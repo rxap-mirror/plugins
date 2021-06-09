@@ -65,6 +65,7 @@ ng g @rxap/plugin-i18n:config [project]
   --- | --- | --- | ---
     availableLanguages | array |  | 
     defaultLanguage | string |  | 
+    assets | array |  | 
 
 
 
