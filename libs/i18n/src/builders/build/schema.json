@@ -12,6 +12,12 @@
     },
     "defaultLanguage": {
       "type": "string"
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
     }
   },
   "required": []

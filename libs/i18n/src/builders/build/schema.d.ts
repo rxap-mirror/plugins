@@ -4,4 +4,5 @@ export interface BuildBuilderSchema extends JsonObject {
   defaultLanguage?: string;
   availableLanguages?: string[];
   indexHtmlTemplate: string;
+  assets?: string[];
 }

@@ -8,7 +8,7 @@ import { json } from '@angular-devkit/core';
 import {
   readFileSync,
   existsSync,
-  writeFileSync
+  writeFileSync, copyFileSync
 } from 'fs';
 import { join } from 'path';
 import { compile } from 'handlebars';
@@ -40,10 +40,18 @@ export class Builder {
 
   public async run(): Promise<BuilderOutput> {
 
-    if (!this.context.target?.project) {
-      throw new Error('The target project is not defined!');
+    try {
+      await this.createIndexHtml();
+      await this.copyAssets();
+    } catch (e) {
+      return { success: false, error: e.message };
     }
 
+    return { success: true };
+
+  }
+
+  private async createIndexHtml() {
     const indexHtmlTemplateFilePath = this.options.indexHtmlTemplate;
 
     if (!indexHtmlTemplateFilePath) {
@@ -62,6 +70,23 @@ export class Builder {
 
     const indexHtml = indexHtmlTemplate(this.options);
 
+    const outputPath = await this.getOutputPath();
+
+    const indexHtmlFilePath = join(this.context.workspaceRoot, outputPath, 'index.html');
+
+    if (existsSync(indexHtmlFilePath)) {
+      throw new Error(`The index.html file already exists in the location: '${indexHtmlFilePath}'`);
+    }
+
+    writeFileSync(indexHtmlFilePath, indexHtml);
+  }
+
+  private async getOutputPath(): Promise<string> {
+
+    if (!this.context.target?.project) {
+      throw new Error('The target project is not defined!');
+    }
+
     const buildOptions = await this.context.getTargetOptions({
       target:        'build',
       project:       this.context.target?.project,
@@ -73,16 +98,20 @@ export class Builder {
     if (typeof outputPath !== 'string') {
       throw new Error(`Could not extract the output path from the build target with the configuration: '${this.context.target?.configuration}'`);
     }
+    return outputPath;
+  }
 
-    const indexHtmlFilePath = join(this.context.workspaceRoot, outputPath, 'index.html');
+  private async copyAssets() {
 
-    if (existsSync(indexHtmlFilePath)) {
-      throw new Error(`The index.html file already exists in the location: '${indexHtmlFilePath}'`);
+    if (Array.isArray(this.options.assets)) {
+
+      const outputPath = await this.getOutputPath();
+
+      for (const assetPath of this.options.assets) {
+        copyFileSync(assetPath, outputPath);
+      }
+
     }
-
-    writeFileSync(indexHtmlFilePath, indexHtml);
-
-    return { success: true };
 
   }
 
