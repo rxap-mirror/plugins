@@ -1,0 +1,14 @@
+{
+  "extends": "<%= pathToRoot %>tsconfig.schematics.json",
+  "compilerOptions": {
+    "rootDir": "schematics",
+    "outDir": "<%= pathToRoot %>dist/<%= path %>/schematics"
+  },
+  "include": [
+    "schematics/**/*"
+  ],
+  "exclude": [
+    "schematics/*/files/**/*",
+"schematics/**/*.spec.ts"
+  ]
+}

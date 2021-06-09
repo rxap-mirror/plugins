@@ -1,0 +1,36 @@
+RxAP
+===
+
+![](logo.png)
+
+---
+
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
+> 
+
+# Projects
+
+## Libraries
+
+Name | License | Version | Dependencies | Description
+--- | --- | --- | --- | ---
+
+
+## Plugins
+
+Name | License | Version | Dependencies | Description
+--- | --- | --- | --- | ---
+@rxap/plugin-build-info | ![NPM](https://img.shields.io/npm/l/@rxap/plugin-build-info?style=flat-square) | [![npm version](https://img.shields.io/npm/v/@rxap/plugin-build-info?style=flat-square)](https://www.npmjs.com/package/@rxap/plugin-build-info) | ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@rxap/plugin-build-info) | 
+@rxap/plugin-i18n | ![NPM](https://img.shields.io/npm/l/@rxap/plugin-i18n?style=flat-square) | [![npm version](https://img.shields.io/npm/v/@rxap/plugin-i18n?style=flat-square)](https://www.npmjs.com/package/@rxap/plugin-i18n) | ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@rxap/plugin-i18n) | 
+@rxap/plugin-kaniko | ![NPM](https://img.shields.io/npm/l/@rxap/plugin-kaniko?style=flat-square) | [![npm version](https://img.shields.io/npm/v/@rxap/plugin-kaniko?style=flat-square)](https://www.npmjs.com/package/@rxap/plugin-kaniko) | ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@rxap/plugin-kaniko) | 
+@rxap/plugin-library-publish | ![NPM](https://img.shields.io/npm/l/@rxap/plugin-library-publish?style=flat-square) | [![npm version](https://img.shields.io/npm/v/@rxap/plugin-library-publish?style=flat-square)](https://www.npmjs.com/package/@rxap/plugin-library-publish) | ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@rxap/plugin-library-publish) | 
+@rxap/plugin-library-schematics | ![NPM](https://img.shields.io/npm/l/@rxap/plugin-library-schematics?style=flat-square) | [![npm version](https://img.shields.io/npm/v/@rxap/plugin-library-schematics?style=flat-square)](https://www.npmjs.com/package/@rxap/plugin-library-schematics) | ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@rxap/plugin-library-schematics) | A builder to compile angular library schematics.
+@rxap/plugin-pack | ![NPM](https://img.shields.io/npm/l/@rxap/plugin-pack?style=flat-square) | [![npm version](https://img.shields.io/npm/v/@rxap/plugin-pack?style=flat-square)](https://www.npmjs.com/package/@rxap/plugin-pack) | ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@rxap/plugin-pack) | A builder to execute a collection of architect targets in sequence.
+@rxap/plugin-readme-generator | ![NPM](https://img.shields.io/npm/l/@rxap/plugin-readme-generator?style=flat-square) | [![npm version](https://img.shields.io/npm/v/@rxap/plugin-readme-generator?style=flat-square)](https://www.npmjs.com/package/@rxap/plugin-readme-generator) | ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@rxap/plugin-readme-generator) | A builder to generate readme files for libraries.
+@rxap/plugin-scss-bundle | ![NPM](https://img.shields.io/npm/l/@rxap/plugin-scss-bundle?style=flat-square) | [![npm version](https://img.shields.io/npm/v/@rxap/plugin-scss-bundle?style=flat-square)](https://www.npmjs.com/package/@rxap/plugin-scss-bundle) | ![Libraries.io dependency status for latest release, scoped npm package](https://img.shields.io/librariesio/release/npm/@rxap/plugin-scss-bundle) | A builder to bundle scss theme files for angular libraries.
+
+
+

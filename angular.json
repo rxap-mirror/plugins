@@ -1,0 +1,610 @@
+{
+  "version": 1,
+  "projects": {
+    "plugin-library-schematics": {
+      "root": "libs/library-schematics",
+      "sourceRoot": "libs/library-schematics/src",
+      "projectType": "library",
+      "schematics": {},
+      "prefix": "rxap-plugin",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/library-schematics/tsconfig.lib.json",
+              "libs/library-schematics/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/library-schematics/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/library-schematics/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/library-schematics"
+          ]
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/library-schematics",
+            "tsConfig": "libs/library-schematics/tsconfig.lib.json",
+            "packageJson": "libs/library-schematics/package.json",
+            "main": "libs/library-schematics/src/index.ts",
+            "assets": [
+              "libs/library-schematics/*.md",
+              {
+                "input": "./libs/library-schematics/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/library-schematics",
+                "glob": "collection.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/library-schematics",
+                "glob": "builders.json",
+                "output": "."
+              }
+            ],
+            "srcRootForCompilationRoot": "libs/library-schematics"
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "pack": {
+          "builder": "@rxap/plugin-pack:build",
+          "options": {
+            "targets": [
+              "plugin-library-schematics:readme",
+              "plugin-library-schematics:build"
+            ]
+          }
+        },
+        "readme": {
+          "builder": "@rxap/plugin-readme-generator:plugin"
+        }
+      }
+    },
+    "plugin-pack": {
+      "root": "libs/pack",
+      "sourceRoot": "libs/pack/src",
+      "projectType": "library",
+      "prefix": "rxap-plugin",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/pack/tsconfig.lib.json",
+              "libs/pack/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/pack/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/pack/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/pack"
+          ]
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/pack",
+            "tsConfig": "libs/pack/tsconfig.lib.json",
+            "packageJson": "libs/pack/package.json",
+            "main": "libs/pack/src/index.ts",
+            "assets": [
+              "libs/pack/*.md",
+              {
+                "input": "./libs/pack/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/pack",
+                "glob": "collection.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/pack",
+                "glob": "builders.json",
+                "output": "."
+              }
+            ],
+            "srcRootForCompilationRoot": "libs/pack"
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "pack": {
+          "builder": "@rxap/plugin-pack:build",
+          "options": {
+            "targets": [
+              "plugin-pack:readme",
+              "plugin-pack:build"
+            ]
+          }
+        },
+        "readme": {
+          "builder": "@rxap/plugin-readme-generator:plugin"
+        }
+      }
+    },
+    "plugin-scss-bundle": {
+      "root": "libs/scss-bundle",
+      "sourceRoot": "libs/scss-bundle/src",
+      "projectType": "library",
+      "prefix": "rxap-plugin",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/scss-bundle/tsconfig.lib.json",
+              "libs/scss-bundle/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/scss-bundle/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/scss-bundle/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/scss-bundle"
+          ]
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/scss-bundle",
+            "tsConfig": "libs/scss-bundle/tsconfig.lib.json",
+            "packageJson": "libs/scss-bundle/package.json",
+            "main": "libs/scss-bundle/src/index.ts",
+            "assets": [
+              "libs/scss-bundle/*.md",
+              {
+                "input": "./libs/scss-bundle/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/scss-bundle",
+                "glob": "collection.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/scss-bundle",
+                "glob": "builders.json",
+                "output": "."
+              }
+            ],
+            "srcRootForCompilationRoot": "libs/scss-bundle"
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "pack": {
+          "builder": "@rxap/plugin-pack:build",
+          "options": {
+            "targets": [
+              "plugin-scss-bundle:readme",
+              "plugin-scss-bundle:build"
+            ]
+          }
+        },
+        "readme": {
+          "builder": "@rxap/plugin-readme-generator:plugin"
+        },
+        "publish": {
+          "builder": "@rxap/plugin-library-publish:publish",
+          "options": {
+            "buildTarget": "plugin-scss-bundle:build",
+            "preTarget": "plugin-scss-bundle:pack"
+          }
+        }
+      }
+    },
+    "plugin-readme-generator": {
+      "root": "libs/readme-generator",
+      "sourceRoot": "libs/readme-generator/src",
+      "projectType": "library",
+      "prefix": "rxap-plugin",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/readme-generator/tsconfig.lib.json",
+              "libs/readme-generator/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/readme-generator/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/readme-generator/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/readme-generator"
+          ]
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/readme-generator",
+            "tsConfig": "libs/readme-generator/tsconfig.lib.json",
+            "packageJson": "libs/readme-generator/package.json",
+            "main": "libs/readme-generator/src/index.ts",
+            "assets": [
+              "libs/readme-generator/*.md",
+              {
+                "input": "./libs/readme-generator/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/readme-generator",
+                "glob": "collection.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/readme-generator",
+                "glob": "builders.json",
+                "output": "."
+              }
+            ],
+            "srcRootForCompilationRoot": "libs/readme-generator"
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "pack": {
+          "builder": "@rxap/plugin-pack:build",
+          "options": {
+            "targets": [
+              "plugin-readme-generator:readme",
+              "plugin-readme-generator:build"
+            ]
+          }
+        },
+        "readme": {
+          "builder": "@rxap/plugin-readme-generator:plugin"
+        }
+      }
+    },
+    "plugin-kaniko": {
+      "root": "libs/kaniko",
+      "sourceRoot": "libs/kaniko/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/kaniko/tsconfig.lib.json",
+              "libs/kaniko/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/kaniko/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/kaniko/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/kaniko"
+          ]
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/kaniko",
+            "tsConfig": "libs/kaniko/tsconfig.lib.json",
+            "packageJson": "libs/kaniko/package.json",
+            "main": "libs/kaniko/src/index.ts",
+            "assets": [
+              "libs/kaniko/*.md",
+              {
+                "input": "./libs/kaniko/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/kaniko",
+                "glob": "collection.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/kaniko",
+                "glob": "builders.json",
+                "output": "."
+              }
+            ],
+            "srcRootForCompilationRoot": "libs/kaniko"
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "pack": {
+          "builder": "@rxap/plugin-pack:build",
+          "options": {
+            "targets": [
+              "plugin-kaniko:readme",
+              "plugin-kaniko:build"
+            ]
+          }
+        },
+        "readme": {
+          "builder": "@rxap/plugin-readme-generator:plugin"
+        }
+      }
+    },
+    "plugin-library-publish": {
+      "root": "libs/library-publish",
+      "sourceRoot": "libs/library-publish/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/library-publish/tsconfig.lib.json",
+              "libs/library-publish/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/library-publish/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/library-publish/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": [
+            "coverage/libs/library-publish"
+          ]
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/library-publish",
+            "tsConfig": "libs/library-publish/tsconfig.lib.json",
+            "packageJson": "libs/library-publish/package.json",
+            "main": "libs/library-publish/src/index.ts",
+            "assets": [
+              "libs/library-publish/*.md",
+              {
+                "input": "./libs/library-publish/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/library-publish",
+                "glob": "collection.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/library-publish",
+                "glob": "builders.json",
+                "output": "."
+              }
+            ],
+            "srcRootForCompilationRoot": "libs/library-publish"
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "pack": {
+          "builder": "@rxap/plugin-pack:build",
+          "options": {
+            "targets": [
+              "plugin-library-publish:readme",
+              "plugin-library-publish:build"
+            ]
+          }
+        },
+        "readme": {
+          "builder": "@rxap/plugin-readme-generator:plugin"
+        },
+        "publish": {
+          "builder": "@rxap/plugin-library-publish:publish",
+          "options": {
+            "buildTarget": "plugin-library-publish:build",
+            "preTarget": "plugin-library-publish:pack"
+          }
+        }
+      }
+    },
+    "plugin-i18n": {
+      "root": "libs/i18n",
+      "sourceRoot": "libs/i18n/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/i18n/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/i18n"
+          ],
+          "options": {
+            "jestConfig": "libs/i18n/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/i18n",
+            "tsConfig": "libs/i18n/tsconfig.lib.json",
+            "packageJson": "libs/i18n/package.json",
+            "main": "libs/i18n/src/index.ts",
+            "assets": [
+              "libs/i18n/*.md",
+              {
+                "input": "./libs/i18n/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/i18n",
+                "glob": "collection.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/i18n",
+                "glob": "builders.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/i18n/src",
+                "glob": "**/files/**",
+                "output": "./src"
+              }
+            ]
+          }
+        },
+        "pack": {
+          "builder": "@rxap/plugin-pack:build",
+          "options": {
+            "targets": [
+              "plugin-i18n:readme",
+              "plugin-i18n:build"
+            ]
+          }
+        },
+        "readme": {
+          "builder": "@rxap/plugin-readme-generator:plugin"
+        }
+      }
+    },
+    "plugin-build-info": {
+      "root": "libs/build-info",
+      "sourceRoot": "libs/build-info/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/build-info/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/build-info"
+          ],
+          "options": {
+            "jestConfig": "libs/build-info/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/build-info",
+            "tsConfig": "libs/build-info/tsconfig.lib.json",
+            "packageJson": "libs/build-info/package.json",
+            "main": "libs/build-info/src/index.ts",
+            "assets": [
+              "libs/build-info/*.md",
+              {
+                "input": "./libs/build-info/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/build-info",
+                "glob": "collection.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/build-info",
+                "glob": "builders.json",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "pack": {
+          "builder": "@rxap/plugin-pack:build",
+          "options": {
+            "targets": [
+              "plugin-build-info:readme",
+              "plugin-build-info:build"
+            ]
+          }
+        },
+        "readme": {
+          "builder": "@rxap/plugin-readme-generator:plugin"
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/workspace",
+    "packageManager": "yarn"
+  }
+}

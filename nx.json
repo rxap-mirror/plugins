@@ -1,0 +1,52 @@
+{
+  "npmScope": "plugins",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "plugin-library-schematics": {
+      "tags": []
+    },
+    "plugin-pack": {
+      "tags": []
+    },
+    "plugin-scss-bundle": {
+      "tags": []
+    },
+    "plugin-readme-generator": {
+      "tags": []
+    },
+    "plugin-kaniko": {
+      "tags": []
+    },
+    "plugin-library-publish": {
+      "tags": []
+    },
+    "plugin-i18n": {
+      "tags": []
+    },
+    "plugin-build-info": {
+      "tags": []
+    }
+  }
+}
