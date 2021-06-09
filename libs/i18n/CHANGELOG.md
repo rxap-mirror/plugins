@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 12.1.0 (2021-06-09)
+
+
+### Features
+
+* **builder:** add support for i18n assets files ([f3c14b9](https://gitlab.com/rxap/packages/commit/f3c14b979de20037f883226f7e44f51b4e96e320))
+
+
+
+
+
 ## [12.0.1](https://gitlab.com/rxap/packages/compare/@rxap/plugin-i18n@12.0.0...@rxap/plugin-i18n@12.0.1) (2021-05-24)
 
 **Note:** Version bump only for package @rxap/plugin-i18n
