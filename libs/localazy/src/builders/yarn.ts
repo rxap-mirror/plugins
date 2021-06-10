@@ -6,6 +6,7 @@ export class Yarn {
   constructor(private readonly logger: logging.LoggerApi) {}
 
   public spawn(args: string[]) {
+    console.log(`$ yarn ${args.join(' ')}`);
     return new Promise((resolve, reject) => {
       const s = cp.spawn('yarn', args, { stdio: [ 'ignore', 'pipe', 'inherit' ], shell: true });
       s.on('error', (err: Error & { code?: string }) => {
