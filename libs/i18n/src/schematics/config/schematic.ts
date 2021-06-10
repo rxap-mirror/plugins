@@ -1,4 +1,16 @@
-import { apply, chain, forEach, mergeWith, move, Rule, template, Tree, url } from '@angular-devkit/schematics';
+import {
+  apply,
+  chain,
+  externalSchematic,
+  forEach,
+  mergeWith,
+  move,
+  Rule,
+  SchematicsException,
+  template,
+  Tree,
+  url
+} from '@angular-devkit/schematics';
 import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
@@ -25,6 +37,8 @@ export default function(options: ConfigSchema): Rule {
   return async host => {
 
     const projectBasePath = await GetProjectBasePath(host, options.project);
+
+    let hasPackTarget: boolean | null = null;
 
     return chain([
       mergeWith(apply(url('./files'), [
@@ -64,7 +78,21 @@ export default function(options: ConfigSchema): Rule {
 
         }
 
-      })
+        hasPackTarget = project.targets.has('pack');
+
+      }),
+      () => {
+        if (hasPackTarget === null) {
+          throw new SchematicsException('It is unclear if the project has a the target "pack"');
+        }
+        if (hasPackTarget) {
+          console.log('Project has pack target');
+          return externalSchematic('@rxap/plugin-pack', 'add-target', {
+            project: options.project,
+            target: `${options.project}:i18n`
+          });
+        }
+      }
     ]);
 
   };
