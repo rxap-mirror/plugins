@@ -18,11 +18,11 @@
 
 Add the plugin to your workspace:
 
-
 ```
-yarn add @rxap/plugin-pack
+ng add @rxap/plugin-pack
 ```
 
+*Adds the pack plugin to the workspace*
 
 Configure @rxap/plugin-pack for a project:
 
@@ -49,6 +49,7 @@ project | string |  | The name of the project.
 | --- |
 | project |
 
+
 **Adds a target to the targets options array**
 
 ```
@@ -62,6 +63,16 @@ project | string |  | The name of the project.
 | Required |
 | --- |
 | project |
+
+**Adds the pack plugin to the workspace**
+
+```
+ng g @rxap/plugin-pack:ng-add
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+project | string |  | Name of the project.
 
 # Builder
 
