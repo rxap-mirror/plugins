@@ -4,13 +4,13 @@
   "version": "0.0.1",
   "schematics": {
     "config": {
-      "factory": "./src/schematics/config/schematic",
+      "factory": "./src/schematics/config/index",
       "schema": "./src/schematics/config/schema.json",
       "description": "Adds the @plugin-pack:build to the specified project"
     },
     "add-target": {
-      "factory": "./src/schematics/config/index",
-      "schema": "./src/schematics/config/schema.json",
+      "factory": "./src/schematics/add-target/index",
+      "schema": "./src/schematics/add-target/schema.json",
       "description": "Adds a target to the targets options array"
     },
     "ng-add": {

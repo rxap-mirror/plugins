@@ -34,6 +34,18 @@ export class Builder {
     return builderRun.result;
   }
 
+  private static stringToTarget(str: string): Target {
+    const split = str.split(':');
+    if (split.length < 2) {
+      throw new Error(`Can not convert string '${str}' into target`);
+    }
+    return {
+      project: split[0],
+      target: split[1],
+      configuration: split[2]
+    };
+  }
+
   public async run(): Promise<BuilderOutput> {
 
     if (process.env.LOCALAZY_WRITE_KEY) {
@@ -44,12 +56,13 @@ export class Builder {
       this.options.readKey = process.env.LOCALAZY_READ_KEY;
     }
 
-    const extractI18nTarget = this.stringToTarget(`${this.context.target.project}:extract-i18n`);
+    if (this.options.extractTarget) {
+      const extractI18nTarget = Builder.stringToTarget(this.options.extractTarget);
 
-    try {
-      await this.executeBuildTarget(extractI18nTarget);
-    } catch (e) {
-      if (e.message !== 'Project target does not exist.') {
+      try {
+        await this.executeBuildTarget(extractI18nTarget);
+      } catch (e) {
+        console.log(`Could not execute extract target: ${e.message}`);
         return { success: false, error: e.message };
       }
     }
@@ -102,18 +115,6 @@ export class Builder {
 
     return { success: true };
 
-  }
-
-  private stringToTarget(str: string): Target {
-    const split = str.split(':');
-    if (split.length < 2) {
-      throw new Error(`Can not convert string '${str}' into target`);
-    }
-    return {
-      project: split[0],
-      target: split[1],
-      configuration: split[2]
-    };
   }
 
 }

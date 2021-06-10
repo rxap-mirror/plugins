@@ -8,4 +8,5 @@ export interface UploadBuilderSchema extends Record<string, any> {
   quite?: boolean;
   force?: boolean;
   version?: number;
+  extractTarget?: string;
 }

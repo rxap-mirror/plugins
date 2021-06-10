@@ -1,7 +1,4 @@
-import {
-  chain,
-  Rule
-} from '@angular-devkit/schematics';
+import { chain, Rule } from '@angular-devkit/schematics';
 import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 

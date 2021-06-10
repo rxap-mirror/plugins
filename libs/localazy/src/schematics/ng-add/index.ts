@@ -10,7 +10,8 @@ export default function(options: NgAddSchema): Rule {
       () => {
         if (options.project) {
           return schematic('config', {
-            project: options.project
+            project: options.project,
+            extractTarget: options.extractTarget
           });
         } else {
           console.log('Default project not defined. Add the localazy target to a project with: ng g @rxap/plugin-localazy:config [project]');

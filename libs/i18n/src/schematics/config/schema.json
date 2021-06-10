@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "ConfigSchema",
+  "id": "rxap-plugin-i18n-config",
   "title": "Config schema options",
   "description": "Adds the i18n builder to the specified project.",
   "type": "object",

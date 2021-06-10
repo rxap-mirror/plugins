@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "ConfigSchema",
+  "id": "rxap-plugin-pack-config",
   "title": "Config schema options",
   "description": "Adds the schematics builder to the specified project.",
   "type": "object",

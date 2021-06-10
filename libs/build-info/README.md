@@ -18,11 +18,12 @@
 
 Add the plugin to your workspace:
 
+
   ```
   ng add @rxap/plugin-build-info
   ```
 
-*Adds the build-info plugin to the workspace*
+  *Adds the build-info plugin to the workspace*
 
 Configure @rxap/plugin-build-info for a project:
 
@@ -69,11 +70,11 @@ project | string |  | Name of the project.
 
 Option | Type | Default | Description
   --- | --- | --- | ---
-    branch | string |  | 
-    tag | string |  | 
-    release | string |  | 
-    commit | string |  | 
-    timestamp | string |  | 
+branch | string |  |
+tag | string |  |
+release | string |  |
+commit | string |  |
+timestamp | string |  | 
 
 
 

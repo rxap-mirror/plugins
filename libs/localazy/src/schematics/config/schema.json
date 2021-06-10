@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "ConfigSchema",
+  "id": "rxap-plugin-localazy-config",
   "title": "Config schema options",
   "description": "Adds the schematics builder to the specified project.",
   "type": "object",
@@ -13,6 +13,10 @@
         "index": 0
       },
       "x-prompt": "For which project should the pack builder be added?"
+    },
+    "extractTarget": {
+      "type": "string",
+      "description": "The target that extracts or generate the translation source file."
     }
   },
   "required": [

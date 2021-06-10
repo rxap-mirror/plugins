@@ -18,6 +18,7 @@
 
 Add the plugin to your workspace:
 
+
 ```
 ng add @rxap/plugin-pack
 ```
@@ -59,10 +60,13 @@ ng g @rxap/plugin-pack:add-target
 Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | The name of the project.
+target | string |  | The target expression that should be added
+preBuild | boolean | false | Whether the target should be added before the build targets
 
 | Required |
 | --- |
 | project |
+| target |
 
 **Adds the pack plugin to the workspace**
 

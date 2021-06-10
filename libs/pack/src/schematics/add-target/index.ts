@@ -26,12 +26,14 @@ export default function(options: AddTargetSchema): Rule {
 
           const targets: string[] = pack.options.targets as string[] ?? [];
 
-          if (targets.includes('build') && options.preBuild) {
-            console.log(`Add target '${options.target}' before the build target.`);
-            targets.splice(targets.indexOf('build'), 0, options.target);
-          } else {
-            console.log(`Add target '${options.target}' after the build target.`);
-            targets.push(options.target);
+          if (!targets.includes(options.target)) {
+            if (targets.some(target => target.includes(':build')) && options.preBuild) {
+              console.log(`Add target '${options.target}' before the build target.`);
+              targets.splice(targets.findIndex(target => target.includes(':build')), 0, options.target);
+            } else {
+              console.log(`Add target '${options.target}' after the build target.`);
+              targets.push(options.target);
+            }
           }
 
         }

@@ -43,9 +43,10 @@ ng g @rxap/plugin-localazy:config [project]
   ng g @rxap/plugin-localazy:config
   ```
 
-  Option | Type | Default | Description
+Option | Type | Default | Description
   --- | --- | --- | ---
-    project | string |  | The name of the project.
+project | string |  | The name of the project.
+extractTarget | string |  | The target that extracts or generate the translation source file.
 
     | Required |
     | --- |
@@ -58,9 +59,10 @@ ng g @rxap/plugin-localazy:config [project]
   ng g @rxap/plugin-localazy:ng-add
   ```
 
-  Option | Type | Default | Description
+Option | Type | Default | Description
   --- | --- | --- | ---
-    project | string |  | Name of the project.
+project | string |  | Name of the project.
+extractTarget | string |  | The target that extracts or generate the translation source file.
 
 
 
@@ -103,6 +105,7 @@ dryRun | boolean | false | Do not perform the actual operation, only simulate th
 quite | boolean | false | Quiet mode. Print only important information.
 force | boolean | false | Force the upload operation if the validation step fails.
 tag | string |  | Perform the operation for the given release tag.
+extractTarget | string |  | The target that extracts or generate the translation source file.
 
 
 

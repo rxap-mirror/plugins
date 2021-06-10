@@ -42,6 +42,10 @@
     "tag": {
       "type": "string",
       "description": "Perform the operation for the given release tag."
+    },
+    "extractTarget": {
+      "type": "string",
+      "description": "The target that extracts or generate the translation source file."
     }
   },
   "required": []
