@@ -25,12 +25,12 @@
       "description": "Set the working directory that all paths are relative to."
     },
     "dryRun": {
-      "type": "string",
+      "type": "boolean",
       "description": "Do not perform the actual operation, only simulate the process. No files are uploaded nor written.",
       "default": false
     },
     "quite": {
-      "type": "string",
+      "type": "boolean",
       "description": "Quiet mode. Print only important information.",
       "default": false
     },

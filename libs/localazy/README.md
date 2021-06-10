@@ -73,17 +73,17 @@ ng g @rxap/plugin-localazy:config [project]
   @rxap/plugin-localazy:download
   ```
 
-  Option | Type | Default | Description
+Option | Type | Default | Description
   --- | --- | --- | ---
-    readKey | string |  | Provide the writeKey on the command line.
-    writeKey | string |  | Provide the readkey on the command line.
-    keysJson | string |  | Override the keys file name.
-    configJson | string |  | Override the configuration file name.
-    workingDirectory | string |  | Set the working directory that all paths are relative to.
-    dryRun | string | false | Do not perform the actual operation, only simulate the process. No files are uploaded nor written.
-    quite | string | false | Quiet mode. Print only important information.
-    force | boolean | false | Force the upload operation if the validation step fails.
-    tag | string |  | Perform the operation for the given release tag.
+readKey | string |  | Provide the writeKey on the command line.
+writeKey | string |  | Provide the readkey on the command line.
+keysJson | string |  | Override the keys file name.
+configJson | string |  | Override the configuration file name.
+workingDirectory | string |  | Set the working directory that all paths are relative to.
+dryRun | boolean | false | Do not perform the actual operation, only simulate the process. No files are uploaded nor written.
+quite | boolean | false | Quiet mode. Print only important information.
+force | boolean | false | Force the upload operation if the validation step fails.
+tag | string |  | Perform the operation for the given release tag.
 
 
   **localazy upload**
@@ -92,17 +92,17 @@ ng g @rxap/plugin-localazy:config [project]
   @rxap/plugin-localazy:upload
   ```
 
-  Option | Type | Default | Description
+Option | Type | Default | Description
   --- | --- | --- | ---
-    readKey | string |  | Provide the writeKey on the command line.
-    writeKey | string |  | Provide the readkey on the command line.
-    keysJson | string |  | Override the keys file name.
-    configJson | string |  | Override the configuration file name.
-    workingDirectory | string |  | Set the working directory that all paths are relative to.
-    dryRun | string | false | Do not perform the actual operation, only simulate the process. No files are uploaded nor written.
-    quite | string | false | Quiet mode. Print only important information.
-    force | boolean | false | Force the upload operation if the validation step fails.
-    tag | string |  | Perform the operation for the given release tag.
+readKey | string |  | Provide the writeKey on the command line.
+writeKey | string |  | Provide the readkey on the command line.
+keysJson | string |  | Override the keys file name.
+configJson | string |  | Override the configuration file name.
+workingDirectory | string |  | Set the working directory that all paths are relative to.
+dryRun | boolean | false | Do not perform the actual operation, only simulate the process. No files are uploaded nor written.
+quite | boolean | false | Quiet mode. Print only important information.
+force | boolean | false | Force the upload operation if the validation step fails.
+tag | string |  | Perform the operation for the given release tag.
 
 
 
