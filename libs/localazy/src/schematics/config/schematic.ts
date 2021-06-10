@@ -1,15 +1,56 @@
-import { chain, externalSchematic, Rule, SchematicsException } from '@angular-devkit/schematics';
+import {
+  apply,
+  chain,
+  externalSchematic,
+  forEach,
+  mergeWith,
+  Rule,
+  SchematicsException,
+  Tree,
+  url
+} from '@angular-devkit/schematics';
 import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
+import { getWorkspace } from '@schematics/angular/utility/workspace';
+import { applyTemplates } from '@angular-devkit/schematics/src/rules/template';
+
+export async function GetProjectBasePath(host: Tree, project: string) {
+  let projectBasePath = join('apps', project);
+  const projectName = project;
+  const workspace = await getWorkspace(host);
+
+  const hasProject = workspace.projects.has(projectName);
+
+  if (hasProject) {
+    console.log(`Project '${projectName}' already exists`);
+    projectBasePath = workspace.projects.get(projectName)!.root;
+  } else {
+    throw new Error('Could not find the project');
+  }
+  return projectBasePath;
+}
 
 export default function(options: ConfigSchema): Rule {
 
-  return () => {
+  return async host => {
+
+    const projectBasePath = await GetProjectBasePath(host, options.project);
+    // TODO : extract the project src root from angular.json
+    const sourceRoot = join(projectBasePath, 'src');
 
     let hasPackTarget: boolean | null = null;
 
     return chain([
+      mergeWith(apply(url('./files'), [
+        applyTemplates({ sourceRoot }),
+        forEach(entry => {
+          if (host.exists(entry.path)) {
+            return null;
+          }
+          return entry;
+        })
+      ])),
       updateWorkspace((workspace) => {
         const project = workspace.projects.get(options.project);
 
