@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.5](https://gitlab.com/rxap/packages/compare/@rxap/plugin-i18n@12.1.4...@rxap/plugin-i18n@12.1.5) (2021-06-10)
+
+
+### Bug Fixes
+
+* update extract-i18n config ([ff17af2](https://gitlab.com/rxap/packages/commit/ff17af298f65daa2b1c4648983187086a5127dc6))
+* update the i18n config of the target project ([48e19b3](https://gitlab.com/rxap/packages/commit/48e19b3c0ae228747f11177c4835caf24753ec6d))
+
+
+
+
+
 ## [12.1.4](https://gitlab.com/rxap/packages/compare/@rxap/plugin-i18n@12.1.3...@rxap/plugin-i18n@12.1.4) (2021-06-10)
 
 
