@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.4](https://gitlab.com/rxap/packages/compare/@rxap/plugin-build-info@12.0.3...@rxap/plugin-build-info@12.0.4) (2021-06-10)
+
+
+### Bug Fixes
+
+* add ng-add schematic ([c7ea2c2](https://gitlab.com/rxap/packages/commit/c7ea2c2d52e16d8d66652a04f7c54820ee0bbe3f))
+* add pack target update ([b8ba587](https://gitlab.com/rxap/packages/commit/b8ba587cfc4d9f5c14a585b2445387b9cbdc535c))
+
+
+
+
+
 ## [12.0.3](https://gitlab.com/rxap/packages/compare/@rxap/plugin-build-info@12.0.2...@rxap/plugin-build-info@12.0.3) (2021-06-10)
 
 **Note:** Version bump only for package @rxap/plugin-build-info
