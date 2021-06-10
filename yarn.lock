@@ -2461,10 +2461,10 @@
     "@angular-devkit/core" "^12.0.3"
     "@angular-devkit/schematics" "^12.0.3"
 
-"@rxap/schematics-utilities@^12.0.3":
-  version "12.0.3"
-  resolved "https://registry.yarnpkg.com/@rxap/schematics-utilities/-/schematics-utilities-12.0.3.tgz#24a3efe4cf3a9f879562d55dcedba56ca4e8989b"
-  integrity sha512-jgkBBoke6HU8LWm/pMPYWdw3ozAAgV3EZdF+m0WIvzLk6PORveKqIF/tzqFsaBBdm+i4i6izEmiQ570/ngBsfw==
+"@rxap/schematics-utilities@^12.0.5":
+  version "12.0.5"
+  resolved "https://registry.yarnpkg.com/@rxap/schematics-utilities/-/schematics-utilities-12.0.5.tgz#21a63243a99f7d846b7e8c71f0947ac5e65c9ea5"
+  integrity sha512-RCRhfjsV8pY9dubnbP7VcyPhBtaRpV4PiVhpvtYb2BfA1XjKetK+iA6UmJPTgpMEDgcifcbxEATG1jakWdPTdQ==
   dependencies:
     tslib "^2.0.0"
 
