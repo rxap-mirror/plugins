@@ -18,11 +18,12 @@
 
 Add the plugin to your workspace:
 
+
   ```
   ng add @rxap/plugin-i18n
   ```
 
-*Adds the i18n plugin to the workspace*
+  *Adds the i18n plugin to the workspace*
 
 Configure @rxap/plugin-i18n for a project:
 
@@ -34,8 +35,7 @@ ng g @rxap/plugin-i18n:config [project]
 
 # Schematics
 
-
-  **Adds the @plugin-pack:build to the specified project**
+**Adds the @plugin-pack:build to the specified project**
 
   ```
   ng g @rxap/plugin-i18n:config
@@ -75,9 +75,9 @@ defaultLanguage | string |  |
 
 Option | Type | Default | Description
   --- | --- | --- | ---
-    availableLanguages | array |  | 
-    defaultLanguage | string |  | 
-    assets | array |  | 
+availableLanguages | array |  |
+defaultLanguage | string |  |
+assets | array |  | 
 
 
 

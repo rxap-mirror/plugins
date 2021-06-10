@@ -1,6 +1,4 @@
-import { JsonObject } from '@angular-devkit/core';
-
-export interface BuildBuilderSchema extends JsonObject {
+export interface BuildBuilderSchema extends Record<string, any> {
   defaultLanguage?: string;
   availableLanguages?: string[];
   indexHtmlTemplate: string;

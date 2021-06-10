@@ -1,19 +1,10 @@
-import {
-  BuilderContext,
-  BuilderOutput,
-  createBuilder
-} from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { BuildBuilderSchema } from './schema';
-import { json } from '@angular-devkit/core';
-import {
-  readFileSync,
-  existsSync,
-  writeFileSync, copyFileSync
-} from 'fs';
-import { join } from 'path';
+import { copyFileSync, existsSync, readFileSync, writeFileSync } from 'fs';
+import { basename, join } from 'path';
 import { compile } from 'handlebars';
 
-export interface Target extends json.JsonObject {
+export interface Target extends Record<string, any> {
   project: string;
   target: string;
   configuration: string;
@@ -42,8 +33,15 @@ export class Builder {
 
     try {
       await this.createIndexHtml();
+    } catch (e) {
+      console.error(`Create index html failed: ${e.message}`);
+      return { success: false, error: e.message };
+    }
+
+    try {
       await this.copyAssets();
     } catch (e) {
+      console.error(`Copy assets failed: ${e.message}`);
       return { success: false, error: e.message };
     }
 
@@ -75,7 +73,7 @@ export class Builder {
     const indexHtmlFilePath = join(this.context.workspaceRoot, outputPath, 'index.html');
 
     if (existsSync(indexHtmlFilePath)) {
-      throw new Error(`The index.html file already exists in the location: '${indexHtmlFilePath}'`);
+      console.warn(`The index.html file already exists in the location: '${indexHtmlFilePath}'`);
     }
 
     writeFileSync(indexHtmlFilePath, indexHtml);
@@ -103,14 +101,22 @@ export class Builder {
 
   private async copyAssets() {
 
-    if (Array.isArray(this.options.assets)) {
+    if (Array.isArray(this.options.assets) && this.options.assets.length) {
 
       const outputPath = await this.getOutputPath();
 
       for (const assetPath of this.options.assets) {
-        copyFileSync(assetPath, outputPath);
+        const assetOutputPath = join(outputPath, basename(assetPath));
+        try {
+          copyFileSync(assetPath, assetOutputPath);
+        } catch (e) {
+          console.error(`Could not copy assets '${assetPath}' to '${outputPath}': ${e.message}`);
+          throw e;
+        }
       }
 
+    } else {
+      console.info('Skip assets copy. No assets specified.');
     }
 
   }
