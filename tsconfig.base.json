@@ -10,11 +10,45 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2017", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@rxap/plugin-localazy": [
+        "libs/localazy/src/index.ts"
+      ],
+      "@rxap/plugin-library-schematics": [
+        "libs/library-schematics/src/index.ts"
+      ],
+      "@rxap/plugin-pack": [
+        "libs/pack/src/index.ts"
+      ],
+      "@rxap/plugin-scss-bundle": [
+        "libs/scss-bundle/src/index.ts"
+      ],
+      "@rxap/form-system": [
+        "libs/form-system/src/index.ts"
+      ],
+      "@rxap/plugin-readme-generator": [
+        "libs/readme-generator/src/index.ts"
+      ],
+      "@rxap/plugin-kaniko": [
+        "libs/kaniko/src/index.ts"
+      ],
+      "@rxap/plugin-library-publish": [
+        "libs/library-publish/src/index.ts"
+      ],
+      "@rxap/plugin-i18n": [
+        "libs/i18n/src/index.ts"
+      ],
+      "@rxap/plugin-build-info": [
+        "libs/build-info/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

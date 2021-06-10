@@ -8,5 +8,6 @@ module.exports = {
     '<rootDir>/libs/library-publish',
     '<rootDir>/libs/i18n',
     '<rootDir>/libs/build-info',
+    '<rootDir>/libs/localazy'
   ],
 };

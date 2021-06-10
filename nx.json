@@ -24,28 +24,31 @@
     }
   },
   "projects": {
-    "plugin-library-schematics": {
+    "library-schematics": {
       "tags": []
     },
-    "plugin-pack": {
+    "pack": {
       "tags": []
     },
-    "plugin-scss-bundle": {
+    "scss-bundle": {
       "tags": []
     },
-    "plugin-readme-generator": {
+    "readme-generator": {
       "tags": []
     },
-    "plugin-kaniko": {
+    "kaniko": {
       "tags": []
     },
-    "plugin-library-publish": {
+    "library-publish": {
       "tags": []
     },
-    "plugin-i18n": {
+    "i18n": {
       "tags": []
     },
-    "plugin-build-info": {
+    "build-info": {
+      "tags": []
+    },
+    "localazy": {
       "tags": []
     }
   }

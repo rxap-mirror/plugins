@@ -1,18 +1,7 @@
-import {
-  createProjectGraph,
-  ProjectGraphNode
-} from '@nrwl/workspace/src/core/project-graph';
+import { createProjectGraph, ProjectGraphNode } from '@nrwl/workspace/src/core/project-graph';
 import { ProjectGraph } from '@nrwl/workspace/src/core/project-graph/project-graph-models';
-import {
-  join,
-  dirname,
-  relative
-} from 'path';
-import {
-  readFileSync,
-  existsSync,
-  writeFileSync
-} from 'fs';
+import { dirname, join, relative } from 'path';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 // @ts-ignore
 import * as conventionalRecommendedBump from 'conventional-recommended-bump';
 // @ts-ignore
@@ -233,7 +222,7 @@ function AddDefaultPackageJsonProperties(packageJson: Record<string, any>, node:
   packageJson.author     = 'Merzough Münker';
   packageJson.private    = false;
   packageJson.bugs       = {
-    url:   'https://gitlab.com/rxap/packages/-/issues',
+    url: 'https://gitlab.com/rxap/plugins/-/issues',
     email: 'incoming+rxap-packages-14898188-issue-@incoming.gitlab.com'
   };
 

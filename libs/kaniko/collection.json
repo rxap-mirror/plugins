@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../packages/node_modules/@angular-devkit/schematics/collection-schema.json",
+  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
   "name": "plugin-kaniko",
   "version": "0.0.1",
   "schematics": {

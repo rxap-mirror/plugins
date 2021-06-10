@@ -2,8 +2,8 @@
   "name": "@rxap/plugin-i18n",
   "version": "12.1.0",
   "author": "Merzough Münker",
-  "homepage": "https://gitlab.com/rxap/packages",
-  "repository": "git@gitlab.com:rxap/packages.git",
+  "homepage": "https://gitlab.com/rxap/plugins",
+  "repository": "git@gitlab.com:rxap/plugins.git",
   "keywords": [
     "rxap",
     "plugin",
@@ -15,8 +15,8 @@
   "license": "MIT",
   "private": false,
   "bugs": {
-    "url": "https://gitlab.com/rxap/packages/-/issues",
-    "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"
+    "url": "https://gitlab.com/rxap/plugins/-/issues",
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   },
   "description": "",
   "main": "src/index.js",

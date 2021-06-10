@@ -5,8 +5,8 @@
   "schematics": "./collection.json",
   "builders": "./builders.json",
   "author": "Merzough Münker",
-  "homepage": "https://gitlab.com/rxap/packages",
-  "repository": "git@gitlab.com:rxap/packages.git",
+  "homepage": "https://gitlab.com/rxap/plugins",
+  "repository": "git@gitlab.com:rxap/plugins.git",
   "keywords": [
     "rxap",
     "plugin",
@@ -19,8 +19,8 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/rxap/packages/-/issues",
-    "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"
+    "url": "https://gitlab.com/rxap/plugins/-/issues",
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   },
   "description": "A builder to generate readme files for libraries.",
   "publishConfig": {

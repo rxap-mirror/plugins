@@ -1,7 +1,7 @@
 {
   "version": 1,
   "projects": {
-    "plugin-library-schematics": {
+    "library-schematics": {
       "root": "libs/library-schematics",
       "sourceRoot": "libs/library-schematics/src",
       "projectType": "library",
@@ -66,8 +66,8 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "plugin-library-schematics:readme",
-              "plugin-library-schematics:build"
+              "library-schematics:readme",
+              "library-schematics:build"
             ]
           }
         },
@@ -76,7 +76,7 @@
         }
       }
     },
-    "plugin-pack": {
+    "pack": {
       "root": "libs/pack",
       "sourceRoot": "libs/pack/src",
       "projectType": "library",
@@ -141,8 +141,8 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "plugin-pack:readme",
-              "plugin-pack:build"
+              "pack:readme",
+              "pack:build"
             ]
           }
         },
@@ -151,7 +151,7 @@
         }
       }
     },
-    "plugin-scss-bundle": {
+    "scss-bundle": {
       "root": "libs/scss-bundle",
       "sourceRoot": "libs/scss-bundle/src",
       "projectType": "library",
@@ -216,8 +216,8 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "plugin-scss-bundle:readme",
-              "plugin-scss-bundle:build"
+              "scss-bundle:readme",
+              "scss-bundle:build"
             ]
           }
         },
@@ -227,13 +227,13 @@
         "publish": {
           "builder": "@rxap/plugin-library-publish:publish",
           "options": {
-            "buildTarget": "plugin-scss-bundle:build",
-            "preTarget": "plugin-scss-bundle:pack"
+            "buildTarget": "scss-bundle:build",
+            "preTarget": "scss-bundle:pack"
           }
         }
       }
     },
-    "plugin-readme-generator": {
+    "readme-generator": {
       "root": "libs/readme-generator",
       "sourceRoot": "libs/readme-generator/src",
       "projectType": "library",
@@ -298,8 +298,8 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "plugin-readme-generator:readme",
-              "plugin-readme-generator:build"
+              "readme-generator:readme",
+              "readme-generator:build"
             ]
           }
         },
@@ -308,7 +308,7 @@
         }
       }
     },
-    "plugin-kaniko": {
+    "kaniko": {
       "root": "libs/kaniko",
       "sourceRoot": "libs/kaniko/src",
       "projectType": "library",
@@ -372,8 +372,8 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "plugin-kaniko:readme",
-              "plugin-kaniko:build"
+              "kaniko:readme",
+              "kaniko:build"
             ]
           }
         },
@@ -382,7 +382,7 @@
         }
       }
     },
-    "plugin-library-publish": {
+    "library-publish": {
       "root": "libs/library-publish",
       "sourceRoot": "libs/library-publish/src",
       "projectType": "library",
@@ -446,8 +446,8 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "plugin-library-publish:readme",
-              "plugin-library-publish:build"
+              "library-publish:readme",
+              "library-publish:build"
             ]
           }
         },
@@ -457,13 +457,13 @@
         "publish": {
           "builder": "@rxap/plugin-library-publish:publish",
           "options": {
-            "buildTarget": "plugin-library-publish:build",
-            "preTarget": "plugin-library-publish:pack"
+            "buildTarget": "library-publish:build",
+            "preTarget": "library-publish:pack"
           }
         }
       }
     },
-    "plugin-i18n": {
+    "i18n": {
       "root": "libs/i18n",
       "sourceRoot": "libs/i18n/src",
       "projectType": "library",
@@ -525,8 +525,8 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "plugin-i18n:readme",
-              "plugin-i18n:build"
+              "i18n:readme",
+              "i18n:build"
             ]
           }
         },
@@ -535,7 +535,7 @@
         }
       }
     },
-    "plugin-build-info": {
+    "build-info": {
       "root": "libs/build-info",
       "sourceRoot": "libs/build-info/src",
       "projectType": "library",
@@ -592,8 +592,75 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "plugin-build-info:readme",
-              "plugin-build-info:build"
+              "build-info:readme",
+              "build-info:build"
+            ]
+          }
+        },
+        "readme": {
+          "builder": "@rxap/plugin-readme-generator:plugin"
+        }
+      }
+    },
+    "localazy": {
+      "root": "libs/localazy",
+      "sourceRoot": "libs/localazy/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/localazy/**/*.ts"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/libs/localazy"
+          ],
+          "options": {
+            "jestConfig": "libs/localazy/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/libs/localazy",
+            "tsConfig": "libs/localazy/tsconfig.lib.json",
+            "packageJson": "libs/localazy/package.json",
+            "main": "libs/localazy/src/index.ts",
+            "assets": [
+              "libs/localazy/*.md",
+              {
+                "input": "./libs/localazy/src",
+                "glob": "**/*.!(ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./libs/localazy",
+                "glob": "collection.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/localazy",
+                "glob": "builders.json",
+                "output": "."
+              }
+            ]
+          }
+        },
+        "pack": {
+          "builder": "@rxap/plugin-pack:build",
+          "options": {
+            "targets": [
+              "localazy:readme",
+              "localazy:build"
             ]
           }
         },
