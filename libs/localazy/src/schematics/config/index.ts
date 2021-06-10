@@ -96,13 +96,24 @@ export default function(options: ConfigSchema): Rule {
           throw new SchematicsException('It is unclear if the project has a the target "pack"');
         }
         if (hasPackTarget) {
-          console.log('Project has pack target')
+          console.log('Project has pack target');
           return externalSchematic('@rxap/plugin-pack', 'add-target', {
             project: options.project,
             target: `${options.project}:localazy-download`,
             preBuild: true
-          })
+          });
         }
+      },
+      tree => {
+        const i18nGitIgnoreFilePath = join(sourceRoot, '.gitignore');
+        if (!tree.exists(i18nGitIgnoreFilePath)) {
+          tree.create(i18nGitIgnoreFilePath, '');
+        }
+        let i18nGitIgnoreContent = tree.read(i18nGitIgnoreFilePath).toString('utf-8');
+        if (!i18nGitIgnoreContent.includes('/i18n')) {
+          i18nGitIgnoreContent += '\n/i18n';
+        }
+        tree.overwrite(i18nGitIgnoreFilePath, i18nGitIgnoreContent);
       }
     ]);
 
