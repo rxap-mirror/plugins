@@ -1,12 +1,7 @@
-import {
-  BuilderContext,
-  BuilderOutput,
-  createBuilder
-} from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { BuildBuilderSchema } from './schema';
-import { json } from '@angular-devkit/core';
 
-export interface Target extends json.JsonObject {
+export interface Target extends Record<string, any> {
   project: string;
   target: string;
   configuration: string;

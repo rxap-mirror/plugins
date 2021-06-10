@@ -49,9 +49,21 @@ project | string |  | The name of the project.
 | --- |
 | project |
 
+**Adds a target to the targets options array**
+
+```
+ng g @rxap/plugin-pack:add-target
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+project | string |  | The name of the project.
+
+| Required |
+| --- |
+| project |
 
 # Builder
-
 
 **build builder**
 

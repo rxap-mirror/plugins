@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../packages/node_modules/@angular-devkit/schematics/collection-schema.json",
+  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
   "name": "plugin-pack",
   "version": "0.0.1",
   "schematics": {
@@ -7,6 +7,11 @@
       "factory": "./src/schematics/config/schematic",
       "schema": "./src/schematics/config/schema.json",
       "description": "Adds the @plugin-pack:build to the specified project"
+    },
+    "add-target": {
+      "factory": "./src/schematics/config/index",
+      "schema": "./src/schematics/config/schema.json",
+      "description": "Adds a target to the targets options array"
     }
   }
 }

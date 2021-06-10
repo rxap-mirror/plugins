@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "ConfigSchema",
+  "title": "Config schema options",
+  "description": "Adds the schematics builder to the specified project.",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "For which project should the pack builder be added?"
+    },
+    "target": {
+      "type": "string",
+      "description": "The target expression that should be added"
+    },
+    "preBuild": {
+      "type": "boolean",
+      "description": "Whether the target should be added before the build targets",
+      "default": false
+    }
+  },
+  "required": [
+    "project",
+    "target"
+  ]
+}
