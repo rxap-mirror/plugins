@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.1.0](https://gitlab.com/rxap/packages/compare/@rxap/plugin-pack@12.0.2...@rxap/plugin-pack@12.1.0) (2021-06-10)
+
+
+### Features
+
+* introduce add-target schematic ([5f67b23](https://gitlab.com/rxap/packages/commit/5f67b23b4ff2762fb9cfa74b7e0b971fed0ec0ca))
+
+
+
+
+
 ## 12.0.2 (2021-06-09)
 
 **Note:** Version bump only for package @rxap/plugin-pack
