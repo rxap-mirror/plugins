@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.5](https://gitlab.com/rxap/packages/compare/@rxap/plugin-localazy@12.0.4...@rxap/plugin-localazy@12.0.5) (2021-06-10)
+
+
+### Bug Fixes
+
+* add ng-add install target ([d43a13f](https://gitlab.com/rxap/packages/commit/d43a13f60dc035c82725b428f4f44aa20e47b138))
+* set current target while configuration ([c57c6bf](https://gitlab.com/rxap/packages/commit/c57c6bfb68412a018025141cf8dc5b844a6523a0))
+
+
+
+
+
 ## [12.0.4](https://gitlab.com/rxap/packages/compare/@rxap/plugin-localazy@12.0.3...@rxap/plugin-localazy@12.0.4) (2021-06-10)
 
 

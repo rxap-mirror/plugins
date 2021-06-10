@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.2](https://gitlab.com/rxap/packages/compare/@rxap/plugin-i18n@12.1.1...@rxap/plugin-i18n@12.1.2) (2021-06-10)
+
+
+### Bug Fixes
+
+* add ng-add schematic ([4f97b37](https://gitlab.com/rxap/packages/commit/4f97b37c7236be59ff266dfc4a727039db262c6e))
+
+
+
+
+
 ## [12.1.1](https://gitlab.com/rxap/packages/compare/@rxap/plugin-i18n@12.1.0...@rxap/plugin-i18n@12.1.1) (2021-06-10)
 
 **Note:** Version bump only for package @rxap/plugin-i18n
