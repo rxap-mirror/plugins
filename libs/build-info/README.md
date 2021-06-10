@@ -18,11 +18,11 @@
 
 Add the plugin to your workspace:
 
-
   ```
-  yarn add @rxap/plugin-build-info
+  ng add @rxap/plugin-build-info
   ```
 
+*Adds the build-info plugin to the workspace*
 
 Configure @rxap/plugin-build-info for a project:
 
@@ -41,25 +41,33 @@ ng g @rxap/plugin-build-info:config [project]
   ng g @rxap/plugin-build-info:config
   ```
 
-  Option | Type | Default | Description
+Option | Type | Default | Description
   --- | --- | --- | ---
-    project | string |  | The name of the project.
+project | string |  | The name of the project.
 
     | Required |
     | --- |
       | project |
 
+**Adds the build-info plugin to the workspace**
+
+  ```
+  ng g @rxap/plugin-build-info:ng-add
+  ```
+
+Option | Type | Default | Description
+  --- | --- | --- | ---
+project | string |  | Name of the project.
 
 # Builder
 
-
-  **build builder**
+**build builder**
 
   ```
   @rxap/plugin-build-info:build
   ```
 
-  Option | Type | Default | Description
+Option | Type | Default | Description
   --- | --- | --- | ---
     branch | string |  | 
     tag | string |  | 
