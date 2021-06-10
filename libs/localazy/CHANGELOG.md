@@ -3,6 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.4](https://gitlab.com/rxap/packages/compare/@rxap/plugin-localazy@12.0.3...@rxap/plugin-localazy@12.0.4) (2021-06-10)
+
+
+### Bug Fixes
+
+* execute extract i18n target if available before upload ([a961936](https://gitlab.com/rxap/packages/commit/a961936105bf255dbd214047f1b8f991fb6c4ea1))
+* print executed command ([7f77a98](https://gitlab.com/rxap/packages/commit/7f77a987bec3f75165d8434d7c64bf68fbe89c1d))
+* set the ng-add save target ([012b01e](https://gitlab.com/rxap/packages/commit/012b01e028ac67f3c2c3ba10a4ca0413a0379d06))
+* use correct property types ([cfb773e](https://gitlab.com/rxap/packages/commit/cfb773e6bae78c7b6a02fb55deecf4467be46514))
+* use correct property types ([dea835e](https://gitlab.com/rxap/packages/commit/dea835e58da004ca40f68532cb35c95f47c8929d))
+
+
+
+
+
 ## [12.0.3](https://gitlab.com/rxap/packages/compare/@rxap/plugin-localazy@12.0.2...@rxap/plugin-localazy@12.0.3) (2021-06-10)
 
 
