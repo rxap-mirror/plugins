@@ -7,6 +7,14 @@
       "factory": "./src/schematics/config/schematic",
       "schema": "./src/schematics/config/schema.json",
       "description": "Adds the @plugin-pack:build to the specified project"
+    },
+    "ng-add": {
+      "description": "Adds the build-info plugin to the workspace",
+      "factory": "./src/schematics/ng-add/index",
+      "schema": "./src/schematics/ng-add/schema.json",
+      "aliases": [
+        "install"
+      ]
     }
   }
 }
