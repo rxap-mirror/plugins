@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.7](https://gitlab.com/rxap/packages/compare/@rxap/plugin-localazy@12.0.6...@rxap/plugin-localazy@12.0.7) (2021-06-10)
+
+
+### Bug Fixes
+
+* streamline the interaction of all plugins ([1a561b4](https://gitlab.com/rxap/packages/commit/1a561b4509478d840be687a6c78d1cc1fba68deb))
+
+
+
+
+
 ## [12.0.6](https://gitlab.com/rxap/packages/compare/@rxap/plugin-localazy@12.0.5...@rxap/plugin-localazy@12.0.6) (2021-06-10)
 
 
