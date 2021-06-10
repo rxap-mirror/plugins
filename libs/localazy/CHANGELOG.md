@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.8](https://gitlab.com/rxap/packages/compare/@rxap/plugin-localazy@12.0.7...@rxap/plugin-localazy@12.0.8) (2021-06-10)
+
+
+### Bug Fixes
+
+* add missing project name to extract-i18n target ([6d79a3a](https://gitlab.com/rxap/packages/commit/6d79a3a60ca4bbce69d50133d286ec93a35b3182))
+
+
+
+
+
 ## [12.0.7](https://gitlab.com/rxap/packages/compare/@rxap/plugin-localazy@12.0.6...@rxap/plugin-localazy@12.0.7) (2021-06-10)
 
 
