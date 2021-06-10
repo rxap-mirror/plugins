@@ -1,8 +1,4 @@
-import {
-  BuilderContext,
-  BuilderOutput,
-  createBuilder
-} from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { UploadBuilderSchema } from './schema';
 import { Yarn } from '../yarn';
 
@@ -29,7 +25,14 @@ export class Builder {
   constructor(
     public readonly options: UploadBuilderSchema,
     public readonly context: BuilderContext
-  ) {}
+  ) {
+  }
+
+  public async executeBuildTarget(buildTarget: Target): Promise<BuilderOutput> {
+    const builderRun = await this.context.scheduleTarget(buildTarget);
+
+    return builderRun.result;
+  }
 
   public async run(): Promise<BuilderOutput> {
 
@@ -41,10 +44,20 @@ export class Builder {
       this.options.readKey = process.env.LOCALAZY_READ_KEY;
     }
 
+    const extractI18nTarget = this.stringToTarget(`${this.context.target.project}:extract-i18n`);
+
+    try {
+      await this.executeBuildTarget(extractI18nTarget);
+    } catch (e) {
+      if (e.message !== 'Project target does not exist.') {
+        return { success: false, error: e.message };
+      }
+    }
+
     const yarn = new Yarn(this.context.logger);
 
     try {
-      const args: string[] = ['localazy', 'upload'];
+      const args: string[] = [ 'localazy', 'upload' ];
 
       if (this.options.readKey) {
         args.push('-r ' + this.options.readKey);
@@ -82,13 +95,25 @@ export class Builder {
         args.push('-f');
       }
 
-      await yarn.spawn(args)
+      await yarn.spawn(args);
     } catch (e) {
       return { success: false, error: e.message };
     }
 
     return { success: true };
 
+  }
+
+  private stringToTarget(str: string): Target {
+    const split = str.split(':');
+    if (split.length < 2) {
+      throw new Error(`Can not convert string '${str}' into target`);
+    }
+    return {
+      project: split[0],
+      target: split[1],
+      configuration: split[2]
+    };
   }
 
 }
