@@ -26,6 +26,9 @@
     "directory": "../../dist/libs/i18n",
     "access": "public"
   },
+  "ng-add": {
+    "save": "devDependencies"
+  },
   "peerDependencies": {
     "@nrwl/workspace": "^12.3.6"
   }

@@ -1,12 +1,20 @@
 {
   "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
-  "name": "plugin-pack",
+  "name": "rxap-plugin-i18n",
   "version": "0.0.1",
   "schematics": {
     "config": {
       "factory": "./src/schematics/config/schematic",
       "schema": "./src/schematics/config/schema.json",
       "description": "Adds the @plugin-pack:build to the specified project"
+    },
+    "ng-add": {
+      "description": "Adds the i18n plugin to the workspace",
+      "factory": "./src/schematics/ng-add/index",
+      "schema": "./src/schematics/ng-add/schema.json",
+      "aliases": [
+        "install"
+      ]
     }
   }
 }

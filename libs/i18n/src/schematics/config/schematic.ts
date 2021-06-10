@@ -1,14 +1,4 @@
-import {
-  chain,
-  Rule,
-  mergeWith,
-  template,
-  move,
-  forEach,
-  apply,
-  url,
-  Tree
-} from '@angular-devkit/schematics';
+import { apply, chain, forEach, mergeWith, move, Rule, template, Tree, url } from '@angular-devkit/schematics';
 import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
@@ -66,8 +56,9 @@ export default function(options: ConfigSchema): Rule {
             builder: '@rxap/plugin-i18n:build',
             options: {
               availableLanguages: options.availableLanguages ?? [ 'en' ],
-              defaultLanguage:    options.defaultLanguage ?? 'en',
-              indexHtmlTemplate:  join(projectBasePath, 'src', 'i18n.index.html.hbs')
+              defaultLanguage: options.defaultLanguage ?? 'en',
+              indexHtmlTemplate: join(projectBasePath, 'src', 'i18n.index.html.hbs'),
+              assets: options.assets ?? []
             }
           });
 
