@@ -15,6 +15,7 @@ import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
 import { getWorkspace } from '@schematics/angular/utility/workspace';
+import { UpdateAngularJson } from '@rxap/schematics-utilities';
 
 export async function GetProjectBasePath(host: Tree, project: string) {
   let projectBasePath = join('apps', project);
@@ -88,7 +89,36 @@ export default function(options: ConfigSchema): Rule {
           project.targets.set('extract-i18n', extractI18n);
         }
 
+        if (project.targets.has('build')) {
+          const build = project.targets.get('build');
+          if (build.configurations.production) {
+            build.configurations.production.localize = options.availableLanguages ?? [];
+          }
+        }
+
         hasPackTarget = project.targets.has('pack');
+
+      }),
+      UpdateAngularJson(angularJson => {
+
+        const project = angularJson.projects.get(options.project);
+
+        if (!project) {
+          throw new Error('Could not extract target project.');
+        }
+
+        if (!project.i18n.sourceLocale) {
+          project.i18n.sourceLocale = 'en-US';
+        }
+
+        project.i18n.locales = {} as any;
+
+        for (const lang of options.availableLanguages) {
+          project.i18n.locales[lang] = {
+            baseHref: `${lang}/`,
+            translation: join(project.sourceRoot, 'i18n', `${lang}.xlf`)
+          };
+        }
 
       }),
       () => {
