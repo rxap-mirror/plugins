@@ -29,6 +29,9 @@
     "@angular-devkit/architect": "0.1200.3",
     "@angular-devkit/schematics": "12.0.3"
   },
+  "ng-add": {
+    "save": "devDependencies"
+  },
   "peerDependencies": {
     "@nrwl/workspace": "^12.3.6",
     "@rxap/schematics-utilities": "^12.0.2"

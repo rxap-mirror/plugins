@@ -17,7 +17,6 @@
       "description": "Adds the pack plugin to the workspace",
       "factory": "./src/schematics/ng-add/index",
       "schema": "./src/schematics/ng-add/schema.json",
-      "save": "devDependencies",
       "aliases": [
         "install"
       ]

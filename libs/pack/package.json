@@ -29,6 +29,9 @@
   "peerDependencies": {
     "@nrwl/workspace": "^12.3.6"
   },
+  "ng-add": {
+    "save": "devDependencies"
+  },
   "publishConfig": {
     "directory": "../../dist/libs/pack",
     "access": "public"
