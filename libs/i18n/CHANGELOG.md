@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.3](https://gitlab.com/rxap/packages/compare/@rxap/plugin-i18n@12.1.2...@rxap/plugin-i18n@12.1.3) (2021-06-10)
+
+
+### Bug Fixes
+
+* create assets copy target path ([0cb06e1](https://gitlab.com/rxap/packages/commit/0cb06e1434c0c6d0e69a7fe7ef9a5261737f1fe4))
+* update default index.html template ([5039ba0](https://gitlab.com/rxap/packages/commit/5039ba0a0cbd99993fa9832cb5803b6935fa48e2))
+
+
+
+
+
 ## [12.1.2](https://gitlab.com/rxap/packages/compare/@rxap/plugin-i18n@12.1.1...@rxap/plugin-i18n@12.1.2) (2021-06-10)
 
 
