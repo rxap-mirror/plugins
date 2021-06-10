@@ -1,0 +1,39 @@
+{
+  "name": "@rxap/plugin-localazy",
+  "version": "12.0.0",
+  "author": "Merzough Münker",
+  "homepage": "https://gitlab.com/rxap/plugins",
+  "repository": "git@gitlab.com:rxap/plugins.git",
+  "keywords": [
+    "rxap",
+    "plugin",
+    "nrwl",
+    "pack",
+    "builder",
+    "angular",
+    "localazy",
+    "react",
+    "vuejs"
+  ],
+  "license": "MIT",
+  "private": false,
+  "bugs": {
+    "url": "https://gitlab.com/rxap/plugins/-/issues",
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
+  },
+  "description": "A builder to execute a collection of architect targets in sequence.",
+  "main": "src/index.js",
+  "schematics": "./collection.json",
+  "builders": "./builders.json",
+  "dependencies": {
+    "@angular-devkit/architect": "0.1200.3",
+    "@angular-devkit/schematics": "12.0.3"
+  },
+  "peerDependencies": {
+    "@nrwl/workspace": "^12.3.6"
+  },
+  "publishConfig": {
+    "directory": "../../dist/libs/pack",
+    "access": "public"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "download": {
+      "implementation": "./src/builders/download/builder",
+      "schema": "./src/builders/download/schema.json",
+      "description": "localazy download"
+    },
+    "upload": {
+      "implementation": "./src/builders/upload/builder",
+      "schema": "./src/builders/upload/schema.json",
+      "description": "localazy upload"
+    }
+  }
+}
