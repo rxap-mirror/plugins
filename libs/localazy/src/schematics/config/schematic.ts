@@ -18,14 +18,14 @@ export default function(options: ConfigSchema): Rule {
 
         if (!project.targets.has('localazy-download')) {
           project.targets.add({
-            name:    'localazy',
+            name: 'localazy-download',
             builder: '@rxap/plugin-localazy:download',
             options: {}
           });
         }
         if (!project.targets.has('localazy-upload')) {
           project.targets.add({
-            name:    'localazy',
+            name: 'localazy-upload',
             builder: '@rxap/plugin-localazy:upload',
             options: {}
           });
