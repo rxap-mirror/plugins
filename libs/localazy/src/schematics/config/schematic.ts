@@ -1,6 +1,7 @@
 import { chain, externalSchematic, Rule, SchematicsException } from '@angular-devkit/schematics';
 import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
+import { join } from 'path';
 
 export default function(options: ConfigSchema): Rule {
 
@@ -29,6 +30,15 @@ export default function(options: ConfigSchema): Rule {
             builder: '@rxap/plugin-localazy:upload',
             options: {}
           });
+        }
+        if (project.targets.has('extract-i18n')) {
+          const extractI18n = project.targets.get('extract-i18n')!;
+          if (!extractI18n.options) {
+            extractI18n.options = {};
+          }
+          extractI18n.options.format = 'xliff2';
+          extractI18n.options.outputPath = join(project.sourceRoot, 'i18n');
+          project.targets.set('extract-i18n', extractI18n);
         }
 
         hasPackTarget = project.targets.has('pack');

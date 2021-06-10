@@ -78,6 +78,16 @@ export default function(options: ConfigSchema): Rule {
 
         }
 
+        if (project.targets.has('extract-i18n')) {
+          const extractI18n = project.targets.get('extract-i18n')!;
+          if (!extractI18n.options) {
+            extractI18n.options = {};
+          }
+          extractI18n.options.format = 'xliff2';
+          extractI18n.options.outputPath = join(project.sourceRoot, 'i18n');
+          project.targets.set('extract-i18n', extractI18n);
+        }
+
         hasPackTarget = project.targets.has('pack');
 
       }),
