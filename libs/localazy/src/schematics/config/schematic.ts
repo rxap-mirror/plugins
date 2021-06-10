@@ -41,7 +41,7 @@ export default function(options: ConfigSchema): Rule {
           console.log('Project has pack target')
           return externalSchematic('@rxap/plugin-pack', 'add-target', {
             project: options.project,
-            target: 'localazy-download',
+            target: `${options.project}:localazy-download`,
             preBuild: true
           })
         }
