@@ -68,7 +68,7 @@ export default function(options: ConfigSchema): Rule {
         if (!project.targets.has('localazy-upload')) {
           const buildOptions: Record<string, any> = {};
           if (project.targets.has('extract-i18n')) {
-            buildOptions.extractTarget = 'extract-i18n';
+            buildOptions.extractTarget = options.project + ':extract-i18n';
           }
           if (options.extractTarget) {
             buildOptions.extractTarget = options.extractTarget;
