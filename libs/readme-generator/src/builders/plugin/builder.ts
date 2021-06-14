@@ -1,14 +1,7 @@
-import {
-  BuilderContext,
-  BuilderOutput,
-  createBuilder
-} from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { PluginBuilderSchema } from './schema';
 import { json } from '@angular-devkit/core';
-import {
-  readFileSync,
-  writeFileSync
-} from 'fs';
+import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { compile } from 'handlebars';
 
@@ -54,14 +47,38 @@ export class Builder {
       throw new Error('Could not extract target project');
     }
 
-    const rootPath    = await this.extractRootPath(this.context.target?.project);
+    const rootPath = await this.extractRootPath(this.context.target?.project);
     const packageJson = JSON.parse(readFileSync(join(rootPath, 'package.json')).toString('utf-8'));
 
-    const builders   = this.getBuildersJson(rootPath, packageJson);
+    const builders = this.getBuildersJson(rootPath, packageJson);
     const collection = this.getCollectionJson(rootPath, packageJson);
-    const template   = this.getTemplate(rootPath);
+    const template = this.getTemplate(rootPath);
 
-    const readme = template({ package: packageJson, builders, collection });
+    const getstarted = readFileSync(join(rootPath, 'GETSTARTED.md')).toString(
+      'utf-8'
+    ) ?? null;
+    const guides = readFileSync(join(rootPath, 'GUIDES.md')).toString('utf-8') ?? null;
+
+    const rxapDependencies: any = {};
+
+    for (const [ packageName, version ] of Object.entries(
+      packageJson.peerDependencies ?? {}
+    )) {
+      if (packageName.match(/^@rxap\//)) {
+        rxapDependencies[packageName] = version;
+      }
+    }
+
+    const readme = template({
+      package: packageJson,
+      builders,
+      collection,
+      guides,
+      getstarted,
+      rxapDependencies,
+      hasSchematics: Object.keys(collection?.schematics ?? {}).length !== 0,
+      hasBulders: Object.keys(builders?.builders ?? {}).length !== 0
+    });
 
     console.log('README.md generated');
 
