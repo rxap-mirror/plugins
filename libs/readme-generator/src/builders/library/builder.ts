@@ -1,11 +1,7 @@
-import {
-  BuilderContext,
-  BuilderOutput,
-  createBuilder,
-} from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { PluginBuilderSchema } from './schema';
 import { json } from '@angular-devkit/core';
-import { readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { compile } from 'handlebars';
 
@@ -49,6 +45,7 @@ export class Builder {
     const packageJson = JSON.parse(
       readFileSync(join(rootPath, 'package.json')).toString('utf-8')
     );
+    const collection = this.getCollectionJson(rootPath, packageJson);
 
     const template = this.getTemplate(rootPath);
     const getstarted = readFileSync(join(rootPath, 'GETSTARTED.md')).toString(
@@ -70,7 +67,9 @@ export class Builder {
       package: packageJson,
       getstarted,
       guides,
+      collection,
       rxapDependencies,
+      hasSchematics: Object.keys(collection?.schematics ?? {}).length !== 0
     });
 
     console.log('README.md generated');
@@ -104,18 +103,22 @@ export class Builder {
   }
 
   private getCollectionJson(basePath: string, packageJson: any) {
-    const collectionJson: any = JSON.parse(
-      readFileSync(join(basePath, 'collection.json')).toString('utf-8')
-    );
-
-    for (const schematic of Object.values<any>(collectionJson.schematics)) {
-      schematic.schema = JSON.parse(
-        readFileSync(join(basePath, schematic.schema)).toString('utf-8')
+    const collectionJsonFilePath = join(basePath, 'collection.json');
+    if (existsSync(collectionJsonFilePath)) {
+      const collectionJson: any = JSON.parse(
+        readFileSync(collectionJsonFilePath).toString('utf-8')
       );
-      schematic.name = packageJson.name;
-    }
 
-    return collectionJson;
+      for (const schematic of Object.values<any>(collectionJson.schematics)) {
+        schematic.schema = JSON.parse(
+          readFileSync(join(basePath, schematic.schema)).toString('utf-8')
+        );
+        schematic.name = packageJson.name;
+      }
+
+      return collectionJson;
+    }
+    return null;
   }
 }
 
