@@ -13,6 +13,7 @@ export default function(): Rule {
       .filter(([ _, project ]) => project.targets.has('readme'))
       .map(([ name, project ]) => chain([
         (_, context) => {
+          // TODO: workaround until issue is resolved: https://github.com/angular/angular-cli/issues/21131
           context.engine['_collectionCache'].delete('@rxap/plugin-readme-generator');
         },
         externalSchematic('@rxap/plugin-readme-generator', 'config', {

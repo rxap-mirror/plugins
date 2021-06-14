@@ -3,8 +3,13 @@
   "schematics": {
     "v12-2-2": {
       "version": "12.2.2",
-      "factory": "./src/migrations/v12-2-2/index",
+      "factory": "./src/migrations/reconfigure/index",
       "description": "updates to v12.2.2"
+    },
+    "v12-2-5": {
+      "version": "12.2.5",
+      "factory": "./src/migrations/reconfigure/index",
+      "description": "updates to v12.2.5"
     }
   }
 }
