@@ -1,4 +1,4 @@
-import { chain, Rule, schematic } from '@angular-devkit/schematics';
+import { chain, externalSchematic, Rule } from '@angular-devkit/schematics';
 import { getWorkspace } from '@nrwl/workspace';
 
 export default function(): Rule {
@@ -11,11 +11,16 @@ export default function(): Rule {
       .projects
       .entries())
       .filter(([ _, project ]) => project.targets.has('readme'))
-      .map(([ name, project ]) => schematic('config', {
-        project: name,
-        overwrite: true,
-        type: project.targets.get('readme')!.builder.match(/@rxap\/plugin-readme-generator:(.*)$/)[1]
-      }))
+      .map(([ name, project ]) => chain([
+        (_, context) => {
+          context.engine['_collectionCache'].delete('@rxap/plugin-readme-generator');
+        },
+        externalSchematic('@rxap/plugin-readme-generator', 'config', {
+          project: name,
+          overwrite: true,
+          type: project.targets.get('readme')!.builder.match(/@rxap\/plugin-readme-generator:(.*)$/)[1]
+        })
+      ]))
     );
 
   };
