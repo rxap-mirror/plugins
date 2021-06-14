@@ -284,6 +284,11 @@
               },
               {
                 "input": "./libs/readme-generator",
+                "glob": "migration.json",
+                "output": "."
+              },
+              {
+                "input": "./libs/readme-generator",
                 "glob": "builders.json",
                 "output": "."
               }
