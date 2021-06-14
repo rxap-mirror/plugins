@@ -12,16 +12,16 @@
 
 - [Installation](#installation)
 {{#if getstarted ~}}
-  - [Get started](#get-started)
+- [Get started](#get-started)
 {{/if}}
 {{#if guides ~}}
-  - [Guides](#guides)
+- [Guides](#guides)
 {{/if}}
 {{#if hasSchematics ~}}
-  - [Schematics](#schematics)
+- [Schematics](#schematics)
 {{/if}}
 {{#if hasBuilders ~}}
-  - [Builder](#builder)
+- [Builder](#builder)
 {{/if}}
 
 # Installation
@@ -29,16 +29,16 @@
 Add the plugin to your workspace:
 
 {{#if collection.schematics.ng-add}}
-  ```
-  ng add {{package.name}}
-  ```
+```
+ng add {{package.name}}
+```
 
-  > {{collection.schematics.ng-add.description}}
+> {{collection.schematics.ng-add.description}}
 
 {{else}}
-  ```
-  yarn add {{package.name}}{{#each rxapDependencies}} {{@key}}@{{this}}{{/each}}
-  ```
+```
+yarn add {{package.name}}{{#each rxapDependencies}} {{@key}}@{{this}}{{/each}}
+```
 {{/if}}
 
 *Configure the builder {{package.name}} for a project:*
@@ -50,68 +50,68 @@ ng g {{package.name}}:config [project]
 > {{collection.schematics.config.description}}
 
 {{#if getstarted ~}}
-  # Get started
+# Get started
 
-  {{getstarted}}
+{{getstarted}}
 
 {{/if}}
 {{#if guides ~}}
-  # Guides
+# Guides
 
-  {{guides}}
+{{guides}}
 
 {{/if}}
 {{#if hasSchematics ~}}
-  # Schematics
+# Schematics
 
-  {{#each collection.schematics}}
-    ## {{@key}}
-    > {{this.description}}
+{{#each collection.schematics}}
+## {{@key}}
+> {{this.description}}
 
-    ```
-    ng g {{this.name}}:{{@key}}
-    ```
+```
+ng g {{this.name}}:{{@key}}
+```
 
-    Option | Type | Default | Description
-    --- | --- | --- | ---
-    {{#each this.schema.properties}}
-      {{@key}} | {{this.type}} | {{this.default}} | {{this.description}}
-    {{/each}}
-    {{#if this.schema.required}}
+Option | Type | Default | Description
+--- | --- | --- | ---
+{{#each this.schema.properties}}
+{{@key}} | {{this.type}} | {{this.default}} | {{this.description}}
+{{/each}}
+{{#if this.schema.required}}
 
-      | Required |
-      | --- |
-      {{#each this.schema.required}}
-        | {{this}} |
-      {{/each}}
-    {{/if}}
+| Required |
+| --- |
+{{#each this.schema.required}}
+| {{this}} |
+{{/each}}
+{{/if}}
 
-  {{/each}}
+{{/each}}
 {{/if}}
 {{#if hasBuilders ~}}
-  # Builder
+# Builder
 
-  {{#each builders.builders}}
-    ## {{@key}}
-    > {{this.description}}
+{{#each builders.builders}}
+## {{@key}}
+> {{this.description}}
 
-    **Builder name**
-    ```
-    {{this.name}}:{{@key}}
-    ```
+**Builder name**
+```
+{{this.name}}:{{@key}}
+```
 
-    Option | Type | Default | Description
-    --- | --- | --- | ---
-    {{#each this.schema.properties}}
-      {{@key}} | {{this.type}} | {{this.default}} | {{this.description}}
-    {{/each}}
-    {{#if this.schema.required}}
+Option | Type | Default | Description
+--- | --- | --- | ---
+{{#each this.schema.properties}}
+{{@key}} | {{this.type}} | {{this.default}} | {{this.description}}
+{{/each}}
+{{#if this.schema.required}}
 
-      | Required |
-      | --- |
-      {{#each this.schema.required}}
-        | {{this}} |
-      {{/each}}
-    {{/if}}
+| Required |
+| --- |
+{{#each this.schema.required}}
+| {{this}} |
+{{/each}}
+{{/if}}
 {{/each}}
 {{/if}}
