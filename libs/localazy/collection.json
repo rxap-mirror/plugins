@@ -1,12 +1,12 @@
 {
   "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
-  "name": "plugin-pack",
+  "name": "rxap-plugin-localazy",
   "version": "0.0.1",
   "schematics": {
     "config": {
       "factory": "./src/schematics/config/index",
       "schema": "./src/schematics/config/schema.json",
-      "description": "Adds the @plugin-pack:build to the specified project"
+      "description": "Adds the builder @rxap/pack-localazy:download and @rxap/pack-localazy:upload to the specified project"
     },
     "ng-add": {
       "description": "Adds the localazy plugin to the workspace",
