@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.2.0](https://gitlab.com/rxap/packages/compare/@rxap/plugin-readme-generator@12.1.3...@rxap/plugin-readme-generator@12.2.0) (2021-06-14)
+
+
+### Bug Fixes
+
+* **schematic-config:** add option overwrite. ([a1e4dc6](https://gitlab.com/rxap/packages/commit/a1e4dc61a0681b4019f3fa6eae776c24d0d19461))
+* streamline readme generation ([23cb408](https://gitlab.com/rxap/packages/commit/23cb408c7f88cfe0f609244d02873f3b098327fa))
+
+
+### Features
+
+* add support for GUIDES.md and GETSTARTED.md for plugins ([c79cbf1](https://gitlab.com/rxap/packages/commit/c79cbf18cf1d72a826d182da04f5d02720cc578a))
+
+
+
+
+
 ## [12.1.3](https://gitlab.com/rxap/packages/compare/@rxap/plugin-readme-generator@12.1.2...@rxap/plugin-readme-generator@12.1.3) (2021-06-10)
 
 
