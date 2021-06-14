@@ -45,6 +45,7 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | The name of the project.
 type | string | library | Specify witch builder type should be added
+overwrite | boolean | false | Whether to overwrite the readme handlebars file.
 
 | Required |
 | --- |

@@ -32,6 +32,11 @@
           }
         ]
       }
+    },
+    "overwrite": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether to overwrite the readme handlebars file."
     }
   },
   "required": [

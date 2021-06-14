@@ -1,14 +1,4 @@
-import {
-  chain,
-  Rule,
-  Tree,
-  mergeWith,
-  url,
-  apply,
-  move,
-  template,
-  noop,
-} from '@angular-devkit/schematics';
+import { apply, chain, forEach, mergeWith, move, Rule, template, Tree, url } from '@angular-devkit/schematics';
 import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
@@ -58,14 +48,23 @@ export default function (options: ConfigSchema): Rule {
           packTarget.options.targets.unshift(`${options.project}:readme`);
         }
       }),
-      host.exists(readmeTemplatePath)
-        ? noop()
-        : mergeWith(
-            apply(url('./files/' + options.type), [
-              template({}),
-              move(projectRootPath),
-            ])
-          ),
+      mergeWith(
+        apply(url('./files/' + options.type), [
+          template({}),
+          move(projectRootPath),
+          forEach(entry => {
+            if (host.exists(entry.path)) {
+              if (options.overwrite && entry.path.includes(readmeTemplatePath)) {
+                // only overwrite the readme.mf.handlebars file
+                host.overwrite(entry.path, entry.content);
+              } else {
+                return null;
+              }
+            }
+            return entry;
+          })
+        ])
+      )
     ]);
   };
 }
