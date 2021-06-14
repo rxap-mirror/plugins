@@ -9,11 +9,12 @@ export default function(): Rule {
 
     return chain(Array.from(workspace
       .projects
-      .keys())
-      .filter((projectName) => workspace.projects.get(projectName).targets.has('readme'))
-      .map(projectName => schematic('config', {
-        project: projectName,
-        overwrite: true
+      .entries())
+      .filter(([ _, project ]) => project.targets.has('readme'))
+      .map(([ name, project ]) => schematic('config', {
+        project: name,
+        overwrite: true,
+        type: project.targets.get('readme')!.builder.match(/@rxap\/plugin-readme-generator:(.*)$/)[1]
       }))
     );
 
