@@ -12,7 +12,7 @@
     "builder",
     "angular"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0",
   "private": false,
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",

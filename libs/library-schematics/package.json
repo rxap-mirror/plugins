@@ -14,7 +14,7 @@
     "builder",
     "angular"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",
     "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"

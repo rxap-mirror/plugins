@@ -8,20 +8,23 @@
     "rxap",
     "plugin",
     "nrwl",
-    "pack",
     "builder",
     "angular",
     "localazy",
     "react",
-    "vuejs"
+    "vuejs",
+    "i18n",
+    "l10n",
+    "localization",
+    "automation"
   ],
-  "license": "MIT",
+  "license": "GPL-3.0",
   "private": false,
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",
     "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"
   },
-  "description": "A builder to execute a collection of architect targets in sequence.",
+  "description": "A Nx/Ng plugin localazy.com upload and download tasks.",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
