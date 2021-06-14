@@ -8,7 +8,7 @@
 ![npm](https://img.shields.io/npm/dm/@rxap/plugin-localazy)
 ![NPM](https://img.shields.io/npm/l/@rxap/plugin-localazy)
 
-> A Nx/Ng plugin localazy.com upload and download tasks.
+> A Nx/Ng plugin for localazy.com upload and download tasks.
 
 - [Installation](#installation)
 - [Get started](#get-started)
@@ -87,7 +87,6 @@ command `nx add @rxap/plugin-localazy --project [projectName]`.
 # Schematics
 
 ## config
-
 > Adds the builder @rxap/pack-localazy:download and @rxap/pack-localazy:upload to the specified project
 
 ```
@@ -118,11 +117,9 @@ extractTarget | string |  | The target that extracts or generate the translation
 # Builder
 
 ## download
-
 > localazy download
 
 **Builder name**
-
 ```
 @rxap/plugin-localazy:download
 ```
@@ -138,13 +135,10 @@ dryRun | boolean | false | Do not perform the actual operation, only simulate th
 quite | boolean | false | Quiet mode. Print only important information.
 force | boolean | false | Force the upload operation if the validation step fails.
 tag | string |  | Perform the operation for the given release tag.
-
 ## upload
-
 > localazy upload
 
 **Builder name**
-
 ```
 @rxap/plugin-localazy:upload
 ```

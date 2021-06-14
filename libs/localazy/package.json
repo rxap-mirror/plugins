@@ -24,7 +24,7 @@
     "url": "https://gitlab.com/rxap/plugins/-/issues",
     "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"
   },
-  "description": "A Nx/Ng plugin localazy.com upload and download tasks.",
+  "description": "A Nx/Ng plugin for localazy.com upload and download tasks.",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
