@@ -12,31 +12,31 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
 Add the plugin to your workspace:
 
-
 ```
 ng add @rxap/plugin-pack
 ```
 
-*Adds the pack plugin to the workspace*
+> Adds the pack plugin to the workspace
 
-Configure @rxap/plugin-pack for a project:
+
+*Configure the builder @rxap/plugin-pack for a project:*
 
 ```
 ng g @rxap/plugin-pack:config [project]
 ```
 
-*Adds the @plugin-pack:build to the specified project*
+> Adds the @plugin-pack:build to the specified project
 
 # Schematics
 
+## config
 
-**Adds the @plugin-pack:build to the specified project**
+> Adds the @plugin-pack:build to the specified project
 
 ```
 ng g @rxap/plugin-pack:config
@@ -50,8 +50,9 @@ project | string |  | The name of the project.
 | --- |
 | project |
 
+## add-target
 
-**Adds a target to the targets options array**
+> Adds a target to the targets options array
 
 ```
 ng g @rxap/plugin-pack:add-target
@@ -68,7 +69,9 @@ preBuild | boolean | false | Whether the target should be added before the build
 | project |
 | target |
 
-**Adds the pack plugin to the workspace**
+## ng-add
+
+> Adds the pack plugin to the workspace
 
 ```
 ng g @rxap/plugin-pack:ng-add
@@ -77,18 +80,4 @@ ng g @rxap/plugin-pack:ng-add
 Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | Name of the project.
-
-# Builder
-
-**build builder**
-
-```
-@rxap/plugin-pack:build
-```
-
-Option | Type | Default | Description
---- | --- | --- | ---
-targets | array |  | A list of architect targets
-
-
 

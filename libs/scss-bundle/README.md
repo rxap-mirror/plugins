@@ -12,30 +12,28 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
 Add the plugin to your workspace:
 
-
 ```
 yarn add @rxap/plugin-scss-bundle
 ```
 
-
-Configure @rxap/plugin-scss-bundle for a project:
+*Configure the builder @rxap/plugin-scss-bundle for a project:*
 
 ```
 ng g @rxap/plugin-scss-bundle:config [project]
 ```
 
-*Adds the @plugin-scss-bundle:build to the specified project*
+> Adds the @plugin-scss-bundle:build to the specified project
 
 # Schematics
 
+## config
 
-**Adds the @plugin-scss-bundle:build to the specified project**
+> Adds the @plugin-scss-bundle:build to the specified project
 
 ```
 ng g @rxap/plugin-scss-bundle:config
@@ -48,22 +46,4 @@ project | string |  | The name of the project.
 | Required |
 | --- |
 | project |
-
-
-# Builder
-
-
-**build builder**
-
-```
-@rxap/plugin-scss-bundle:build
-```
-
-Option | Type | Default | Description
---- | --- | --- | ---
-buildTarget | string |  | The build target that should be execute before this builder
-outFile | string |  | 
-ignoreImports | array |  | A list of architect targets
-
-
 

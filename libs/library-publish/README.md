@@ -12,30 +12,28 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
 Add the plugin to your workspace:
 
-
 ```
 yarn add @rxap/plugin-library-publish
 ```
 
-
-Configure @rxap/plugin-library-publish for a project:
+*Configure the builder @rxap/plugin-library-publish for a project:*
 
 ```
 ng g @rxap/plugin-library-publish:config [project]
 ```
 
-*Add a schematics configuration and the @rxap/plugin-library-publish:build to the specified project*
+> Add a schematics configuration and the @rxap/plugin-library-publish:build to the specified project
 
 # Schematics
 
+## config
 
-**Add a schematics configuration and the @rxap/plugin-library-publish:build to the specified project**
+> Add a schematics configuration and the @rxap/plugin-library-publish:build to the specified project
 
 ```
 ng g @rxap/plugin-library-publish:config
@@ -50,22 +48,4 @@ preTarget | boolean |  | The target that should be executed before
 | Required |
 | --- |
 | project |
-
-
-# Builder
-
-
-**Publish the library**
-
-```
-@rxap/plugin-library-publish:publish
-```
-
-Option | Type | Default | Description
---- | --- | --- | ---
-buildTarget | string |  | The target which defines the out path
-preTarget | string |  | The target that should be execute before
-registry | string |  | The target package registry
-
-
 

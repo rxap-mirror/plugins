@@ -12,30 +12,28 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
 Add the plugin to your workspace:
 
-
 ```
 yarn add @rxap/plugin-kaniko
 ```
 
-
-Configure @rxap/plugin-kaniko for a project:
+*Configure the builder @rxap/plugin-kaniko for a project:*
 
 ```
 ng g @rxap/plugin-kaniko:config [project]
 ```
 
-*Adds the @rxap/plugin-kaniko:build to the specified project*
+> Adds the @rxap/plugin-kaniko:build to the specified project
 
 # Schematics
 
+## config
 
-**Adds the @rxap/plugin-kaniko:build to the specified project**
+> Adds the @rxap/plugin-kaniko:build to the specified project
 
 ```
 ng g @rxap/plugin-kaniko:config
@@ -55,25 +53,4 @@ command | string |  | The command to start kaniko
 | --- |
 | project |
 | destination |
-
-
-# Builder
-
-
-**build builder**
-
-```
-@rxap/plugin-kaniko:build
-```
-
-Option | Type | Default | Description
---- | --- | --- | ---
-context | string |  | The docker build context path
-dockerfile | string |  | The path to the dockerfile
-destination | array |  | A list of docker image tags
-buildTarget | string |  | The target from witch the output path can be extract.
-preTarget | string |  | The target that should be execute before.
-command | string | /kaniko/executor | The command to start kaniko
-
-
 

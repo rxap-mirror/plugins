@@ -12,72 +12,59 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
 Add the plugin to your workspace:
 
+```
+ng add @rxap/plugin-i18n
+```
 
-  ```
-  ng add @rxap/plugin-i18n
-  ```
+> Adds the i18n plugin to the workspace
 
-  *Adds the i18n plugin to the workspace*
 
-Configure @rxap/plugin-i18n for a project:
+*Configure the builder @rxap/plugin-i18n for a project:*
 
 ```
 ng g @rxap/plugin-i18n:config [project]
 ```
 
-*Adds the @plugin-pack:build to the specified project*
+> Adds the @plugin-pack:build to the specified project
 
 # Schematics
 
-**Adds the @plugin-pack:build to the specified project**
+## config
 
-  ```
-  ng g @rxap/plugin-i18n:config
-  ```
+> Adds the @plugin-pack:build to the specified project
+
+```
+ng g @rxap/plugin-i18n:config
+```
 
 Option | Type | Default | Description
-  --- | --- | --- | ---
+--- | --- | --- | ---
 project | string |  | The name of the project.
 availableLanguages | array |  |
 assets | array |  |
 defaultLanguage | string |  |
 
-    | Required |
-    | --- |
-      | project |
+| Required |
+| --- |
+| project |
 
-**Adds the i18n plugin to the workspace**
+## ng-add
 
-  ```
-  ng g @rxap/plugin-i18n:ng-add
-  ```
+> Adds the i18n plugin to the workspace
+
+```
+ng g @rxap/plugin-i18n:ng-add
+```
 
 Option | Type | Default | Description
-  --- | --- | --- | ---
+--- | --- | --- | ---
 project | string |  | Name of the project.
 availableLanguages | array |  |
 assets | array |  |
-defaultLanguage | string |  |
-
-# Builder
-
-**build builder**
-
-  ```
-  @rxap/plugin-i18n:build
-  ```
-
-Option | Type | Default | Description
-  --- | --- | --- | ---
-availableLanguages | array |  |
-defaultLanguage | string |  |
-assets | array |  | 
-
-
+defaultLanguage | string |  | 
 

@@ -11,42 +11,62 @@
 > {{package.description}}
 
 - [Installation](#installation)
+{{#if getstarted ~}}
+- [Get started](#get-started)
+{{/if}}
+{{#if guides ~}}
+- [Guides](#guides)
+{{/if}}
+{{#if hasSchematics ~}}
 - [Schematics](#schematics)
+{{/if}}
+{{#if hasBuilders ~}}
 - [Builder](#builder)
+{{/if}}
 
 # Installation
 
 Add the plugin to your workspace:
 
 {{#if collection.schematics.ng-add}}
-
 ```
 ng add {{package.name}}
 ```
 
-*{{collection.schematics.ng-add.description}}*
+> {{collection.schematics.ng-add.description}}
 
 {{else}}
-
 ```
-yarn add {{package.name}}
+yarn add {{package.name}}{{#each rxapDependencies}} {{@key}}@{{this}}{{/each}}
 ```
-
 {{/if}}
 
-Configure {{package.name}} for a project:
+*Configure the builder {{package.name}} for a project:*
 
 ```
 ng g {{package.name}}:config [project]
 ```
 
-*{{collection.schematics.config.description}}*
+> {{collection.schematics.config.description}}
 
+{{#if getstarted ~}}
+# Get started
+
+{{getstarted}}
+
+{{/if}}
+{{#if guides ~}}
+# Guides
+
+{{guides}}
+
+{{/if}}
+{{#if hasSchematics ~}}
 # Schematics
 
 {{#each collection.schematics}}
-
-**{{this.description}}**
+## {{@key}}
+> {{this.description}}
 
 ```
 ng g {{this.name}}:{{@key}}
@@ -57,8 +77,8 @@ Option | Type | Default | Description
 {{#each this.schema.properties}}
 {{@key}} | {{this.type}} | {{this.default}} | {{this.description}}
 {{/each}}
-
 {{#if this.schema.required}}
+
 | Required |
 | --- |
 {{#each this.schema.required}}
@@ -67,13 +87,15 @@ Option | Type | Default | Description
 {{/if}}
 
 {{/each}}
-
+{{/if}}
+{{#if hasBuilders ~}}
 # Builder
 
 {{#each builders.builders}}
+## {{@key}}
+> {{this.description}}
 
-**{{this.description}}**
-
+**Builder name**
 ```
 {{this.name}}:{{@key}}
 ```
@@ -83,8 +105,8 @@ Option | Type | Default | Description
 {{#each this.schema.properties}}
 {{@key}} | {{this.type}} | {{this.default}} | {{this.description}}
 {{/each}}
-
 {{#if this.schema.required}}
+
 | Required |
 | --- |
 {{#each this.schema.required}}
@@ -92,5 +114,4 @@ Option | Type | Default | Description
 {{/each}}
 {{/if}}
 {{/each}}
-
-
+{{/if}}

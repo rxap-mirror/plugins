@@ -12,30 +12,28 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
 Add the plugin to your workspace:
 
-
 ```
 yarn add @rxap/plugin-readme-generator
 ```
 
-
-Configure @rxap/plugin-readme-generator for a project:
+*Configure the builder @rxap/plugin-readme-generator for a project:*
 
 ```
 ng g @rxap/plugin-readme-generator:config [project]
 ```
 
-*Adds the @rxap/plugin-readme-generator builder to the specified project.*
+> Adds the @rxap/plugin-readme-generator builder to the specified project.
 
 # Schematics
 
+## config
 
-**Adds the @rxap/plugin-readme-generator builder to the specified project.**
+> Adds the @rxap/plugin-readme-generator builder to the specified project.
 
 ```
 ng g @rxap/plugin-readme-generator:config
@@ -51,29 +49,4 @@ overwrite | boolean | false | Whether to overwrite the readme handlebars file.
 | --- |
 | project |
 | type |
-
-
-# Builder
-
-
-**Readme generator for plugin libraries.**
-
-```
-@rxap/plugin-readme-generator:plugin
-```
-
-Option | Type | Default | Description
---- | --- | --- | ---
-
-
-**Readme generator for library libraries.**
-
-```
-@rxap/plugin-readme-generator:library
-```
-
-Option | Type | Default | Description
---- | --- | --- | ---
-
-
 

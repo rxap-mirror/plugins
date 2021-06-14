@@ -12,30 +12,28 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
 Add the plugin to your workspace:
 
-
 ```
 yarn add @rxap/plugin-library-schematics
 ```
 
-
-Configure @rxap/plugin-library-schematics for a project:
+*Configure the builder @rxap/plugin-library-schematics for a project:*
 
 ```
 ng g @rxap/plugin-library-schematics:config [project]
 ```
 
-*Add a schematics configuration and the @plugin-library-schematics:build to the specified project*
+> Add a schematics configuration and the @plugin-library-schematics:build to the specified project
 
 # Schematics
 
+## config
 
-**Add a schematics configuration and the @plugin-library-schematics:build to the specified project**
+> Add a schematics configuration and the @plugin-library-schematics:build to the specified project
 
 ```
 ng g @rxap/plugin-library-schematics:config
@@ -50,31 +48,4 @@ onlyBuilder | boolean | false | Whether only the builder configuration should be
 | Required |
 | --- |
 | project |
-
-
-# Builder
-
-
-**Builds the library schematics and copy all files into the out path**
-
-```
-@rxap/plugin-library-schematics:build
-```
-
-Option | Type | Default | Description
---- | --- | --- | ---
-buildTarget | string |  | The build target that where the output path is defined
-tsConfig | string |  | The schematics ts config file
-
-
-**Updates the package group array in the package.json**
-
-```
-@rxap/plugin-library-schematics:update-package-group
-```
-
-Option | Type | Default | Description
---- | --- | --- | ---
-
-
 

@@ -12,100 +12,55 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
 Add the plugin to your workspace:
 
+```
+ng add @rxap/plugin-localazy
+```
 
-  ```
-  ng add @rxap/plugin-localazy
-  ```
-
-  *Adds the localazy plugin to the workspace*
+> Adds the localazy plugin to the workspace
 
 
-Configure @rxap/plugin-localazy for a project:
+*Configure the builder @rxap/plugin-localazy for a project:*
 
 ```
 ng g @rxap/plugin-localazy:config [project]
 ```
 
-*Adds the @plugin-pack:build to the specified project*
+> Adds the @plugin-pack:build to the specified project
 
 # Schematics
 
+## config
 
-  **Adds the @plugin-pack:build to the specified project**
+> Adds the @plugin-pack:build to the specified project
 
-  ```
-  ng g @rxap/plugin-localazy:config
-  ```
+```
+ng g @rxap/plugin-localazy:config
+```
 
 Option | Type | Default | Description
-  --- | --- | --- | ---
+--- | --- | --- | ---
 project | string |  | The name of the project.
 extractTarget | string |  | The target that extracts or generate the translation source file.
 
-    | Required |
-    | --- |
-      | project |
+| Required |
+| --- |
+| project |
 
+## ng-add
 
-  **Adds the localazy plugin to the workspace**
+> Adds the localazy plugin to the workspace
 
-  ```
-  ng g @rxap/plugin-localazy:ng-add
-  ```
+```
+ng g @rxap/plugin-localazy:ng-add
+```
 
 Option | Type | Default | Description
-  --- | --- | --- | ---
+--- | --- | --- | ---
 project | string |  | Name of the project.
 extractTarget | string |  | The target that extracts or generate the translation source file.
-
-
-
-# Builder
-
-
-  **localazy download**
-
-  ```
-  @rxap/plugin-localazy:download
-  ```
-
-Option | Type | Default | Description
-  --- | --- | --- | ---
-readKey | string |  | Provide the writeKey on the command line.
-writeKey | string |  | Provide the readkey on the command line.
-keysJson | string |  | Override the keys file name.
-configJson | string |  | Override the configuration file name.
-workingDirectory | string |  | Set the working directory that all paths are relative to.
-dryRun | boolean | false | Do not perform the actual operation, only simulate the process. No files are uploaded nor written.
-quite | boolean | false | Quiet mode. Print only important information.
-force | boolean | false | Force the upload operation if the validation step fails.
-tag | string |  | Perform the operation for the given release tag.
-
-
-  **localazy upload**
-
-  ```
-  @rxap/plugin-localazy:upload
-  ```
-
-Option | Type | Default | Description
-  --- | --- | --- | ---
-readKey | string |  | Provide the writeKey on the command line.
-writeKey | string |  | Provide the readkey on the command line.
-keysJson | string |  | Override the keys file name.
-configJson | string |  | Override the configuration file name.
-workingDirectory | string |  | Set the working directory that all paths are relative to.
-dryRun | boolean | false | Do not perform the actual operation, only simulate the process. No files are uploaded nor written.
-quite | boolean | false | Quiet mode. Print only important information.
-force | boolean | false | Force the upload operation if the validation step fails.
-tag | string |  | Perform the operation for the given release tag.
-extractTarget | string |  | The target that extracts or generate the translation source file.
-
-
 

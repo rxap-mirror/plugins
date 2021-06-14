@@ -12,69 +12,53 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
 Add the plugin to your workspace:
 
+```
+ng add @rxap/plugin-build-info
+```
 
-  ```
-  ng add @rxap/plugin-build-info
-  ```
+> Adds the build-info plugin to the workspace
 
-  *Adds the build-info plugin to the workspace*
 
-Configure @rxap/plugin-build-info for a project:
+*Configure the builder @rxap/plugin-build-info for a project:*
 
 ```
 ng g @rxap/plugin-build-info:config [project]
 ```
 
-*Adds the @plugin-pack:build to the specified project*
+> Adds the @plugin-pack:build to the specified project
 
 # Schematics
 
+## config
 
-  **Adds the @plugin-pack:build to the specified project**
+> Adds the @plugin-pack:build to the specified project
 
-  ```
-  ng g @rxap/plugin-build-info:config
-  ```
+```
+ng g @rxap/plugin-build-info:config
+```
 
 Option | Type | Default | Description
-  --- | --- | --- | ---
+--- | --- | --- | ---
 project | string |  | The name of the project.
 
-    | Required |
-    | --- |
-      | project |
+| Required |
+| --- |
+| project |
 
-**Adds the build-info plugin to the workspace**
+## ng-add
 
-  ```
-  ng g @rxap/plugin-build-info:ng-add
-  ```
+> Adds the build-info plugin to the workspace
+
+```
+ng g @rxap/plugin-build-info:ng-add
+```
 
 Option | Type | Default | Description
-  --- | --- | --- | ---
+--- | --- | --- | ---
 project | string |  | Name of the project.
-
-# Builder
-
-**build builder**
-
-  ```
-  @rxap/plugin-build-info:build
-  ```
-
-Option | Type | Default | Description
-  --- | --- | --- | ---
-branch | string |  |
-tag | string |  |
-release | string |  |
-commit | string |  |
-timestamp | string |  | 
-
-
 
