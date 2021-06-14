@@ -1,15 +1,10 @@
-import {
-  BuilderContext,
-  BuilderOutput,
-  createBuilder
-} from '@angular-devkit/architect';
+import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { json } from '@angular-devkit/core';
 import { UpdatePackageGroupBuilderSchema } from './schema';
 import { ReadFile } from './read-file';
 import { join } from 'path';
 import { WriteFile } from './write-file';
 import { existsSync } from 'fs';
-import { CoerceProperty } from '../../../../../../packages/dist/libs/utilities';
 
 export interface Target extends json.JsonObject {
   project: string;
