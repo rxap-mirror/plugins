@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'plugin-i18n',
+  displayName: 'i18n',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': { tsconfig: '<rootDir>/tsconfig.spec.json' }

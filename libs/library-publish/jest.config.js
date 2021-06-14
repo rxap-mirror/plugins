@@ -8,5 +8,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
   coverageDirectory: '../../coverage/libs/library-publish',
-  displayName: 'plugin-library-publish'
+  displayName: 'library-publish'
 };

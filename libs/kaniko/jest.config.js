@@ -8,5 +8,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
   coverageDirectory: '../../coverage/libs/kaniko',
-  displayName: 'plugin-kaniko'
+  displayName: 'kaniko'
 };

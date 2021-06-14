@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'plugin-build-info',
+  displayName: 'build-info',
   preset: '../../jest.preset.js',
   globals: {
     'ts-jest': { tsconfig: '<rootDir>/tsconfig.spec.json' }

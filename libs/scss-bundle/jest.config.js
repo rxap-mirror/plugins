@@ -8,5 +8,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
   coverageDirectory: '../../coverage/libs/scss-bundle',
-  displayName: 'plugin-scss-bundle'
+  displayName: 'scss-bundle'
 };

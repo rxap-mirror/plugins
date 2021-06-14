@@ -8,5 +8,5 @@ module.exports = {
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
   coverageDirectory: '../../coverage/libs/readme-generator',
-  displayName: 'plugin-readme-generator'
+  displayName: 'readme-generator'
 };
