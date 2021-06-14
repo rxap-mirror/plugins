@@ -54,7 +54,7 @@ test:
     allow_failure: true
 
 .extract_project: &extract_project |
-  PROJECT="$(echo $CI_COMMIT_TAG | cut -d'@' -f2 | cut -d'/' -f2)"
+  PROJECT="$(echo $CI_COMMIT_TAG | cut -d'@' -f2 | cut -d'/' -f2 | sed 's/plugin-//')"
   echo "PROJECT=${PROJECT}"
 
 .extract_project_root_path: &extract_project_root_path |
