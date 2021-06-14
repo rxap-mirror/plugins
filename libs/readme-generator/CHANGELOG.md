@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.2.2](https://gitlab.com/rxap/packages/compare/@rxap/plugin-readme-generator@12.2.1...@rxap/plugin-readme-generator@12.2.2) (2021-06-14)
+
+
+### Bug Fixes
+
+* update migration config ([dbb6fba](https://gitlab.com/rxap/packages/commit/dbb6fba91471da3a671f99a03a28f57789bd0c68))
+
+
+
+
+
 ## [12.2.1](https://gitlab.com/rxap/packages/compare/@rxap/plugin-readme-generator@12.2.0...@rxap/plugin-readme-generator@12.2.1) (2021-06-14)
 
 
