@@ -77,7 +77,7 @@ export class Builder {
       getstarted,
       rxapDependencies,
       hasSchematics: Object.keys(collection?.schematics ?? {}).length !== 0,
-      hasBulders: Object.keys(builders?.builders ?? {}).length !== 0
+      hasBuilders: Object.keys(builders?.builders ?? {}).length !== 0
     });
 
     console.log('README.md generated');
