@@ -12,6 +12,7 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
+- [Builder](#builder)
 
 # Installation
 
@@ -32,7 +33,6 @@ ng g @rxap/plugin-readme-generator:config [project]
 # Schematics
 
 ## config
-
 > Adds the @rxap/plugin-readme-generator builder to the specified project.
 
 ```
@@ -50,3 +50,30 @@ overwrite | boolean | false | Whether to overwrite the readme handlebars file.
 | project |
 | type |
 
+# Builder
+
+## plugin
+
+> Readme generator for plugin libraries.
+
+**Builder name**
+
+```
+@rxap/plugin-readme-generator:plugin
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+
+## library
+
+> Readme generator for library libraries.
+
+**Builder name**
+
+```
+@rxap/plugin-readme-generator:library
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---

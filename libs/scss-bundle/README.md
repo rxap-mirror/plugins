@@ -12,6 +12,7 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
+- [Builder](#builder)
 
 # Installation
 
@@ -32,7 +33,6 @@ ng g @rxap/plugin-scss-bundle:config [project]
 # Schematics
 
 ## config
-
 > Adds the @plugin-scss-bundle:build to the specified project
 
 ```
@@ -47,3 +47,20 @@ project | string |  | The name of the project.
 | --- |
 | project |
 
+# Builder
+
+## build
+
+> build builder
+
+**Builder name**
+
+```
+@rxap/plugin-scss-bundle:build
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+buildTarget | string |  | The build target that should be execute before this builder
+outFile | string |  |
+ignoreImports | array |  | A list of architect targets

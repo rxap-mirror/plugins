@@ -12,6 +12,7 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
+- [Builder](#builder)
 
 # Installation
 
@@ -32,7 +33,6 @@ ng g @rxap/plugin-library-schematics:config [project]
 # Schematics
 
 ## config
-
 > Add a schematics configuration and the @plugin-library-schematics:build to the specified project
 
 ```
@@ -49,3 +49,32 @@ onlyBuilder | boolean | false | Whether only the builder configuration should be
 | --- |
 | project |
 
+# Builder
+
+## build
+
+> Builds the library schematics and copy all files into the out path
+
+**Builder name**
+
+```
+@rxap/plugin-library-schematics:build
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+buildTarget | string |  | The build target that where the output path is defined
+tsConfig | string |  | The schematics ts config file
+
+## update-package-group
+
+> Updates the package group array in the package.json
+
+**Builder name**
+
+```
+@rxap/plugin-library-schematics:update-package-group
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---

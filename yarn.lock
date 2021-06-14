@@ -2452,10 +2452,10 @@
     "@angular-devkit/architect" "0.1200.3"
     "@angular-devkit/schematics" "12.0.3"
 
-"@rxap/plugin-readme-generator@12.2.4":
-  version "12.2.4"
-  resolved "https://registry.yarnpkg.com/@rxap/plugin-readme-generator/-/plugin-readme-generator-12.2.4.tgz#dc42ee60d8fe5291ae0a8500b51c756061a62008"
-  integrity sha512-urR4l/uZkOpkA5g59XfZFrVHzfY78AcNK652m8e07FUvImUwtNDVV9xhThaJIvMFuit4HrAJfXrdvzQkbJR5AQ==
+"@rxap/plugin-readme-generator@12.2.5":
+  version "12.2.5"
+  resolved "https://registry.yarnpkg.com/@rxap/plugin-readme-generator/-/plugin-readme-generator-12.2.5.tgz#1145a0cf80560004bf7a142ce2505e87da52b81f"
+  integrity sha512-7IqBlxktzD8F1MYYbJOGIeUt+k8SOyvv4SIsbcYyLQyLxNVSbH6Isurtl3h6zF4qEb+lEPOs7A5K1pBUHGrAuw==
   dependencies:
     "@angular-devkit/architect" "^0.1200.3"
     "@angular-devkit/core" "^12.0.3"

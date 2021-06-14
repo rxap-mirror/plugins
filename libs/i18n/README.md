@@ -12,6 +12,7 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
+- [Builder](#builder)
 
 # Installation
 
@@ -66,5 +67,22 @@ Option | Type | Default | Description
 project | string |  | Name of the project.
 availableLanguages | array |  |
 assets | array |  |
-defaultLanguage | string |  | 
+defaultLanguage | string |  |
 
+# Builder
+
+## build
+
+> build builder
+
+**Builder name**
+
+```
+@rxap/plugin-i18n:build
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+availableLanguages | array |  |
+defaultLanguage | string |  |
+assets | array |  | 

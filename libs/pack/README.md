@@ -12,6 +12,7 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
+- [Builder](#builder)
 
 # Installation
 
@@ -35,7 +36,6 @@ ng g @rxap/plugin-pack:config [project]
 # Schematics
 
 ## config
-
 > Adds the @plugin-pack:build to the specified project
 
 ```
@@ -51,7 +51,6 @@ project | string |  | The name of the project.
 | project |
 
 ## add-target
-
 > Adds a target to the targets options array
 
 ```
@@ -81,3 +80,18 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | Name of the project.
 
+# Builder
+
+## build
+
+> build builder
+
+**Builder name**
+
+```
+@rxap/plugin-pack:build
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+targets | array |  | A list of architect targets

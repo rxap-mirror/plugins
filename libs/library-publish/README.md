@@ -12,6 +12,7 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
+- [Builder](#builder)
 
 # Installation
 
@@ -32,7 +33,6 @@ ng g @rxap/plugin-library-publish:config [project]
 # Schematics
 
 ## config
-
 > Add a schematics configuration and the @rxap/plugin-library-publish:build to the specified project
 
 ```
@@ -49,3 +49,20 @@ preTarget | boolean |  | The target that should be executed before
 | --- |
 | project |
 
+# Builder
+
+## publish
+
+> Publish the library
+
+**Builder name**
+
+```
+@rxap/plugin-library-publish:publish
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+buildTarget | string |  | The target which defines the out path
+preTarget | string |  | The target that should be execute before
+registry | string |  | The target package registry

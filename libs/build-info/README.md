@@ -12,6 +12,7 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
+- [Builder](#builder)
 
 # Installation
 
@@ -35,7 +36,6 @@ ng g @rxap/plugin-build-info:config [project]
 # Schematics
 
 ## config
-
 > Adds the @plugin-pack:build to the specified project
 
 ```
@@ -62,3 +62,22 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | Name of the project.
 
+# Builder
+
+## build
+
+> build builder
+
+**Builder name**
+
+```
+@rxap/plugin-build-info:build
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+branch | string |  |
+tag | string |  |
+release | string |  |
+commit | string |  |
+timestamp | string |  | 

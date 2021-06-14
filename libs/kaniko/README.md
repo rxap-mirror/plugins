@@ -12,6 +12,7 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
+- [Builder](#builder)
 
 # Installation
 
@@ -32,7 +33,6 @@ ng g @rxap/plugin-kaniko:config [project]
 # Schematics
 
 ## config
-
 > Adds the @rxap/plugin-kaniko:build to the specified project
 
 ```
@@ -54,3 +54,23 @@ command | string |  | The command to start kaniko
 | project |
 | destination |
 
+# Builder
+
+## build
+
+> build builder
+
+**Builder name**
+
+```
+@rxap/plugin-kaniko:build
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+context | string |  | The docker build context path
+dockerfile | string |  | The path to the dockerfile
+destination | array |  | A list of docker image tags
+buildTarget | string |  | The target from witch the output path can be extract.
+preTarget | string |  | The target that should be execute before.
+command | string | /kaniko/executor | The command to start kaniko
