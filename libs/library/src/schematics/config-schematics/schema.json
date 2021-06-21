@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "library-config-schematics",
+  "title": "ConfigSchematics",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "For which project should the schematics builder be added?"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "migrations",
+        "schematics",
+        "builders"
+      ],
+      "x-prompt": {
+        "type": "list",
+        "message": "For which type of schematics should the schematics builder be added?",
+        "items": [
+          {
+            "value": "schematics",
+            "label": "collection.json"
+          },
+          {
+            "value": "migrations",
+            "label": "migration.json"
+          },
+          {
+            "value": "builders",
+            "label": "builders.json"
+          }
+        ]
+      }
+    }
+  },
+  "required": [
+    "project",
+    "type"
+  ]
+}

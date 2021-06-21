@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "title": "Build builder",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "tsConfig": {
+      "type": "string",
+      "description": "The name of the Typescript configuration file."
+    },
+    "outputPath": {
+      "type": "string",
+      "description": "The output path of the generated files."
+    },
+    "assets": {
+      "type": "array",
+      "description": "List of static library assets.",
+      "default": [],
+      "items": {
+        "$ref": "#/definitions/assetPattern"
+      }
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "migrations",
+        "schematics",
+        "builders"
+      ],
+      "default": "schematics"
+    }
+  },
+  "required": [
+    "tsConfig",
+    "outputPath"
+  ],
+  "definitions": {
+    "assetPattern": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "glob": {
+              "type": "string",
+              "description": "The pattern to match."
+            },
+            "input": {
+              "type": "string",
+              "description": "The input directory path in which to apply 'glob'. Defaults to the project root."
+            },
+            "ignore": {
+              "description": "An array of globs to ignore.",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "output": {
+              "type": "string",
+              "description": "Absolute path within the output."
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "glob",
+            "input",
+            "output"
+          ]
+        },
+        {
+          "type": "string"
+        }
+      ]
+    }
+  }
+}

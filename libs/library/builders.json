@@ -1,0 +1,10 @@
+{
+  "$schema": "../../node_modules/@angular-devkit/architect/src/builders-schema.json",
+  "builders": {
+    "build-schematics": {
+      "implementation": "./src/builders/build-schematics/builder",
+      "schema": "./src/builders/build-schematics/schema.json",
+      "description": "Builds the library schematics and copy all files into the out path"
+    }
+  }
+}

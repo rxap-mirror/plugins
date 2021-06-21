@@ -1,0 +1,17 @@
+{
+  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "name": "rxap-plugin-library",
+  "version": "0.0.1",
+  "schematics": {
+    "config-schematics": {
+      "description": "Adds the builder @rxap/pack-library:build-schematics to the specified project",
+      "factory": "./src/schematics/config-schematics/index",
+      "schema": "./src/schematics/config-schematics/schema.json"
+    },
+    "config": {
+      "description": "Adds @rxap/plugin-library builder to the specified project",
+      "factory": "./src/schematics/config/index",
+      "schema": "./src/schematics/config/schema.json"
+    }
+  }
+}

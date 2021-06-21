@@ -47,6 +47,9 @@
       ],
       "@rxap/plugin-build-info": [
         "libs/build-info/src/index.ts"
+      ],
+      "@rxap/plugin-library": [
+        "libs/library/src/index.ts"
       ]
     }
   },

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "library-config",
+  "title": "Config",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "For which project should the builders be added?"
+    },
+    "schematics": {
+      "type": "boolean",
+      "description": "Whether to add the build-schematics for schematics",
+      "default": true,
+      "x-prompt": "Should the project have schematics?"
+    },
+    "migrations": {
+      "type": "boolean",
+      "description": "Whether to add the build-schematics for migrations",
+      "default": true,
+      "x-prompt": "Should the project have migrations?"
+    },
+    "builders": {
+      "type": "boolean",
+      "description": "Whether to add the build-schematics for builders",
+      "default": false,
+      "x-prompt": "Should the project have builders?"
+    }
+  },
+  "required": [
+    "project"
+  ]
+}
