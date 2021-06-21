@@ -82,7 +82,11 @@ export class Builder {
 
     console.log('README.md generated');
 
-    writeFileSync(join(rootPath, 'README.md'), readme);
+    const current = readFileSync(join(rootPath, 'README.md'))?.toString('utf-8');
+
+    if (current !== readme) {
+      writeFileSync(join(rootPath, 'README.md'), readme);
+    }
 
     return { success: true };
 
