@@ -574,22 +574,7 @@
             "packageJson": "libs/build-info/package.json",
             "main": "libs/build-info/src/index.ts",
             "assets": [
-              "libs/build-info/*.md",
-              {
-                "input": "./libs/build-info/src",
-                "glob": "**/*.!(ts)",
-                "output": "./src"
-              },
-              {
-                "input": "./libs/build-info",
-                "glob": "collection.json",
-                "output": "."
-              },
-              {
-                "input": "./libs/build-info",
-                "glob": "builders.json",
-                "output": "."
-              }
+              "libs/build-info/*.md"
             ]
           }
         },
@@ -598,12 +583,42 @@
           "options": {
             "targets": [
               "build-info:readme",
-              "build-info:build"
+              "build-info:build",
+              "build-info:build-schematics",
+              "build-info:build-migrations",
+              "build-info:build-builders"
             ]
           }
         },
         "readme": {
           "builder": "@rxap/plugin-readme-generator:plugin"
+        },
+        "build-schematics": {
+          "builder": "@rxap/plugin-library:build-schematics",
+          "options": {
+            "outputPath": "dist/libs/build-info",
+            "tsConfig": "libs/build-info/tsconfig.schematics.json",
+            "assets": [],
+            "type": "schematics"
+          }
+        },
+        "build-migrations": {
+          "builder": "@rxap/plugin-library:build-schematics",
+          "options": {
+            "outputPath": "dist/libs/build-info",
+            "tsConfig": "libs/build-info/tsconfig.migrations.json",
+            "assets": [],
+            "type": "migrations"
+          }
+        },
+        "build-builders": {
+          "builder": "@rxap/plugin-library:build-schematics",
+          "options": {
+            "outputPath": "dist/libs/build-info",
+            "tsConfig": "libs/build-info/tsconfig.builders.json",
+            "assets": [],
+            "type": "builders"
+          }
         }
       }
     },

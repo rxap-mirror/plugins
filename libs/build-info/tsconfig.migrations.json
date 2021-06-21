@@ -2,19 +2,18 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "module": "commonjs",
-    "outDir": "../../dist/out-tsc",
+    "outDir": "../../dist/migrations/libs/build-info",
     "declaration": true,
+    "esModuleInterop": true,
     "types": [
       "node"
     ]
   },
   "exclude": [
     "**/*.spec.ts",
-    "src/schematics/**",
-    "src/migrations/**",
-    "src/builders/**"
+    "**/files/**"
   ],
   "include": [
-    "**/*.ts"
+    "src/migrations/**/*.ts"
   ]
 }

@@ -51,7 +51,6 @@ project | string |  | The name of the project.
 | project |
 
 ## ng-add
-
 > Adds the build-info plugin to the workspace
 
 ```
@@ -65,11 +64,9 @@ project | string |  | Name of the project.
 # Builder
 
 ## build
-
 > build builder
 
 **Builder name**
-
 ```
 @rxap/plugin-build-info:build
 ```
