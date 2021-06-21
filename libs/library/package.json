@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-library",
-  "version": "12.0.0",
+  "version": "12.0.1",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/packages",
   "repository": "git@gitlab.com:rxap/packages.git",
@@ -30,8 +30,9 @@
     "save": "devDependencies"
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^12.3.6",
-    "@rxap/schematics-utilities": "^12.0.5"
+    "@rxap/schematics-utilities": "^12.0.5",
+    "@rxap/utilities": "^12.0.3",
+    "typescript": "^4.2.4"
   },
   "publishConfig": {
     "directory": "../../dist/libs/library",
