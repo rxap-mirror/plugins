@@ -30,6 +30,12 @@
       "description": "Whether to add the build-schematics for builders",
       "default": false,
       "x-prompt": "Should the project have builders?"
+    },
+    "updatePackageGroup": {
+      "type": "boolean",
+      "description": "Whether to add the update-package-group for builders",
+      "default": true,
+      "x-prompt": "Should the project have update the ng-update package group?"
     }
   },
   "required": [

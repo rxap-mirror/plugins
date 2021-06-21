@@ -5,6 +5,11 @@
       "implementation": "./src/builders/build-schematics/builder",
       "schema": "./src/builders/build-schematics/schema.json",
       "description": "Builds the library schematics and copy all files into the out path"
+    },
+    "update-package-group": {
+      "implementation": "./src/builders/update-package-group/builder",
+      "schema": "./src/builders/update-package-group/schema.json",
+      "description": "Updates the package-group in the project package.json"
     }
   }
 }

@@ -19,7 +19,7 @@
 Add the plugin to your workspace:
 
 ```
-yarn add @rxap/plugin-library @rxap/schematics-utilities@^12.0.5
+yarn add @rxap/plugin-library
 ```
 
 *Configure the builder @rxap/plugin-library for a project:*
@@ -64,6 +64,23 @@ project | string |  | The name of the project.
 schematics | boolean | true | Whether to add the build-schematics for schematics
 migrations | boolean | true | Whether to add the build-schematics for migrations
 builders | boolean | false | Whether to add the build-schematics for builders
+updatePackageGroup | boolean | true | Whether to add the update-package-group for builders
+
+| Required |
+| --- |
+| project |
+
+## config-update-package-group
+
+> Adds @rxap/plugin-library:update-package-group builder to the specified project
+
+```
+ng g @rxap/plugin-library:config-update-package-group
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+project | string |  | The name of the project.
 
 | Required |
 | --- |
@@ -72,6 +89,7 @@ builders | boolean | false | Whether to add the build-schematics for builders
 # Builder
 
 ## build-schematics
+
 > Builds the library schematics and copy all files into the out path
 
 **Builder name**
@@ -91,3 +109,16 @@ type | string | schematics |
 | --- |
 | tsConfig |
 | outputPath |
+
+## update-package-group
+
+> Updates the package-group in the project package.json
+
+**Builder name**
+
+```
+@rxap/plugin-library:update-package-group
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---

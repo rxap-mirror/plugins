@@ -3,4 +3,5 @@ export interface ConfigSchema {
   schematics: boolean;
   builders: boolean;
   migrations: boolean;
+  updatePackageGroup: boolean;
 }
