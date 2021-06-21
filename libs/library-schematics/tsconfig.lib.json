@@ -10,7 +10,10 @@
   },
   "exclude": [
     "**/*.spec.ts",
-    "**/files/**"
+    "**/files/**",
+    "src/schematics/**",
+    "src/migrations/**",
+    "src/builders/**"
   ],
   "include": [
     "**/*.ts"

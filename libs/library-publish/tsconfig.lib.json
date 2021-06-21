@@ -8,6 +8,13 @@
       "node"
     ]
   },
-  "exclude": ["**/*.spec.ts"],
-  "include": ["**/*.ts"]
+  "exclude": [
+    "**/*.spec.ts",
+    "src/schematics/**",
+    "src/migrations/**",
+    "src/builders/**"
+  ],
+  "include": [
+    "**/*.ts"
+  ]
 }

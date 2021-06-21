@@ -69,7 +69,6 @@ preBuild | boolean | false | Whether the target should be added before the build
 | target |
 
 ## ng-add
-
 > Adds the pack plugin to the workspace
 
 ```
@@ -83,11 +82,9 @@ project | string |  | Name of the project.
 # Builder
 
 ## build
-
 > build builder
 
 **Builder name**
-
 ```
 @rxap/plugin-pack:build
 ```

@@ -1,14 +1,14 @@
 import { BundleResult, FileRegistry, ImportData } from './interfaces';
 import { EOL } from 'os';
 import { access, readFile } from 'fs/promises';
-import { resolve, dirname, basename, join } from 'path';
-import * as globs from 'globs';
+import { basename, dirname, join, resolve } from 'path';
+import globs from 'globs';
 
 const IMPORT_PATTERN = /@import\s+['"](.+)['"];/g;
 const COMMENT_PATTERN = /\/\/.*$/gm;
 const MULTILINE_COMMENT_PATTERN = /\/\*[\s\S]*?\*\//g;
 const DEFAULT_FILE_EXTENSION = '.scss';
-const ALLOWED_FILE_EXTENSIONS = ['.scss', '.css'];
+const ALLOWED_FILE_EXTENSIONS = [ '.scss', '.css' ];
 const NODE_MODULES = 'node_modules';
 const TILDE = '~';
 

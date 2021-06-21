@@ -34,5 +34,11 @@
   "publishConfig": {
     "directory": "../../dist/libs/library-schematics",
     "access": "public"
+  },
+  "ng-update": {
+    "migrations": "./migration.json",
+    "packageGroup": [
+      "@rxap/plugin-library-schematics"
+    ]
   }
 }

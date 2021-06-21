@@ -53,24 +53,19 @@ overwrite | boolean | false | Whether to overwrite the readme handlebars file.
 # Builder
 
 ## plugin
-
 > Readme generator for plugin libraries.
 
 **Builder name**
-
 ```
 @rxap/plugin-readme-generator:plugin
 ```
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-
 ## library
-
 > Readme generator for library libraries.
 
 **Builder name**
-
 ```
 @rxap/plugin-readme-generator:library
 ```

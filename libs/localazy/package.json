@@ -42,5 +42,11 @@
   "publishConfig": {
     "directory": "../../dist/libs/localazy",
     "access": "public"
+  },
+  "ng-update": {
+    "migrations": "./migration.json",
+    "packageGroup": [
+      "@rxap/plugin-localazy"
+    ]
   }
 }

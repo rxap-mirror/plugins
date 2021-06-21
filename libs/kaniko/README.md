@@ -57,11 +57,9 @@ command | string |  | The command to start kaniko
 # Builder
 
 ## build
-
 > build builder
 
 **Builder name**
-
 ```
 @rxap/plugin-kaniko:build
 ```

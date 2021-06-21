@@ -30,7 +30,12 @@
     "save": "devDependencies"
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^12.3.6",
-    "@rxap/schematics-utilities": "^12.0.5"
+    "@nrwl/workspace": "^12.3.6"
+  },
+  "ng-update": {
+    "migrations": "./migration.json",
+    "packageGroup": [
+      "@rxap/plugin-i18n"
+    ]
   }
 }

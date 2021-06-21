@@ -50,11 +50,9 @@ project | string |  | The name of the project.
 # Builder
 
 ## build
-
 > build builder
 
 **Builder name**
-
 ```
 @rxap/plugin-scss-bundle:build
 ```

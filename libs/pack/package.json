@@ -35,5 +35,11 @@
   "publishConfig": {
     "directory": "../../dist/libs/pack",
     "access": "public"
+  },
+  "ng-update": {
+    "migrations": "./migration.json",
+    "packageGroup": [
+      "@rxap/plugin-pack"
+    ]
   }
 }

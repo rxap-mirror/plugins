@@ -52,11 +52,9 @@ preTarget | boolean |  | The target that should be executed before
 # Builder
 
 ## publish
-
 > Publish the library
 
 **Builder name**
-
 ```
 @rxap/plugin-library-publish:publish
 ```
