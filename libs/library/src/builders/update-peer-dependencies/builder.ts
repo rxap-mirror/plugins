@@ -317,7 +317,7 @@ export class Builder {
     const filteredDependencies = await this.filterIgnoredDependencies(projectName, flattenDependencies);
 
     // cache the old peer dependencies to check if changed
-    const oldPeerDependencies = packageJson.peerDependencies;
+    const oldPeerDependencies = packageJson.peerDependencies ?? {};
 
     packageJson.peerDependencies = (await Promise.all(filteredDependencies.map(async peerDependency => [ this.getPackageName(peerDependency), await this.getDependencyVersion(peerDependency) ])))
       .sort((aItem, bItem) => {
