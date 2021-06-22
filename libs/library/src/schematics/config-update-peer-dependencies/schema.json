@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "library-config-update-peer-dependencies",
+  "title": "ConfigUpdatePeerDependencies",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the project.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "For which project should the pack builder be added?"
+    },
+    "ignore": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "A list of package name regex that should not be included as peer dependencies",
+      "default": []
+    }
+  },
+  "required": [
+    "project"
+  ]
+}

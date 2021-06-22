@@ -71,7 +71,6 @@ updatePackageGroup | boolean | true | Whether to add the update-package-group fo
 | project |
 
 ## config-update-package-group
-
 > Adds @rxap/plugin-library:update-package-group builder to the specified project
 
 ```
@@ -81,6 +80,23 @@ ng g @rxap/plugin-library:config-update-package-group
 Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | The name of the project.
+
+| Required |
+| --- |
+| project |
+
+## config-update-peer-dependencies
+
+> Adds the builder @rxap/plugin-library:update-peer-dependencies to the specified project.
+
+```
+ng g @rxap/plugin-library:config-update-peer-dependencies
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+project | string |  | The name of the project.
+ignore | array |  | A list of package name regex that should not be included as peer dependencies
 
 | Required |
 | --- |
@@ -122,3 +138,17 @@ type | string | schematics |
 
 Option | Type | Default | Description
 --- | --- | --- | ---
+
+## update-peer-dependencies
+
+> Updates the package.json peerDependencies and will predict the next version of local dependencies.
+
+**Builder name**
+
+```
+@rxap/plugin-library:update-peer-dependencies
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+ignore | array |  | A list of package name regex that should not be included as peer dependencies

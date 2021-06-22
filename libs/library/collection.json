@@ -17,6 +17,11 @@
       "description": "Adds @rxap/plugin-library:update-package-group builder to the specified project",
       "factory": "./src/schematics/config-update-package-group/index",
       "schema": "./src/schematics/config-update-package-group/schema.json"
+    },
+    "config-update-peer-dependencies": {
+      "description": "Adds the builder @rxap/plugin-library:update-peer-dependencies to the specified project.",
+      "factory": "./src/schematics/config-update-peer-dependencies/index",
+      "schema": "./src/schematics/config-update-peer-dependencies/schema.json"
     }
   }
 }

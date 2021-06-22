@@ -10,6 +10,11 @@
       "implementation": "./src/builders/update-package-group/builder",
       "schema": "./src/builders/update-package-group/schema.json",
       "description": "Updates the package-group in the project package.json"
+    },
+    "update-peer-dependencies": {
+      "implementation": "./src/builders/update-peer-dependencies/builder",
+      "schema": "./src/builders/update-peer-dependencies/schema.json",
+      "description": "Updates the package.json peerDependencies and will predict the next version of local dependencies."
     }
   }
 }

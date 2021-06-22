@@ -4,4 +4,5 @@ export interface ConfigSchema {
   builders: boolean;
   migrations: boolean;
   updatePackageGroup: boolean;
+  updatePeerDependencies: boolean;
 }

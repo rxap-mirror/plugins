@@ -33,9 +33,15 @@
     },
     "updatePackageGroup": {
       "type": "boolean",
-      "description": "Whether to add the update-package-group for builders",
+      "description": "Whether to add the update-package-group builder to the project",
       "default": true,
-      "x-prompt": "Should the project have update the ng-update package group?"
+      "x-prompt": "Should the project have a builder to update the ng-update package group?"
+    },
+    "updatePeerDependencies": {
+      "type": "boolean",
+      "description": "Whether to add the update-peer-dependencies for builder to the project",
+      "default": true,
+      "x-prompt": "Should the project have a builder to update an check the peer dependencies?"
     }
   },
   "required": [
