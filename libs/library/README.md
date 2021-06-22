@@ -64,7 +64,8 @@ project | string |  | The name of the project.
 schematics | boolean | true | Whether to add the build-schematics for schematics
 migrations | boolean | true | Whether to add the build-schematics for migrations
 builders | boolean | false | Whether to add the build-schematics for builders
-updatePackageGroup | boolean | true | Whether to add the update-package-group for builders
+updatePackageGroup | boolean | true | Whether to add the update-package-group builder to the project
+updatePeerDependencies | boolean | true | Whether to add the update-peer-dependencies for builder to the project
 
 | Required |
 | --- |
@@ -86,7 +87,6 @@ project | string |  | The name of the project.
 | project |
 
 ## config-update-peer-dependencies
-
 > Adds the builder @rxap/plugin-library:update-peer-dependencies to the specified project.
 
 ```
@@ -105,7 +105,6 @@ ignore | array |  | A list of package name regex that should not be included as 
 # Builder
 
 ## build-schematics
-
 > Builds the library schematics and copy all files into the out path
 
 **Builder name**
@@ -138,13 +137,10 @@ type | string | schematics |
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-
 ## update-peer-dependencies
-
 > Updates the package.json peerDependencies and will predict the next version of local dependencies.
 
 **Builder name**
-
 ```
 @rxap/plugin-library:update-peer-dependencies
 ```
