@@ -3,7 +3,7 @@
     <option name="FORMATTER_TAGS_ENABLED" value="true" />
     <option name="DO_NOT_FORMAT">
       <list>
-        <fileSet type="namedScope" name="Handlebars" pattern="*.handlebars" />
+        <fileSet type="namedScope" name="Handlebars" />
       </list>
     </option>
     <HTMLCodeStyleSettings>
