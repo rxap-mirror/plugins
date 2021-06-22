@@ -1,22 +1,12 @@
 import { chain, Rule } from '@angular-devkit/schematics';
-import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
+import { UpdateAngularProject } from '@rxap/schematics-utilities';
 
 export default function(options: ConfigSchema): Rule {
-
   return () => {
-
     return chain([
-      updateWorkspace((workspace) => {
-        const project = workspace.projects.get(options.project);
-
-        if (!project) {
-          throw new Error('Could not extract target project.');
-        }
-
-        if (project.targets.has('pack')) {
-
-        } else {
+      UpdateAngularProject((project) => {
+        if (!project.targets.has('pack')) {
 
           const targets: string[] = [];
 
@@ -31,17 +21,15 @@ export default function(options: ConfigSchema): Rule {
 
           }
 
-          project.targets.add({
-            name:    'pack',
+          project.targets.add('pack', {
             builder: '@rxap/plugin-pack:build',
             options: { targets }
           });
 
+        } else {
+          console.warn(`The project '${options.project}' has already the builder pack.`);
         }
-
-      })
+      }, { projectName: options.project })
     ]);
-
   };
-
 }

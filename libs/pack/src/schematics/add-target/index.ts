@@ -1,19 +1,13 @@
 import { chain, Rule, SchematicsException } from '@angular-devkit/schematics';
-import { updateWorkspace } from '@nrwl/workspace';
 import { AddTargetSchema } from './schema';
+import { UpdateAngularProject } from '@rxap/schematics-utilities';
 
 export default function(options: AddTargetSchema): Rule {
 
   return () => {
 
     return chain([
-      updateWorkspace((workspace) => {
-        const project = workspace.projects.get(options.project);
-
-        if (!project) {
-          throw new SchematicsException('Could not extract target project.');
-        }
-
+      UpdateAngularProject((project) => {
         if (!project.targets.has('pack')) {
           throw new SchematicsException('The selected project does not have the target "pack"');
         } else {
@@ -38,7 +32,7 @@ export default function(options: AddTargetSchema): Rule {
 
         }
 
-      })
+      }, { projectName: options.project })
     ]);
 
   };
