@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.3.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.2.0...@rxap/plugin-library@12.3.0) (2021-06-23)
+
+
+### Features
+
+* remove lerna dependency ([652fed9](https://gitlab.com/rxap/schematics/commit/652fed9b577a2554e0212320ed78281ef204eb10))
+
+
+
+
+
 # [12.2.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.1.2...@rxap/plugin-library@12.2.0) (2021-06-23)
 
 
