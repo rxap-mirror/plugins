@@ -2444,10 +2444,17 @@
   dependencies:
     "@octokit/openapi-types" "^7.2.3"
 
-"@rxap/plugin-library@^12.1.2":
-  version "12.1.2"
-  resolved "https://registry.yarnpkg.com/@rxap/plugin-library/-/plugin-library-12.1.2.tgz#75636dfac24760721b264d055413f1fd70ed628d"
-  integrity sha512-gSjt0omtyGRZXnQSNhrT5RkG06nHb/T0drbefZ7cVI/90CPVw/Ksd+iblGaLn3ImPvlSqwgKCiqaIg2dj6vUNA==
+"@rxap/plugin-library@^12.3.0":
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/@rxap/plugin-library/-/plugin-library-12.3.0.tgz#b3be41f2af2b7b113166ff1c39f4b13a300a8391"
+  integrity sha512-3Nt/jETFRjccr6MWSv8sHK0CoSnsxsc/F/2DFVwtoVVCtISFQusA2wJJa24IqDfhBW8IWXrMBVji1LyOGhnfzA==
+  dependencies:
+    "@angular-devkit/architect" "^0.1200.3"
+    "@angular-devkit/core" "^12.0.3"
+    "@angular-devkit/schematics" "^12.0.3"
+    "@nrwl/workspace" "^12.3.6"
+    "@rxap/schematics-utilities" "^12.3.3"
+    "@rxap/utilities" "^12.0.3"
 
 "@rxap/plugin-pack@^12.1.2":
   version "12.1.2"
