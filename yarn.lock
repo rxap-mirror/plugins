@@ -2444,6 +2444,11 @@
   dependencies:
     "@octokit/openapi-types" "^7.2.3"
 
+"@rxap/plugin-library@^12.1.2":
+  version "12.1.2"
+  resolved "https://registry.yarnpkg.com/@rxap/plugin-library/-/plugin-library-12.1.2.tgz#75636dfac24760721b264d055413f1fd70ed628d"
+  integrity sha512-gSjt0omtyGRZXnQSNhrT5RkG06nHb/T0drbefZ7cVI/90CPVw/Ksd+iblGaLn3ImPvlSqwgKCiqaIg2dj6vUNA==
+
 "@rxap/plugin-pack@^12.1.2":
   version "12.1.2"
   resolved "https://registry.yarnpkg.com/@rxap/plugin-pack/-/plugin-pack-12.1.2.tgz#de09766c7c72f1551b6307959fd75a46d5a93257"
