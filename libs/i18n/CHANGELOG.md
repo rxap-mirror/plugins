@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.14](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@12.1.13...@rxap/plugin-i18n@12.1.14) (2021-06-23)
+
+
+### Bug Fixes
+
+* mv peerDependencies to dependencies ([97be8bf](https://gitlab.com/rxap/schematics/commit/97be8bf8395ede8e5a50804b9ad7f72fde12bc81))
+
+
+
+
+
 ## [12.1.13](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@12.1.12...@rxap/plugin-i18n@12.1.13) (2021-06-23)
 
 

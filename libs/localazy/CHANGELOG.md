@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.17](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@12.0.16...@rxap/plugin-localazy@12.0.17) (2021-06-23)
+
+
+### Bug Fixes
+
+* mv peerDependencies to dependencies ([97be8bf](https://gitlab.com/rxap/schematics/commit/97be8bf8395ede8e5a50804b9ad7f72fde12bc81))
+
+
+
+
+
 ## [12.0.16](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@12.0.15...@rxap/plugin-localazy@12.0.16) (2021-06-23)
 
 

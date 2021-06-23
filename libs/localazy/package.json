@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-localazy",
-  "version": "12.0.16",
+  "version": "12.0.17",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/localazy",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -30,8 +30,8 @@
   "builders": "./builders.json",
   "dependencies": {
     "@angular-devkit/architect": "0.1200.3",
-    "@angular-devkit/schematics": "12.0.3",
     "@angular-devkit/core": "^12.0.3",
+    "@angular-devkit/schematics": "12.0.3",
     "@nrwl/workspace": "^12.3.6",
     "@rxap/schematics-utilities": "^12.0.5"
   },
@@ -48,5 +48,6 @@
       "@rxap/plugin-localazy",
       "@rxap/schematics-utilities"
     ]
-  }
+  },
+  "peerDependencies": {}
 }

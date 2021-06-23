@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-i18n",
-  "version": "12.1.13",
+  "version": "12.1.14",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/i18n",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -42,5 +42,6 @@
       "@rxap/plugin-i18n",
       "@rxap/schematics-utilities"
     ]
-  }
+  },
+  "peerDependencies": {}
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-build-info",
-  "version": "12.0.13",
+  "version": "12.0.14",
   "homepage": "https://gitlab.com/rxap/plugins/libs/build-info",
   "keywords": [
     "rxap",
@@ -23,7 +23,6 @@
   "ng-add": {
     "save": "devDependencies"
   },
-  "peerDependencies": {},
   "dependencies": {
     "@angular-devkit/architect": "^0.1200.3",
     "@angular-devkit/core": "^12.0.3",
@@ -43,5 +42,6 @@
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",
     "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
-  }
+  },
+  "peerDependencies": {}
 }

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.12](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-scss-bundle@12.0.11...@rxap/plugin-scss-bundle@12.0.12) (2021-06-23)
+
+
+### Bug Fixes
+
+* mv peerDependencies to dependencies ([97be8bf](https://gitlab.com/rxap/schematics/commit/97be8bf8395ede8e5a50804b9ad7f72fde12bc81))
+
+
+
+
+
 ## [12.0.11](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-scss-bundle@12.0.10...@rxap/plugin-scss-bundle@12.0.11) (2021-06-23)
 
 
