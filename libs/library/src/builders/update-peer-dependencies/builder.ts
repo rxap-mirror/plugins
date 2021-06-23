@@ -1,17 +1,12 @@
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { json } from '@angular-devkit/core';
 import { UpdatePeerDependenciesBuilderSchema } from './schema';
-import { dirname, join } from 'path';
+import { join } from 'path';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { PackageJson } from '@rxap/schematics-utilities';
-import { PackageGraph } from '@lerna/package-graph';
 import { createProjectGraph } from '@nrwl/workspace/src/core/project-graph';
 import { ProjectGraph } from '@nrwl/workspace/src/core/project-graph/project-graph-models';
 import { equals, unique } from '@rxap/utilities';
-import { inc } from 'semver';
-import conventionalRecommendedBump from 'conventional-recommended-bump';
-import { Project } from '@lerna/project';
-import { collectUpdates } from '@lerna/collect-updates';
 
 export interface Target extends json.JsonObject {
   project: string;
@@ -29,8 +24,6 @@ export class Builder {
 
   private readonly projectNewVersion = new Map<string, string[]>();
 
-  private readonly updates$: Promise<any[]>;
-
   private readonly flattenDependenciesMap = new Map<string, string[]>();
 
   constructor(
@@ -39,7 +32,6 @@ export class Builder {
   ) {
     this.rootPackageVersionMap = this.loadRootPackageVersionMap();
     this.projectGraph = createProjectGraph();
-    this.updates$ = this.loadUpdates();
   }
 
   public static Run(
@@ -73,48 +65,6 @@ export class Builder {
       console.debug(e.stack);
       return { success: false, error: e.message };
     }
-
-  }
-
-  private async loadUpdates(): Promise<any[]> {
-
-    const project = new Project(this.context.workspaceRoot);
-
-    const packages = await project.getPackages();
-
-    const packageGraph = new PackageGraph(packages);
-
-    const updates = collectUpdates(
-      packageGraph.rawPackageList,
-      packageGraph,
-      {
-        cwd: this.context.workspaceRoot
-      },
-      {
-        conventionalCommits: true
-      }
-    ).filter((node: any) => {
-      // --no-private completely removes private packages from consideration
-      if (node.pkg.private) {
-        // TODO: (major) make --no-private the default
-        return false;
-      }
-
-      if (!node.version) {
-        // a package may be unversioned only if it is private
-        if (node.pkg.private) {
-          console.info('version', 'Skipping unversioned private package %j', node.name);
-        } else {
-          throw new Error('failed');
-        }
-      }
-
-      return !!node.version;
-    });
-
-    console.log(`Changed packages count: ${updates.length}`);
-
-    return updates;
 
   }
 
@@ -216,66 +166,13 @@ export class Builder {
         const version = '^' + this.rootPackageVersionMap.get(packageName)!;
         this.dependencyVersionMap.set(dependencyName, version);
       } else {
-        const version = '^' + await this.getNewProjectVersion(dependencyName);
+        const version = '^' + (await this.getProjectPackageJson(dependencyName)).version;
         this.dependencyVersionMap.set(dependencyName, version);
       }
 
     }
 
     return this.dependencyVersionMap.get(dependencyName)!;
-
-  }
-
-  private async hasProjectVersionChange(projectName: string): Promise<boolean> {
-
-    const updates = await this.updates$;
-
-    const packageJson = this.getProjectPackageJson(projectName);
-
-    return !!updates.find((pkg: any) => pkg.name === packageJson.name);
-
-  }
-
-  private async getNewProjectVersion(projectName: string): Promise<string> {
-    const packageJson = this.getProjectPackageJson(projectName);
-    const version = packageJson.version;
-
-    if (await this.hasProjectVersionChange(projectName)) {
-
-
-      return new Promise((resolve, reject) => {
-
-        const options = {
-          lernaPackage: packageJson.name,
-          path: dirname(join(this.context.workspaceRoot, this.getProjectPackageJsonPath(projectName))),
-          config: require('conventional-changelog-angular')
-        };
-
-        conventionalRecommendedBump(options, (err: any, data: any) => {
-          if (err) {
-            return reject(err);
-          }
-
-          const releaseType = data.releaseType ?? 'patch';
-          const newVersion = inc(version, releaseType);
-
-          if (newVersion !== version) {
-            this.projectNewVersion.set(projectName, [ version, newVersion ]);
-          }
-
-          if (!newVersion) {
-            throw new Error('Could not resolve the new version');
-          }
-
-          resolve(newVersion);
-
-        });
-
-      });
-
-    }
-
-    return version;
 
   }
 
