@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.3.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-readme-generator@12.2.7...@rxap/plugin-readme-generator@12.3.0) (2021-06-23)
+
+
+### Bug Fixes
+
+* only write README.md if changed ([34e2483](https://gitlab.com/rxap/schematics/commit/34e2483b9e3601309101589d6f099c50977ecbf1))
+
+
+### Features
+
+* remove add to pack target ([3c9b081](https://gitlab.com/rxap/schematics/commit/3c9b081520a30f98d19d9b35f913a2ac71ca4371))
+
+
+
+
+
 ## [12.2.7](https://gitlab.com/rxap/packages/compare/@rxap/plugin-readme-generator@12.2.6...@rxap/plugin-readme-generator@12.2.7) (2021-06-21)
 
 **Note:** Version bump only for package @rxap/plugin-readme-generator
