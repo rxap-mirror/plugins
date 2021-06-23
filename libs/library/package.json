@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-library",
-  "version": "12.3.0",
+  "version": "12.3.1",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/library",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -43,5 +43,6 @@
     "packageGroup": [
       "@rxap/plugin-library"
     ]
-  }
+  },
+  "peerDependencies": {}
 }

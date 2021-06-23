@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.3.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.3.0...@rxap/plugin-library@12.3.1) (2021-06-23)
+
+
+### Bug Fixes
+
+* mv typescript package to dependencies ([06a7d2b](https://gitlab.com/rxap/schematics/commit/06a7d2bbbf5b0018cacdeb2445942719682c6937))
+
+
+
+
+
 # [12.3.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.2.0...@rxap/plugin-library@12.3.0) (2021-06-23)
 
 
