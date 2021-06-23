@@ -16,9 +16,14 @@
       "options": {
         "cacheableOperations": [
           "build",
-          "lint",
+          "pack",
           "test",
+          "lint",
           "e2e"
+        ],
+        "strictlyOrderedTargets": [
+          "build",
+          "pack"
         ]
       }
     }
