@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-build-info",
-  "version": "12.0.12",
+  "version": "12.0.13",
   "homepage": "https://gitlab.com/rxap/plugins/libs/build-info",
   "keywords": [
     "rxap",
@@ -33,7 +33,8 @@
   "ng-update": {
     "migrations": "./migration.json",
     "packageGroup": [
-      "@rxap/plugin-build-info"
+      "@rxap/plugin-build-info",
+      "@rxap/schematics-utilities"
     ]
   },
   "author": "Merzough Münker",

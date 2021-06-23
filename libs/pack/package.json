@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-pack",
-  "version": "12.1.9",
+  "version": "12.1.10",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/pack",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -32,7 +32,8 @@
   "ng-update": {
     "migrations": "./migration.json",
     "packageGroup": [
-      "@rxap/plugin-pack"
+      "@rxap/plugin-pack",
+      "@rxap/schematics-utilities"
     ]
   },
   "peerDependencies": {

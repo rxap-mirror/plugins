@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-library",
-  "version": "12.1.0",
+  "version": "12.1.1",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/library",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -44,7 +44,9 @@
   "ng-update": {
     "migrations": "./migration.json",
     "packageGroup": [
-      "@rxap/plugin-library"
+      "@rxap/plugin-library",
+      "@rxap/schematics-utilities",
+      "@rxap/utilities"
     ]
   }
 }
