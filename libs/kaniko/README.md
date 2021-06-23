@@ -19,8 +19,11 @@
 Add the plugin to your workspace:
 
 ```
-yarn add @rxap/plugin-kaniko
+ng add @rxap/plugin-kaniko
 ```
+
+> Setup the package @rxap/plugin-kaniko for the workspace.
+
 
 *Configure the builder @rxap/plugin-kaniko for a project:*
 
@@ -54,12 +57,26 @@ command | string |  | The command to start kaniko
 | project |
 | destination |
 
+## ng-add
+
+> Setup the package @rxap/plugin-kaniko for the workspace.
+
+```
+ng g @rxap/plugin-kaniko:ng-add
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+project | string |  | Name of the project
+
 # Builder
 
 ## build
+
 > build builder
 
 **Builder name**
+
 ```
 @rxap/plugin-kaniko:build
 ```

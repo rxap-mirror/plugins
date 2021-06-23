@@ -2,8 +2,8 @@
   "name": "@rxap/plugin-i18n",
   "version": "12.1.11",
   "author": "Merzough Münker",
-  "homepage": "https://gitlab.com/rxap/packages",
-  "repository": "git@gitlab.com:rxap/packages.git",
+  "homepage": "https://gitlab.com/rxap/plugins/libs/i18n",
+  "repository": "git@gitlab.com:rxap/schematics.git",
   "keywords": [
     "rxap",
     "plugin",
@@ -16,7 +16,7 @@
   "private": false,
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",
-    "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   },
   "description": "",
   "main": "src/index.js",
@@ -27,7 +27,7 @@
     "access": "public"
   },
   "ng-add": {
-    "save": "devDependencies"
+    "save": "dependencies"
   },
   "peerDependencies": {
     "@nrwl/workspace": "^12.3.6",

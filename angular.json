@@ -66,7 +66,6 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "library-schematics:readme",
               "library-schematics:build",
               "library-schematics:build-schematics",
               "library-schematics:build-migrations",
@@ -161,7 +160,8 @@
                 "output": "."
               }
             ],
-            "srcRootForCompilationRoot": "libs/pack"
+            "srcRootForCompilationRoot": "libs/pack",
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           },
           "outputs": [
             "{options.outputPath}"
@@ -171,7 +171,6 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "pack:readme",
               "pack:build",
               "pack:build-schematics",
               "pack:build-migrations",
@@ -207,6 +206,15 @@
             "tsConfig": "libs/pack/tsconfig.builders.json",
             "assets": [],
             "type": "builders"
+          }
+        },
+        "update-package-group": {
+          "builder": "@rxap/plugin-library:update-package-group"
+        },
+        "update-peer-dependencies": {
+          "builder": "@rxap/plugin-library:update-peer-dependencies",
+          "options": {
+            "ignore": []
           }
         }
       }
@@ -266,7 +274,8 @@
                 "output": "."
               }
             ],
-            "srcRootForCompilationRoot": "libs/scss-bundle"
+            "srcRootForCompilationRoot": "libs/scss-bundle",
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           },
           "outputs": [
             "{options.outputPath}"
@@ -276,7 +285,6 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "scss-bundle:readme",
               "scss-bundle:build",
               "scss-bundle:build-schematics",
               "scss-bundle:build-migrations",
@@ -319,6 +327,15 @@
             "tsConfig": "libs/scss-bundle/tsconfig.builders.json",
             "assets": [],
             "type": "builders"
+          }
+        },
+        "update-package-group": {
+          "builder": "@rxap/plugin-library:update-package-group"
+        },
+        "update-peer-dependencies": {
+          "builder": "@rxap/plugin-library:update-peer-dependencies",
+          "options": {
+            "ignore": []
           }
         }
       }
@@ -383,7 +400,8 @@
                 "output": "."
               }
             ],
-            "srcRootForCompilationRoot": "libs/readme-generator"
+            "srcRootForCompilationRoot": "libs/readme-generator",
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           },
           "outputs": [
             "{options.outputPath}"
@@ -393,7 +411,6 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "readme-generator:readme",
               "readme-generator:build",
               "readme-generator:build-schematics",
               "readme-generator:build-migrations",
@@ -429,6 +446,15 @@
             "tsConfig": "libs/readme-generator/tsconfig.builders.json",
             "assets": [],
             "type": "builders"
+          }
+        },
+        "update-package-group": {
+          "builder": "@rxap/plugin-library:update-package-group"
+        },
+        "update-peer-dependencies": {
+          "builder": "@rxap/plugin-library:update-peer-dependencies",
+          "options": {
+            "ignore": []
           }
         }
       }
@@ -487,7 +513,8 @@
                 "output": "."
               }
             ],
-            "srcRootForCompilationRoot": "libs/kaniko"
+            "srcRootForCompilationRoot": "libs/kaniko",
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           },
           "outputs": [
             "{options.outputPath}"
@@ -497,7 +524,6 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "kaniko:readme",
               "kaniko:build",
               "kaniko:build-schematics",
               "kaniko:build-migrations",
@@ -533,6 +559,15 @@
             "tsConfig": "libs/kaniko/tsconfig.builders.json",
             "assets": [],
             "type": "builders"
+          }
+        },
+        "update-package-group": {
+          "builder": "@rxap/plugin-library:update-package-group"
+        },
+        "update-peer-dependencies": {
+          "builder": "@rxap/plugin-library:update-peer-dependencies",
+          "options": {
+            "ignore": []
           }
         }
       }
@@ -601,7 +636,6 @@
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "library-publish:readme",
               "library-publish:build",
               "library-publish:build-schematics",
               "library-publish:build-migrations",
@@ -703,14 +737,14 @@
                 "glob": "**/files/**",
                 "output": "./src"
               }
-            ]
+            ],
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           }
         },
         "pack": {
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "i18n:readme",
               "i18n:build",
               "i18n:build-schematics",
               "i18n:build-migrations",
@@ -746,6 +780,15 @@
             "tsConfig": "libs/i18n/tsconfig.builders.json",
             "assets": [],
             "type": "builders"
+          }
+        },
+        "update-package-group": {
+          "builder": "@rxap/plugin-library:update-package-group"
+        },
+        "update-peer-dependencies": {
+          "builder": "@rxap/plugin-library:update-peer-dependencies",
+          "options": {
+            "ignore": []
           }
         }
       }
@@ -785,14 +828,14 @@
             "main": "libs/build-info/src/index.ts",
             "assets": [
               "libs/build-info/*.md"
-            ]
+            ],
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           }
         },
         "pack": {
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "build-info:readme",
               "build-info:build",
               "build-info:build-schematics",
               "build-info:build-migrations",
@@ -828,6 +871,15 @@
             "tsConfig": "libs/build-info/tsconfig.builders.json",
             "assets": [],
             "type": "builders"
+          }
+        },
+        "update-package-group": {
+          "builder": "@rxap/plugin-library:update-package-group"
+        },
+        "update-peer-dependencies": {
+          "builder": "@rxap/plugin-library:update-peer-dependencies",
+          "options": {
+            "ignore": []
           }
         }
       }
@@ -882,14 +934,14 @@
                 "glob": "builders.json",
                 "output": "."
               }
-            ]
+            ],
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           }
         },
         "pack": {
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "localazy:readme",
               "localazy:build",
               "localazy:build-schematics",
               "localazy:build-migrations",
@@ -925,6 +977,15 @@
             "tsConfig": "libs/localazy/tsconfig.builders.json",
             "assets": [],
             "type": "builders"
+          }
+        },
+        "update-package-group": {
+          "builder": "@rxap/plugin-library:update-package-group"
+        },
+        "update-peer-dependencies": {
+          "builder": "@rxap/plugin-library:update-peer-dependencies",
+          "options": {
+            "ignore": []
           }
         }
       }
@@ -974,14 +1035,14 @@
                 "glob": "schema.json",
                 "output": "./src/builders/build-schematics"
               }
-            ]
+            ],
+            "buildableProjectDepsInPackageJsonType": "dependencies"
           }
         },
         "pack": {
           "builder": "@rxap/plugin-pack:build",
           "options": {
             "targets": [
-              "library:readme",
               "library:build",
               "library:build-schematics",
               "library:build-migrations",
@@ -1017,6 +1078,15 @@
             "tsConfig": "libs/library/tsconfig.builders.json",
             "assets": [],
             "type": "builders"
+          }
+        },
+        "update-package-group": {
+          "builder": "@rxap/plugin-library:update-package-group"
+        },
+        "update-peer-dependencies": {
+          "builder": "@rxap/plugin-library:update-peer-dependencies",
+          "options": {
+            "ignore": []
           }
         }
       }

@@ -11,7 +11,7 @@ export default function(options: NgAddSchema): Rule {
           project: options.project
         });
       } else {
-        console.log('Default project not defined. Add the pack target to a project with: ng g @rxap/plugin-build-info:config [project]');
+        console.log('Default project not defined. Add the pack target to a project with: ng g @rxap/plugin-kaniko:config [project]');
       }
     }
   ]);

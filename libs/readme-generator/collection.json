@@ -7,6 +7,11 @@
       "factory": "./src/schematics/config/index",
       "schema": "./src/schematics/config/schema.json",
       "description": "Adds the @rxap/plugin-readme-generator builder to the specified project."
+    },
+    "ng-add": {
+      "description": "Setup the package @rxap/plugin-readme-generator for the workspace.",
+      "factory": "./src/schematics/ng-add/index",
+      "schema": "./src/schematics/ng-add/schema.json"
     }
   }
 }

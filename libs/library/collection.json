@@ -22,6 +22,11 @@
       "description": "Adds the builder @rxap/plugin-library:update-peer-dependencies to the specified project.",
       "factory": "./src/schematics/config-update-peer-dependencies/index",
       "schema": "./src/schematics/config-update-peer-dependencies/schema.json"
+    },
+    "ng-add": {
+      "description": "Setup the package @rxap/plugin-library for the workspace.",
+      "factory": "./src/schematics/ng-add/index",
+      "schema": "./src/schematics/ng-add/schema.json"
     }
   }
 }

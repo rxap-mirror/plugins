@@ -17,18 +17,21 @@
     "plugin",
     "nrwl"
   ],
-  "repository": "git@gitlab.com:rxap/packages.git",
-  "homepage": "https://gitlab.com/rxap/packages",
+  "repository": "git@gitlab.com:rxap/schematics.git",
+  "homepage": "https://gitlab.com/rxap/plugins/libs/kaniko",
   "author": "Merzough Münker",
   "private": false,
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",
-    "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   },
   "ng-update": {
     "migrations": "./migration.json",
     "packageGroup": [
       "@rxap/plugin-kaniko"
     ]
+  },
+  "ng-add": {
+    "save": "dependencies"
   }
 }

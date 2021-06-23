@@ -1,32 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "rxap-plugin-i18n",
-  "title": "RxAP i18n workspace plugin",
+  "$id": "i18n-ng-add",
   "type": "object",
   "properties": {
     "project": {
       "type": "string",
-      "description": "Name of the project.",
+      "description": "Name of the project",
       "$default": {
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "What project would you like to add the i18n plugin?"
-    },
-    "availableLanguages": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "assets": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "defaultLanguage": {
-      "type": "string"
+      "x-prompt": "For which project would you like to add the plugin?"
     }
   },
   "required": []

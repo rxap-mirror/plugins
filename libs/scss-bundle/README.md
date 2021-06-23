@@ -19,8 +19,11 @@
 Add the plugin to your workspace:
 
 ```
-yarn add @rxap/plugin-scss-bundle
+ng add @rxap/plugin-scss-bundle
 ```
+
+> Setup the package @rxap/plugin-scss-bundle for the workspace.
+
 
 *Configure the builder @rxap/plugin-scss-bundle for a project:*
 
@@ -47,12 +50,26 @@ project | string |  | The name of the project.
 | --- |
 | project |
 
+## ng-add
+
+> Setup the package @rxap/plugin-scss-bundle for the workspace.
+
+```
+ng g @rxap/plugin-scss-bundle:ng-add
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+project | string |  | Name of the project
+
 # Builder
 
 ## build
+
 > build builder
 
 **Builder name**
+
 ```
 @rxap/plugin-scss-bundle:build
 ```

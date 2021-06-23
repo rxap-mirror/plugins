@@ -9,12 +9,9 @@
       "description": "Adds the @plugin-pack:build to the specified project"
     },
     "ng-add": {
-      "description": "Adds the build-info plugin to the workspace",
+      "description": "Setup the package @rxap/plugin-build-info for the workspace.",
       "factory": "./src/schematics/ng-add/index",
-      "schema": "./src/schematics/ng-add/schema.json",
-      "aliases": [
-        "install"
-      ]
+      "schema": "./src/schematics/ng-add/schema.json"
     }
   }
 }

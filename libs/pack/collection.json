@@ -14,12 +14,9 @@
       "description": "Adds a target to the targets options array"
     },
     "ng-add": {
-      "description": "Adds the pack plugin to the workspace",
+      "description": "Setup the package @rxap/plugin-pack for the workspace.",
       "factory": "./src/schematics/ng-add/index",
-      "schema": "./src/schematics/ng-add/schema.json",
-      "aliases": [
-        "install"
-      ]
+      "schema": "./src/schematics/ng-add/schema.json"
     }
   }
 }

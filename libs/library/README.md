@@ -19,8 +19,11 @@
 Add the plugin to your workspace:
 
 ```
-yarn add @rxap/plugin-library
+ng add @rxap/plugin-library
 ```
+
+> Setup the package @rxap/plugin-library for the workspace.
+
 
 *Configure the builder @rxap/plugin-library for a project:*
 
@@ -102,9 +105,22 @@ ignore | array |  | A list of package name regex that should not be included as 
 | --- |
 | project |
 
+## ng-add
+
+> Setup the package @rxap/plugin-library for the workspace.
+
+```
+ng g @rxap/plugin-library:ng-add
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+project | string |  | Name of the project
+
 # Builder
 
 ## build-schematics
+
 > Builds the library schematics and copy all files into the out path
 
 **Builder name**

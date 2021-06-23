@@ -2,8 +2,8 @@
   "name": "@rxap/plugin-scss-bundle",
   "version": "12.0.9",
   "author": "Merzough Münker",
-  "homepage": "https://gitlab.com/rxap/packages",
-  "repository": "git@gitlab.com:rxap/packages.git",
+  "homepage": "https://gitlab.com/rxap/plugins/libs/scss-bundle",
+  "repository": "git@gitlab.com:rxap/schematics.git",
   "keywords": [
     "rxap",
     "plugin",
@@ -15,7 +15,7 @@
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",
-    "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   },
   "description": "A builder to bundle scss theme files for angular libraries.",
   "main": "src/index.js",
@@ -40,5 +40,8 @@
     "directory": "../../dist/libs/scss-bundle",
     "access": "public"
   },
-  "private": false
+  "private": false,
+  "ng-add": {
+    "save": "dependencies"
+  }
 }

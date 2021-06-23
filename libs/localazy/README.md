@@ -23,7 +23,7 @@ Add the plugin to your workspace:
 ng add @rxap/plugin-localazy
 ```
 
-> Adds the localazy plugin to the workspace
+> Setup the package @rxap/plugin-localazy for the workspace.
 
 
 *Configure the builder @rxap/plugin-localazy for a project:*
@@ -84,6 +84,8 @@ list run the schematic `nx g @rxap/plugin-localazy:config --project [projectName
 package `@rxap/plugin-localazy` is not yet added to the workspace run the
 command `nx add @rxap/plugin-localazy --project [projectName]`.
 
+
+
 # Schematics
 
 ## config
@@ -103,7 +105,8 @@ extractTarget | string |  | The target that extracts or generate the translation
 | project |
 
 ## ng-add
-> Adds the localazy plugin to the workspace
+
+> Setup the package @rxap/plugin-localazy for the workspace.
 
 ```
 ng g @rxap/plugin-localazy:ng-add
@@ -111,8 +114,7 @@ ng g @rxap/plugin-localazy:ng-add
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-project | string |  | Name of the project.
-extractTarget | string |  | The target that extracts or generate the translation source file.
+project | string |  | Name of the project
 
 # Builder
 

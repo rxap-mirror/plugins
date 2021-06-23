@@ -2,8 +2,8 @@
   "name": "@rxap/plugin-pack",
   "version": "12.1.8",
   "author": "Merzough Münker",
-  "homepage": "https://gitlab.com/rxap/packages",
-  "repository": "git@gitlab.com:rxap/packages.git",
+  "homepage": "https://gitlab.com/rxap/plugins/libs/pack",
+  "repository": "git@gitlab.com:rxap/schematics.git",
   "keywords": [
     "rxap",
     "plugin",
@@ -16,14 +16,14 @@
   "private": false,
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",
-    "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   },
   "description": "A builder to execute a collection of architect targets in sequence.",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
   "ng-add": {
-    "save": "devDependencies"
+    "save": "dependencies"
   },
   "publishConfig": {
     "directory": "../../dist/libs/pack",

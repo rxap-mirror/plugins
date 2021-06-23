@@ -22,7 +22,7 @@ Add the plugin to your workspace:
 ng add @rxap/plugin-build-info
 ```
 
-> Adds the build-info plugin to the workspace
+> Setup the package @rxap/plugin-build-info for the workspace.
 
 
 *Configure the builder @rxap/plugin-build-info for a project:*
@@ -51,7 +51,8 @@ project | string |  | The name of the project.
 | project |
 
 ## ng-add
-> Adds the build-info plugin to the workspace
+
+> Setup the package @rxap/plugin-build-info for the workspace.
 
 ```
 ng g @rxap/plugin-build-info:ng-add
@@ -59,7 +60,7 @@ ng g @rxap/plugin-build-info:ng-add
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-project | string |  | Name of the project.
+project | string |  | Name of the project
 
 # Builder
 

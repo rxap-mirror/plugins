@@ -1,9 +1,7 @@
 {
   "name": "@rxap/plugin-build-info",
   "version": "12.0.11",
-  "author": "Merzough Münker",
-  "homepage": "https://gitlab.com/rxap/packages",
-  "repository": "git@gitlab.com:rxap/packages.git",
+  "homepage": "https://gitlab.com/rxap/plugins/libs/build-info",
   "keywords": [
     "rxap",
     "plugin",
@@ -14,10 +12,6 @@
   ],
   "license": "GPL-3.0",
   "private": false,
-  "bugs": {
-    "url": "https://gitlab.com/rxap/plugins/-/issues",
-    "email": "incoming+rxap-packages-14898188-issue-@incoming.gitlab.com"
-  },
   "description": "",
   "main": "src/index.js",
   "schematics": "./collection.json",
@@ -27,7 +21,7 @@
     "access": "public"
   },
   "ng-add": {
-    "save": "devDependencies"
+    "save": "dependencies"
   },
   "peerDependencies": {
     "@nrwl/workspace": "^12.3.6"
@@ -37,5 +31,11 @@
     "packageGroup": [
       "@rxap/plugin-build-info"
     ]
+  },
+  "author": "Merzough Münker",
+  "repository": "git@gitlab.com:rxap/schematics.git",
+  "bugs": {
+    "url": "https://gitlab.com/rxap/plugins/-/issues",
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   }
 }

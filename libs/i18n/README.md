@@ -22,7 +22,7 @@ Add the plugin to your workspace:
 ng add @rxap/plugin-i18n
 ```
 
-> Adds the i18n plugin to the workspace
+> Setup the package @rxap/plugin-i18n for the workspace.
 
 
 *Configure the builder @rxap/plugin-i18n for a project:*
@@ -56,7 +56,7 @@ defaultLanguage | string |  |
 
 ## ng-add
 
-> Adds the i18n plugin to the workspace
+> Setup the package @rxap/plugin-i18n for the workspace.
 
 ```
 ng g @rxap/plugin-i18n:ng-add
@@ -64,19 +64,14 @@ ng g @rxap/plugin-i18n:ng-add
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-project | string |  | Name of the project.
-availableLanguages | array |  |
-assets | array |  |
-defaultLanguage | string |  |
+project | string |  | Name of the project
 
 # Builder
 
 ## build
-
 > build builder
 
 **Builder name**
-
 ```
 @rxap/plugin-i18n:build
 ```

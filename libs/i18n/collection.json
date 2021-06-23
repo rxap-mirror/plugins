@@ -9,12 +9,9 @@
       "description": "Adds the @plugin-pack:build to the specified project"
     },
     "ng-add": {
-      "description": "Adds the i18n plugin to the workspace",
+      "description": "Setup the package @rxap/plugin-i18n for the workspace.",
       "factory": "./src/schematics/ng-add/index",
-      "schema": "./src/schematics/ng-add/schema.json",
-      "aliases": [
-        "install"
-      ]
+      "schema": "./src/schematics/ng-add/schema.json"
     }
   }
 }

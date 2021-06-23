@@ -19,8 +19,11 @@
 Add the plugin to your workspace:
 
 ```
-yarn add @rxap/plugin-readme-generator
+ng add @rxap/plugin-readme-generator
 ```
+
+> Setup the package @rxap/plugin-readme-generator for the workspace.
+
 
 *Configure the builder @rxap/plugin-readme-generator for a project:*
 
@@ -50,12 +53,26 @@ overwrite | boolean | false | Whether to overwrite the readme handlebars file.
 | project |
 | type |
 
+## ng-add
+
+> Setup the package @rxap/plugin-readme-generator for the workspace.
+
+```
+ng g @rxap/plugin-readme-generator:ng-add
+```
+
+Option | Type | Default | Description
+--- | --- | --- | ---
+project | string |  | Name of the project
+
 # Builder
 
 ## plugin
+
 > Readme generator for plugin libraries.
 
 **Builder name**
+
 ```
 @rxap/plugin-readme-generator:plugin
 ```

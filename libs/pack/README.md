@@ -22,7 +22,7 @@ Add the plugin to your workspace:
 ng add @rxap/plugin-pack
 ```
 
-> Adds the pack plugin to the workspace
+> Setup the package @rxap/plugin-pack for the workspace.
 
 
 *Configure the builder @rxap/plugin-pack for a project:*
@@ -69,7 +69,8 @@ preBuild | boolean | false | Whether the target should be added before the build
 | target |
 
 ## ng-add
-> Adds the pack plugin to the workspace
+
+> Setup the package @rxap/plugin-pack for the workspace.
 
 ```
 ng g @rxap/plugin-pack:ng-add
@@ -77,7 +78,7 @@ ng g @rxap/plugin-pack:ng-add
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-project | string |  | Name of the project.
+project | string |  | Name of the project
 
 # Builder
 

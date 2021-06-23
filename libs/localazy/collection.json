@@ -9,12 +9,9 @@
       "description": "Adds the builder @rxap/pack-localazy:download and @rxap/pack-localazy:upload to the specified project"
     },
     "ng-add": {
-      "description": "Adds the localazy plugin to the workspace",
+      "description": "Setup the package @rxap/plugin-localazy for the workspace.",
       "factory": "./src/schematics/ng-add/index",
-      "schema": "./src/schematics/ng-add/schema.json",
-      "aliases": [
-        "install"
-      ]
+      "schema": "./src/schematics/ng-add/schema.json"
     }
   }
 }

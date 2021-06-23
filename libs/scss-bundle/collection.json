@@ -7,6 +7,11 @@
       "factory": "./src/schematics/config/schematic",
       "schema": "./src/schematics/config/schema.json",
       "description": "Adds the @plugin-scss-bundle:build to the specified project"
+    },
+    "ng-add": {
+      "description": "Setup the package @rxap/plugin-scss-bundle for the workspace.",
+      "factory": "./src/schematics/ng-add/index",
+      "schema": "./src/schematics/ng-add/schema.json"
     }
   }
 }
