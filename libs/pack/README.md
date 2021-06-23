@@ -69,7 +69,6 @@ preBuild | boolean | false | Whether the target should be added before the build
 | target |
 
 ## ng-add
-
 > Setup the package @rxap/plugin-pack for the workspace.
 
 ```

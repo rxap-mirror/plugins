@@ -54,7 +54,6 @@ overwrite | boolean | false | Whether to overwrite the readme handlebars file.
 | type |
 
 ## ng-add
-
 > Setup the package @rxap/plugin-readme-generator for the workspace.
 
 ```
@@ -68,11 +67,9 @@ project | string |  | Name of the project
 # Builder
 
 ## plugin
-
 > Readme generator for plugin libraries.
 
 **Builder name**
-
 ```
 @rxap/plugin-readme-generator:plugin
 ```

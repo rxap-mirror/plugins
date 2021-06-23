@@ -105,7 +105,6 @@ extractTarget | string |  | The target that extracts or generate the translation
 | project |
 
 ## ng-add
-
 > Setup the package @rxap/plugin-localazy for the workspace.
 
 ```

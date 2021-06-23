@@ -51,7 +51,6 @@ project | string |  | The name of the project.
 | project |
 
 ## ng-add
-
 > Setup the package @rxap/plugin-scss-bundle for the workspace.
 
 ```
@@ -65,11 +64,9 @@ project | string |  | Name of the project
 # Builder
 
 ## build
-
 > build builder
 
 **Builder name**
-
 ```
 @rxap/plugin-scss-bundle:build
 ```
@@ -77,5 +74,5 @@ project | string |  | Name of the project
 Option | Type | Default | Description
 --- | --- | --- | ---
 buildTarget | string |  | The build target that should be execute before this builder
-outFile | string |  |
+outFile | string |  | 
 ignoreImports | array |  | A list of architect targets

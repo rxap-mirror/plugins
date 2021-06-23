@@ -36,7 +36,6 @@ ng g @rxap/plugin-library:config [project]
 # Schematics
 
 ## config-schematics
-
 > Adds the builder @rxap/pack-library:build-schematics to the specified project
 
 ```
@@ -46,7 +45,7 @@ ng g @rxap/plugin-library:config-schematics
 Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | The name of the project.
-type | string |  |
+type | string |  | 
 
 | Required |
 | --- |
@@ -54,7 +53,6 @@ type | string |  |
 | type |
 
 ## config
-
 > Adds @rxap/plugin-library builder to the specified project
 
 ```
@@ -106,7 +104,6 @@ ignore | array |  | A list of package name regex that should not be included as 
 | project |
 
 ## ng-add
-
 > Setup the package @rxap/plugin-library for the workspace.
 
 ```
@@ -120,11 +117,9 @@ project | string |  | Name of the project
 # Builder
 
 ## build-schematics
-
 > Builds the library schematics and copy all files into the out path
 
 **Builder name**
-
 ```
 @rxap/plugin-library:build-schematics
 ```
@@ -134,19 +129,16 @@ Option | Type | Default | Description
 tsConfig | string |  | The name of the Typescript configuration file.
 outputPath | string |  | The output path of the generated files.
 assets | array |  | List of static library assets.
-type | string | schematics |
+type | string | schematics | 
 
 | Required |
 | --- |
 | tsConfig |
 | outputPath |
-
 ## update-package-group
-
 > Updates the package-group in the project package.json
 
 **Builder name**
-
 ```
 @rxap/plugin-library:update-package-group
 ```

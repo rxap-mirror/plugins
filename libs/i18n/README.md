@@ -36,7 +36,6 @@ ng g @rxap/plugin-i18n:config [project]
 # Schematics
 
 ## config
-
 > Adds the @plugin-pack:build to the specified project
 
 ```
@@ -46,16 +45,15 @@ ng g @rxap/plugin-i18n:config
 Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | The name of the project.
-availableLanguages | array |  |
-assets | array |  |
-defaultLanguage | string |  |
+availableLanguages | array |  | 
+assets | array |  | 
+defaultLanguage | string |  | 
 
 | Required |
 | --- |
 | project |
 
 ## ng-add
-
 > Setup the package @rxap/plugin-i18n for the workspace.
 
 ```
@@ -78,6 +76,6 @@ project | string |  | Name of the project
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-availableLanguages | array |  |
-defaultLanguage | string |  |
+availableLanguages | array |  | 
+defaultLanguage | string |  | 
 assets | array |  | 

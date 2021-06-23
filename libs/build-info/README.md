@@ -51,7 +51,6 @@ project | string |  | The name of the project.
 | project |
 
 ## ng-add
-
 > Setup the package @rxap/plugin-build-info for the workspace.
 
 ```
@@ -74,8 +73,8 @@ project | string |  | Name of the project
 
 Option | Type | Default | Description
 --- | --- | --- | ---
-branch | string |  |
-tag | string |  |
-release | string |  |
-commit | string |  |
+branch | string |  | 
+tag | string |  | 
+release | string |  | 
+commit | string |  | 
 timestamp | string |  | 

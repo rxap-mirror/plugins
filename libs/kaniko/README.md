@@ -58,7 +58,6 @@ command | string |  | The command to start kaniko
 | destination |
 
 ## ng-add
-
 > Setup the package @rxap/plugin-kaniko for the workspace.
 
 ```
@@ -72,11 +71,9 @@ project | string |  | Name of the project
 # Builder
 
 ## build
-
 > build builder
 
 **Builder name**
-
 ```
 @rxap/plugin-kaniko:build
 ```
