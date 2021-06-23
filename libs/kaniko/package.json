@@ -8,7 +8,7 @@
     "directory": "../../dist/libs/kaniko",
     "access": "public"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@angular-devkit/architect": "^0.1200.3",
     "@angular-devkit/core": "^12.0.3",
     "@angular-devkit/schematics": "^12.0.3",

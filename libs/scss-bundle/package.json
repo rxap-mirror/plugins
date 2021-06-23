@@ -22,9 +22,12 @@
   "schematics": "./collection.json",
   "builders": "./builders.json",
   "dependencies": {
-    "@angular-devkit/architect": "0.1200.1",
-    "@angular-devkit/core": "12",
-    "@angular-devkit/schematics": "12"
+    "@angular-devkit/architect": "0.1200.5",
+    "@angular-devkit/core": "12.0.5",
+    "@angular-devkit/schematics": "12.0.5",
+    "@nrwl/workspace": "^12.3.6",
+    "@rxap/schematics-utilities": "^12.0.5",
+    "globs": "^0.1.4"
   },
   "ng-update": {
     "migrations": "./migration.json",
@@ -32,11 +35,6 @@
       "@rxap/plugin-scss-bundle",
       "@rxap/schematics-utilities"
     ]
-  },
-  "peerDependencies": {
-    "@nrwl/workspace": "^12.3.6",
-    "@rxap/schematics-utilities": "^12.0.5",
-    "globs": "^0.1.4"
   },
   "publishConfig": {
     "directory": "../../dist/libs/scss-bundle",
