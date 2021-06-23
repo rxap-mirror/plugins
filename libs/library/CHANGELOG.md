@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.1.1...@rxap/plugin-library@12.1.2) (2021-06-23)
+
+
+### Bug Fixes
+
+* only write json file if changed ([b39207b](https://gitlab.com/rxap/schematics/commit/b39207b446fde7ea294a3eb1313ed714f6861ece))
+
+
+
+
+
 ## [12.1.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.1.0...@rxap/plugin-library@12.1.1) (2021-06-23)
 
 
