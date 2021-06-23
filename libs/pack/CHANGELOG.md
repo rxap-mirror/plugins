@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.1.10](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-pack@12.1.9...@rxap/plugin-pack@12.1.10) (2021-06-23)
+
+
+### Bug Fixes
+
+* set ng-add save target to devDependencies ([c213f21](https://gitlab.com/rxap/schematics/commit/c213f21067e8bb280a48ae726840bfe0f5c4ff11))
+
+
+
+
+
 ## [12.1.9](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-pack@12.1.8...@rxap/plugin-pack@12.1.9) (2021-06-23)
 
 **Note:** Version bump only for package @rxap/plugin-pack
