@@ -308,22 +308,8 @@ export class Builder {
     }
   }
 
-  private async update(projectName: string) {
-    const graphDependencies = this.projectGraph.dependencies[projectName];
-
-    if (!graphDependencies) {
-      throw new Error(`The dependencies for the project '${projectName}' are not available`);
-    }
-
-    const dependencies: string[] = graphDependencies.map(pdg => pdg.target);
-
-    const flattenDependencies: string[] = await this.flattenDependencies(dependencies);
-
-    const packageJson = this.getProjectPackageJson(projectName);
-
-    const filteredDependencies = await this.filterIgnoredDependencies(projectName, flattenDependencies);
-
-    packageJson.peerDependencies = (await Promise.all(filteredDependencies.map(async peerDependency => [ this.getPackageName(peerDependency), await this.getDependencyVersion(peerDependency) ])))
+  private async mapToPackageDependencies(projectDependencies: string[]): Promise<Record<string, string>> {
+    return (await Promise.all(projectDependencies.map(async peerDependency => [ this.getPackageName(peerDependency), await this.getDependencyVersion(peerDependency) ])))
       .sort((aItem, bItem) => {
 
         const a = aItem[0];
@@ -344,6 +330,26 @@ export class Builder {
       })
       .map(item => ({ [item[0]]: item[1] }))
       .reduce((map, item) => ({ ...map, ...item }), {});
+  }
+
+  private async update(projectName: string) {
+    const graphProjectDependency = this.projectGraph.dependencies[projectName];
+
+    if (!graphProjectDependency) {
+      throw new Error(`The dependencies for the project '${projectName}' are not available`);
+    }
+
+    const projectDependencies: string[] = graphProjectDependency.map(pdg => pdg.target);
+
+    const flattenProjectDependencies: string[] = await this.flattenDependencies(projectDependencies);
+
+    const packageJson = this.getProjectPackageJson(projectName);
+
+    const projectPeerDependency = await this.filterIgnoredDependencies(projectName, flattenProjectDependencies);
+    const projectDependency = flattenProjectDependencies.filter(projectDependency => !projectPeerDependency.includes(projectDependency));
+
+    packageJson.peerDependencies = await this.mapToPackageDependencies(projectPeerDependency);
+    packageJson.dependencies = await this.mapToPackageDependencies(projectDependency);
 
     // only write the package.json file if some peer dependencies changed
     this.writeProjectPackageJson(projectName, packageJson);
