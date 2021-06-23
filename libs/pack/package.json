@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-pack",
-  "version": "12.1.11",
+  "version": "12.1.12",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/pack",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -39,7 +39,7 @@
   "dependencies": {
     "@angular-devkit/architect": "^0.1200.3",
     "@angular-devkit/schematics": "^12.0.3",
-    "@rxap/schematics-utilities": "^12.0.5"
+    "@rxap/schematics-utilities": "^12.3.3"
   },
   "peerDependencies": {}
 }

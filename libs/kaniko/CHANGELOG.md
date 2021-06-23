@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.13](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@12.0.12...@rxap/plugin-kaniko@12.0.13) (2021-06-23)
+
+**Note:** Version bump only for package @rxap/plugin-kaniko
+
+
+
+
+
 ## [12.0.12](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@12.0.11...@rxap/plugin-kaniko@12.0.12) (2021-06-23)
 
 

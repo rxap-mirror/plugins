@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-scss-bundle",
-  "version": "12.0.12",
+  "version": "12.0.13",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/scss-bundle",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -22,11 +22,11 @@
   "schematics": "./collection.json",
   "builders": "./builders.json",
   "dependencies": {
-    "@angular-devkit/architect": "0.1200.5",
-    "@angular-devkit/core": "12.0.5",
-    "@angular-devkit/schematics": "12.0.5",
+    "@angular-devkit/architect": "^0.1200.3",
+    "@angular-devkit/core": "^12.0.3",
+    "@angular-devkit/schematics": "^12.0.3",
     "@nrwl/workspace": "^12.3.6",
-    "@rxap/schematics-utilities": "^12.0.5",
+    "@rxap/schematics-utilities": "^12.3.3",
     "globs": "^0.1.4"
   },
   "ng-update": {
