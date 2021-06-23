@@ -26,6 +26,15 @@
     "save": "dependencies"
   },
   "peerDependencies": {
+    "@angular-devkit/architect": "^0.1200.3",
+    "@angular-devkit/core": "^12.0.3",
+    "@angular-devkit/schematics": "^12.0.3",
+    "@lerna/collect-updates": "^4.0.0",
+    "@lerna/package-graph": "^4.0.0",
+    "@lerna/project": "^4.0.0",
+    "@nrwl/workspace": "^12.3.6",
+    "@rxap/schematics-utilities": "^12.0.5",
+    "@rxap/utilities": "^12.0.3",
     "typescript": "^4.2.4"
   },
   "publishConfig": {

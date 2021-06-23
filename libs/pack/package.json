@@ -34,5 +34,10 @@
     "packageGroup": [
       "@rxap/plugin-pack"
     ]
+  },
+  "peerDependencies": {
+    "@angular-devkit/architect": "^0.1200.3",
+    "@angular-devkit/schematics": "^12.0.3",
+    "@rxap/schematics-utilities": "^12.0.5"
   }
 }

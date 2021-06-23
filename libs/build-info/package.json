@@ -24,7 +24,11 @@
     "save": "dependencies"
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^12.3.6"
+    "@angular-devkit/architect": "^0.1200.3",
+    "@angular-devkit/core": "^12.0.3",
+    "@angular-devkit/schematics": "^12.0.3",
+    "@nrwl/workspace": "^12.3.6",
+    "@rxap/schematics-utilities": "^12.0.5"
   },
   "ng-update": {
     "migrations": "./migration.json",
