@@ -23,7 +23,7 @@
   "schematics": "./collection.json",
   "builders": "./builders.json",
   "ng-add": {
-    "save": "dependencies"
+    "save": "devDependencies"
   },
   "peerDependencies": {
     "@angular-devkit/architect": "^0.1200.3",

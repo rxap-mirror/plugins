@@ -36,6 +36,6 @@
     ]
   },
   "ng-add": {
-    "save": "dependencies"
+    "save": "devDependencies"
   }
 }

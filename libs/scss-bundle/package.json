@@ -43,6 +43,6 @@
   },
   "private": false,
   "ng-add": {
-    "save": "dependencies"
+    "save": "devDependencies"
   }
 }

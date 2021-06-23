@@ -23,7 +23,7 @@
   "schematics": "./collection.json",
   "builders": "./builders.json",
   "ng-add": {
-    "save": "dependencies"
+    "save": "devDependencies"
   },
   "publishConfig": {
     "directory": "../../dist/libs/pack",

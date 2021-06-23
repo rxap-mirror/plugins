@@ -33,7 +33,7 @@
     "@angular-devkit/schematics": "12.0.3"
   },
   "ng-add": {
-    "save": "dependencies"
+    "save": "devDependencies"
   },
   "peerDependencies": {
     "@angular-devkit/core": "^12.0.3",
