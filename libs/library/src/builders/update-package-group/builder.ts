@@ -5,6 +5,7 @@ import { ReadFile } from './read-file';
 import { join } from 'path';
 import { WriteFile } from './write-file';
 import { existsSync } from 'fs';
+import { equals } from '@rxap/utilities';
 
 export interface Target extends json.JsonObject {
   project: string;
@@ -98,15 +99,23 @@ export class Builder {
 
       packageJson['ng-update'].packageGroup = newPackageGroup;
 
-      const writeFile = new WriteFile();
+      const oldPackageJson = JSON.parse(readFile.sync(packageJsonFilePath));
 
-      writeFile.sync(packageJsonFilePath, JSON.stringify(
-        packageJson,
-        undefined,
-        2
-      ));
+      if (!equals(oldPackageJson, packageJson)) {
 
-      console.log('Set ng-update.packageGroup = ', newPackageGroup);
+        const writeFile = new WriteFile();
+
+        writeFile.sync(packageJsonFilePath, JSON.stringify(
+          packageJson,
+          undefined,
+          2
+        ));
+
+        console.log('Set ng-update.packageGroup = ', newPackageGroup);
+
+      } else {
+        console.info(`The package.json ng-update.packageGroup is not updated. No changes detected!`);
+      }
 
     }
 

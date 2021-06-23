@@ -7,7 +7,7 @@ import { PackageJson } from '@rxap/schematics-utilities';
 import { PackageGraph } from '@lerna/package-graph';
 import { createProjectGraph } from '@nrwl/workspace/src/core/project-graph';
 import { ProjectGraph } from '@nrwl/workspace/src/core/project-graph/project-graph-models';
-import { unique } from '@rxap/utilities';
+import { equals, unique } from '@rxap/utilities';
 import { inc } from 'semver';
 import conventionalRecommendedBump from 'conventional-recommended-bump';
 import { Project } from '@lerna/project';
@@ -298,7 +298,14 @@ export class Builder {
     if (!existsSync(packageJsonFile)) {
       throw new Error(`Could not find the package.json file for the project '${projectName}'`);
     }
-    writeFileSync(packageJsonFile, JSON.stringify(packageJson, undefined, 2));
+
+    const oldPackageJson = JSON.parse(readFileSync(packageJsonFile).toString('utf-8'));
+
+    if (!equals(packageJson, oldPackageJson)) {
+      writeFileSync(packageJsonFile, JSON.stringify(packageJson, undefined, 2));
+    } else {
+      console.info(`The package.json peer dependencies for the project '${projectName}' is not updated. No changes detected!`);
+    }
   }
 
   private async update(projectName: string) {
@@ -315,9 +322,6 @@ export class Builder {
     const packageJson = this.getProjectPackageJson(projectName);
 
     const filteredDependencies = await this.filterIgnoredDependencies(projectName, flattenDependencies);
-
-    // cache the old peer dependencies to check if changed
-    const oldPeerDependencies = packageJson.peerDependencies ?? {};
 
     packageJson.peerDependencies = (await Promise.all(filteredDependencies.map(async peerDependency => [ this.getPackageName(peerDependency), await this.getDependencyVersion(peerDependency) ])))
       .sort((aItem, bItem) => {
@@ -342,15 +346,7 @@ export class Builder {
       .reduce((map, item) => ({ ...map, ...item }), {});
 
     // only write the package.json file if some peer dependencies changed
-    if (
-      Object.keys(oldPeerDependencies).length !== Object.keys(packageJson.peerDependencies).length ||
-      Object.entries(oldPeerDependencies).some(([ name, version ]) => packageJson.peerDependencies[name] !== version) ||
-      Object.keys(packageJson.peerDependencies).some(name => !Object.keys(oldPeerDependencies).includes(name))
-    ) {
-      this.writeProjectPackageJson(projectName, packageJson);
-    } else {
-      console.info(`The package.json peer dependencies for the project '${projectName}' is not updated. No changes detected!`);
-    }
+    this.writeProjectPackageJson(projectName, packageJson);
 
   }
 
