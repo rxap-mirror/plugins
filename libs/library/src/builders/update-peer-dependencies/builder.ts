@@ -32,6 +32,9 @@ export class Builder {
   ) {
     this.rootPackageVersionMap = this.loadRootPackageVersionMap();
     this.projectGraph = createProjectGraph();
+    this.options.dependencies = this.options.dependencies ?? [];
+    this.options.dependencies.push('tslib');
+    this.options.dependencies = this.options.dependencies.filter(unique());
   }
 
   public static Run(
@@ -98,7 +101,7 @@ export class Builder {
     for (const dependency of knownDependencies) {
       if (!this.flattenDependenciesMap.has(dependency)) {
         const dependencies = await this.flattenDependencies(this.projectGraph.dependencies[dependency].map(dependency => dependency.target));
-        const filteredDependencies = await this.filterIgnoredDependencies(dependency, dependencies);
+        const filteredDependencies = await this.filterForPeerDependencies(dependency, dependencies);
         this.flattenDependenciesMap.set(dependency, filteredDependencies);
       }
       flattenDependencies.push(...this.flattenDependenciesMap.get(dependency)!);
@@ -125,6 +128,13 @@ export class Builder {
       } catch (e) {
         console.warn(`Could not remove ignore dependencies from '${dependency}' builder options: ${e.message}`);
       }
+    }
+    return dependencies.filter(dep => !ignore.some(regex => this.getPackageName(dep).match(regex)));
+  }
+
+  private async filterForPeerDependencies(dependency: string, dependencies: string[]): Promise<string[]> {
+    const ignore: Array<RegExp> = [];
+    if (!dependency.match(/^npm:/)) {
 
       const packageJson = this.getProjectPackageJson(dependency);
 
@@ -136,7 +146,8 @@ export class Builder {
         ignore.push(...dependenciesIgnore);
       }
     }
-    return dependencies.filter(dep => !ignore.some(regex => this.getPackageName(dep).match(regex)));
+    return (await this.filterIgnoredDependencies(dependency, dependencies))
+      .filter(dep => !ignore.some(regex => this.getPackageName(dep).match(regex)));
   }
 
   private getPackageName(dependencyName: string): string {
@@ -189,6 +200,35 @@ export class Builder {
     return packageJsonFile;
   }
 
+  private getProjectNgPackageJson(projectName: string): any {
+    return this.parseJsonFile(this.getProjectNgPackageJsonPath(projectName));
+  }
+
+  private getProjectNgPackageJsonPath(projectName: string): string {
+    const packageJsonFile = join(this.projectGraph.nodes[projectName].data.root, 'ng-package.json');
+
+    if (!existsSync(packageJsonFile)) {
+      throw new Error(`Could not find the ng-package.json file for the project '${projectName}'`);
+    }
+    return packageJsonFile;
+  }
+
+  private writeProjectNgPackageJson(projectName: string, ngPackageJson: any) {
+    const ngPackageJsonFile = join(this.projectGraph.nodes[projectName].data.root, 'ng-package.json');
+
+    if (!existsSync(ngPackageJsonFile)) {
+      throw new Error(`Could not find the ng-package.json file for the project '${projectName}'`);
+    }
+
+    const oldPackageJson = JSON.parse(readFileSync(ngPackageJsonFile).toString('utf-8'));
+
+    if (!equals(ngPackageJson, oldPackageJson)) {
+      writeFileSync(ngPackageJsonFile, JSON.stringify(ngPackageJson, undefined, 2));
+    } else {
+      console.info(`The ng-package.json peer dependencies for the project '${projectName}' is not updated. No changes detected!`);
+    }
+  }
+
   private writeProjectPackageJson(projectName: string, packageJson: PackageJson) {
     const packageJsonFile = join(this.projectGraph.nodes[projectName].data.root, 'package.json');
 
@@ -229,6 +269,14 @@ export class Builder {
       .reduce((map, item) => ({ ...map, ...item }), {});
   }
 
+  private updateNgPackage(projectName: string, dependencies: string[]) {
+    const root = this.getProjectNgPackageJson(projectName);
+
+    root.allowedNonPeerDependencies = dependencies;
+
+    this.writeProjectNgPackageJson(projectName, root);
+  }
+
   private async update(projectName: string) {
     const graphProjectDependency = this.projectGraph.dependencies[projectName];
 
@@ -242,14 +290,18 @@ export class Builder {
 
     const packageJson = this.getProjectPackageJson(projectName);
 
-    const projectPeerDependency = await this.filterIgnoredDependencies(projectName, flattenProjectDependencies);
-    const projectDependency = flattenProjectDependencies.filter(projectDependency => !projectPeerDependency.includes(projectDependency));
+    const projectPeerDependency = await this.filterForPeerDependencies(projectName, flattenProjectDependencies);
+    const projectDependency = await this.filterIgnoredDependencies(projectName, flattenProjectDependencies.filter(projectDependency => !projectPeerDependency.includes(projectDependency)));
+
+    projectDependency.push(...this.options.dependencies.map(dependency => [ 'npm', dependency ].join(':')));
 
     packageJson.peerDependencies = await this.mapToPackageDependencies(projectPeerDependency);
     packageJson.dependencies = await this.mapToPackageDependencies(projectDependency);
 
     // only write the package.json file if some peer dependencies changed
     this.writeProjectPackageJson(projectName, packageJson);
+
+    this.updateNgPackage(projectName, Object.keys(packageJson.dependencies));
 
   }
 
