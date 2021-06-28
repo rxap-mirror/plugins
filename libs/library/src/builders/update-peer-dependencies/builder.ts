@@ -213,6 +213,12 @@ export class Builder {
     return packageJsonFile;
   }
 
+  private hasProjectNgPackageJsonPath(projectName: string): boolean {
+    const packageJsonFile = join(this.projectGraph.nodes[projectName].data.root, 'ng-package.json');
+
+    return existsSync(packageJsonFile);
+  }
+
   private writeProjectNgPackageJson(projectName: string, ngPackageJson: any) {
     const ngPackageJsonFile = join(this.projectGraph.nodes[projectName].data.root, 'ng-package.json');
 
@@ -270,6 +276,11 @@ export class Builder {
   }
 
   private updateNgPackage(projectName: string, dependencies: string[]) {
+
+    if (!this.hasProjectNgPackageJsonPath(projectName)) {
+      return;
+    }
+
     const root = this.getProjectNgPackageJson(projectName);
 
     root.allowedNonPeerDependencies = dependencies;
