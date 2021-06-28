@@ -156,3 +156,4 @@ Option | Type | Default | Description
 Option | Type | Default | Description
 --- | --- | --- | ---
 ignore | array |  | A list of package name regex that should not be included as peer dependencies
+dependencies | array |  | A list of package name should be included as dependencies

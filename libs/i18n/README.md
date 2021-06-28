@@ -78,4 +78,4 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 availableLanguages | array |  | 
 defaultLanguage | string |  | 
-assets | array |  | 
+assets |  |  | 
