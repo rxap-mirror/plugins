@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.4.0-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.3.2...@rxap/plugin-library@12.4.0-next.0) (2021-06-28)
+
+
+### Bug Fixes
+
+* **update-package-dependencies:** only update ng-package if exists ([0374698](https://gitlab.com/rxap/schematics/commit/0374698b552356409336b4389e09b16b44746f57))
+
+
+### Features
+
+* **update-package-dependencies:** add option dependencies ([c7c7fd8](https://gitlab.com/rxap/schematics/commit/c7c7fd83d3f143508009d3af34ed1daac37d90a2))
+
+
+
+
+
 ## [12.3.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.3.1...@rxap/plugin-library@12.3.2) (2021-06-23)
 
 **Note:** Version bump only for package @rxap/plugin-library
