@@ -1,8 +1,9 @@
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { BuildBuilderSchema } from './schema';
-import { copyFileSync, existsSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { basename, join } from 'path';
 import { compile } from 'handlebars';
+import { copy } from 'fs-extra';
 
 export interface Target extends Record<string, any> {
   project: string;
@@ -99,20 +100,33 @@ export class Builder {
     return outputPath;
   }
 
+  private async copyFiles(pathList: string[]) {
+    const outputPath = await this.getOutputPath();
+    await Promise.all(pathList.map(async assetPath => {
+      const assetOutputPath = join(outputPath, basename(assetPath));
+      try {
+        await copy(assetPath, assetOutputPath);
+      } catch (e) {
+        console.error(`Could not copy assets '${assetPath}' to '${outputPath}': ${e.message}`);
+      }
+    }));
+  }
+
   private async copyAssets() {
 
     if (Array.isArray(this.options.assets) && this.options.assets.length) {
+      await this.copyFiles(this.options.assets);
+    } else if (typeof this.options.assets === 'boolean' && this.options.assets) {
 
-      const outputPath = await this.getOutputPath();
+      const buildOptions = await this.context.getTargetOptions({
+        project: this.context.target.project,
+        target: 'build'
+      });
 
-      for (const assetPath of this.options.assets) {
-        const assetOutputPath = join(outputPath, basename(assetPath));
-        try {
-          copyFileSync(assetPath, assetOutputPath);
-        } catch (e) {
-          console.error(`Could not copy assets '${assetPath}' to '${outputPath}': ${e.message}`);
-          throw e;
-        }
+      if (Array.isArray(buildOptions.assets) && buildOptions.assets.length) {
+        await this.copyFiles(buildOptions.assets as string[]);
+      } else {
+        console.info('Skip assets copy. The build target of this project has no assets specified.');
       }
 
     } else {
