@@ -1,3 +1,7 @@
+> If not using the `ng add` command, but using a normal yarn or npm installation. Make sure that the @localazy/cli package is available in the workspace environment. To be sure, install the package in the workspace with `yarn add -D @localazy/cli`.
+
+## Usage
+
 > Depending on your workspace configuration, the command `nx` must be replaced by `ng` and the file `workspace.json` by `angular.json`.
 
 Executing the `nx g @rxap/plugin-localazy:config --project [projectName]` scheme adds
