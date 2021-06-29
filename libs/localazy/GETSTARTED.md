@@ -46,3 +46,11 @@ list run the schematic `nx g @rxap/plugin-localazy:config --project [projectName
 package `@rxap/plugin-localazy` is not yet added to the workspace run the
 command `nx add @rxap/plugin-localazy --project [projectName]`.
 
+## Environment Variables
+
+In a CI environment, it is quite convenient to set the writeKey and readKey with environment variables.
+
+When using the download and upload builders, the writeKey and readKey can be set with the environment
+variables: `LOCALAZY_WRITE_KEY` and `LOCALAZY_READ_KEY`.
+
+> If the Builder option writeKey or readKey is defined, the environment variables override these values.
