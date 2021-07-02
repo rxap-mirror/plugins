@@ -40,6 +40,7 @@
             "main": "libs/library-schematics/src/index.ts",
             "assets": [
               "libs/library-schematics/*.md",
+              "libs/library-schematics/LICENSE",
               {
                 "input": "./libs/library-schematics/src",
                 "glob": "**/*.!(ts)",
@@ -144,6 +145,7 @@
             "main": "libs/pack/src/index.ts",
             "assets": [
               "libs/pack/*.md",
+              "libs/pack/LICENSE",
               {
                 "input": "./libs/pack/src",
                 "glob": "**/*.!(ts)",
@@ -258,6 +260,7 @@
             "main": "libs/scss-bundle/src/index.ts",
             "assets": [
               "libs/scss-bundle/*.md",
+              "libs/scss-bundle/LICENSE",
               {
                 "input": "./libs/scss-bundle/src",
                 "glob": "**/*.!(ts)",
@@ -379,6 +382,7 @@
             "main": "libs/readme-generator/src/index.ts",
             "assets": [
               "libs/readme-generator/*.md",
+              "libs/readme-generator/LICENSE",
               {
                 "input": "./libs/readme-generator/src",
                 "glob": "**/*.!(ts)",
@@ -497,6 +501,7 @@
             "main": "libs/kaniko/src/index.ts",
             "assets": [
               "libs/kaniko/*.md",
+              "libs/kaniko/LICENSE",
               {
                 "input": "./libs/kaniko/src",
                 "glob": "**/*.!(ts)",
@@ -610,6 +615,7 @@
             "main": "libs/library-publish/src/index.ts",
             "assets": [
               "libs/library-publish/*.md",
+              "libs/library-publish/LICENSE",
               {
                 "input": "./libs/library-publish/src",
                 "glob": "**/*.!(ts)",
@@ -717,6 +723,7 @@
             "main": "libs/i18n/src/index.ts",
             "assets": [
               "libs/i18n/*.md",
+              "libs/i18n/LICENSE",
               {
                 "input": "./libs/i18n/src",
                 "glob": "**/*.!(ts)",
@@ -827,7 +834,8 @@
             "packageJson": "libs/build-info/package.json",
             "main": "libs/build-info/src/index.ts",
             "assets": [
-              "libs/build-info/*.md"
+              "libs/build-info/*.md",
+              "libs/build-info/LICENSE"
             ],
             "buildableProjectDepsInPackageJsonType": "dependencies"
           }
@@ -919,6 +927,7 @@
             "main": "libs/localazy/src/index.ts",
             "assets": [
               "libs/localazy/*.md",
+              "libs/localazy/LICENSE",
               {
                 "input": "./libs/localazy/src",
                 "glob": "**/*.!(ts)",
@@ -1025,6 +1034,7 @@
             "main": "libs/library/src/index.ts",
             "assets": [
               "libs/library/*.md",
+              "libs/library/LICENSE",
               {
                 "input": "./libs/library",
                 "glob": "builders.json",
