@@ -1376,6 +1376,17 @@
     strip-json-comments "^3.1.1"
     tslib "^2.0.0"
 
+"@nrwl/devkit@12.5.7":
+  version "12.5.7"
+  resolved "https://registry.yarnpkg.com/@nrwl/devkit/-/devkit-12.5.7.tgz#9f49ae2b884f0b440bda79ffedfae984c878827f"
+  integrity sha512-zVH8edxO59GeOzmwcw6qBpQVT0yX9aHdhP5/XAUgPOYINdHIDMy1IZHyhb19fefT4Ju6wUil+1L9g9KvUpULcw==
+  dependencies:
+    "@nrwl/tao" "12.5.7"
+    ejs "^3.1.5"
+    ignore "^5.0.4"
+    semver "7.3.4"
+    tslib "^2.0.0"
+
 "@nrwl/eslint-plugin-nx@12.3.6":
   version "12.3.6"
   resolved "https://registry.yarnpkg.com/@nrwl/eslint-plugin-nx/-/eslint-plugin-nx-12.3.6.tgz#e92247d3e06dd4d8ef20ad1258329cd44b40a7de"
@@ -1403,6 +1414,17 @@
   integrity sha512-okDJxYVnxlgb/WNyp7eYCQzOSQkTVizLf5zeoyB1alt4iUUQmFSpww+FU8Jp1zEwZ9EbAWbKSKD1YwEt6g6ZTQ==
   dependencies:
     "@nrwl/devkit" "12.3.6"
+    glob "7.1.4"
+    minimatch "3.0.4"
+    tmp "~0.2.1"
+    tslib "^2.0.0"
+
+"@nrwl/linter@^12.3.6":
+  version "12.5.7"
+  resolved "https://registry.yarnpkg.com/@nrwl/linter/-/linter-12.5.7.tgz#511346bc7aa82890ff8c4b2b72cab42b2b3e6af8"
+  integrity sha512-+fPN2rWZ7YfUdax+NcHtqQibDEUOd/XGb/DdFZ+fP+E6lJQLzpRXAOdJI3cYpkUo8sG3ClPyLdjleWKPE8REyA==
+  dependencies:
+    "@nrwl/devkit" "12.5.7"
     glob "7.1.4"
     minimatch "3.0.4"
     tmp "~0.2.1"
@@ -1462,6 +1484,22 @@
     rxjs-for-await "0.0.2"
     semver "7.3.4"
     strip-json-comments "^3.1.1"
+    tmp "~0.2.1"
+    tslib "^2.0.0"
+    yargs-parser "20.0.0"
+
+"@nrwl/tao@12.5.7":
+  version "12.5.7"
+  resolved "https://registry.yarnpkg.com/@nrwl/tao/-/tao-12.5.7.tgz#007e0ee743230cbfc18eae8aabba2aace8b3488d"
+  integrity sha512-H3kxmbPxYV3qG8TkjjqyLFVBW6Np1Ft3+iaoXr0Agh88I3oJhuxVFKHdclahAVGy76VtVjvnXr8lc4J9/6E0cA==
+  dependencies:
+    chalk "4.1.0"
+    enquirer "~2.3.6"
+    fs-extra "^9.1.0"
+    jsonc-parser "3.0.0"
+    rxjs "^6.5.4"
+    rxjs-for-await "0.0.2"
+    semver "7.3.4"
     tmp "~0.2.1"
     tslib "^2.0.0"
     yargs-parser "20.0.0"
@@ -1634,10 +1672,12 @@
     "@rxap/schematics-utilities" "^12.3.3"
     handlebars "^4.7.7"
 
-"@rxap/schematics-ts-morph@^12.0.7":
-  version "12.0.7"
-  resolved "https://registry.yarnpkg.com/@rxap/schematics-ts-morph/-/schematics-ts-morph-12.0.7.tgz#4790f45ee41297bacad275ff6ded88b7052ce989"
-  integrity sha512-mZZNKaqZEIFiWrrcUtZEAc0eF37rWrT+YLQ3AySyPfLhpFrXB8FiBpX44awoty8qMr61Te9NXq6wr3Bl+U22yw==
+"@rxap/schematics-ts-morph@^12.2.0-next.0":
+  version "12.2.0-next.0"
+  resolved "https://registry.yarnpkg.com/@rxap/schematics-ts-morph/-/schematics-ts-morph-12.2.0-next.0.tgz#047cb2649059401bb3b56cf5cb0bf7dfd32d1fa1"
+  integrity sha512-JvNHq8W1nh8EUlvVv75I2Hzy1uw3H7rD8yxrsyTEzCLKvZ81HkDvqCxfxahWJfTlNHsoKTsZLEpr6rYKdBg+2A==
+  dependencies:
+    "@rxap/utilities" "^12.0.3"
 
 "@rxap/schematics-utilities@^12.1.0", "@rxap/schematics-utilities@^12.3.4":
   version "12.3.4"
@@ -1651,16 +1691,18 @@
   dependencies:
     tslib "^2.0.0"
 
-"@rxap/schematics@^12.5.2":
-  version "12.5.2"
-  resolved "https://registry.yarnpkg.com/@rxap/schematics/-/schematics-12.5.2.tgz#60ac9c18ce7323220571306976beee13f57faebf"
-  integrity sha512-kFlnojLnV+/Xy1bZuXU4Pj2D5wwEX406kUAbQAx8TowLF628T+5rogetzVHtTTVfLw7yz9DtaZkxFThAOMAzSw==
+"@rxap/schematics@^12.7.0-next.1":
+  version "12.7.0-next.1"
+  resolved "https://registry.yarnpkg.com/@rxap/schematics/-/schematics-12.7.0-next.1.tgz#f8306c209b01500e32377b441d837fb946846810"
+  integrity sha512-c6PXaSAtt+KtMUlQLA/Vt4VopIcfPuVlqOrS7iVp9bkPCgW50DNC4u2epxysznjjL4jOy7Q0PNLTBJkn5CYRUA==
   dependencies:
-    "@rxap/schematics-ts-morph" "^12.0.7"
+    "@nrwl/linter" "^12.3.6"
+    "@nrwl/workspace" "^12.3.6"
+    "@rxap/schematics-ts-morph" "^12.2.0-next.0"
     "@rxap/utilities" "^12.0.3"
     "@rxap/xml-parser" "^12.0.3"
+    parse5 "^6.0.1"
     ts-morph "^11.0.0"
-    typescript "^4.2.4"
 
 "@rxap/utilities@^12.0.3":
   version "12.0.3"
@@ -7536,7 +7578,7 @@ parse-url@^5.0.0:
     parse-path "^4.0.0"
     protocols "^1.4.0"
 
-parse5@6.0.1:
+parse5@6.0.1, parse5@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
   integrity sha512-Ofn/CTFzRGTTxwpNEs9PP93gXShHcTq255nzRYSKe8AkVpZY7e1fpmTfOyoIvjP5HG7Z2ZM7VS9PPhQGW2pOpw==
