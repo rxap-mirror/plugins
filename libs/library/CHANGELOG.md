@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.4.0-next.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.4.0-next.0...@rxap/plugin-library@12.4.0-next.1) (2021-07-08)
+
+
+### Bug Fixes
+
+* include hidden files in schematics files folder ([028450e](https://gitlab.com/rxap/schematics/commit/028450e11e0f0caeec7ace91e84d45a606ff2dad))
+
+
+
+
+
 # [12.4.0-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.3.2...@rxap/plugin-library@12.4.0-next.0) (2021-06-28)
 
 

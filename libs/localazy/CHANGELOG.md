@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.19-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@12.0.18...@rxap/plugin-localazy@12.0.19-next.0) (2021-07-08)
+
+
+### Bug Fixes
+
+* install @localazy/cli on ng-add ([c004fc2](https://gitlab.com/rxap/schematics/commit/c004fc21351245ef943fc59e345a238c1944b9bb))
+
+
+
+
+
 ## [12.0.18](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@12.0.17...@rxap/plugin-localazy@12.0.18) (2021-06-23)
 
 **Note:** Version bump only for package @rxap/plugin-localazy
