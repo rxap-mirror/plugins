@@ -129,12 +129,13 @@ Option | Type | Default | Description
 tsConfig | string |  | The name of the Typescript configuration file.
 outputPath | string |  | The output path of the generated files.
 assets | array |  | List of static library assets.
-type | string | schematics | 
+type | string |  | 
 
 | Required |
 | --- |
 | tsConfig |
 | outputPath |
+| type |
 ## update-package-group
 > Updates the package-group in the project package.json
 
