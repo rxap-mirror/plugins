@@ -26,13 +26,13 @@
         "migrations",
         "schematics",
         "builders"
-      ],
-      "default": "schematics"
+      ]
     }
   },
   "required": [
     "tsConfig",
-    "outputPath"
+    "outputPath",
+    "type"
   ],
   "definitions": {
     "assetPattern": {

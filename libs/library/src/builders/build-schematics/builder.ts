@@ -63,6 +63,7 @@ export class Builder {
       input: `./${projectRoot}/src/${this.options.type}`,
       glob: '**/files/**',
       output: `./src/${this.options.type}`,
+      dot: true,
       ignore: []
     });
 
