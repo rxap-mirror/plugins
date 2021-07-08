@@ -128,6 +128,17 @@ export class Builder {
       } catch (e) {
         console.warn(`Could not remove ignore dependencies from '${dependency}' builder options: ${e.message}`);
       }
+
+      const packageJson = this.getProjectPackageJson(dependency);
+
+      if (packageJson.devDependencies) {
+        const dependenciesIgnore = Object
+          .keys(packageJson.devDependencies)
+          .map(dep => new RegExp(`${dep.replace(/\//g, '\\/')}`));
+
+        ignore.push(...dependenciesIgnore);
+      }
+
     }
     return dependencies.filter(dep => !ignore.some(regex => this.getPackageName(dep).match(regex)));
   }
@@ -141,6 +152,13 @@ export class Builder {
       if (packageJson.dependencies) {
         const dependenciesIgnore = Object
           .keys(packageJson.dependencies)
+          .map(dep => new RegExp(`${dep.replace(/\//g, '\\/')}`));
+
+        ignore.push(...dependenciesIgnore);
+      }
+      if (packageJson.devDependencies) {
+        const dependenciesIgnore = Object
+          .keys(packageJson.devDependencies)
           .map(dep => new RegExp(`${dep.replace(/\//g, '\\/')}`));
 
         ignore.push(...dependenciesIgnore);
