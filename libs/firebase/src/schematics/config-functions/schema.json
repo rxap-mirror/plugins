@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "firebase-config-functions",
+  "title": "ConfigFunctions",
+  "type": "object",
+  "properties": {
+    "project": {
+      "type": "string",
+      "description": "The name of the functions project",
+      "default": "functions"
+    },
+    "initial": {
+      "visible": false,
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "project"
+  ]
+}

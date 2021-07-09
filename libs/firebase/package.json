@@ -1,0 +1,30 @@
+{
+  "name": "@rxap/plugin-firebase",
+  "version": "12.0.0",
+  "schematics": "./collection.json",
+  "ng-update": {
+    "migrations": "./migration.json",
+    "packageGroup": [
+      "@rxap/plugin-firebase"
+    ]
+  },
+  "builders": "./builders.json",
+  "ng-add": {
+    "save": "dependencies"
+  },
+  "private": false,
+  "author": "Merzough Münker",
+  "homepage": "https://gitlab.com/rxap/plugins/-/blob/master/libs/firebase",
+  "repository": "git@gitlab.com:rxap/schematics.git",
+  "keywords": [],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://gitlab.com/rxap/plugins/-/issues",
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
+  },
+  "publishConfig": {
+    "directory": "../../dist/libs/firebase",
+    "access": "public"
+  },
+  "peerDependencies": {}
+}

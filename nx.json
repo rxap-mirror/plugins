@@ -52,6 +52,9 @@
     },
     "library": {
       "tags": []
+    },
+    "firebase": {
+      "tags": []
     }
   }
 }

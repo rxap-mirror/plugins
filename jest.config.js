@@ -9,6 +9,7 @@ module.exports = {
     '<rootDir>/libs/i18n',
     '<rootDir>/libs/build-info',
     '<rootDir>/libs/localazy',
-    '<rootDir>/libs/library'
+    '<rootDir>/libs/library',
+    '<rootDir>/libs/firebase'
   ],
 };

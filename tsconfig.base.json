@@ -50,6 +50,9 @@
       ],
       "@rxap/plugin-library": [
         "libs/library/src/index.ts"
+      ],
+      "@rxap/plugin-firebase-functions": [
+        "libs/firebase/src/index.ts"
       ]
     }
   },

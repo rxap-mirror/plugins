@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "firebase-init-functions",
+  "title": "InitFunctions",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the functions project",
+      "default": "functions"
+    }
+  },
+  "required": []
+}
