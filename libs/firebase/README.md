@@ -8,7 +8,7 @@
 ![npm](https://img.shields.io/npm/dm/@rxap/plugin-firebase)
 ![NPM](https://img.shields.io/npm/l/@rxap/plugin-firebase)
 
-> 
+> A Nx/Ng plugin for configuring and building firebase features
 
 - [Installation](#installation)
 - [Schematics](#schematics)
