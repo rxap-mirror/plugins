@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-firebase",
-  "version": "12.0.1",
+  "version": "12.0.2",
   "schematics": "./collection.json",
   "description": "A Nx/Ng plugin for configuring and building firebase features",
   "ng-update": {
@@ -33,11 +33,11 @@
     "directory": "../../dist/libs/firebase",
     "access": "public"
   },
-  "peerDependencies": {},
   "dependencies": {
-    "tslib": "^2.0.0",
     "@angular-devkit/core": "^12.0.3",
     "@angular-devkit/schematics": "^12.0.3",
-    "@rxap/schematics-utilities": "^12.4.1"
-  }
+    "@rxap/schematics-utilities": "^12.4.1",
+    "tslib": "^2.0.0"
+  },
+  "peerDependencies": {}
 }
