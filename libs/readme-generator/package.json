@@ -39,8 +39,9 @@
     "@angular-devkit/core": "^12.0.3",
     "@angular-devkit/schematics": "^12.0.3",
     "@nrwl/workspace": "^12.3.6",
-    "@rxap/schematics-utilities": "^12.3.3",
-    "handlebars": "^4.7.7"
+    "@rxap/schematics-utilities": "^12.4.0",
+    "handlebars": "^4.7.7",
+    "tslib": "^2.0.0"
   },
   "private": false,
   "ng-add": {

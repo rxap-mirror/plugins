@@ -39,7 +39,8 @@
   "dependencies": {
     "@angular-devkit/architect": "^0.1200.3",
     "@angular-devkit/schematics": "^12.0.3",
-    "@rxap/schematics-utilities": "^12.3.3"
+    "@rxap/schematics-utilities": "^12.4.0",
+    "tslib": "^2.0.0"
   },
   "peerDependencies": {}
 }
