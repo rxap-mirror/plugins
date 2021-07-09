@@ -2,6 +2,7 @@
   "name": "@rxap/plugin-firebase",
   "version": "12.0.1",
   "schematics": "./collection.json",
+  "description": "A Nx/Ng plugin for configuring and building firebase features",
   "ng-update": {
     "migrations": "./migration.json",
     "packageGroup": [
@@ -16,7 +17,13 @@
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/-/blob/master/libs/firebase",
   "repository": "git@gitlab.com:rxap/schematics.git",
-  "keywords": [],
+  "keywords": [
+    "rxap",
+    "plugin",
+    "nrwl",
+    "firebase",
+    "automation"
+  ],
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",
@@ -26,12 +33,11 @@
     "directory": "../../dist/libs/firebase",
     "access": "public"
   },
-  "peerDependencies": {
+  "peerDependencies": {},
+  "dependencies": {
+    "tslib": "^2.0.0",
     "@angular-devkit/core": "^12.0.3",
     "@angular-devkit/schematics": "^12.0.3",
     "@rxap/schematics-utilities": "^12.4.1"
-  },
-  "dependencies": {
-    "tslib": "^2.0.0"
   }
 }
