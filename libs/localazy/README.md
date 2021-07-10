@@ -111,6 +111,9 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | The name of the project.
 extractTarget | string |  | The target that extracts or generate the translation source file.
+writeKey | string |  | The localazy write key.
+readKey | string |  | The localazy read key.
+overwrite | boolean | false | Whether to overwrite existing files.
 
 | Required |
 | --- |

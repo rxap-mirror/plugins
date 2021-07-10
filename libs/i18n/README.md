@@ -47,7 +47,9 @@ Option | Type | Default | Description
 project | string |  | The name of the project.
 availableLanguages | array |  | 
 assets | array |  | 
-defaultLanguage | string |  | 
+defaultLanguage | string | en | The project default language code
+sourceLocale | string | en-US | The source locale code use in the project.
+overwrite | boolean | false | Whether to overwrite existing files.
 
 | Required |
 | --- |
