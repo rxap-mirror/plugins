@@ -6,46 +6,31 @@ import {
   mergeWith,
   Rule,
   SchematicsException,
-  Tree,
   url
 } from '@angular-devkit/schematics';
 import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
-import { getWorkspace } from '@schematics/angular/utility/workspace';
 import { applyTemplates } from '@angular-devkit/schematics/src/rules/template';
-
-export async function GetProjectBasePath(host: Tree, project: string) {
-  let projectBasePath = join('apps', project);
-  const projectName = project;
-  const workspace = await getWorkspace(host);
-
-  const hasProject = workspace.projects.has(projectName);
-
-  if (hasProject) {
-    console.log(`Project '${projectName}' already exists`);
-    projectBasePath = workspace.projects.get(projectName)!.root;
-  } else {
-    throw new Error('Could not find the project');
-  }
-  return projectBasePath;
-}
+import { GetProjectSourceRoot } from '@rxap/schematics-utilities';
+import { UpdateEnvFile } from './update-env-file';
 
 export default function(options: ConfigSchema): Rule {
 
   return async host => {
 
-    const projectBasePath = await GetProjectBasePath(host, options.project);
-    // TODO : extract the project src root from angular.json
-    const sourceRoot = join(projectBasePath, 'src');
+    const projectSourceRoot = GetProjectSourceRoot(host, options.project);
 
     let hasPackTarget: boolean | null = null;
 
     return chain([
       mergeWith(apply(url('./files'), [
-        applyTemplates({ sourceRoot }),
+        applyTemplates({ sourceRoot: projectSourceRoot }),
         forEach(entry => {
           if (host.exists(entry.path)) {
+            if (options.overwrite) {
+              host.overwrite(entry.path, entry.content);
+            }
             return null;
           }
           return entry;
@@ -79,6 +64,12 @@ export default function(options: ConfigSchema): Rule {
             options: buildOptions
           });
         }
+        if (options.overwrite) {
+          if (options.extractTarget) {
+            const buildTarget = project.targets.get('localazy-upload');
+            buildTarget!.options.extractTarget = options.extractTarget;
+          }
+        }
 
         if (project.targets.has('extract-i18n')) {
           const extractI18n = project.targets.get('extract-i18n')!;
@@ -105,7 +96,7 @@ export default function(options: ConfigSchema): Rule {
         }
       },
       tree => {
-        const i18nGitIgnoreFilePath = join(sourceRoot, '.gitignore');
+        const i18nGitIgnoreFilePath = join(projectSourceRoot, '.gitignore');
         if (!tree.exists(i18nGitIgnoreFilePath)) {
           tree.create(i18nGitIgnoreFilePath, '');
         }
@@ -114,7 +105,8 @@ export default function(options: ConfigSchema): Rule {
           i18nGitIgnoreContent += '\n/i18n';
         }
         tree.overwrite(i18nGitIgnoreFilePath, i18nGitIgnoreContent);
-      }
+      },
+      UpdateEnvFile(options)
     ]);
 
   };

@@ -1649,7 +1649,7 @@
   resolved "https://registry.yarnpkg.com/@rxap/schematics-utilities/-/schematics-utilities-12.3.4.tgz#f667cd449d662097dcdf085f8de1faae5166236d"
   integrity sha512-geh9/2MkmtKfpLZcANo0bjRqmkH9DjgLgZc3C0cN0xewMQy3+f8mzsjatvK3z6uDgEcKIK/6gTlHcePNuW8pjw==
 
-"@rxap/schematics-utilities@^12.4.0", "@rxap/schematics-utilities@^12.4.1":
+"@rxap/schematics-utilities@^12.4.0":
   version "12.4.1"
   resolved "https://registry.yarnpkg.com/@rxap/schematics-utilities/-/schematics-utilities-12.4.1.tgz#b4baf2793244683d90b8b039b1c012c17d2c0be1"
   integrity sha512-MrkXY2eEuGiA15DjJ1Na4qudebdff6Wsp3X4t4oyEsyVD6ldyHvzgg3TFv3SjdYOF3VeiUSWuWP3bXpN7It79w==
@@ -1657,15 +1657,26 @@
     "@rxap/utilities" "^12.2.0"
     semver "^7.3.5"
 
-"@rxap/schematics@^12.8.1":
-  version "12.8.1"
-  resolved "https://registry.yarnpkg.com/@rxap/schematics/-/schematics-12.8.1.tgz#58fbb629729313e182cf0c19506f53cf260d5ff9"
-  integrity sha512-FIiCIOauYoYG9jIxnno2prlhfxW8E/GWnfSivp86aMG1KpTpR/kXR8Kl/uJg63CA+6lLv55FIVcNd0+9HOc7kg==
+"@rxap/schematics-utilities@^12.5.0":
+  version "12.5.0"
+  resolved "https://registry.yarnpkg.com/@rxap/schematics-utilities/-/schematics-utilities-12.5.0.tgz#07e0816afb496de5cd6e9ae62dd5810b48a98f6f"
+  integrity sha512-m8P/yXM7s8gmQX4j2qjIIX6XG6qCf+PBVhBqPF+6SBnZKvKiSPhLzSwtEVGiBIFOi/sf+pDYCEydsuWIcurL7Q==
+  dependencies:
+    "@rxap/utilities" "^12.2.0"
+    semver "^7.3.5"
+    tslib "^2.0.0"
+
+"@rxap/schematics@^12.8.8":
+  version "12.8.8"
+  resolved "https://registry.yarnpkg.com/@rxap/schematics/-/schematics-12.8.8.tgz#df7eb350cdcbdaccc9f37698df147a4a45d11d47"
+  integrity sha512-3pYXWOmFXDb5ZkoFiK5nhxakHc0rLadaG2XjafiYU6Ky1Uoe10vk5bCQf6Vcg+srKFrJcD1rk40bO9E/9dkD4A==
   dependencies:
     "@rxap/schematics-ts-morph" "^12.2.0"
     "@rxap/utilities" "^12.2.0"
     parse5 "^6.0.1"
     ts-morph "^11.0.0"
+    tslib "^2.0.0"
+    typescript "^4.2.4"
 
 "@rxap/utilities@^12.0.3":
   version "12.0.3"
@@ -8298,7 +8309,7 @@ rxjs-for-await@0.0.2:
   resolved "https://registry.yarnpkg.com/rxjs-for-await/-/rxjs-for-await-0.0.2.tgz#26598a1d6167147cc192172970e7eed4e620384b"
   integrity sha512-IJ8R/ZCFMHOcDIqoABs82jal00VrZx8Xkgfe7TOKoaRPAW5nH/VFlG23bXpeGdrmtqI9UobFPgUKgCuFc7Lncw==
 
-rxjs@6.6.7, rxjs@^6.5.4, rxjs@^6.6.0, rxjs@^6.6.6:
+rxjs@6.6.7, rxjs@^6.5.4, rxjs@^6.5.5, rxjs@^6.6.0, rxjs@^6.6.6:
   version "6.6.7"
   resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.7.tgz#90ac018acabf491bf65044235d5863c4dab804c9"
   integrity sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ==

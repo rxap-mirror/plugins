@@ -12,11 +12,27 @@
         "$source": "argv",
         "index": 0
       },
-      "x-prompt": "For which project should the pack builder be added?"
+      "x-prompt": "For which project should the localazy builder be added?"
     },
     "extractTarget": {
       "type": "string",
       "description": "The target that extracts or generate the translation source file."
+    },
+    "writeKey": {
+      "type": "string",
+      "description": "The localazy write key.",
+      "x-prompt": "(optional) Enter the localazy write key. This key will be added to the .env file."
+    },
+    "readKey": {
+      "type": "string",
+      "description": "The localazy read key.",
+      "x-prompt": "(optional) Enter the localazy read key. This key will be added to the .env file."
+    },
+    "overwrite": {
+      "type": "boolean",
+      "description": "Whether to overwrite existing files.",
+      "default": false,
+      "x-prompt": "Should the schematic overwrite existing files?"
     }
   },
   "required": [
