@@ -8,46 +8,44 @@ import {
   Rule,
   SchematicsException,
   template,
-  Tree,
   url
 } from '@angular-devkit/schematics';
 import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
-import { getWorkspace } from '@schematics/angular/utility/workspace';
-import { UpdateAngularJson } from '@rxap/schematics-utilities';
-
-export async function GetProjectBasePath(host: Tree, project: string) {
-  let projectBasePath = join('apps', project);
-  const projectName   = project;
-  const workspace     = await getWorkspace(host);
-
-  const hasProject = workspace.projects.has(projectName);
-
-  if (hasProject) {
-    console.log(`Project '${projectName}' already exists`);
-    projectBasePath = workspace.projects.get(projectName)!.root;
-  } else {
-    throw new Error('Could not find the project');
-  }
-  return projectBasePath;
-}
+import {
+  AddPackageJsonDependency,
+  GetPackageJson,
+  GetProjectSourceRoot,
+  UpdateAngularJson
+} from '@rxap/schematics-utilities';
+import { NodePackageInstallTask, RunSchematicTask } from '@angular-devkit/schematics/tasks';
 
 export default function(options: ConfigSchema): Rule {
 
+  if (!options.availableLanguages) {
+    options.availableLanguages = [];
+  }
+
+  if (!options.availableLanguages.includes(options.defaultLanguage)) {
+    options.availableLanguages.push(options.defaultLanguage);
+  }
+
   return async host => {
 
-    const projectBasePath = await GetProjectBasePath(host, options.project);
+    const projectSourceRoot = GetProjectSourceRoot(host, options.project);
 
     let hasPackTarget: boolean | null = null;
 
     return chain([
       mergeWith(apply(url('./files'), [
         template({}),
-        // TODO : extract the project src root from angular.json
-        move(join(projectBasePath, 'src')),
+        move(projectSourceRoot),
         forEach(entry => {
           if (host.exists(entry.path)) {
+            if (options.overwrite) {
+              host.overwrite(entry.path, entry.content);
+            }
             return null;
           }
           return entry;
@@ -60,23 +58,25 @@ export default function(options: ConfigSchema): Rule {
           throw new Error('Could not extract target project.');
         }
 
-        if (project.targets.has('i18n')) {
-
-          console.log('Plugin in is already configured.');
-
-        } else {
+        if (!project.targets.has('i18n')) {
 
           project.targets.add({
-            name:    'i18n',
+            name: 'i18n',
             builder: '@rxap/plugin-i18n:build',
             options: {
-              availableLanguages: options.availableLanguages ?? [ 'en' ],
-              defaultLanguage: options.defaultLanguage ?? 'en',
-              indexHtmlTemplate: join(projectBasePath, 'src', 'i18n.index.html.hbs'),
+              availableLanguages: options.availableLanguages,
+              defaultLanguage: options.defaultLanguage,
+              indexHtmlTemplate: join(projectSourceRoot, 'i18n.index.html.hbs'),
               assets: options.assets ?? []
             }
           });
 
+        } else if (options.overwrite) {
+          const i18nTarget = project.targets.get('i18n');
+          i18nTarget.options.availableLanguages = options.availableLanguages;
+          i18nTarget.options.defaultLanguage = options.defaultLanguage;
+          i18nTarget.options.assets = options.assets ?? [];
+          i18nTarget.options.indexHtmlTemplate = join(projectSourceRoot, 'i18n.index.html.hbs');
         }
 
         if (project.targets.has('extract-i18n')) {
@@ -91,7 +91,9 @@ export default function(options: ConfigSchema): Rule {
         if (project.targets.has('build')) {
           const build = project.targets.get('build');
           if (build.configurations.production) {
-            build.configurations.production.localize = options.availableLanguages ?? [];
+            if (!build.configurations.production.localize || options.overwrite) {
+              build.configurations.production.localize = options.availableLanguages ?? [];
+            }
           }
         }
 
@@ -106,17 +108,21 @@ export default function(options: ConfigSchema): Rule {
           throw new Error('Could not extract target project.');
         }
 
-        if (!project.i18n.sourceLocale) {
-          project.i18n.sourceLocale = 'en-US';
+        if (!project.i18n.sourceLocale || options.overwrite) {
+          project.i18n.sourceLocale = options.sourceLocale;
         }
 
-        project.i18n.locales = {} as any;
+        if (!project.i18n.locales || options.overwrite) {
+          project.i18n.locales = {} as any;
+        }
 
         for (const lang of options.availableLanguages) {
-          project.i18n.locales[lang] = {
-            baseHref: `${lang}/`,
-            translation: join(project.sourceRoot, 'i18n', `${lang}.xlf`)
-          };
+          if (!project.i18n.locales[lang] || options.overwrite) {
+            project.i18n.locales[lang] = {
+              baseHref: `${lang}/`,
+              translation: join(project.sourceRoot, 'i18n', `${lang}.xlf`)
+            };
+          }
         }
 
       }),
@@ -130,6 +136,20 @@ export default function(options: ConfigSchema): Rule {
             project: options.project,
             target: `${options.project}:i18n`
           });
+        }
+      },
+      (tree, context) => {
+        const rootPackageJson = GetPackageJson(tree);
+        const hasAngularLocalizePackage = Object.keys(rootPackageJson.dependencies ?? {}).includes('@angular/localize');
+        if (hasAngularLocalizePackage) {
+          return externalSchematic('@angular/localize', 'ng-add', { name: options.project, useAtRuntime: true });
+        } else {
+          AddPackageJsonDependency('@angular/localize')(tree, context);
+          const installTaskId = context.addTask(new NodePackageInstallTask());
+          context.addTask(new RunSchematicTask('@angular/localize', 'ng-add', {
+            name: options.project,
+            useAtRuntime: true
+          }), [ installTaskId ]);
         }
       }
     ]);
