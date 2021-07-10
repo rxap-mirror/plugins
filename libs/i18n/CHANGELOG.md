@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.3.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@12.2.0...@rxap/plugin-i18n@12.3.0) (2021-07-10)
+
+
+### Features
+
+* ensure angular localize is correctly configured ([8017b0a](https://gitlab.com/rxap/schematics/commit/8017b0ad0dc68e0cc319257dcfdad4fa12dc0d9e))
+
+
+
+
+
 # [12.2.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@12.2.0-next.0...@rxap/plugin-i18n@12.2.0) (2021-07-09)
 
 **Note:** Version bump only for package @rxap/plugin-i18n

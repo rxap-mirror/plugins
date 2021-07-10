@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.1.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@12.0.19...@rxap/plugin-localazy@12.1.0) (2021-07-10)
+
+
+### Features
+
+* update env file with read and write key ([26ad0a4](https://gitlab.com/rxap/schematics/commit/26ad0a480953f7ef942a41003e38fffae075d953))
+
+
+
+
+
 ## [12.0.19](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@12.0.19-next.0...@rxap/plugin-localazy@12.0.19) (2021-07-09)
 
 **Note:** Version bump only for package @rxap/plugin-localazy
