@@ -1,0 +1,10 @@
+{
+  "builders": {
+    "config": {
+      "description": "Copy all config files defined in the environment to the project dist folder",
+      "implementation": "./src/builders/config/index",
+      "schema": "./src/builders/config/schema.json"
+    }
+  },
+  "$schema": "../../node_modules/@angular-devkit/architect/src/builders-schema.json"
+}

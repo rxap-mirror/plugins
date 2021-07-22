@@ -1,0 +1,15 @@
+{
+  "schematics": {
+    "ng-add": {
+      "description": "Setup the package @rxap/plugin-config for the workspace.",
+      "factory": "./src/schematics/ng-add/index",
+      "schema": "./src/schematics/ng-add/schema.json"
+    },
+    "config": {
+      "description": "Adds the builder @rxap/plugin-config:config to the specified project",
+      "factory": "./src/schematics/config/index",
+      "schema": "./src/schematics/config/schema.json"
+    }
+  },
+  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json"
+}

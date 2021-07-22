@@ -10,6 +10,7 @@ module.exports = {
     '<rootDir>/libs/build-info',
     '<rootDir>/libs/localazy',
     '<rootDir>/libs/library',
-    '<rootDir>/libs/firebase'
+    '<rootDir>/libs/firebase',
+    '<rootDir>/libs/config'
   ],
 };
