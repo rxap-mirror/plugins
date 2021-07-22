@@ -10,13 +10,18 @@
   },
   "builders": "./builders.json",
   "ng-add": {
-    "save": "dependencies"
+    "save": "devDependencies"
   },
   "private": false,
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/-/blob/master/libs/config",
   "repository": "git@gitlab.com:rxap/schematics.git",
-  "keywords": [],
+  "keywords": [
+    "rxap",
+    "nrwl",
+    "plugin",
+    "config"
+  ],
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://gitlab.com/rxap/plugins/-/issues",
@@ -26,13 +31,12 @@
     "directory": "../../dist/libs/config",
     "access": "public"
   },
-  "peerDependencies": {
+  "peerDependencies": {},
+  "dependencies": {
+    "tslib": "^2.0.0",
     "@angular-devkit/architect": "^0.1200.3",
     "@angular-devkit/core": "^12.0.3",
     "@angular-devkit/schematics": "^12.0.3",
     "@rxap/schematics-utilities": "^12.5.0"
-  },
-  "dependencies": {
-    "tslib": "^2.0.0"
   }
 }
