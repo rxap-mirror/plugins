@@ -8,30 +8,26 @@ export default function(options: ConfigSchema): Rule {
       UpdateAngularProject((project) => {
         if (!project.targets.has('pack')) {
 
+          const targets: string[] = [];
+          const configurations: Record<string, { targets: string[] }> = {};
+
           if (project.targets.has('build')) {
 
-            project.targets.add('pack', {
-              builder: '@rxap/plugin-pack:build',
-              options: { targets: [ `${options.project}:build` ] }
-            });
+            targets.push(`${options.project}:build`);
 
             const buildTarget = project.targets.get('build')!;
 
             for (const configuration of Object.keys(buildTarget.configurations)) {
-              project.targets.add(`pack:${configuration}`, {
-                builder: '@rxap/plugin-pack:build',
-                options: { targets: [ `${options.project}:build:${configuration}` ] }
-              });
+              configurations[configuration] = { targets: [ `${options.project}:build:${configuration}` ] };
             }
 
-          } else {
-
-            project.targets.add('pack', {
-              builder: '@rxap/plugin-pack:build',
-              options: { targets: [] }
-            });
-
           }
+
+          project.targets.add('pack', {
+            builder: '@rxap/plugin-pack:build',
+            options: { targets },
+            configurations
+          });
 
         } else {
           console.warn(`The project '${options.project}' has already the builder pack.`);
