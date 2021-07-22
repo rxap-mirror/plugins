@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [12.2.0-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-pack@12.1.13...@rxap/plugin-pack@12.2.0-next.0) (2021-07-22)
+
+
+### Features
+
+* create for each config a pack config ([c06eff8](https://gitlab.com/rxap/schematics/commit/c06eff825b9cb3595875475c301c387ca4cb5bfa))
+
+
+
+
+
 ## [12.1.13](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-pack@12.1.12...@rxap/plugin-pack@12.1.13) (2021-07-09)
 
 **Note:** Version bump only for package @rxap/plugin-pack
