@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.11](https://gitlab.com/rxap/packages/compare/@rxap/plugin-library-schematics@12.0.10...@rxap/plugin-library-schematics@12.0.11) (2021-07-27)
+
+
+### Bug Fixes
+
+* replace deprecated schema id property ([cb8dedb](https://gitlab.com/rxap/packages/commit/cb8dedb0c15c774f6c101df150f0d98242bc511a))
+
+
+
+
+
 ## [12.0.10](https://gitlab.com/rxap/packages/compare/@rxap/plugin-library-schematics@12.0.9...@rxap/plugin-library-schematics@12.0.10) (2021-06-23)
 
 **Note:** Version bump only for package @rxap/plugin-library-schematics

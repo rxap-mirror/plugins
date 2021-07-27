@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.15](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@12.0.14...@rxap/plugin-kaniko@12.0.15) (2021-07-27)
+
+
+### Bug Fixes
+
+* replace deprecated schema id property ([cb8dedb](https://gitlab.com/rxap/schematics/commit/cb8dedb0c15c774f6c101df150f0d98242bc511a))
+
+
+
+
+
 ## [12.0.14](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@12.0.13...@rxap/plugin-kaniko@12.0.14) (2021-07-09)
 
 **Note:** Version bump only for package @rxap/plugin-kaniko

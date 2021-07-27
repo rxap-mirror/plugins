@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.3.5](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-readme-generator@12.3.4...@rxap/plugin-readme-generator@12.3.5) (2021-07-27)
+
+
+### Bug Fixes
+
+* replace deprecated schema id property ([cb8dedb](https://gitlab.com/rxap/schematics/commit/cb8dedb0c15c774f6c101df150f0d98242bc511a))
+
+
+
+
+
 ## [12.3.4](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-readme-generator@12.3.3...@rxap/plugin-readme-generator@12.3.4) (2021-07-09)
 
 **Note:** Version bump only for package @rxap/plugin-readme-generator

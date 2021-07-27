@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-library",
-  "version": "12.4.0",
+  "version": "12.4.1",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/library",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -30,8 +30,8 @@
     "@angular-devkit/core": "^12.0.3",
     "@angular-devkit/schematics": "^12.0.3",
     "@nrwl/workspace": "^12.3.6",
-    "@rxap/schematics-utilities": "^12.4.0",
-    "@rxap/utilities": "^12.1.3",
+    "@rxap/schematics-utilities": "^12.6.0",
+    "@rxap/utilities": "^12.2.0",
     "tslib": "^2.0.0",
     "typescript": "^4.2.4"
   },
