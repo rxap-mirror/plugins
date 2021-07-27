@@ -32,7 +32,12 @@ ng g @rxap/plugin-config:ng-add
 
 Option | Type | Default | Description
 --- | --- | --- | ---
+project | string |  | The name of the project.
+buildTarget | string |  | 
 
+| Required |
+| --- |
+| project |
 
 ## config
 > Adds the builder @rxap/plugin-config:config to the specified project
