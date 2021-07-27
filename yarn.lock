@@ -1637,12 +1637,13 @@
     handlebars "^4.7.7"
     tslib "^2.0.0"
 
-"@rxap/schematics-ts-morph@^12.2.0":
-  version "12.2.0"
-  resolved "https://registry.yarnpkg.com/@rxap/schematics-ts-morph/-/schematics-ts-morph-12.2.0.tgz#c5783b92406dc54df55ed514c593b8061aaa58d6"
-  integrity sha512-I3JjcUoTCc3/3Qcowq/zM4ErqWQ8YPifsGqLbjVLMafvv1Y4TLjywixliB8TcA8be4fomOG6N0EKw7NlAph73Q==
+"@rxap/schematics-ts-morph@^12.3.0":
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/@rxap/schematics-ts-morph/-/schematics-ts-morph-12.3.0.tgz#4ae86c634b6a5e765394727e85cebf7b433add17"
+  integrity sha512-XmhGJWZy959bItsYNAWEitRsrobXRPb/73+dVw9AKN/9s8ms2234mqMisruU73SPE2Ad9+aIHLgDJyYs3Togkw==
   dependencies:
-    "@rxap/utilities" "^12.0.3"
+    "@rxap/utilities" "^12.2.1-next.0"
+    tslib "^2.0.0"
 
 "@rxap/schematics-utilities@^12.1.0":
   version "12.3.4"
@@ -1657,33 +1658,26 @@
     "@rxap/utilities" "^12.2.0"
     semver "^7.3.5"
 
-"@rxap/schematics-utilities@^12.5.0":
-  version "12.5.0"
-  resolved "https://registry.yarnpkg.com/@rxap/schematics-utilities/-/schematics-utilities-12.5.0.tgz#07e0816afb496de5cd6e9ae62dd5810b48a98f6f"
-  integrity sha512-m8P/yXM7s8gmQX4j2qjIIX6XG6qCf+PBVhBqPF+6SBnZKvKiSPhLzSwtEVGiBIFOi/sf+pDYCEydsuWIcurL7Q==
+"@rxap/schematics-utilities@^12.5.1-next.0", "@rxap/schematics-utilities@^12.6.0":
+  version "12.6.0"
+  resolved "https://registry.yarnpkg.com/@rxap/schematics-utilities/-/schematics-utilities-12.6.0.tgz#1d309d121e7d6f6766b0f2e28a92b90c38e3e00d"
+  integrity sha512-FIzewieHq2QpvVZWAXS7+OBZ1FHLBTDQwSwlJICUmbbiutU+zEnUz7gSDySSLvvcq8V/49+I6endqlIUoLUiOg==
   dependencies:
     "@rxap/utilities" "^12.2.0"
     semver "^7.3.5"
     tslib "^2.0.0"
 
-"@rxap/schematics@^12.8.8":
-  version "12.8.8"
-  resolved "https://registry.yarnpkg.com/@rxap/schematics/-/schematics-12.8.8.tgz#df7eb350cdcbdaccc9f37698df147a4a45d11d47"
-  integrity sha512-3pYXWOmFXDb5ZkoFiK5nhxakHc0rLadaG2XjafiYU6Ky1Uoe10vk5bCQf6Vcg+srKFrJcD1rk40bO9E/9dkD4A==
+"@rxap/schematics@^12.9.0":
+  version "12.9.0"
+  resolved "https://registry.yarnpkg.com/@rxap/schematics/-/schematics-12.9.0.tgz#8671ee3e1efdcd343a8ef51a28c4678176fa0577"
+  integrity sha512-RNg6Sx7CU+rEV7g9GSPiTq8jvf4cY0+p8ZxFE6u4Wd/y/DncESNLjhQ5dp+ibGdLhMmDtqe3fXxZ/uTGL8JKsg==
   dependencies:
-    "@rxap/schematics-ts-morph" "^12.2.0"
-    "@rxap/utilities" "^12.2.0"
+    "@rxap/schematics-ts-morph" "^12.3.0"
+    "@rxap/utilities" "^12.2.1-next.0"
     parse5 "^6.0.1"
     ts-morph "^11.0.0"
     tslib "^2.0.0"
     typescript "^4.2.4"
-
-"@rxap/utilities@^12.0.3":
-  version "12.0.3"
-  resolved "https://registry.yarnpkg.com/@rxap/utilities/-/utilities-12.0.3.tgz#123c6591d5ffca8a6ff41b46769fbada3c255eb8"
-  integrity sha512-GsDvxUoDyWTh5AKLqhhhY9yG/9YBAxI4bKVvShK/V+L2WuK+zJtVOzB+RjLni9cYUne51w3bCoAKKQvcfXbiBA==
-  dependencies:
-    tslib "^2.1.0"
 
 "@rxap/utilities@^12.1.3":
   version "12.1.3"
@@ -1699,6 +1693,15 @@
   integrity sha512-SV3U1C1dfpf3zp2QUT4/9rpXLPq6jb1b/Tn1hhgP3w3nWlCQou6Kx8guvF2GVR8s8iWAz8aVw6i3YAAqU9inPA==
   dependencies:
     "@rxap/schematics-utilities" "^12.4.0"
+    ts-morph "^10.1.0"
+    tslib "^2.2.0"
+
+"@rxap/utilities@^12.2.1-next.0":
+  version "12.2.1"
+  resolved "https://registry.yarnpkg.com/@rxap/utilities/-/utilities-12.2.1.tgz#3c4e1f97bb50805fc1b9ba5d2ddb562b27a4016a"
+  integrity sha512-IjEOcUpgz35n+ZwyEx2T7iI0Du3npfmUg1+Oxl7eRvxLhtXibOhPI9xsCGnQ34CGYjAp2vJnwyeupiaNxQRUEg==
+  dependencies:
+    "@rxap/schematics-utilities" "^12.5.1-next.0"
     ts-morph "^10.1.0"
     tslib "^2.2.0"
 
@@ -9304,7 +9307,7 @@ tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
 
-tslib@^2.0.0, tslib@^2.1.0:
+tslib@^2.0.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
   integrity sha512-gS9GVHRU+RGn5KQM2rllAlR3dU6m7AcpJKdtH8gFvQiC4Otgk98XnmMU+nZenHt/+VhnBPWwgrJsyrdcw6i23w==
