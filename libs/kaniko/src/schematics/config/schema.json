@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "rxap-plugin-kaniko-config",
+  "$id": "rxap-plugin-kaniko-config",
   "title": "Add schema options",
   "description": "Adds the kaniko builder to the specified project.",
   "type": "object",

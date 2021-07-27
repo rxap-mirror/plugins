@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "rxap-plugin-pack-add-target",
+  "$id": "rxap-plugin-pack-add-target",
   "title": "Config schema options",
   "description": "Adds the schematics builder to the specified project.",
   "type": "object",
