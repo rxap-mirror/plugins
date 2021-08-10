@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.3.6-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-readme-generator@12.3.5...@rxap/plugin-readme-generator@12.3.6-next.0) (2021-08-10)
+
+
+### Bug Fixes
+
+* add strict tsc compiler option ([a262758](https://gitlab.com/rxap/schematics/commit/a2627582222671e58f6feaed0309d33ab13e6984))
+
+
+
+
+
 ## [12.3.5](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-readme-generator@12.3.4...@rxap/plugin-readme-generator@12.3.5) (2021-07-27)
 
 
