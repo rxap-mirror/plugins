@@ -118,6 +118,10 @@ export class Builder {
       await this.copyFiles(this.options.assets);
     } else if (typeof this.options.assets === 'boolean' && this.options.assets) {
 
+      if (!this.context.target) {
+        throw new Error('The current builder target is not defined in the context');
+      }
+
       const buildOptions = await this.context.getTargetOptions({
         project: this.context.target.project,
         target: 'build'

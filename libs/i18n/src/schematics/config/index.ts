@@ -72,7 +72,10 @@ export default function(options: ConfigSchema): Rule {
           });
 
         } else if (options.overwrite) {
-          const i18nTarget = project.targets.get('i18n');
+          const i18nTarget = project.targets.get('i18n')!;
+          if (!i18nTarget.options) {
+            i18nTarget.options = {};
+          }
           i18nTarget.options.availableLanguages = options.availableLanguages;
           i18nTarget.options.defaultLanguage = options.defaultLanguage;
           i18nTarget.options.assets = options.assets ?? [];
@@ -85,12 +88,15 @@ export default function(options: ConfigSchema): Rule {
             extractI18n.options = {};
           }
           extractI18n.options.format = 'xliff2';
+          if (!project.sourceRoot) {
+            throw new SchematicsException('The project source root is not defined');
+          }
           extractI18n.options.outputPath = join(project.sourceRoot, 'i18n');
         }
 
         if (project.targets.has('build')) {
-          const build = project.targets.get('build');
-          if (build.configurations.production) {
+          const build = project.targets.get('build')!;
+          if (build.configurations?.production) {
             if (!build.configurations.production.localize || options.overwrite) {
               build.configurations.production.localize = options.availableLanguages ?? [];
             }
@@ -116,12 +122,17 @@ export default function(options: ConfigSchema): Rule {
           project.i18n.locales = {} as any;
         }
 
-        for (const lang of options.availableLanguages) {
-          if (!project.i18n.locales[lang] || options.overwrite) {
-            project.i18n.locales[lang] = {
-              baseHref: `${lang}/`,
-              translation: join(project.sourceRoot, 'i18n', `${lang}.xlf`)
-            };
+        if (options.availableLanguages) {
+          for (const lang of options.availableLanguages) {
+            if (!project.i18n.locales![lang] || options.overwrite) {
+              if (!project.sourceRoot) {
+                throw new SchematicsException('The project source root is not defined');
+              }
+              project.i18n.locales![lang] = {
+                baseHref: `${lang}/`,
+                translation: join(project.sourceRoot, 'i18n', `${lang}.xlf`)
+              };
+            }
           }
         }
 

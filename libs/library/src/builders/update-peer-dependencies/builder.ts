@@ -76,11 +76,11 @@ export class Builder {
 
     const rootPackageJson = this.parseJsonFile('package.json');
 
-    for (const [ name, version ] of Object.entries(rootPackageJson.dependencies)) {
+    for (const [ name, version ] of Object.entries(rootPackageJson.dependencies ?? {})) {
       map.set(name, (version as string).replace(/^[~^]/, ''));
     }
 
-    for (const [ name, version ] of Object.entries(rootPackageJson.devDependencies)) {
+    for (const [ name, version ] of Object.entries(rootPackageJson.devDependencies ?? {})) {
       map.set(name, (version as string).replace(/^[~^]/, ''));
     }
 
@@ -175,6 +175,10 @@ export class Builder {
     }
 
     const packageJson = this.getProjectPackageJson(dependencyName);
+
+    if (!packageJson.name) {
+      throw new Error(`The package name for the dependency '${dependencyName}' is not defined!`);
+    }
 
     return packageJson.name;
   }

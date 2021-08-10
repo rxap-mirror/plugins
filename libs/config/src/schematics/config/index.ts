@@ -16,7 +16,7 @@ export default function(options: ConfigSchema): Rule {
 
           if (!buildTarget) {
             if (project.targets.has('build')) {
-              if (project.targets.get('build')!.configurations.production) {
+              if (project.targets.get('build')!.configurations?.production) {
                 buildTarget = `${options.project}:build:production`;
               } else {
                 buildTarget = `${options.project}:build`;

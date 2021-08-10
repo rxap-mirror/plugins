@@ -29,7 +29,7 @@ export default function(options: ConfigFunctionsSchema): Rule {
       tree => {
         const mainFilePath = join('apps', dasherize(options.project), 'src', 'main.ts');
         if (tree.exists(mainFilePath)) {
-          const content = tree.read(mainFilePath).toString();
+          const content = tree.read(mainFilePath)!.toString();
           if (options.initial || content.includes(`console.log('Hello World!');`)) {
             tree.overwrite(mainFilePath, `import * as functions from "firebase-functions";
 

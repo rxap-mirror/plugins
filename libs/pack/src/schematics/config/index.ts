@@ -17,7 +17,7 @@ export default function(options: ConfigSchema): Rule {
 
             const buildTarget = project.targets.get('build')!;
 
-            for (const configuration of Object.keys(buildTarget.configurations)) {
+            for (const configuration of Object.keys(buildTarget.configurations ?? {})) {
               configurations[configuration] = { targets: [ `${options.project}:build:${configuration}` ] };
             }
 

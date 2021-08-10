@@ -53,19 +53,21 @@ export class Builder {
       for (const key of Object.keys(process.env)) {
         if (key.match(/^RXAP_CONFIG/)) {
           const value = process.env[key];
-          let content: string;
-          if (value.match(/^(\/[^/\s]*)+\/?$/)) {
-            content = readFileSync(value).toString('utf-8');
-          } else {
-            content = value;
+          if (value) {
+            let content: string;
+            if (value.match(/^(\/[^/\s]*)+\/?$/)) {
+              content = readFileSync(value).toString('utf-8');
+            } else {
+              content = value;
+            }
+            try {
+              JSON.parse(content);
+            } catch (e) {
+              console.error(`Can not parse config from '${key}'`, content);
+              return { success: false, error: `Can not parse config from '${key}'` };
+            }
+            writeFileSync(join(outputPath, this.createFileName(key)), content);
           }
-          try {
-            JSON.parse(content);
-          } catch (e) {
-            console.error(`Can not parse config from '${key}'`, content);
-            return { success: false, error: `Can not parse config from '${key}'` };
-          }
-          writeFileSync(join(outputPath, this.createFileName(key)), content);
         }
       }
     } catch (e) {

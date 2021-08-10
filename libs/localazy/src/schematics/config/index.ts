@@ -66,7 +66,10 @@ export default function(options: ConfigSchema): Rule {
         }
         if (options.overwrite) {
           if (options.extractTarget) {
-            const buildTarget = project.targets.get('localazy-upload');
+            const buildTarget = project.targets.get('localazy-upload')!;
+            if (!buildTarget.options) {
+              buildTarget.options = {};
+            }
             buildTarget!.options.extractTarget = options.extractTarget;
           }
         }
@@ -77,6 +80,9 @@ export default function(options: ConfigSchema): Rule {
             extractI18n.options = {};
           }
           extractI18n.options.format = 'xliff2';
+          if (!project.sourceRoot) {
+            throw new SchematicsException('The project source root is not defined');
+          }
           extractI18n.options.outputPath = join(project.sourceRoot, 'i18n');
         }
 
@@ -100,7 +106,7 @@ export default function(options: ConfigSchema): Rule {
         if (!tree.exists(i18nGitIgnoreFilePath)) {
           tree.create(i18nGitIgnoreFilePath, '');
         }
-        let i18nGitIgnoreContent = tree.read(i18nGitIgnoreFilePath).toString('utf-8');
+        let i18nGitIgnoreContent = tree.read(i18nGitIgnoreFilePath)!.toString('utf-8');
         if (!i18nGitIgnoreContent.includes('/i18n')) {
           i18nGitIgnoreContent += '\n/i18n';
         }
