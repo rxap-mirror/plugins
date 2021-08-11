@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.3.2-next.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@12.3.2-next.0...@rxap/plugin-i18n@12.3.2-next.1) (2021-08-11)
+
+
+### Bug Fixes
+
+* add nrwl package to peer dependencies ([e15f848](https://gitlab.com/rxap/schematics/commit/e15f848369366bad60b63b32c7e71710b1ded826))
+
+
+
+
+
 ## [12.3.2-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@12.3.1...@rxap/plugin-i18n@12.3.2-next.0) (2021-08-10)
 
 

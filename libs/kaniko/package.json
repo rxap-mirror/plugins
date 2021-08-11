@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-kaniko",
-  "version": "12.0.15",
+  "version": "12.0.16-next.0",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
@@ -32,8 +32,7 @@
   "ng-update": {
     "migrations": "./migration.json",
     "packageGroup": [
-      "@rxap/plugin-kaniko",
-      "@rxap/schematics-utilities"
+      "@rxap/plugin-kaniko"
     ]
   },
   "ng-add": {

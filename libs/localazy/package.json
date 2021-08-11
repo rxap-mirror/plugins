@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-localazy",
-  "version": "12.1.2-next.0",
+  "version": "12.1.2-next.1",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/localazy",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -45,8 +45,7 @@
   "ng-update": {
     "migrations": "./migration.json",
     "packageGroup": [
-      "@rxap/plugin-localazy",
-      "@rxap/schematics-utilities"
+      "@rxap/plugin-localazy"
     ]
   },
   "peerDependencies": {

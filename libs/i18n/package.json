@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-i18n",
-  "version": "12.3.2-next.0",
+  "version": "12.3.2-next.1",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/i18n",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -39,8 +39,7 @@
   "ng-update": {
     "migrations": "./migration.json",
     "packageGroup": [
-      "@rxap/plugin-i18n",
-      "@rxap/schematics-utilities"
+      "@rxap/plugin-i18n"
     ]
   },
   "peerDependencies": {

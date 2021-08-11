@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.16-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-scss-bundle@12.0.15...@rxap/plugin-scss-bundle@12.0.16-next.0) (2021-08-11)
+
+
+### Bug Fixes
+
+* add nrwl package to peer dependencies ([e15f848](https://gitlab.com/rxap/schematics/commit/e15f848369366bad60b63b32c7e71710b1ded826))
+
+
+
+
+
 ## [12.0.15](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-scss-bundle@12.0.14...@rxap/plugin-scss-bundle@12.0.15) (2021-07-27)
 
 
