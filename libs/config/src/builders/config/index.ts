@@ -66,6 +66,7 @@ export class Builder {
               console.error(`Can not parse config from '${key}'`, content);
               return { success: false, error: `Can not parse config from '${key}'` };
             }
+            console.info(`Add config '${key}'`);
             writeFileSync(join(outputPath, this.createFileName(key)), content);
           }
         }
