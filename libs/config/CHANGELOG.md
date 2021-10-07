@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-config@12.0.3-next.0...@rxap/plugin-config@12.0.3) (2021-10-07)
+
+
+### Bug Fixes
+
+* log added config files ([e7efb69](https://gitlab.com/rxap/schematics/commit/e7efb697f69e99960bee27d053911bf76e1c610c))
+
+
+
+
+
 ## [12.0.3-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-config@12.0.2...@rxap/plugin-config@12.0.3-next.0) (2021-08-10)
 
 
