@@ -20,7 +20,10 @@ import {
   InstallNodePackages
 } from '@rxap/schematics-utilities';
 import { TaskId } from '@angular-devkit/schematics/src/engine';
-import { NodePackageInstallTask, RunSchematicTask } from '@angular-devkit/schematics/tasks';
+import {
+  NodePackageInstallTask,
+  RunSchematicTask
+} from '@angular-devkit/schematics/tasks';
 
 export default function(options: InitFunctionsSchema): Rule {
 
@@ -55,6 +58,8 @@ export default function(options: InitFunctionsSchema): Rule {
       ])),
       AddPackageJsonScript('build:functions:watch', 'nx run functions:build --watch'),
       AddPackageJsonScript('build:functions', 'nx run functions:build:production'),
+      AddPackageJsonScript('firebase:emulators:start', 'env-cmd firebase emulators:start --export-on-exit=\\".firebase-emulator\\"' +
+                                                       ' --import=\\".firebase-emulator\\"'),
       (_, context) => {
         if (installTaskIdList.length) {
           installTaskIdList.push(context.addTask(new RunSchematicTask('@nrwl/node', 'application', { name: options.name }), installTaskIdList.slice()));
