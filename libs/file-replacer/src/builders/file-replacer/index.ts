@@ -83,7 +83,7 @@ export class Builder {
       return readFileSync(value);
     }
 
-    return Buffer.from(value, 'base64');
+    return Buffer.from(value.replace(/^data:[^,]+,/, ''), 'base64');
   }
 
 }
