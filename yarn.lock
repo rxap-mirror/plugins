@@ -1696,7 +1696,7 @@
     ts-morph "^10.1.0"
     tslib "^2.2.0"
 
-"@rxap/utilities@^12.2.1-next.0":
+"@rxap/utilities@^12.2.1", "@rxap/utilities@^12.2.1-next.0":
   version "12.2.1"
   resolved "https://registry.yarnpkg.com/@rxap/utilities/-/utilities-12.2.1.tgz#3c4e1f97bb50805fc1b9ba5d2ddb562b27a4016a"
   integrity sha512-IjEOcUpgz35n+ZwyEx2T7iI0Du3npfmUg1+Oxl7eRvxLhtXibOhPI9xsCGnQ34CGYjAp2vJnwyeupiaNxQRUEg==
