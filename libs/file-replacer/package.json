@@ -1,0 +1,29 @@
+{
+  "name": "@rxap/plugin-file-replacer",
+  "version": "12.0.0",
+  "schematics": "./collection.json",
+  "ng-update": {
+    "migrations": "./migration.json",
+    "packageGroup": [
+      "@rxap/plugin-file-replacer"
+    ]
+  },
+  "builders": "./builders.json",
+  "ng-add": {
+    "save": "dependencies"
+  },
+  "private": false,
+  "author": "Merzough Münker",
+  "homepage": "https://gitlab.com/rxap/plugins/-/blob/master/libs/file-replacer",
+  "repository": "git@gitlab.com:rxap/schematics.git",
+  "keywords": [],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://gitlab.com/rxap/plugins/-/issues",
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
+  },
+  "publishConfig": {
+    "directory": "../../dist/libs/file-replacer",
+    "access": "public"
+  }
+}

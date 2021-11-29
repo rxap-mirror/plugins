@@ -1,0 +1,10 @@
+{
+  "builders": {
+    "file-replacer": {
+      "description": "replaces files from environment variables",
+      "implementation": "./src/builders/file-replacer/index",
+      "schema": "./src/builders/file-replacer/schema.json"
+    }
+  },
+  "$schema": "../../node_modules/@angular-devkit/architect/src/builders-schema.json"
+}

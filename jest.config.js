@@ -11,6 +11,7 @@ module.exports = {
     '<rootDir>/libs/localazy',
     '<rootDir>/libs/library',
     '<rootDir>/libs/firebase',
-    '<rootDir>/libs/config'
+    '<rootDir>/libs/config',
+    '<rootDir>/libs/file-replacer'
   ],
 };

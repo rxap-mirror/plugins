@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "file-replacer-file-replacer",
+  "title": "FileReplacer",
+  "type": "object",
+  "properties": {
+    "files": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  },
+  "required": []
+}

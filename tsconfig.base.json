@@ -57,6 +57,9 @@
       ],
       "@rxap/plugin-config": [
         "libs/config/src/index.ts"
+      ],
+      "@rxap/plugin-file-replacer": [
+        "libs/file-replacer/src/index.ts"
       ]
     }
   },

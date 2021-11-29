@@ -58,6 +58,9 @@
     },
     "config": {
       "tags": []
+    },
+    "file-replacer": {
+      "tags": []
     }
   }
 }
