@@ -12,11 +12,11 @@ export class Builder {
     public readonly options: FileReplacerSchema,
     public readonly context: BuilderContext
   ) {
-    if (process.env.RXAP_FILE_REPLACER) {
+    if (process.env.RXAP_FILE_REPLACER_IDENTIFIER) {
       try {
-        this.options.files = JSON.parse(process.env.RXAP_FILE_REPLACER);
+        this.options.files = JSON.parse(process.env.RXAP_FILE_REPLACER_IDENTIFIER);
       } catch (e) {
-        this.context.logger.error('Could not parse the RXAP_FILE_REPLACER environment variable!');
+        this.context.logger.error('Could not parse the RXAP_FILE_REPLACER_IDENTIFIER environment variable!');
       }
     }
   }
@@ -43,6 +43,15 @@ export class Builder {
     const fileReplaceMap = new Map<string, Buffer>();
 
     this.context.logger.debug('Environment variable: ' + JSON.stringify(process.env, undefined, 2));
+
+    if (process.env.RXAP_FILE_REPLACEMENT) {
+      try {
+        const replacement: Record<string, string> = JSON.parse(process.env.RXAP_FILE_REPLACEMENT);
+        Object.entries(replacement).forEach(([ key, value ]) => fileReplaceMap.set(key, this.getFileBuffer(value)));
+      } catch (e) {
+        this.context.logger.error('Could not parse environment variable RXAP_FILE_REPLACEMENT');
+      }
+    }
 
     for (const [ key, value ] of Object.entries(process.env).filter(([ key ]) => key.match(/^RXAP_REPLACE_/))) {
       this.context.logger.info(`Detect environment variable: '${key}'`);
