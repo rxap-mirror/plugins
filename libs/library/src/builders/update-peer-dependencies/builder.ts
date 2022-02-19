@@ -17,7 +17,10 @@ import {
   equals,
   unique
 } from '@rxap/utilities';
-import { readCachedProjectGraph } from '@nrwl/workspace/src/core/project-graph/project-graph';
+import {
+  readCachedProjectGraph,
+  createProjectGraphAsync
+} from '@nrwl/workspace/src/core/project-graph/project-graph';
 
 export interface Target extends json.JsonObject {
   project: string;
@@ -29,7 +32,7 @@ export class Builder {
 
   private readonly rootPackageVersionMap = new Map<string, string>();
 
-  private readonly projectGraph: ProjectGraph;
+  private projectGraph!: ProjectGraph;
 
   private readonly dependencyVersionMap = new Map<string, string>();
 
@@ -42,9 +45,12 @@ export class Builder {
     public readonly context: BuilderContext
   ) {
     this.rootPackageVersionMap = this.loadRootPackageVersionMap();
-    // TODO : migrate to createProjectGraphAsync
-    this.projectGraph          = readCachedProjectGraph();
-    this.options.dependencies  = this.options.dependencies ?? [];
+    try {
+      this.projectGraph = readCachedProjectGraph();
+    } catch (e) {
+      console.warn('A cached project graph was not found. Load the project graph when needed.');
+    }
+    this.options.dependencies = this.options.dependencies ?? [];
     this.options.dependencies.push('tslib');
     this.options.dependencies = this.options.dependencies.filter(unique());
   }
@@ -61,6 +67,8 @@ export class Builder {
   }
 
   public async run(): Promise<BuilderOutput> {
+
+    this.projectGraph = this.projectGraph ?? await createProjectGraphAsync();
 
     const projectName = this.context.target?.project;
 
