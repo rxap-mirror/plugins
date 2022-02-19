@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.5](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@12.0.5-next.0...@rxap/plugin-firebase@12.0.5) (2022-02-19)
+
+**Note:** Version bump only for package @rxap/plugin-firebase
+
+
+
+
+
 ## [12.0.5-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@12.0.4...@rxap/plugin-firebase@12.0.5-next.0) (2021-11-29)
 
 
