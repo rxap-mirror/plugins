@@ -9,7 +9,7 @@
   dependencies:
     "@jridgewell/trace-mapping" "^0.3.0"
 
-"@angular-devkit/architect@0.1302.4":
+"@angular-devkit/architect@0.1302.4", "@angular-devkit/architect@^0.1302.4":
   version "0.1302.4"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.1302.4.tgz#3dd21186db473f7c0adddc93f3e948d454ad230a"
   integrity sha512-9dS0Gvs4ER1DPSnKorJ4uk27A/rWwyvNy5CheOZu4ZTUnggGA7SFtMG7CKPD11Ae01lIMfxKfDqJYE8j2VpQaw==
@@ -17,27 +17,7 @@
     "@angular-devkit/core" "13.2.4"
     rxjs "6.6.7"
 
-"@angular-devkit/architect@^0.1200.3":
-  version "0.1200.3"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.1200.3.tgz#b919f78bcc0fac645733804329443b9e8500dab4"
-  integrity sha512-CaqushsPYQ3Us7eBIuZM9/u5H6Rjvm5tUCYS7D5lr5w4QbiwC+6L4dheWEu1PuS2TyyBt6lVwgUNguOmixDb0Q==
-  dependencies:
-    "@angular-devkit/core" "12.0.3"
-    rxjs "6.6.7"
-
-"@angular-devkit/core@12.0.3", "@angular-devkit/core@^12.0.3":
-  version "12.0.3"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-12.0.3.tgz#01c796dd7d3e0c228b4628439ee1c34bbdda4f1f"
-  integrity sha512-d6E4ldHzIerzFpXXZkynluIbZZeYD+VteFLBZ77lOXAuUYuuLEiW8h4bpJOqribeJli5c1cJ/yyELYHrbiiLcw==
-  dependencies:
-    ajv "8.2.0"
-    ajv-formats "2.0.2"
-    fast-json-stable-stringify "2.1.0"
-    magic-string "0.25.7"
-    rxjs "6.6.7"
-    source-map "0.7.3"
-
-"@angular-devkit/core@13.2.4":
+"@angular-devkit/core@13.2.4", "@angular-devkit/core@^13.2.4":
   version "13.2.4"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-13.2.4.tgz#3de82f14434db168093d8d6b4df84a10594612b8"
   integrity sha512-hSw1JWA/6dDAF/xleQRXGtzHphfU49TMUhvAoAmsmmz3NAn03xLy1dtqdIXIf+TkFXVvZDaAB2mW8KfRV67GFg==
@@ -49,7 +29,7 @@
     rxjs "6.6.7"
     source-map "0.7.3"
 
-"@angular-devkit/schematics@13.2.4":
+"@angular-devkit/schematics@13.2.4", "@angular-devkit/schematics@^13.2.4":
   version "13.2.4"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-13.2.4.tgz#dc22c94f52e1123cad8e03a09a5e80663cda6c9d"
   integrity sha512-VMhYa4cDu5yE31OvHncAd15Rmlchih/Sr6sxFsIwkg4xzRNIIZCtwqxVXgf0TiTN9zrvlvzK7nhPqTGNqqYb2A==
@@ -58,15 +38,6 @@
     jsonc-parser "3.0.0"
     magic-string "0.25.7"
     ora "5.4.1"
-    rxjs "6.6.7"
-
-"@angular-devkit/schematics@^12.0.3":
-  version "12.0.3"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-12.0.3.tgz#9c9a881db1fd4c07b78729f46e2932adf76906de"
-  integrity sha512-FozSvAJPI1iNLkrMVfbQvrk6XxF86zkpnVoaOeT/S2WeS64uRLW9DZmFHJxD4K2+MUPkwx6x6Y8AjARIkGtcIA==
-  dependencies:
-    "@angular-devkit/core" "12.0.3"
-    ora "5.4.0"
     rxjs "6.6.7"
 
 "@angular/cli@13.2.4":
@@ -2047,40 +2018,40 @@
   dependencies:
     esquery "^1.0.1"
 
-"@rxap/plugin-library@^12.4.2":
-  version "12.4.2"
-  resolved "https://registry.yarnpkg.com/@rxap/plugin-library/-/plugin-library-12.4.2.tgz#78fd2359cc6fdb13d1d421c7e0bcf285be0084bf"
-  integrity sha512-jPp5YWgK1XuvK/7l8oItI6ORAlZ2arNcYDZafM3DImb876lYeB9adaWclvJzTjk4PjohLVsut/EWKwtpHwBMYQ==
+"@rxap/plugin-library@^13.0.0-next.0":
+  version "13.0.0-next.0"
+  resolved "https://registry.yarnpkg.com/@rxap/plugin-library/-/plugin-library-13.0.0-next.0.tgz#31b5daeec45fce217c00d4c47cd5154ade277b4e"
+  integrity sha512-yV1dw1RJU4rqtlVA6W4wO5fbFkw19hzRteO+/qMJgMuDzZwo/8ckmAW5h2akf/vOddEbMpKp6NiY6txHrOaOiw==
   dependencies:
-    "@angular-devkit/architect" "^0.1200.3"
-    "@angular-devkit/core" "^12.0.3"
-    "@angular-devkit/schematics" "^12.0.3"
-    "@rxap/schematics-utilities" "^12.6.0"
-    "@rxap/utilities" "^12.2.0"
-    tslib "^2.0.0"
-    typescript "^4.2.4"
+    "@angular-devkit/architect" "^0.1302.4"
+    "@angular-devkit/core" "^13.2.4"
+    "@angular-devkit/schematics" "^13.2.4"
+    "@rxap/schematics-utilities" "^12.7.0"
+    "@rxap/utilities" "^12.2.2"
+    tslib "^2.3.1"
+    typescript "^4.3.5"
 
-"@rxap/plugin-pack@^12.2.1":
-  version "12.2.1"
-  resolved "https://registry.yarnpkg.com/@rxap/plugin-pack/-/plugin-pack-12.2.1.tgz#be010162392250e2db9112791aea6bb31949ecf9"
-  integrity sha512-dNJCnICaMjlGjJyb1HVsFZEVu5dz7QTLPUk/fqwELrG1sCjZJdn+i50e9BhWbIarl0ZGsl6DO5Jd95MAtYDKBA==
+"@rxap/plugin-pack@^13.0.0-next.0":
+  version "13.0.0-next.0"
+  resolved "https://registry.yarnpkg.com/@rxap/plugin-pack/-/plugin-pack-13.0.0-next.0.tgz#52bb013ff84b7dbdaed0bf8f4a1ef23d8d7c5e02"
+  integrity sha512-ez9H0+MuwPnuRg7Gv1i9cirdtH6tGN27ns7fvTYu5AWtfDf+y5gDz9Eqqs0cquJH1pJeAOOloH4ljPgMB3yTrQ==
   dependencies:
-    "@angular-devkit/architect" "^0.1200.3"
-    "@angular-devkit/schematics" "^12.0.3"
-    "@rxap/schematics-utilities" "^12.6.0"
-    tslib "^2.0.0"
+    "@angular-devkit/architect" "^0.1302.4"
+    "@angular-devkit/schematics" "^13.2.4"
+    "@rxap/schematics-utilities" "^12.7.0"
+    tslib "^2.3.1"
 
-"@rxap/plugin-readme-generator@12.3.6":
-  version "12.3.6"
-  resolved "https://registry.yarnpkg.com/@rxap/plugin-readme-generator/-/plugin-readme-generator-12.3.6.tgz#8f76040bc8fbd6e7af5538a6d793a057e006c23b"
-  integrity sha512-febOfF775rX22Umw8VUZP6z91UtJg5FkDCAkBT//e63b2PLaGniOvqFgv2drMIiayyY/Ckq5yP0aQoQIhX0cIw==
+"@rxap/plugin-readme-generator@13.0.0-next.0":
+  version "13.0.0-next.0"
+  resolved "https://registry.yarnpkg.com/@rxap/plugin-readme-generator/-/plugin-readme-generator-13.0.0-next.0.tgz#9a229e454818fd637d9a1df69150306811dbbcd7"
+  integrity sha512-DGaguCIcoP6XH5kF9rPBhqc09DWimf1CaZvXYJK5/cMerMkwGgHMaFNujb01yRE7QQpjQXWHjnnVRdt/UIKrig==
   dependencies:
-    "@angular-devkit/architect" "^0.1200.3"
-    "@angular-devkit/core" "^12.0.3"
-    "@angular-devkit/schematics" "^12.0.3"
-    "@rxap/schematics-utilities" "^12.6.0"
+    "@angular-devkit/architect" "^0.1302.4"
+    "@angular-devkit/core" "^13.2.4"
+    "@angular-devkit/schematics" "^13.2.4"
+    "@rxap/schematics-utilities" "^12.7.0"
     handlebars "^4.7.7"
-    tslib "^2.0.0"
+    tslib "^2.3.1"
 
 "@rxap/schematics-ts-morph@^12.3.2":
   version "12.3.2"
@@ -2107,7 +2078,7 @@
     semver "^7.3.5"
     tslib "^2.0.0"
 
-"@rxap/schematics-utilities@^12.6.0", "@rxap/schematics-utilities@^12.7.0":
+"@rxap/schematics-utilities@^12.7.0":
   version "12.7.0"
   resolved "https://registry.yarnpkg.com/@rxap/schematics-utilities/-/schematics-utilities-12.7.0.tgz#33be4136a70a85e028bedbbcca6819ffe528c400"
   integrity sha512-O922a6txhsac5U1SiC90pmyPSzf/0/8Xy21zF3NSi/Z3AZj7KqqQbwESf1xjXK7vL/QlkPc0iwpFe3CD2St9uA==
@@ -2924,13 +2895,6 @@ aggregate-error@^3.0.0:
     clean-stack "^2.0.0"
     indent-string "^4.0.0"
 
-ajv-formats@2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/ajv-formats/-/ajv-formats-2.0.2.tgz#69875cb99d76c74be46e9c7a4444bc232354eba0"
-  integrity sha512-Brah4Uo5/U8v76c6euTwtjVFFaVishwnJrQBYpev1JRh4vjA1F4HY3UzQez41YUCszUCXKagG8v6eVRBHV1gkw==
-  dependencies:
-    ajv "^8.0.0"
-
 ajv-formats@2.1.1, ajv-formats@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/ajv-formats/-/ajv-formats-2.1.1.tgz#6e669400659eb74973bbf2e33327180a0996b520"
@@ -2942,16 +2906,6 @@ ajv-keywords@^3.4.1, ajv-keywords@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.5.2.tgz#31f29da5ab6e00d1c2d329acf7b5929614d5014d"
   integrity sha512-5p6WTN0DdTGVQk6VjcEju19IgaHudalcfabD7yhDGeA6bcQnmL+CpveLJq/3hvfwd1aof6L386Ougkx6RfyMIQ==
-
-ajv@8.2.0:
-  version "8.2.0"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-8.2.0.tgz#c89d3380a784ce81b2085f48811c4c101df4c602"
-  integrity sha512-WSNGFuyWd//XO8n/m/EaOlNLtO0yL8EXT/74LqT4khdhpZjP7lkj/kT5uwRmGitKEVp/Oj7ZUHeGfPtgHhQ5CA==
-  dependencies:
-    fast-deep-equal "^3.1.1"
-    json-schema-traverse "^1.0.0"
-    require-from-string "^2.0.2"
-    uri-js "^4.2.2"
 
 ajv@8.9.0:
   version "8.9.0"
@@ -7234,21 +7188,6 @@ optionator@^0.9.1:
     type-check "^0.4.0"
     word-wrap "^1.2.3"
 
-ora@5.4.0:
-  version "5.4.0"
-  resolved "https://registry.yarnpkg.com/ora/-/ora-5.4.0.tgz#42eda4855835b9cd14d33864c97a3c95a3f56bf4"
-  integrity sha512-1StwyXQGoU6gdjYkyVcqOLnVlbKj+6yPNNOxJVgpt9t4eksKjiriiHuxktLYkgllwk+D6MbC4ihH84L1udRXPg==
-  dependencies:
-    bl "^4.1.0"
-    chalk "^4.1.0"
-    cli-cursor "^3.1.0"
-    cli-spinners "^2.5.0"
-    is-interactive "^1.0.0"
-    is-unicode-supported "^0.1.0"
-    log-symbols "^4.1.0"
-    strip-ansi "^6.0.0"
-    wcwidth "^1.0.1"
-
 ora@5.4.1, ora@^5.4.1:
   version "5.4.1"
   resolved "https://registry.yarnpkg.com/ora/-/ora-5.4.1.tgz#1b2678426af4ac4a509008e5e4ac9e9959db9e18"
@@ -8997,7 +8936,7 @@ typescript@^4.2.4:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.3.4.tgz#3f85b986945bcf31071decdd96cf8bfa65f9dcbc"
   integrity sha512-uauPG7XZn9F/mo+7MrsRjyvbxFpzemRjKEZXS4AK83oP2KKOJPvb+9cO/gmnv8arWZvhnjVOXz7B49m1l0e9Ew==
 
-typescript@^4.5.3:
+typescript@^4.3.5, typescript@^4.5.3:
   version "4.5.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.5.5.tgz#d8c953832d28924a9e3d37c73d729c846c5896f3"
   integrity sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==
