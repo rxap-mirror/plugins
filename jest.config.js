@@ -1,17 +1,3 @@
-module.exports = {
-  projects: [
-    '<rootDir>/libs/library-schematics',
-    '<rootDir>/libs/pack',
-    '<rootDir>/libs/scss-bundle',
-    '<rootDir>/libs/readme-generator',
-    '<rootDir>/libs/kaniko',
-    '<rootDir>/libs/library-publish',
-    '<rootDir>/libs/i18n',
-    '<rootDir>/libs/build-info',
-    '<rootDir>/libs/localazy',
-    '<rootDir>/libs/library',
-    '<rootDir>/libs/firebase',
-    '<rootDir>/libs/config',
-    '<rootDir>/libs/file-replacer'
-  ],
-};
+const { getJestProjects } = require("@nrwl/jest");
+
+module.exports = { projects: getJestProjects() };

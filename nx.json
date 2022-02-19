@@ -15,52 +15,26 @@
           "lint",
           "e2e"
         ],
-        "strictlyOrderedTargets": [
-          "build",
-          "pack"
-        ]
+        "parallel": 1
       }
     }
   },
-  "projects": {
-    "library-schematics": {
-      "tags": []
-    },
-    "pack": {
-      "tags": []
-    },
-    "scss-bundle": {
-      "tags": []
-    },
-    "readme-generator": {
-      "tags": []
-    },
-    "kaniko": {
-      "tags": []
-    },
-    "library-publish": {
-      "tags": []
-    },
-    "i18n": {
-      "tags": []
-    },
-    "build-info": {
-      "tags": []
-    },
-    "localazy": {
-      "tags": []
-    },
-    "library": {
-      "tags": []
-    },
-    "firebase": {
-      "tags": []
-    },
-    "config": {
-      "tags": []
-    },
-    "file-replacer": {
-      "tags": []
-    }
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ],
+    "pack": [
+      {
+        "target": "pack",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "cli": {
+    "defaultCollection": "@rxap/schematics",
+    "packageManager": "yarn"
   }
 }
