@@ -11,6 +11,24 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
+# [13.0.0-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@12.0.5-next.0...@rxap/plugin-firebase@13.0.0-next.0) (2022-02-19)
+
+
+### Build System
+
+* upgrade to nrwl 13.x.x ([f6fb1fd](https://gitlab.com/rxap/schematics/commit/f6fb1fde34006136be4dadd72795d2d43207072a))
+
+
+### BREAKING CHANGES
+
+* update the core nrwl packages to 13.x.x
+
+Signed-off-by: Merzough Münker <mmuenker@digitaix.com>
+
+
+
+
+
 ## [12.0.5-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@12.0.4...@rxap/plugin-firebase@12.0.5-next.0) (2021-11-29)
 
 
