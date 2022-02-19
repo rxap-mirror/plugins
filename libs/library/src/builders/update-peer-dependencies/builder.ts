@@ -1,12 +1,23 @@
-import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
+import {
+  BuilderContext,
+  BuilderOutput,
+  createBuilder
+} from '@angular-devkit/architect';
 import { json } from '@angular-devkit/core';
 import { UpdatePeerDependenciesBuilderSchema } from './schema';
 import { join } from 'path';
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import {
+  existsSync,
+  readFileSync,
+  writeFileSync
+} from 'fs';
 import { PackageJson } from '@rxap/schematics-utilities';
-import { createProjectGraph } from '@nrwl/workspace/src/core/project-graph';
 import { ProjectGraph } from '@nrwl/workspace/src/core/project-graph/project-graph-models';
-import { equals, unique } from '@rxap/utilities';
+import {
+  equals,
+  unique
+} from '@rxap/utilities';
+import { readCachedProjectGraph } from '@nrwl/workspace/src/core/project-graph/project-graph';
 
 export interface Target extends json.JsonObject {
   project: string;
@@ -31,8 +42,9 @@ export class Builder {
     public readonly context: BuilderContext
   ) {
     this.rootPackageVersionMap = this.loadRootPackageVersionMap();
-    this.projectGraph = createProjectGraph();
-    this.options.dependencies = this.options.dependencies ?? [];
+    // TODO : migrate to createProjectGraphAsync
+    this.projectGraph          = readCachedProjectGraph();
+    this.options.dependencies  = this.options.dependencies ?? [];
     this.options.dependencies.push('tslib');
     this.options.dependencies = this.options.dependencies.filter(unique());
   }

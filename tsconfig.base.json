@@ -19,47 +19,47 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@rxap/plugin-localazy": [
-        "libs/localazy/src/index.ts"
-      ],
-      "@rxap/plugin-library-schematics": [
-        "libs/library-schematics/src/index.ts"
-      ],
-      "@rxap/plugin-pack": [
-        "libs/pack/src/index.ts"
-      ],
-      "@rxap/plugin-scss-bundle": [
-        "libs/scss-bundle/src/index.ts"
-      ],
       "@rxap/form-system": [
         "libs/form-system/src/index.ts"
       ],
-      "@rxap/plugin-readme-generator": [
-        "libs/readme-generator/src/index.ts"
-      ],
-      "@rxap/plugin-kaniko": [
-        "libs/kaniko/src/index.ts"
-      ],
-      "@rxap/plugin-library-publish": [
-        "libs/library-publish/src/index.ts"
-      ],
-      "@rxap/plugin-i18n": [
-        "libs/i18n/src/index.ts"
-      ],
       "@rxap/plugin-build-info": [
         "libs/build-info/src/index.ts"
-      ],
-      "@rxap/plugin-library": [
-        "libs/library/src/index.ts"
-      ],
-      "@rxap/plugin-firebase-functions": [
-        "libs/firebase/src/index.ts"
       ],
       "@rxap/plugin-config": [
         "libs/config/src/index.ts"
       ],
       "@rxap/plugin-file-replacer": [
         "libs/file-replacer/src/index.ts"
+      ],
+      "@rxap/plugin-firebase-functions": [
+        "libs/firebase/src/index.ts"
+      ],
+      "@rxap/plugin-i18n": [
+        "libs/i18n/src/index.ts"
+      ],
+      "@rxap/plugin-kaniko": [
+        "libs/kaniko/src/index.ts"
+      ],
+      "@rxap/plugin-library": [
+        "libs/library/src/index.ts"
+      ],
+      "@rxap/plugin-library-publish": [
+        "libs/library-publish/src/index.ts"
+      ],
+      "@rxap/plugin-library-schematics": [
+        "libs/library-schematics/src/index.ts"
+      ],
+      "@rxap/plugin-localazy": [
+        "libs/localazy/src/index.ts"
+      ],
+      "@rxap/plugin-pack": [
+        "libs/pack/src/index.ts"
+      ],
+      "@rxap/plugin-readme-generator": [
+        "libs/readme-generator/src/index.ts"
+      ],
+      "@rxap/plugin-scss-bundle": [
+        "libs/scss-bundle/src/index.ts"
       ]
     }
   },

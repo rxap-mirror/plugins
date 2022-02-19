@@ -1,12 +1,13 @@
 module.exports = {
-  preset: '../../jest.preset.js',
+  preset: "../../jest.preset.js",
   globals: {
-    'ts-jest': { tsconfig: '<rootDir>/tsconfig.spec.json' }
+    "ts-jest": { tsconfig: "<rootDir>/tsconfig.spec.json" }
   },
   transform: {
-    '^.+\\.[tj]sx?$': 'ts-jest'
+    "^.+\\.[tj]sx?$": "ts-jest"
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'html'],
-  coverageDirectory: '../../coverage/libs/library-publish',
-  displayName: 'library-publish'
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "html"],
+  coverageDirectory: "../../coverage/libs/library-publish",
+  displayName: "library-publish",
+  testEnvironment: "node"
 };

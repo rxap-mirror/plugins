@@ -1,14 +1,15 @@
 module.exports = {
   displayName: 'firebase',
-  preset: '../../jest.preset.js',
+  preset: "../../jest.preset.js",
   globals: {
-    'ts-jest': {
-      tsconfig: '<rootDir>/tsconfig.spec.json'
+    "ts-jest": {
+      tsconfig: "<rootDir>/tsconfig.spec.json"
     }
   },
   transform: {
-    '^.+\\.[tj]sx?$': 'ts-jest'
+    "^.+\\.[tj]sx?$": "ts-jest"
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/firebase'
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+  coverageDirectory: "../../coverage/libs/firebase",
+  testEnvironment: "node"
 };
