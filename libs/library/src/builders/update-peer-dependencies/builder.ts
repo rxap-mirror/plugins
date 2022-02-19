@@ -119,10 +119,18 @@ export class Builder {
     const flattenDependencies: string[] = knownDependencies.slice();
 
     for (const dependency of knownDependencies) {
+      // check if the dependencies for the dependency are already resolved
+      // else resolve the dependencies and update the cache
       if (!this.flattenDependenciesMap.has(dependency)) {
-        const dependencies = await this.flattenDependencies(this.projectGraph.dependencies[dependency].map(dependency => dependency.target));
-        const filteredDependencies = await this.filterForPeerDependencies(dependency, dependencies);
-        this.flattenDependenciesMap.set(dependency, filteredDependencies);
+        const dependencies = this.projectGraph.dependencies[ dependency ];
+        if (!dependencies || !Array.isArray(dependencies)) {
+          // this is a leaf dependency
+          this.flattenDependenciesMap.set(dependency, []);
+        } else {
+          const flattenDependencies  = await this.flattenDependencies(dependencies.map(dependency => dependency.target));
+          const filteredDependencies = await this.filterForPeerDependencies(dependency, flattenDependencies);
+          this.flattenDependenciesMap.set(dependency, filteredDependencies);
+        }
       }
       flattenDependencies.push(...this.flattenDependenciesMap.get(dependency)!);
     }
@@ -337,8 +345,10 @@ export class Builder {
       throw new Error(`The dependencies for the project '${projectName}' are not available`);
     }
 
+    // the list of direct dependencies of the project
     const projectDependencies: string[] = graphProjectDependency.map(pdg => pdg.target);
 
+    // the list of direct AND indirect of the project
     const flattenProjectDependencies: string[] = await this.flattenDependencies(projectDependencies);
 
     const packageJson = this.getProjectPackageJson(projectName);
