@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-config@12.0.3...@rxap/plugin-config@13.0.0-next.0) (2022-02-19)
+
+
+### Build System
+
+* upgrade to nrwl 13.x.x ([f6fb1fd](https://gitlab.com/rxap/schematics/commit/f6fb1fde34006136be4dadd72795d2d43207072a))
+
+
+### BREAKING CHANGES
+
+* update the core nrwl packages to 13.x.x
+
+Signed-off-by: Merzough Münker <mmuenker@digitaix.com>
+
+
+
+
+
 ## [12.0.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-config@12.0.3-next.0...@rxap/plugin-config@12.0.3) (2021-10-07)
 
 

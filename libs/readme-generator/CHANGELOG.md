@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-readme-generator@12.3.6...@rxap/plugin-readme-generator@13.0.0-next.0) (2022-02-19)
+
+
+### Build System
+
+* upgrade to nrwl 13.x.x ([f6fb1fd](https://gitlab.com/rxap/schematics/commit/f6fb1fde34006136be4dadd72795d2d43207072a))
+
+
+### BREAKING CHANGES
+
+* update the core nrwl packages to 13.x.x
+
+Signed-off-by: Merzough Münker <mmuenker@digitaix.com>
+
+
+
+
+
 ## [12.3.6](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-readme-generator@12.3.6-next.1...@rxap/plugin-readme-generator@12.3.6) (2021-10-07)
 
 **Note:** Version bump only for package @rxap/plugin-readme-generator

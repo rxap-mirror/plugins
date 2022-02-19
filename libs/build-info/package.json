@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-build-info",
-  "version": "12.0.18",
+  "version": "13.0.0-next.0",
   "homepage": "https://gitlab.com/rxap/plugins/libs/build-info",
   "keywords": [
     "rxap",
@@ -24,11 +24,11 @@
     "save": "devDependencies"
   },
   "dependencies": {
-    "@angular-devkit/architect": "^0.1200.3",
-    "@angular-devkit/core": "^12.0.3",
-    "@angular-devkit/schematics": "^12.0.3",
-    "@rxap/schematics-utilities": "^12.6.0",
-    "tslib": "^2.0.0"
+    "@angular-devkit/architect": "^0.1302.4",
+    "@angular-devkit/core": "^13.2.4",
+    "@angular-devkit/schematics": "^13.2.4",
+    "@rxap/schematics-utilities": "^12.7.0",
+    "tslib": "^2.3.1"
   },
   "ng-update": {
     "migrations": "./migration.json",
@@ -43,6 +43,6 @@
     "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^12.3.6"
+    "@nrwl/workspace": "^13.8.3"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-readme-generator",
-  "version": "12.3.6",
+  "version": "13.0.0-next.0",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
@@ -34,18 +34,18 @@
     "access": "public"
   },
   "dependencies": {
-    "@angular-devkit/architect": "^0.1200.3",
-    "@angular-devkit/core": "^12.0.3",
-    "@angular-devkit/schematics": "^12.0.3",
-    "@rxap/schematics-utilities": "^12.6.0",
+    "@angular-devkit/architect": "^0.1302.4",
+    "@angular-devkit/core": "^13.2.4",
+    "@angular-devkit/schematics": "^13.2.4",
+    "@rxap/schematics-utilities": "^12.7.0",
     "handlebars": "^4.7.7",
-    "tslib": "^2.0.0"
+    "tslib": "^2.3.1"
   },
   "private": false,
   "ng-add": {
     "save": "devDependencies"
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^12.3.6"
+    "@nrwl/workspace": "^13.8.3"
   }
 }
