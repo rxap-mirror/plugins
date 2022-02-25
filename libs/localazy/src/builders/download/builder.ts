@@ -82,8 +82,8 @@ export class Builder {
         args.push('-f');
       }
 
-      await yarn.spawn(args)
-    } catch (e) {
+      await yarn.spawn(args);
+    } catch (e: any) {
       return { success: false, error: e.message };
     }
 

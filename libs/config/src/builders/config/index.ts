@@ -62,7 +62,7 @@ export class Builder {
             }
             try {
               JSON.parse(content);
-            } catch (e) {
+            } catch (e: any) {
               console.error(`Can not parse config from '${key}'`, content);
               return { success: false, error: `Can not parse config from '${key}'` };
             }
@@ -71,7 +71,7 @@ export class Builder {
           }
         }
       }
-    } catch (e) {
+    } catch (e: any) {
       console.error('Could not create config files: ' + e.message);
       return { success: false, error: e.message };
     }
