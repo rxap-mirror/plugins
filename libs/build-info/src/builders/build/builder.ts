@@ -31,13 +31,16 @@ export class Builder {
       throw new Error('The target project is not defined!');
     }
 
-    const { sourceRoot } = await this.context.getProjectMetadata(this.context.target.project);
+    const buildOptions = await this.context.getTargetOptions({
+      target:        'build',
+      project:       this.context.target?.project,
+      configuration: this.context.target?.configuration!
+    });
 
-    if (typeof sourceRoot !== 'string') {
-      return {
-        success: false,
-        message: `Could not extract the source root from the build target with the configuration: '${this.context.target?.configuration}'`
-      };
+    const outputPath = buildOptions.outputPath;
+
+    if (typeof outputPath !== 'string') {
+      throw new Error(`Could not extract the output path from the build target with the configuration: '${this.context.target?.configuration}'`);
     }
 
     const buildInfo = this.options;
@@ -64,7 +67,7 @@ export class Builder {
 
     const buildJsonFile = JSON.stringify(buildInfo, undefined, 2);
 
-    const buildInfoFilePath = join(this.context.workspaceRoot, sourceRoot, 'build.json');
+    const buildInfoFilePath = join(this.context.workspaceRoot, outputPath, 'build.json');
 
     writeFileSync(buildInfoFilePath, buildJsonFile);
 
