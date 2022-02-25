@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-alpha.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-build-info@13.0.0-alpha.1...@rxap/plugin-build-info@13.0.0-alpha.2) (2022-02-25)
+
+
+### Bug Fixes
+
+* add logging ([209afb5](https://gitlab.com/rxap/schematics/commit/209afb58b71de31fc71110920f6db27266d6c11c))
+
+
+
+
+
 # [13.0.0-alpha.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-build-info@13.0.0-alpha.0...@rxap/plugin-build-info@13.0.0-alpha.1) (2022-02-25)
 
 
