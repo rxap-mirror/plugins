@@ -112,7 +112,7 @@ export class Builder {
         return { success: false };
       }
 
-    } catch (e) {
+    } catch (e: any) {
       return { success: false };
     }
 

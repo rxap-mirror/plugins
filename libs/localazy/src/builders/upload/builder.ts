@@ -61,7 +61,7 @@ export class Builder {
 
       try {
         await this.executeBuildTarget(extractI18nTarget);
-      } catch (e) {
+      } catch (e: any) {
         console.log(`Could not execute extract target: ${e.message}`);
         return { success: false, error: e.message };
       }
@@ -109,7 +109,7 @@ export class Builder {
       }
 
       await yarn.spawn(args);
-    } catch (e) {
+    } catch (e: any) {
       return { success: false, error: e.message };
     }
 

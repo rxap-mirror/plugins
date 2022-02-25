@@ -19,8 +19,8 @@ export async function CopyAssetFiles(files: FileInputOutput[]): Promise<{ succes
     await Promise.all(files.map((file) => copy(file.input, file.output)));
     console.info('Done copying asset files.');
     return { success: true };
-  } catch (err) {
-    return { error: err.message, success: false };
+  } catch (e: any) {
+    return { error: e.message, success: false };
   }
 }
 

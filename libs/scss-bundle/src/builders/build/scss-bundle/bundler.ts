@@ -292,8 +292,8 @@ export class Bundler {
     try {
       await access(importData.fullPath);
       importData.found = true;
-    } catch (error) {
-      const underscoredDirname = dirname(importData.fullPath);
+    } catch (e: any) {
+      const underscoredDirname  = dirname(importData.fullPath);
       const underscoredBasename = basename(importData.fullPath);
       const underscoredFilePath = join(
         underscoredDirname,
@@ -302,7 +302,7 @@ export class Bundler {
       try {
         await access(underscoredFilePath);
         importData.fullPath = underscoredFilePath;
-        importData.found = true;
+        importData.found    = true;
       } catch (underscoreErr) {
         // If there are any includePaths
         if (includePaths.length) {

@@ -34,14 +34,14 @@ export class Builder {
 
     try {
       await this.createIndexHtml();
-    } catch (e) {
+    } catch (e: any) {
       console.error(`Create index html failed: ${e.message}`);
       return { success: false, error: e.message };
     }
 
     try {
       await this.copyAssets();
-    } catch (e) {
+    } catch (e: any) {
       console.error(`Copy assets failed: ${e.message}`);
       return { success: false, error: e.message };
     }
@@ -106,7 +106,7 @@ export class Builder {
       const assetOutputPath = join(outputPath, basename(assetPath));
       try {
         await copy(assetPath, assetOutputPath);
-      } catch (e) {
+      } catch (e: any) {
         console.error(`Could not copy assets '${assetPath}' to '${outputPath}': ${e.message}`);
       }
     }));
