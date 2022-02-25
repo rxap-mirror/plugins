@@ -80,6 +80,9 @@ export class Builder {
 
     writeFileSync(buildInfoFilePath, buildJsonFile);
 
+    console.log('Successfully created the build.json file.');
+    console.log('build.json: ' + buildInfoFilePath);
+
     return { success: true };
 
   }
