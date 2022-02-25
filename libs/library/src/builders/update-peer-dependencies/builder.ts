@@ -47,7 +47,7 @@ export class Builder {
     this.rootPackageVersionMap = this.loadRootPackageVersionMap();
     try {
       this.projectGraph = readCachedProjectGraph();
-    } catch (e) {
+    } catch (e: any) {
       console.warn('A cached project graph was not found. Load the project graph when needed.');
     }
     this.options.dependencies = this.options.dependencies ?? [];
@@ -80,10 +80,10 @@ export class Builder {
       await this.update(projectName);
       for (const dependency of Array.from(this.projectNewVersion.keys())) {
         const versions = this.projectNewVersion.get(dependency)!;
-        console.log(`${dependency}   ${versions[0]} -> ${versions[1]}`);
+        console.log(`${dependency}   ${versions[ 0 ]} -> ${versions[ 1 ]}`);
       }
       return { success: true };
-    } catch (e) {
+    } catch (e: any) {
       console.error(`Failed to update peer dependencies for project '${projectName}': ${e.message}`);
       console.debug(e.stack);
       return { success: false, error: e.message };
@@ -144,7 +144,7 @@ export class Builder {
       try {
         const options = await this.context.getTargetOptions({
           project: dependency,
-          target: 'update-peer-dependencies'
+          target:  'update-peer-dependencies'
         });
 
         const optionsIgnore: Array<RegExp> = Array.isArray(options.ignore) ? options
@@ -153,7 +153,7 @@ export class Builder {
           .map(pattern => new RegExp(pattern as string)) : [];
 
         ignore.push(...optionsIgnore);
-      } catch (e) {
+      } catch (e: any) {
         console.warn(`Could not remove ignore dependencies from '${dependency}' builder options: ${e.message}`);
       }
 

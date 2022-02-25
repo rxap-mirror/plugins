@@ -15,7 +15,7 @@ export class Builder {
     if (process.env.RXAP_FILE_REPLACER_IDENTIFIER) {
       try {
         this.options.files = JSON.parse(process.env.RXAP_FILE_REPLACER_IDENTIFIER);
-      } catch (e) {
+      } catch (e: any) {
         this.context.logger.error('Could not parse the RXAP_FILE_REPLACER_IDENTIFIER environment variable!');
       }
     }
@@ -48,7 +48,7 @@ export class Builder {
       try {
         const replacement: Record<string, string> = JSON.parse(process.env.RXAP_FILE_REPLACEMENT);
         Object.entries(replacement).forEach(([ key, value ]) => fileReplaceMap.set(key, this.getFileBuffer(value)));
-      } catch (e) {
+      } catch (e: any) {
         this.context.logger.error('Could not parse environment variable RXAP_FILE_REPLACEMENT');
       }
     }
@@ -60,7 +60,7 @@ export class Builder {
         const fileIdentifier = camelize(match[1]);
         try {
           fileReplaceMap.set(fileIdentifier, this.getFileBuffer(value));
-        } catch (e) {
+        } catch (e: any) {
           this.context.logger.error(`Could not convert environment variable '${key}' value to Buffer: ${e.message}`);
           return { success: false, message: e.message };
         }
@@ -76,7 +76,7 @@ export class Builder {
       if (filePath) {
         try {
           writeFileSync(join(this.context.workspaceRoot, filePath), file);
-        } catch (e) {
+        } catch (e: any) {
           this.context.logger.error(`Could not write file to ${filePath}: ${e.message}`);
           return { success: false, message: e.message };
         }

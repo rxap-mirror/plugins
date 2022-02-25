@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@13.0.0-next.0...@rxap/plugin-library@13.0.0-next.1) (2022-02-25)
+
+
+### Bug Fixes
+
+* update catch type ([4587831](https://gitlab.com/rxap/schematics/commit/45878319c926061dc8995c568278c4ae7a903feb))
+
+
+
+
+
 # [13.0.0-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.4.2...@rxap/plugin-library@13.0.0-next.0) (2022-02-19)
 
 

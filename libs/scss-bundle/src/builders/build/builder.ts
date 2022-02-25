@@ -96,7 +96,7 @@ export class Builder {
         this.options.includePaths ?? [],
         this.options.ignoreImports
       );
-    } catch (e) {
+    } catch (e: any) {
       return { success: false, error: `Bundle failed: ${e.message}` };
     }
 
