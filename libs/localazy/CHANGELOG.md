@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-alpha.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@13.0.0-next.1...@rxap/plugin-localazy@13.0.0-alpha.0) (2022-02-25)
+
+**Note:** Version bump only for package @rxap/plugin-localazy
+
+
+
+
+
 # [13.0.0-next.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@13.0.0-next.0...@rxap/plugin-localazy@13.0.0-next.1) (2022-02-25)
 
 

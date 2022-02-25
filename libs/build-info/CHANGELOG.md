@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-alpha.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-build-info@13.0.0-next.0...@rxap/plugin-build-info@13.0.0-alpha.0) (2022-02-25)
+
+
+### Features
+
+* use the dependsOn feature ([8fbf7d7](https://gitlab.com/rxap/schematics/commit/8fbf7d7d6b2d6496ba783c6d437f0895e3f17314))
+
+
+
+
+
 # [13.0.0-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-build-info@12.0.18...@rxap/plugin-build-info@13.0.0-next.0) (2022-02-19)
 
 
