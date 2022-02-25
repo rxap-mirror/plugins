@@ -10,13 +10,6 @@ import {
 } from 'fs';
 import { join } from 'path';
 
-export interface Target extends Record<string, any> {
-  project: string;
-  target: string;
-  configuration: string;
-}
-
-
 export class Builder {
 
   public static Run(
@@ -65,10 +58,6 @@ export class Builder {
 
     if (!buildInfo.tag && process.env.CI_COMMIT_TAG) {
       buildInfo.tag = process.env.CI_COMMIT_TAG;
-    }
-
-    if (!buildInfo.release && process.env.VERSION) {
-      buildInfo.release = process.env.VERSION;
     }
 
     if (!buildInfo.commit && process.env.CI_COMMIT_SHA) {
