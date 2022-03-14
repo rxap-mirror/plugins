@@ -87,7 +87,7 @@ export class Builder {
       console.warn(`The build.json file already exists in the location: '${buildInfoFilePath}'`);
     }
 
-    console.log('build.json: ', JSON.stringify(buildInfo));
+    console.log(buildInfoFilePath + ' : ', buildJsonFile);
 
     writeFileSync(buildInfoFilePath, buildJsonFile);
 
