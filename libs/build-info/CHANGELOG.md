@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [12.0.19](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-build-info@12.0.18...@rxap/plugin-build-info@12.0.19) (2022-03-14)
+
+
+### Bug Fixes
+
+* log build.json ([2dd02fd](https://gitlab.com/rxap/schematics/commit/2dd02fd3af1b579bec84dbe4498d2a417bb16642))
+
+
+
+
+
 ## [12.0.18](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-build-info@12.0.18-next.0...@rxap/plugin-build-info@12.0.18) (2021-10-07)
 
 **Note:** Version bump only for package @rxap/plugin-build-info
