@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@12.0.16...@rxap/plugin-kaniko@13.0.0-next.1) (2022-03-24)
+
+
+### Build System
+
+* upgrade to nrwl 13.x.x ([8f07b6b](https://gitlab.com/rxap/schematics/commit/8f07b6b82fb82e8b70fbc82bd91a08d69cc52692))
+
+
+### BREAKING CHANGES
+
+* update the core nrwl packages to 13.x.x
+
+Signed-off-by: Merzough Münker <mmuenker@digitaix.com>
+
+
+
+
+
 # [13.0.0-next.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@12.0.16...@rxap/plugin-kaniko@13.0.0-next.0) (2022-02-19)
 
 

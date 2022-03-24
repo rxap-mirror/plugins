@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@12.4.2...@rxap/plugin-library@13.0.0-next.2) (2022-03-24)
+
+
+### Bug Fixes
+
+* update catch type ([a3a376b](https://gitlab.com/rxap/schematics/commit/a3a376be772f10889a1f7e1afdf18895ce070d9e))
+* **update-peer-dependencies:** migrate to use the createProjectGraphAsync if cache is unavailable ([3454d1d](https://gitlab.com/rxap/schematics/commit/3454d1d0f21a201da01169e4bd470811bcbac919))
+* **update-peer-dependencies:** update to the new project graph structure ([1b86986](https://gitlab.com/rxap/schematics/commit/1b86986ab259eaa6859f827164c389fd17fa63fc))
+
+
+### Build System
+
+* upgrade to nrwl 13.x.x ([8f07b6b](https://gitlab.com/rxap/schematics/commit/8f07b6b82fb82e8b70fbc82bd91a08d69cc52692))
+
+
+### BREAKING CHANGES
+
+* update the core nrwl packages to 13.x.x
+
+Signed-off-by: Merzough Münker <mmuenker@digitaix.com>
+
+
+
+
+
 # [13.0.0-next.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@13.0.0-next.0...@rxap/plugin-library@13.0.0-next.1) (2022-02-25)
 
 
