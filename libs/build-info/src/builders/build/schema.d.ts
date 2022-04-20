@@ -7,4 +7,15 @@ export interface BuildBuilderSchema extends JsonObject {
   branch?: string;
   tag?: string;
   name?: string;
+  url?: string;
+  tier?: string;
+  job?: string;
+  pipeline?: string;
+  project?: string;
+  runner?: string;
+  slug?: {
+    name?: string;
+    branch?: string;
+    tag?: string;
+  }
 }
