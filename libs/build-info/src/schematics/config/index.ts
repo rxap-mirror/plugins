@@ -23,10 +23,22 @@ export default function(options: ConfigSchema): Rule {
 
         if (!project.targets.has('ci')) {
 
+          const configurations: Record<string, {}> = {};
+
+          if (project.targets.has('build')) {
+            const buildTarget = project.targets.get('build')!;
+            for (const configuration in buildTarget.configurations) {
+              configurations[configuration] = {
+                buildTarget: `${options.project}:build:${configuration}`
+              }
+            }
+          }
+
           project.targets.add({
             name:    'ci',
             builder: '@rxap/plugin-build-info:build',
-            options: {}
+            options: {},
+            configurations
           });
 
         }
