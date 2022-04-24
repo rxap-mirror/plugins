@@ -95,17 +95,6 @@ export default function(options: ConfigSchema): Rule {
         }
 
       }),
-      updateNxJsonInTree((json, context) => {
-        json.targetDependencies ??= {};
-        json.targetDependencies.kaniko ??= [];
-        if (!json.targetDependencies.kaniko.find(dep => dep.target === 'build')) {
-          json.targetDependencies.kaniko.push({ target: 'build', projects: 'self' });
-        }
-        if (!json.targetDependencies.kaniko.find(dep => dep.target === 'ci')) {
-          json.targetDependencies.kaniko.push({ target: 'ci', projects: 'self' });
-        }
-        return json;
-      }),
       host.exists(dockerPath) || options.dockerfile ?
       noop() :
       mergeWith(apply(url('./files'), [
