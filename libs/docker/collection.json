@@ -1,0 +1,17 @@
+{
+  "$schema": "../../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "name": "plugin-docker",
+  "version": "0.0.1",
+  "schematics": {
+    "config": {
+      "factory": "./src/schematics/config/schematic",
+      "schema": "./src/schematics/config/schema.json",
+      "description": "Adds the @rxap/plugin-docker:build to the specified project"
+    },
+    "ng-add": {
+      "description": "Setup the package @rxap/plugin-docker for the workspace.",
+      "factory": "./src/schematics/ng-add/index",
+      "schema": "./src/schematics/ng-add/schema.json"
+    }
+  }
+}

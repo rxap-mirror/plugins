@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "title": "Build builder",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "context": {
+      "type": "string",
+      "description": "The docker build context path"
+    },
+    "dockerfile": {
+      "type": "string",
+      "description": "The path to the dockerfile"
+    },
+    "tag": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "A list of docker image tags"
+    },
+    "buildTarget": {
+      "type": "string",
+      "description": "The target from witch the output path can be extract."
+    },
+    "command": {
+      "type": "string",
+      "description": "The command to start docker",
+      "default": "docker"
+    },
+    "latest": {
+      "type": "boolean",
+      "description": "If true a destination with a latest tag is added",
+      "default": false
+    }
+  },
+  "required": [ "buildTarget" ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@rxap/plugin-docker",
+  "version": "13.0.0-next.0",
+  "main": "src/index.js",
+  "schematics": "./collection.json",
+  "builders": "./builders.json",
+  "publishConfig": {
+    "directory": "../../dist/libs/docker",
+    "access": "public"
+  },
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
+  "license": "GPL-3.0",
+  "keywords": [
+    "rxap",
+    "plugin",
+    "nrwl"
+  ],
+  "repository": "git@gitlab.com:rxap/schematics.git",
+  "homepage": "https://gitlab.com/rxap/plugins/libs/docker",
+  "author": "Merzough Münker",
+  "private": false,
+  "bugs": {
+    "url": "https://gitlab.com/rxap/plugins/-/issues",
+    "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
+  },
+  "ng-update": {
+    "migrations": "./migration.json",
+    "packageGroup": [
+      "@rxap/plugin-docker"
+    ]
+  },
+  "ng-add": {
+    "save": "devDependencies"
+  },
+  "peerDependencies": {}
+}

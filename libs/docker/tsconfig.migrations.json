@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "outDir": "../../dist/migrations/libs/kaniko",
+    "declaration": true,
+    "esModuleInterop": true,
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/files/**"
+  ],
+  "include": [
+    "src/migrations/**/*.ts"
+  ]
+}
