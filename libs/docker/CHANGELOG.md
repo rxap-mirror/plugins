@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@13.0.0-next.2...@rxap/plugin-docker@13.0.0-next.3) (2022-04-24)
+
+
+### Features
+
+* add imageName build option ([75426e8](https://gitlab.com/rxap/schematics/commit/75426e838db8a38045ebc320641b5e0230e0984a))
+
+
+
+
+
 # [13.0.0-next.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@13.0.0-next.1...@rxap/plugin-docker@13.0.0-next.2) (2022-04-24)
 
 
