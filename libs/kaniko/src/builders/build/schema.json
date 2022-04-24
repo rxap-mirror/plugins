@@ -23,15 +23,21 @@
       "type": "string",
       "description": "The target from witch the output path can be extract."
     },
-    "preTarget": {
-      "type": "string",
-      "description": "The target that should be execute before."
-    },
     "command": {
       "type": "string",
       "description": "The command to start kaniko",
       "default": "/kaniko/executor"
+    },
+    "cache": {
+      "type": "boolean",
+      "description": "Enable kaniko cache feature",
+      "default": true
+    },
+    "latest": {
+      "type": "boolean",
+      "description": "If true a destination with a latest tag is added",
+      "default": false
     }
   },
-  "required": []
+  "required": [ "buildTarget" ]
 }

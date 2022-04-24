@@ -10,7 +10,10 @@ import {
   noop,
   forEach
 } from '@angular-devkit/schematics';
-import { updateWorkspace } from '@nrwl/workspace';
+import {
+  updateWorkspace,
+  updateNxJsonInTree
+} from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
 import { createDefaultPath } from '@schematics/angular/utility/workspace';
@@ -24,6 +27,8 @@ export default function(options: ConfigSchema): Rule {
     const projectRootPath    = join(projectRootLibPath, '../');
     const dockerPath = join(projectRootPath, 'Dockerfile');
 
+    let hasCiTarget = false;
+
     return chain([
       updateWorkspace((workspace) => {
         const project = workspace.projects.get(options.project);
@@ -32,13 +37,20 @@ export default function(options: ConfigSchema): Rule {
           throw new Error('Could not extract target project.');
         }
 
+        hasCiTarget = project.targets.has('ci');
+
         if (project.targets.has('kaniko')) {
 
         } else {
 
-          const targetOptions: any = {
-            dockerfile: options.dockerfile ?? dockerPath.replace(/^\//, ''),
-            destination: options.destination,
+          const targetOptions: any = {}
+
+          if (options.dockerfile) {
+            targetOptions.dockerfile = options.dockerfile;
+          }
+
+          if (options.destination) {
+            targetOptions.destination = options.destination;
           }
 
           if (options.context) {
@@ -49,33 +61,50 @@ export default function(options: ConfigSchema): Rule {
             targetOptions.command = options.command;
           }
 
+          if (options.latest) {
+            targetOptions.latest = options.latest;
+          }
+
+          if (options.cache) {
+            targetOptions.cache = options.cache;
+          }
+
+          const configurations: Record<string, { buildTarget: string }> = {};
+
           if (options.buildTarget) {
             targetOptions.buildTarget = options.buildTarget;
           } else if (project.targets.has('build')) {
             const buildTarget = project.targets.get('build')!;
+            targetOptions.buildTarget = `${options.project}:build`;
 
-            if (buildTarget.configurations && buildTarget.configurations['production']) {
-              targetOptions.buildTarget = `${options.project}:build:production`;
-            } else {
-              targetOptions.buildTarget = `${options.project}:build`;
+            for (const configuration in buildTarget.configurations) {
+              configurations[configuration] = {
+                buildTarget: `${options.project}:build:${configuration}`
+              }
             }
 
           }
 
-          if (options.preTarget) {
-            targetOptions.preTarget = options.preTarget
-          } else {
-            targetOptions.preTarget = targetOptions.buildTarget;
-          }
-
           project.targets.add({
             name:    'kaniko',
-            builder: `@rxap/plugin-kaniko:executor`,
-            options: targetOptions
+            builder: `@rxap/plugin-kaniko:build`,
+            options: targetOptions,
+            configurations,
           });
 
         }
 
+      }),
+      updateNxJsonInTree((json, context) => {
+        json.targetDependencies ??= {};
+        json.targetDependencies.docker ??= [];
+        if (!json.targetDependencies.docker.find(dep => dep.target === 'build')) {
+          json.targetDependencies.docker.push({ target: 'build', projects: 'self' });
+        }
+        if (!json.targetDependencies.docker.find(dep => dep.target === 'ci')) {
+          json.targetDependencies.docker.push({ target: 'ci', projects: 'self' });
+        }
+        return json;
       }),
       host.exists(dockerPath) || options.dockerfile ?
       noop() :

@@ -19,12 +19,23 @@ export class Kaniko {
     });
   }
 
-  public executor(command: string, context: string, dockerfile: string, destinations: string[]) {
+  public executor(command: string, context: string, destinations: string[], dockerfile?: string, cache: boolean = true) {
 
     const args = [
-      `--context="${context}"`,
-      `--dockerfile="${dockerfile}"`
+      `--context="${context}"`
     ];
+
+    if (dockerfile) {
+      args.push(`--dockerfile="${dockerfile}"`);
+    }
+
+    if (cache) {
+      args.push('--cache="true"');
+    }
+
+    if (!destinations.length) {
+      throw new Error('At least one destination must be specified');
+    }
 
     for (const destination of destinations) {
       args.push(`--destination=${destination}`);

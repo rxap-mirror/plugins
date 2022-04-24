@@ -5,5 +5,6 @@ export interface ConfigSchema {
   context?: string;
   buildTarget?: string;
   command?: string;
-  preTarget?: string;
+  cache: boolean;
+  latest: boolean;
 }

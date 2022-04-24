@@ -6,6 +6,8 @@ import {
 import { BuildBuilderSchema } from './schema';
 import { json } from '@angular-devkit/core';
 import { Kaniko } from './kaniko';
+import { join } from 'path';
+import { writeFileSync } from 'fs';
 
 export interface Target extends json.JsonObject {
   project: string;
@@ -44,15 +46,6 @@ export class Builder {
       throw new Error('The target project is not defined!');
     }
 
-    const preTarget = this.stringToTarget(this.options.preTarget);
-
-    const builderOutput = await this.executeBuildTarget(preTarget);
-
-    if (!builderOutput.success) {
-      this.context.logger.error(`Could not execute build target '${this.options.preTarget}'`);
-      return { success: false };
-    }
-
     const kaniko = new Kaniko(this.context.logger as any);
 
     if (!this.options.context) {
@@ -61,23 +54,58 @@ export class Builder {
 
       const buildTargetOptions = await this.context.getTargetOptions(buildTarget);
 
-      this.options.context = buildTargetOptions.outputPath as string;
+      this.options.context = join(this.context.workspaceRoot, buildTargetOptions.outputPath as string);
 
     }
 
-    console.log('start kaniko...');
+    console.log('add registry configuration');
+
+    this.addRegistryConfig();
+
+    if (!this.options.destination?.length) {
+      console.log('create registry destination');
+      this.options.destination = [
+        this.getGitlabRegistryDestination()
+      ];
+      if (process.env.LATEST || this.options.latest) {
+        this.options.destination.push(this.getGitlabRegistryDestination('latest'));
+      }
+    }
+
+    console.log(`start kaniko for ${this.options.dockerfile}`);
 
     const result = await kaniko.executor(
       this.options.command,
       this.options.context,
+      this.options.destination,
       this.options.dockerfile,
-      this.options.destination
+      this.options.cache,
     );
 
     console.log('docker image build');
 
     return { success: !Number(result) };
 
+  }
+
+  private addRegistryConfig() {
+    const username = process.env.REGISTRY_USER ?? process.env.CI_REGISTRY_USER;
+    const password = process.env.REGISTRY_PASSWORD ?? process.env.CI_REGISTRY_PASSWORD;
+    const registry = process.env.REGISTRY ?? process.env.CI_REGISTRY;
+    writeFileSync('/kaniko/.docker/config.json', JSON.stringify({
+      auths: {
+        [registry + '']: {
+          username,
+          password
+        }
+      }
+    }));
+  }
+
+  private getGitlabRegistryDestination(imageTag?: string) {
+    const registryImage = process.env.REGISTRY_IMAGE ?? process.env.CI_REGISTRY_IMAGE;
+    const registryImageTag = imageTag ?? process.env.REGISTRY_IMAGE_TAG ?? process.env.VERSION ?? process.env.CI_COMMIT_TAG ?? process.env.CI_COMMIT_BRANCH ?? 'latest';
+    return `${registryImage}${process.env.REGISTRY_IMAGE_SUFFIX ?? ''}:${registryImageTag}`;
   }
 
   private stringToTarget(str: string): Target {
