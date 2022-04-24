@@ -49,13 +49,13 @@ destination | array |  | Specify the docker image names
 context | string |  | Path to context for the docker build process.
 dockerfile | string |  | Path to the dockerfile.
 buildTarget | string |  | The target from witch the output path can be extract.
-preTarget | string |  | The target that should be execute before.
 command | string |  | The command to start kaniko
+cache | boolean | true | Enable kaniko cache feature
+latest | boolean | false | If true a destination with a latest tag is added
 
 | Required |
 | --- |
 | project |
-| destination |
 
 ## ng-add
 > Setup the package @rxap/plugin-kaniko for the workspace.
@@ -84,5 +84,10 @@ context | string |  | The docker build context path
 dockerfile | string |  | The path to the dockerfile
 destination | array |  | A list of docker image tags
 buildTarget | string |  | The target from witch the output path can be extract.
-preTarget | string |  | The target that should be execute before.
 command | string | /kaniko/executor | The command to start kaniko
+cache | boolean | true | Enable kaniko cache feature
+latest | boolean | false | If true a destination with a latest tag is added
+
+| Required |
+| --- |
+| buildTarget |

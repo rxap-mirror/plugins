@@ -12,7 +12,6 @@
 
 - [Installation](#installation)
 - [Schematics](#schematics)
-- [Builder](#builder)
 
 # Installation
 
@@ -50,11 +49,11 @@ context | string |  | Path to context for the docker build process.
 dockerfile | string |  | Path to the dockerfile.
 buildTarget | string |  | The target from witch the output path can be extract.
 command | string |  | The command to start docker
+latest | boolean | false | If true a tag with a latest tag is added
 
 | Required |
 | --- |
 | project |
-| destination |
 
 ## ng-add
 > Setup the package @rxap/plugin-docker for the workspace.
@@ -67,20 +66,3 @@ Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | Name of the project
 
-# Builder
-
-## build
-> build builder
-
-**Builder name**
-```
-@rxap/plugin-docker:build
-```
-
-Option | Type | Default | Description
---- | --- | --- | ---
-context | string |  | The docker build context path
-dockerfile | string |  | The path to the dockerfile
-destination | array |  | A list of docker image tags
-buildTarget | string |  | The target from witch the output path can be extract.
-command | string | /docker/executor | The command to start docker
