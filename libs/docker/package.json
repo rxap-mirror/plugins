@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-docker",
-  "version": "13.0.0-next.0",
+  "version": "13.0.0-next.1",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
@@ -34,5 +34,11 @@
   "ng-add": {
     "save": "devDependencies"
   },
-  "peerDependencies": {}
+  "peerDependencies": {
+    "@angular-devkit/architect": "^0.1302.4",
+    "@angular-devkit/core": "^13.2.4",
+    "@angular-devkit/schematics": "^13.2.4",
+    "@nrwl/workspace": "^13.8.3",
+    "@rxap/schematics-utilities": "^12.7.0"
+  }
 }

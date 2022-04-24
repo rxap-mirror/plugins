@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@13.0.0-next.1...@rxap/plugin-kaniko@13.0.0-next.2) (2022-04-24)
+
+
+### Features
+
+* align with the new docker plugin ([5bb5288](https://gitlab.com/rxap/schematics/commit/5bb5288c1f9070c35bdd7a750f25eb47445bf5b0))
+
+
+
+
+
 # [13.0.0-next.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@12.0.16...@rxap/plugin-kaniko@13.0.0-next.1) (2022-03-24)
 
 
