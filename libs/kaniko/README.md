@@ -84,6 +84,7 @@ context | string |  | The docker build context path
 dockerfile | string |  | The path to the dockerfile
 destination | array |  | A list of docker image tags
 buildTarget | string |  | The target from witch the output path can be extract.
+imageSuffix | string |  | A suffix added to the base image name
 command | string | /kaniko/executor | The command to start kaniko
 cache | boolean | true | Enable kaniko cache feature
 latest | boolean | false | If true a destination with a latest tag is added
