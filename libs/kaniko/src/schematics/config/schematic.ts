@@ -97,12 +97,12 @@ export default function(options: ConfigSchema): Rule {
       }),
       updateNxJsonInTree((json, context) => {
         json.targetDependencies ??= {};
-        json.targetDependencies.docker ??= [];
-        if (!json.targetDependencies.docker.find(dep => dep.target === 'build')) {
-          json.targetDependencies.docker.push({ target: 'build', projects: 'self' });
+        json.targetDependencies.kaniko ??= [];
+        if (!json.targetDependencies.kaniko.find(dep => dep.target === 'build')) {
+          json.targetDependencies.kaniko.push({ target: 'build', projects: 'self' });
         }
-        if (!json.targetDependencies.docker.find(dep => dep.target === 'ci')) {
-          json.targetDependencies.docker.push({ target: 'ci', projects: 'self' });
+        if (!json.targetDependencies.kaniko.find(dep => dep.target === 'ci')) {
+          json.targetDependencies.kaniko.push({ target: 'ci', projects: 'self' });
         }
         return json;
       }),
