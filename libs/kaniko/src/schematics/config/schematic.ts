@@ -49,7 +49,7 @@ export default function(options: ConfigSchema): Rule {
             targetOptions.dockerfile = options.dockerfile;
           }
 
-          if (options.destination) {
+          if (options.destination?.length) {
             targetOptions.destination = options.destination;
           }
 
