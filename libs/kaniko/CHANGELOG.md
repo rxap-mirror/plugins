@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.4](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@13.0.0-next.3...@rxap/plugin-kaniko@13.0.0-next.4) (2022-04-24)
+
+
+### Bug Fixes
+
+* remove nx.json update ([3d44030](https://gitlab.com/rxap/schematics/commit/3d4403063a5aed9104ad2b1e662fa31c3a8eb9c1))
+* use correct target name in nx.json ([8282799](https://gitlab.com/rxap/schematics/commit/8282799c0da5dd6ef7ffaa9f3d46a916bac831c5))
+
+
+
+
+
 # [13.0.0-next.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@13.0.0-next.2...@rxap/plugin-kaniko@13.0.0-next.3) (2022-04-24)
 
 
