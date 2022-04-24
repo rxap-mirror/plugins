@@ -100,7 +100,7 @@ export class Builder {
   private getGitlabRegistryDestination(fallbackImageName?: string, imageTag?: string) {
     const registryImage = process.env.REGISTRY_IMAGE ?? process.env.CI_REGISTRY_IMAGE ?? fallbackImageName;
     const registryImageTag = imageTag ?? process.env.REGISTRY_IMAGE_TAG ?? process.env.VERSION ?? process.env.CI_COMMIT_TAG ?? process.env.CI_COMMIT_BRANCH ?? 'latest';
-    return `${registryImage}${process.env.REGISTRY_IMAGE_SUFFIX ?? ''}:${registryImageTag}`;
+    return `${registryImage}${process.env.REGISTRY_IMAGE_SUFFIX ?? this.options.imageSuffix ?? ''}:${registryImageTag}`;
   }
 
   private stringToTarget(str: string): Target {

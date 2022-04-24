@@ -7,4 +7,5 @@ export interface BuildBuilderSchema extends JsonObject {
   buildTarget: string;
   command: string;
   latest: boolean;
+  imageSuffix?: string;
 }
