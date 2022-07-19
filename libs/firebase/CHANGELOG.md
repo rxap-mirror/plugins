@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@13.0.0-next.2...@rxap/plugin-firebase@13.0.0-next.3) (2022-07-19)
+
+
+### Bug Fixes
+
+* add missing builder configuration ([33de962](https://gitlab.com/rxap/schematics/commit/33de96254da0b64a2a661e6599246f9bc081df53))
+
+
+
+
+
 # [13.0.0-next.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@12.0.5...@rxap/plugin-firebase@13.0.0-next.2) (2022-07-19)
 
 
