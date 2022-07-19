@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.6](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@13.0.0-next.5...@rxap/plugin-firebase@13.0.0-next.6) (2022-07-19)
+
+
+### Bug Fixes
+
+* add deploy url extraction ([c7e5f20](https://gitlab.com/rxap/schematics/commit/c7e5f200b05975e4f3fc59133dee3cdabc9fee2f))
+
+
+
+
+
 # [13.0.0-next.5](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@13.0.0-next.4...@rxap/plugin-firebase@13.0.0-next.5) (2022-07-19)
 
 
