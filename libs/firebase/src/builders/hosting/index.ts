@@ -37,7 +37,7 @@ export class Builder {
     }
 
     if (process.env.FIREBASE_PROJECT) {
-      this.options.token = process.env.FIREBASE_PROJECT;
+      this.options.project = process.env.FIREBASE_PROJECT;
     }
 
     const yarn = new Yarn(this.context.logger);
