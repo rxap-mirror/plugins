@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "$id": "firebase-hosting",
+  "title": "Hosting",
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "string",
+      "default": "live"
+    },
+    "project": {
+      "type": "string"
+    },
+    "token": {
+      "type": "string"
+    },
+    "target": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expires": {
+      "type": "string"
+    }
+  },
+  "required": ["target"]
+}
