@@ -1,7 +1,7 @@
 {
   "builders": {
     "hosting": {
-      "implementation": "./src/builders/hosting/builder",
+      "implementation": "./src/builders/hosting/index",
       "schema": "./src/builders/hosting/schema.json",
       "description": "firebase hosting deployment"
     }
