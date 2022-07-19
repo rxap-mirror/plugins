@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.0.0-next.9](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@13.0.0-next.8...@rxap/plugin-firebase@13.0.0-next.9) (2022-07-19)
+
+
+### Bug Fixes
+
+* change option version to channel ([645e8e1](https://gitlab.com/rxap/schematics/commit/645e8e197810f1b809246ff83cad0d6fc90481cf))
+
+
+
+
+
 # [13.0.0-next.8](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@13.0.0-next.7...@rxap/plugin-firebase@13.0.0-next.8) (2022-07-19)
 
 
