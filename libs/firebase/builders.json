@@ -1,4 +1,10 @@
 {
-  "builders": {},
+  "builders": {
+    "hosting": {
+      "implementation": "./src/builders/hosting/builder",
+      "schema": "./src/builders/hosting/schema.json",
+      "description": "firebase hosting deployment"
+    }
+  },
   "$schema": "../../node_modules/@angular-devkit/architect/src/builders-schema.json"
 }
