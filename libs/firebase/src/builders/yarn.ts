@@ -25,7 +25,6 @@ export class Yarn {
         }
       );
       s.on('close', (d) => {
-        console.log('close: ', d);
         resolve(output)
       });
     });

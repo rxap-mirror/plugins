@@ -1,6 +1,6 @@
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { HostingSchema } from './schema';
-import { readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { json } from '@angular-devkit/core';
 import { Yarn } from '../yarn';
@@ -64,13 +64,44 @@ export class Builder {
       }
 
       const output = await yarn.spawn(args);
-      console.log('output: ', output);
+      const url = this.extractHostingUrl(output);
+      if (url) {
+        this.updateDeployMap(url);
+      }
     } catch (e: any) {
       return { success: false, error: e.message };
     }
 
     return { success: true };
 
+  }
+
+  private extractHostingUrl(output: string) {
+    let url: string | null = null;
+    if (this.options.version === 'live') {
+      const match = output.match(/Hosting URL: (.+)/)
+      if (match) {
+        url = match[1]
+      }
+    } else {
+      const match = output.match(/hosting:channel: Channel URL \([^)]+\): (.+) \[/)
+      if (match) {
+        url = match[1]
+      }
+    }
+    return url;
+  }
+
+  private updateDeployMap(url: string) {
+    const deployFile = 'deploy-urls.json';
+    let deploy: Record<string, string> = {}
+    if (existsSync(deployFile)) {
+      deploy = JSON.parse(readFileSync(deployFile).toString('utf-8'));
+    }
+    for (const target of this.options.target) {
+      deploy[target] = url;
+    }
+    writeFileSync(deployFile, JSON.stringify(deploy, undefined, 2));
   }
 
 }
