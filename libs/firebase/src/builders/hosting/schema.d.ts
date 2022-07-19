@@ -1,5 +1,5 @@
 export interface HostingSchema {
-  version: string;
+  channel: string;
   token?: string;
   project?: string;
   target: string[];

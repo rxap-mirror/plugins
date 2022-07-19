@@ -4,7 +4,7 @@
   "title": "Hosting",
   "type": "object",
   "properties": {
-    "version": {
+    "channel": {
       "type": "string",
       "default": "live"
     },

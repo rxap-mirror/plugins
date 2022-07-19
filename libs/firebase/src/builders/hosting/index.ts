@@ -43,12 +43,12 @@ export class Builder {
     const yarn = new Yarn(this.context.logger);
 
     try {
-      const args: string[] = [ 'firebase', this.options.version === 'live' ? 'deploy' : `hosting:channel:deploy` ];
+      const args: string[] = [ 'firebase', this.options.channel === 'live' ? 'deploy' : `hosting:channel:deploy` ];
 
-      if (this.options.version === 'live') {
+      if (this.options.channel === 'live') {
         args.push(`--only hosting:${this.options.target.join(',')}`);
       } else {
-        args.push(this.options.version);
+        args.push(this.options.channel);
         if (this.options.expires) {
           args.push(`--expires ${this.options.expires}`);
         }
@@ -82,7 +82,7 @@ export class Builder {
 
   private extractHostingUrl(output: string) {
     let url: string | null = null;
-    if (this.options.version === 'live') {
+    if (this.options.channel === 'live') {
       const match = output.match(/"hosting": "(.+)"/)
       if (match) {
         const hosting = match[1];
