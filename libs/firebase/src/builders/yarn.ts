@@ -7,8 +7,9 @@ export class Yarn {
 
   public spawn(args: string[]) {
     console.log(`$ yarn ${args.join(' ')}`);
-    return new Promise((resolve, reject) => {
+    return new Promise<string>((resolve, reject) => {
       const s = cp.spawn('yarn', args, { stdio: [ 'ignore', 'pipe', 'inherit' ], shell: true });
+      let output = '';
       s.on('error', (err: Error & { code?: string }) => {
         if (err.code === 'ENOENT') {
           this.logger.error('Yarn must be installed to use the CLI.');
@@ -19,10 +20,14 @@ export class Yarn {
       s.stdout.on(
         'data',
         (data: Buffer) => {
+          output += data.toString('utf-8');
           console.log(data.toString('utf-8'));
         }
       );
-      s.on('close', resolve);
+      s.on('close', (d) => {
+        console.log('close: ', d);
+        resolve(output)
+      });
     });
   }
 

@@ -61,7 +61,8 @@ export class Builder {
 
       args.push(`--only ${this.options.target.join(',')}`)
 
-      await yarn.spawn(args);
+      const output = await yarn.spawn(args);
+      console.log('output: ', output);
     } catch (e: any) {
       return { success: false, error: e.message };
     }
