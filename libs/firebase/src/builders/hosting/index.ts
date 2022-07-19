@@ -63,6 +63,8 @@ export class Builder {
         args.push(`--project ${this.options.project}`);
       }
 
+      args.push('--json');
+
       const output = await yarn.spawn(args);
       const url = this.extractHostingUrl(output);
       if (url) {
@@ -81,12 +83,15 @@ export class Builder {
   private extractHostingUrl(output: string) {
     let url: string | null = null;
     if (this.options.version === 'live') {
-      const match = output.match(/Hosting URL: (.+)/)
+      const match = output.match(/"hosting": "(.+)"/)
       if (match) {
-        url = match[1]
+        const hosting = match[1];
+        const segments = hosting.split('/');
+        const site = segments[3];
+        url = `https://${site}.web.app`;
       }
     } else {
-      const match = output.match(/Channel URL \([^)]+\): (.+) \[/)
+      const match = output.match(/"url": "(.+)"/)
       if (match) {
         url = match[1]
       }
