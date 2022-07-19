@@ -67,6 +67,8 @@ export class Builder {
       const url = this.extractHostingUrl(output);
       if (url) {
         this.updateDeployMap(url);
+      } else {
+        console.warn('Could not extract the deploy url')
       }
     } catch (e: any) {
       return { success: false, error: e.message };
@@ -84,7 +86,7 @@ export class Builder {
         url = match[1]
       }
     } else {
-      const match = output.match(/hosting:channel: Channel URL \([^)]+\): (.+) \[/)
+      const match = output.match(/Channel URL \([^)]+\): (.+) \[/)
       if (match) {
         url = match[1]
       }
@@ -93,7 +95,7 @@ export class Builder {
   }
 
   private updateDeployMap(url: string) {
-    const deployFile = 'deploy-urls.json';
+    const deployFile = join(this.context.workspaceRoot, 'dist', 'deploy-urls.json');
     let deploy: Record<string, string> = {}
     if (existsSync(deployFile)) {
       deploy = JSON.parse(readFileSync(deployFile).toString('utf-8'));
