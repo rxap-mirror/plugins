@@ -43,9 +43,17 @@ export class Builder {
     const yarn = new Yarn(this.context.logger);
 
     try {
-      const args: string[] = [ 'firebase', `hosting:channel:deploy` ];
+      const args: string[] = [ 'firebase', this.options.version === 'live' ? 'deploy' : `hosting:channel:deploy` ];
 
-      args.push(this.options.version);
+      if (this.options.version === 'live') {
+        args.push(`--only hosting:${this.options.target.join(',')}`);
+      } else {
+        args.push(this.options.version);
+        if (this.options.expires) {
+          args.push(`--expires ${this.options.expires}`);
+        }
+        args.push(`--only ${this.options.target.join(',')}`);
+      }
 
       if (this.options.token) {
         args.push(`--token ${this.options.token}`);
@@ -54,12 +62,6 @@ export class Builder {
       if (this.options.project) {
         args.push(`--project ${this.options.project}`);
       }
-
-      if (this.options.expires) {
-        args.push(`--expires ${this.options.expires}`);
-      }
-
-      args.push(`--only ${this.options.target.join(',')}`)
 
       const output = await yarn.spawn(args);
       console.log('output: ', output);
