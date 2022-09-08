@@ -1,0 +1,104 @@
+{
+  "sourceRoot": "libs/docker/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/docker",
+        "tsConfig": "libs/docker/tsconfig.lib.json",
+        "packageJson": "libs/docker/package.json",
+        "main": "libs/docker/src/index.ts",
+        "assets": [
+          "libs/docker/*.md",
+          "libs/docker/LICENSE",
+          {
+            "input": "./libs/docker/src",
+            "glob": "**/*.!(ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/docker",
+            "glob": "collection.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/docker",
+            "glob": "builders.json",
+            "output": "."
+          }
+        ],
+        "srcRootForCompilationRoot": "libs/docker",
+        "buildableProjectDepsInPackageJsonType": "dependencies"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/docker/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/docker"],
+      "options": {
+        "jestConfig": "libs/docker/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "pack": {
+      "executor": "@rxap/plugin-pack:build",
+      "options": {
+        "targets": [
+          "docker:build",
+          "docker:build-schematics",
+          "docker:build-migrations",
+          "docker:build-builders"
+        ]
+      },
+      "configurations": {}
+    },
+    "readme": {
+      "executor": "@rxap/plugin-readme-generator:library"
+    },
+    "build-schematics": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/docker",
+        "tsConfig": "libs/docker/tsconfig.schematics.json",
+        "assets": [],
+        "type": "schematics"
+      }
+    },
+    "build-migrations": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/docker",
+        "tsConfig": "libs/docker/tsconfig.migrations.json",
+        "assets": [],
+        "type": "migrations"
+      }
+    },
+    "build-builders": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/docker",
+        "tsConfig": "libs/docker/tsconfig.builders.json",
+        "assets": [],
+        "type": "builders"
+      }
+    },
+    "update-package-group": {
+      "executor": "@rxap/plugin-library:update-package-group"
+    },
+    "update-peer-dependencies": {
+      "executor": "@rxap/plugin-library:update-peer-dependencies",
+      "options": {
+        "ignore": []
+      }
+    }
+  },
+  "tags": []
+}

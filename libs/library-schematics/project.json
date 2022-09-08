@@ -1,0 +1,88 @@
+{
+  "sourceRoot": "libs/library-schematics/src",
+  "projectType": "library",
+  "generators": {},
+  "prefix": "rxap-plugin",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/library-schematics/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/libs/library-schematics"]
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/libs/library-schematics",
+        "tsConfig": "libs/library-schematics/tsconfig.lib.json",
+        "packageJson": "libs/library-schematics/package.json",
+        "main": "libs/library-schematics/src/index.ts",
+        "assets": [
+          "libs/library-schematics/*.md",
+          "libs/library-schematics/LICENSE",
+          {
+            "input": "./libs/library-schematics/src",
+            "glob": "**/*.!(ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/library-schematics",
+            "glob": "collection.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/library-schematics",
+            "glob": "builders.json",
+            "output": "."
+          }
+        ],
+        "srcRootForCompilationRoot": "libs/library-schematics"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "pack": {
+      "executor": "@rxap/plugin-pack:build",
+      "options": {
+        "targets": [
+          "library-schematics:build",
+          "library-schematics:build-schematics",
+          "library-schematics:build-migrations",
+          "library-schematics:build-builders"
+        ]
+      }
+    },
+    "readme": {
+      "executor": "@rxap/plugin-readme-generator:plugin"
+    },
+    "build-schematics": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/library-schematics",
+        "tsConfig": "libs/library-schematics/tsconfig.schematics.json",
+        "assets": [],
+        "type": "schematics"
+      }
+    },
+    "build-migrations": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/library-schematics",
+        "tsConfig": "libs/library-schematics/tsconfig.migrations.json",
+        "assets": [],
+        "type": "migrations"
+      }
+    },
+    "build-builders": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/library-schematics",
+        "tsConfig": "libs/library-schematics/tsconfig.builders.json",
+        "assets": [],
+        "type": "builders"
+      }
+    }
+  },
+  "tags": []
+}

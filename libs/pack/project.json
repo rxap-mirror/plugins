@@ -1,0 +1,98 @@
+{
+  "sourceRoot": "libs/pack/src",
+  "projectType": "library",
+  "prefix": "rxap-plugin",
+  "generators": {},
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/pack/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/libs/pack"]
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/libs/pack",
+        "tsConfig": "libs/pack/tsconfig.lib.json",
+        "packageJson": "libs/pack/package.json",
+        "main": "libs/pack/src/index.ts",
+        "assets": [
+          "libs/pack/*.md",
+          "libs/pack/LICENSE",
+          {
+            "input": "./libs/pack/src",
+            "glob": "**/*.!(ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/pack",
+            "glob": "collection.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/pack",
+            "glob": "builders.json",
+            "output": "."
+          }
+        ],
+        "srcRootForCompilationRoot": "libs/pack",
+        "buildableProjectDepsInPackageJsonType": "dependencies"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "pack": {
+      "executor": "@rxap/plugin-pack:build",
+      "options": {
+        "targets": [
+          "pack:build",
+          "pack:build-schematics",
+          "pack:build-migrations",
+          "pack:build-builders"
+        ]
+      }
+    },
+    "readme": {
+      "executor": "@rxap/plugin-readme-generator:plugin"
+    },
+    "build-schematics": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/pack",
+        "tsConfig": "libs/pack/tsconfig.schematics.json",
+        "assets": [],
+        "type": "schematics"
+      }
+    },
+    "build-migrations": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/pack",
+        "tsConfig": "libs/pack/tsconfig.migrations.json",
+        "assets": [],
+        "type": "migrations"
+      }
+    },
+    "build-builders": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/pack",
+        "tsConfig": "libs/pack/tsconfig.builders.json",
+        "assets": [],
+        "type": "builders"
+      }
+    },
+    "update-package-group": {
+      "executor": "@rxap/plugin-library:update-package-group"
+    },
+    "update-peer-dependencies": {
+      "executor": "@rxap/plugin-library:update-peer-dependencies",
+      "options": {
+        "ignore": []
+      }
+    }
+  },
+  "tags": []
+}

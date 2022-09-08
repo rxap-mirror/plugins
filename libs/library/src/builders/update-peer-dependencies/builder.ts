@@ -12,15 +12,12 @@ import {
   writeFileSync
 } from 'fs';
 import { PackageJson } from '@rxap/schematics-utilities';
-import { ProjectGraph } from '@nrwl/workspace/src/core/project-graph/project-graph-models';
 import {
   equals,
   unique
 } from '@rxap/utilities';
-import {
-  readCachedProjectGraph,
-  createProjectGraphAsync
-} from '@nrwl/workspace/src/core/project-graph/project-graph';
+import { createProjectGraphAsync, readCachedProjectGraph } from 'nx/src/project-graph/project-graph';
+import { ProjectGraph } from 'nx/src/config/project-graph';
 
 export interface Target extends json.JsonObject {
   project: string;

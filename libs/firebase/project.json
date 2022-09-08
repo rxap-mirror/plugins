@@ -1,0 +1,84 @@
+{
+  "sourceRoot": "libs/firebase/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/firebase",
+        "tsConfig": "libs/firebase/tsconfig.lib.json",
+        "packageJson": "libs/firebase/package.json",
+        "main": "libs/firebase/src/index.ts",
+        "assets": ["libs/firebase/*.md"],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/firebase/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/firebase"],
+      "options": {
+        "jestConfig": "libs/firebase/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "pack": {
+      "executor": "@rxap/plugin-pack:build",
+      "options": {
+        "targets": [
+          "firebase:build",
+          "firebase:build-schematics",
+          "firebase:build-migrations",
+          "firebase:build-builders"
+        ]
+      }
+    },
+    "readme": {
+      "executor": "@rxap/plugin-readme-generator:library"
+    },
+    "build-schematics": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/firebase",
+        "tsConfig": "libs/firebase/tsconfig.schematics.json",
+        "assets": [],
+        "type": "schematics"
+      }
+    },
+    "build-migrations": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/firebase",
+        "tsConfig": "libs/firebase/tsconfig.migrations.json",
+        "assets": [],
+        "type": "migrations"
+      }
+    },
+    "build-builders": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/firebase",
+        "tsConfig": "libs/firebase/tsconfig.builders.json",
+        "assets": [],
+        "type": "builders"
+      }
+    },
+    "update-package-group": {
+      "executor": "@rxap/plugin-library:update-package-group"
+    },
+    "update-peer-dependencies": {
+      "executor": "@rxap/plugin-library:update-peer-dependencies",
+      "options": {
+        "ignore": []
+      }
+    }
+  },
+  "tags": []
+}

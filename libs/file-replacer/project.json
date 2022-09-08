@@ -1,0 +1,85 @@
+{
+  "sourceRoot": "libs/file-replacer/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/file-replacer",
+        "tsConfig": "libs/file-replacer/tsconfig.lib.json",
+        "packageJson": "libs/file-replacer/package.json",
+        "main": "libs/file-replacer/src/index.ts",
+        "assets": ["libs/file-replacer/*.md"],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/file-replacer/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/file-replacer"],
+      "options": {
+        "jestConfig": "libs/file-replacer/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "pack": {
+      "executor": "@rxap/plugin-pack:build",
+      "options": {
+        "targets": [
+          "file-replacer:build",
+          "file-replacer:build-schematics",
+          "file-replacer:build-migrations",
+          "file-replacer:build-builders"
+        ]
+      },
+      "configurations": {}
+    },
+    "readme": {
+      "executor": "@rxap/plugin-readme-generator:library"
+    },
+    "build-schematics": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/file-replacer",
+        "tsConfig": "libs/file-replacer/tsconfig.schematics.json",
+        "assets": [],
+        "type": "schematics"
+      }
+    },
+    "build-migrations": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/file-replacer",
+        "tsConfig": "libs/file-replacer/tsconfig.migrations.json",
+        "assets": [],
+        "type": "migrations"
+      }
+    },
+    "build-builders": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/file-replacer",
+        "tsConfig": "libs/file-replacer/tsconfig.builders.json",
+        "assets": [],
+        "type": "builders"
+      }
+    },
+    "update-package-group": {
+      "executor": "@rxap/plugin-library:update-package-group"
+    },
+    "update-peer-dependencies": {
+      "executor": "@rxap/plugin-library:update-peer-dependencies",
+      "options": {
+        "ignore": []
+      }
+    }
+  },
+  "tags": []
+}

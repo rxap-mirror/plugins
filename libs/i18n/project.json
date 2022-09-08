@@ -1,0 +1,107 @@
+{
+  "sourceRoot": "libs/i18n/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/i18n/**/*.ts"]
+      },
+      "outputs": ["{options.outputFile}"]
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/i18n"],
+      "options": {
+        "jestConfig": "libs/i18n/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/i18n",
+        "tsConfig": "libs/i18n/tsconfig.lib.json",
+        "packageJson": "libs/i18n/package.json",
+        "main": "libs/i18n/src/index.ts",
+        "assets": [
+          "libs/i18n/*.md",
+          "libs/i18n/LICENSE",
+          {
+            "input": "./libs/i18n/src",
+            "glob": "**/*.!(ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/i18n",
+            "glob": "collection.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/i18n",
+            "glob": "builders.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/i18n/src",
+            "glob": "**/files/**",
+            "output": "./src"
+          }
+        ],
+        "buildableProjectDepsInPackageJsonType": "dependencies"
+      }
+    },
+    "pack": {
+      "executor": "@rxap/plugin-pack:build",
+      "options": {
+        "targets": [
+          "i18n:build",
+          "i18n:build-schematics",
+          "i18n:build-migrations",
+          "i18n:build-builders"
+        ]
+      }
+    },
+    "readme": {
+      "executor": "@rxap/plugin-readme-generator:plugin"
+    },
+    "build-schematics": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/i18n",
+        "tsConfig": "libs/i18n/tsconfig.schematics.json",
+        "assets": [],
+        "type": "schematics"
+      }
+    },
+    "build-migrations": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/i18n",
+        "tsConfig": "libs/i18n/tsconfig.migrations.json",
+        "assets": [],
+        "type": "migrations"
+      }
+    },
+    "build-builders": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/i18n",
+        "tsConfig": "libs/i18n/tsconfig.builders.json",
+        "assets": [],
+        "type": "builders"
+      }
+    },
+    "update-package-group": {
+      "executor": "@rxap/plugin-library:update-package-group"
+    },
+    "update-peer-dependencies": {
+      "executor": "@rxap/plugin-library:update-peer-dependencies",
+      "options": {
+        "ignore": []
+      }
+    }
+  },
+  "tags": []
+}

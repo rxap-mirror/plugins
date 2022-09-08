@@ -47,7 +47,7 @@ export default function(options: ConfigSchema): Rule {
       updateNxJsonInTree((json, context) => {
         json.targetDependencies ??= {};
         json.targetDependencies.ci ??= [];
-        if (!json.targetDependencies.ci.find(dep => dep.target === 'build')) {
+        if (!json.targetDependencies.ci.find(dep => typeof dep === 'string' ? dep === 'build' : dep.target === 'build')) {
           json.targetDependencies.ci.push({ target: 'build', projects: 'self' });
         }
         return json;

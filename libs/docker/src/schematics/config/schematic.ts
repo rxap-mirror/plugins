@@ -90,10 +90,10 @@ export default function(options: ConfigSchema): Rule {
       updateNxJsonInTree((json, context) => {
         json.targetDependencies ??= {};
         json.targetDependencies.docker ??= [];
-        if (!json.targetDependencies.docker.find(dep => dep.target === 'build')) {
+        if (!json.targetDependencies.docker.find(dep => typeof dep === 'string' ? dep === 'build' : dep.target === 'build')) {
           json.targetDependencies.docker.push({ target: 'build', projects: 'self' });
         }
-        if (!json.targetDependencies.docker.find(dep => dep.target === 'ci')) {
+        if (!json.targetDependencies.docker.find(dep => typeof dep === 'string' ? dep === 'ci' : dep.target === 'ci')) {
           json.targetDependencies.docker.push({ target: 'ci', projects: 'self' });
         }
         return json;

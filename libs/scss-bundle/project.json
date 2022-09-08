@@ -1,0 +1,105 @@
+{
+  "sourceRoot": "libs/scss-bundle/src",
+  "projectType": "library",
+  "prefix": "rxap-plugin",
+  "generators": {},
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "options": {
+        "jestConfig": "libs/scss-bundle/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "outputs": ["coverage/libs/scss-bundle"]
+    },
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "options": {
+        "outputPath": "dist/libs/scss-bundle",
+        "tsConfig": "libs/scss-bundle/tsconfig.lib.json",
+        "packageJson": "libs/scss-bundle/package.json",
+        "main": "libs/scss-bundle/src/index.ts",
+        "assets": [
+          "libs/scss-bundle/*.md",
+          "libs/scss-bundle/LICENSE",
+          {
+            "input": "./libs/scss-bundle/src",
+            "glob": "**/*.!(ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./libs/scss-bundle",
+            "glob": "collection.json",
+            "output": "."
+          },
+          {
+            "input": "./libs/scss-bundle",
+            "glob": "builders.json",
+            "output": "."
+          }
+        ],
+        "srcRootForCompilationRoot": "libs/scss-bundle",
+        "buildableProjectDepsInPackageJsonType": "dependencies"
+      },
+      "outputs": ["{options.outputPath}"]
+    },
+    "pack": {
+      "executor": "@rxap/plugin-pack:build",
+      "options": {
+        "targets": [
+          "scss-bundle:build",
+          "scss-bundle:build-schematics",
+          "scss-bundle:build-migrations",
+          "scss-bundle:build-builders"
+        ]
+      }
+    },
+    "readme": {
+      "executor": "@rxap/plugin-readme-generator:plugin"
+    },
+    "publish": {
+      "executor": "@rxap/plugin-library-publish:publish",
+      "options": {
+        "buildTarget": "scss-bundle:build",
+        "preTarget": "scss-bundle:pack"
+      }
+    },
+    "build-schematics": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/scss-bundle",
+        "tsConfig": "libs/scss-bundle/tsconfig.schematics.json",
+        "assets": [],
+        "type": "schematics"
+      }
+    },
+    "build-migrations": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/scss-bundle",
+        "tsConfig": "libs/scss-bundle/tsconfig.migrations.json",
+        "assets": [],
+        "type": "migrations"
+      }
+    },
+    "build-builders": {
+      "executor": "@rxap/plugin-library:build-schematics",
+      "options": {
+        "outputPath": "dist/libs/scss-bundle",
+        "tsConfig": "libs/scss-bundle/tsconfig.builders.json",
+        "assets": [],
+        "type": "builders"
+      }
+    },
+    "update-package-group": {
+      "executor": "@rxap/plugin-library:update-package-group"
+    },
+    "update-peer-dependencies": {
+      "executor": "@rxap/plugin-library:update-peer-dependencies",
+      "options": {
+        "ignore": []
+      }
+    }
+  },
+  "tags": []
+}
