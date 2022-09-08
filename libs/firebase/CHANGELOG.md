@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [14.0.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@13.0.1...@rxap/plugin-firebase@14.0.0) (2022-09-08)
+
+
+### chore
+
+* upgrade to 14.x.x ([52cccdb](https://gitlab.com/rxap/schematics/commit/52cccdb066599a3c333117107a06169e5d42c604))
+
+
+### BREAKING CHANGES
+
+* upgrade to 14.x.x
+
+
+
+
+
 ## [13.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@13.0.0...@rxap/plugin-firebase@13.0.1) (2022-09-08)
 
 **Note:** Version bump only for package @rxap/plugin-firebase

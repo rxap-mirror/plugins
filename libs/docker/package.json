@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-docker",
-  "version": "13.0.1",
+  "version": "14.0.0",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
@@ -36,10 +36,10 @@
     "save": "devDependencies"
   },
   "peerDependencies": {
-    "@angular-devkit/architect": "^0.1302.4",
-    "@angular-devkit/core": "^13.2.4",
-    "@angular-devkit/schematics": "^13.2.4",
-    "@nrwl/workspace": "^13.8.3",
+    "@angular-devkit/architect": "^0.1402.2",
+    "@angular-devkit/core": "^14.2.2",
+    "@angular-devkit/schematics": "^14.2.2",
+    "@nrwl/workspace": "^14.6.5",
     "@rxap/schematics-utilities": "^12.7.0"
   },
   "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
