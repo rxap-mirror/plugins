@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-kaniko",
-  "version": "13.0.0",
+  "version": "13.0.1",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
@@ -40,5 +40,6 @@
   },
   "peerDependencies": {
     "@nrwl/workspace": "^13.8.3"
-  }
+  },
+  "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }

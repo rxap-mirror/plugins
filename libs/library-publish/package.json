@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-library-publish",
-  "version": "13.0.0",
+  "version": "13.0.1",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
@@ -30,5 +30,6 @@
     "packageGroup": [
       "@rxap/plugin-library-publish"
     ]
-  }
+  },
+  "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }

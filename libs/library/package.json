@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-library",
-  "version": "13.0.0",
+  "version": "13.0.1",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/library",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -46,5 +46,6 @@
   },
   "peerDependencies": {
     "@nrwl/workspace": "^13.8.3"
-  }
+  },
+  "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }

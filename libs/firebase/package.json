@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-firebase",
-  "version": "13.0.0",
+  "version": "13.0.1",
   "schematics": "./collection.json",
   "description": "A Nx/Ng plugin for configuring and building firebase features",
   "ng-update": {
@@ -41,5 +41,6 @@
   },
   "peerDependencies": {
     "@angular-devkit/architect": "^0.1302.4"
-  }
+  },
+  "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }

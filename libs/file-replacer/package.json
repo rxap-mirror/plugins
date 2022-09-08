@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-file-replacer",
-  "version": "13.0.0",
+  "version": "13.0.1",
   "schematics": "./collection.json",
   "ng-update": {
     "migrations": "./migration.json",
@@ -35,5 +35,6 @@
   },
   "dependencies": {
     "tslib": "^2.3.1"
-  }
+  },
+  "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }
