@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.1.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@13.0.1...@rxap/plugin-i18n@13.1.0) (2022-09-13)
+
+
+### Features
+
+* support assets glob pattern ([cab63c6](https://gitlab.com/rxap/schematics/commit/cab63c6e2762288862fa7ef8fd9cb1a9be76956c))
+
+
+
+
+
 ## [13.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@13.0.0...@rxap/plugin-i18n@13.0.1) (2022-09-08)
 
 **Note:** Version bump only for package @rxap/plugin-i18n

@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-i18n",
-  "version": "13.0.1",
+  "version": "13.1.0",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/i18n",
   "repository": "git@gitlab.com:rxap/schematics.git",
@@ -32,7 +32,7 @@
   "dependencies": {
     "@angular-devkit/architect": "^0.1302.4",
     "@angular-devkit/schematics": "^13.2.4",
-    "@rxap/schematics-utilities": "^12.7.0",
+    "@rxap/schematics-utilities": "^13.0.0",
     "handlebars": "^4.7.7",
     "tslib": "^2.3.1"
   },
@@ -43,7 +43,8 @@
     ]
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^13.8.3"
+    "@nrwl/workspace": "^13.8.3",
+    "glob": "^8.0.3"
   },
   "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }
