@@ -1,7 +1,7 @@
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { BuildBuilderSchema } from './schema';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
-import { basename, join } from 'path';
+import { basename, join, relative } from 'path';
 import { compile } from 'handlebars';
 import { copy } from 'fs-extra';
 import glob from 'glob';
@@ -119,7 +119,7 @@ export class Builder {
               reject(err);
               return;
             }
-            Promise.all(files.map(file => copy(file, assetOutputPath))).then(resolve).catch(reject);
+            Promise.all(files.map(file => copy(file, join(assetOutputPath, relative(assetPath.input, file))))).then(resolve).catch(reject);
           }));
         } catch (e: any) {
           console.error(`Could not copy assets '${JSON.stringify(assetPath)}' to '${outputPath}': ${e.message}`);
