@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.1.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@13.1.0...@rxap/plugin-i18n@13.1.1) (2022-09-19)
+
+
+### Bug Fixes
+
+* copy glob files to relative dest ([50f1b6b](https://gitlab.com/rxap/schematics/commit/50f1b6ba91678b619cc9f63a96fdcbc7e2044031))
+
+
+
+
+
 # [13.1.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@13.0.1...@rxap/plugin-i18n@13.1.0) (2022-09-13)
 
 
