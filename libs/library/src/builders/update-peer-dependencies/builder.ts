@@ -12,12 +12,9 @@ import {
   writeFileSync
 } from 'fs';
 import { PackageJson } from '@rxap/schematics-utilities';
-import {
-  equals,
-  unique
-} from '@rxap/utilities';
 import { createProjectGraphAsync, readCachedProjectGraph } from 'nx/src/project-graph/project-graph';
 import { ProjectGraph } from 'nx/src/config/project-graph';
+import { equals } from '../utils/equals';
 
 export interface Target extends json.JsonObject {
   project: string;
@@ -49,7 +46,7 @@ export class Builder {
     }
     this.options.dependencies = this.options.dependencies ?? [];
     this.options.dependencies.push('tslib');
-    this.options.dependencies = this.options.dependencies.filter(unique());
+    this.options.dependencies = this.options.dependencies.filter((value, index, self) => self.indexOf(value) === index);
   }
 
   public static Run(
@@ -132,7 +129,7 @@ export class Builder {
       flattenDependencies.push(...this.flattenDependenciesMap.get(dependency)!);
     }
 
-    return flattenDependencies.filter(unique());
+    return flattenDependencies.filter((value, index, self) => self.indexOf(value) === index);
   }
 
   private async filterIgnoredDependencies(dependency: string, dependencies: string[]): Promise<string[]> {

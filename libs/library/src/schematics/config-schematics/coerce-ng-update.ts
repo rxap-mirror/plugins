@@ -1,5 +1,4 @@
 import { UpdateProjectPackageJson } from '@rxap/schematics-utilities';
-import { unique } from '@rxap/utilities';
 
 export function CoerceNgUpdate(projectName: string) {
   return UpdateProjectPackageJson(packageJson => {
@@ -17,7 +16,7 @@ export function CoerceNgUpdate(projectName: string) {
     packageJson['ng-update'].packageGroup = [
       packageJson.name,
       ...packageJson['ng-update'].packageGroup
-    ].filter(unique());
+    ].filter((value, index, self) => self.indexOf(value) === index);
 
   }, { projectName: projectName });
 }

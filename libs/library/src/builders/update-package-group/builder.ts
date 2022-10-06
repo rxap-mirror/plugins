@@ -5,7 +5,7 @@ import { ReadFile } from './read-file';
 import { join } from 'path';
 import { WriteFile } from './write-file';
 import { existsSync } from 'fs';
-import { equals } from '@rxap/utilities';
+import { equals } from '../utils/equals';
 
 export interface Target extends json.JsonObject {
   project: string;
