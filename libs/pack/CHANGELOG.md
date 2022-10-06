@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-pack@14.0.0...@rxap/plugin-pack@14.0.1) (2022-10-06)
+
+
+### Bug Fixes
+
+* remove @rxap/utilities dependency ([fa8b3e6](https://gitlab.com/rxap/schematics/commit/fa8b3e667f7c4e5e1a5f15a5d0cc9543da72729d))
+
+
+
+
+
 # [14.0.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-pack@13.0.1...@rxap/plugin-pack@14.0.0) (2022-09-08)
 
 
