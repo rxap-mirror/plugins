@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-readme-generator@14.0.1...@rxap/plugin-readme-generator@14.0.2) (2022-10-06)
+
+
+### Bug Fixes
+
+* update rxap packages to 14.x.x ([eda3337](https://gitlab.com/rxap/schematics/commit/eda3337af2c477126a3d83715cdc7a955c239cb6))
+
+
+
+
+
 ## [14.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-readme-generator@14.0.0...@rxap/plugin-readme-generator@14.0.1) (2022-10-06)
 
 
