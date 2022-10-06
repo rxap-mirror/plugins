@@ -1,8 +1,9 @@
 import { chain, Rule, SchematicsException, Tree } from '@angular-devkit/schematics';
 import { ConfigFunctionsSchema } from './schema';
-import { UpdateAngularJson, UpdateJsonFile, UpdateProjectPackageJson } from '@rxap/schematics-utilities';
+import { UpdateJsonFile, UpdateProjectPackageJson } from '@rxap/schematics-utilities';
 import { join } from 'path';
 import { strings } from '@angular-devkit/core';
+import { updateWorkspace } from '@nrwl/workspace';
 
 const { dasherize } = strings;
 
@@ -11,8 +12,8 @@ export default function(options: ConfigFunctionsSchema): Rule {
   return async (host: Tree) => {
 
     return chain([
-      UpdateAngularJson(angular => {
-        const project = angular.projects.get(options.project);
+      updateWorkspace(workspace => {
+        const project = workspace.projects.get(options.project);
         if (!project) {
           throw new SchematicsException(`The project '${options.project}' does not exists in the workspace.`);
         }
@@ -20,6 +21,7 @@ export default function(options: ConfigFunctionsSchema): Rule {
         if (!buildTarget) {
           throw new SchematicsException(`The project '${options.project}' does not have the target 'build'`);
         }
+        buildTarget.options ??= {};
         buildTarget.options.generatePackageJson = true;
       }),
       UpdateProjectPackageJson(packageJson => {
