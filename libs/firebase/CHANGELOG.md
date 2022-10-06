@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@14.0.1...@rxap/plugin-firebase@14.0.2) (2022-10-06)
+
+
+### Bug Fixes
+
+* use native workspace update function ([3e5a5d8](https://gitlab.com/rxap/schematics/commit/3e5a5d8ec993efb765ea23239462f18c6dbf8706))
+
+
+
+
+
 ## [14.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@14.0.0...@rxap/plugin-firebase@14.0.1) (2022-10-06)
 
 
