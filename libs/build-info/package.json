@@ -41,7 +41,7 @@
   },
   "peerDependencies": {
     "@nrwl/workspace": "^14.6.5",
-    "@rxap/schematics-utilities": "^12.7.0"
+    "@rxap/schematics-utilities": "^14.0.1"
   },
   "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }
