@@ -9,4 +9,5 @@ export interface BuildBuilderSchema extends JsonObject {
   latest: boolean;
   imageSuffix?: string;
   imageName?: string;
+  push?: boolean;
 }

@@ -40,6 +40,11 @@
       "type": "boolean",
       "description": "If true a destination with a latest tag is added",
       "default": false
+    },
+    "push": {
+      "type": "boolean",
+      "description": "If true all created images are pushed",
+      "default": false
     }
   },
   "required": [ "buildTarget" ]
