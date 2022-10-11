@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [14.1.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@14.0.1...@rxap/plugin-docker@14.1.0) (2022-10-11)
+
+
+### Bug Fixes
+
+* use correct image tag ([0bbe9ba](https://gitlab.com/rxap/schematics/commit/0bbe9bafbbfaf2fd26aabd04a9f28e30091af201))
+
+
+### Features
+
+* add push option ([8ba1f1b](https://gitlab.com/rxap/schematics/commit/8ba1f1b3c8c1cc1d4ab4bc58fa6369398ca6dc0e))
+
+
+
+
+
 ## [14.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@14.0.0...@rxap/plugin-docker@14.0.1) (2022-10-06)
 
 
