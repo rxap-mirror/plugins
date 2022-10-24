@@ -1,9 +1,10 @@
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { BuildBuilderSchema } from './schema';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
-import { basename, join } from 'path';
+import { basename, join, relative } from 'path';
 import { compile } from 'handlebars';
 import { copy } from 'fs-extra';
+import glob from 'glob';
 
 export interface Target extends Record<string, any> {
   project: string;
@@ -100,14 +101,29 @@ export class Builder {
     return outputPath;
   }
 
-  private async copyFiles(pathList: string[]) {
+  private async copyFiles(pathList: Array<string | { glob: string, input: string, output: string }>) {
     const outputPath = await this.getOutputPath();
     await Promise.all(pathList.map(async assetPath => {
-      const assetOutputPath = join(outputPath, basename(assetPath));
-      try {
-        await copy(assetPath, assetOutputPath);
-      } catch (e: any) {
-        console.error(`Could not copy assets '${assetPath}' to '${outputPath}': ${e.message}`);
+      if (typeof assetPath === 'string') {
+        const assetOutputPath = join(outputPath, basename(assetPath));
+        try {
+          await copy(assetPath, assetOutputPath);
+        } catch (e: any) {
+          console.error(`Could not copy assets '${assetPath}' to '${outputPath}': ${e.message}`);
+        }
+      } else {
+        const assetOutputPath = join(outputPath, assetPath.output);
+        try {
+          await new Promise((resolve, reject) => glob(assetPath.input + assetPath.glob, (err: any, files: string[]) => {
+            if (err) {
+              reject(err);
+              return;
+            }
+            Promise.all(files.map(file => copy(file, join(assetOutputPath, relative(assetPath.input, file))))).then(resolve).catch(reject);
+          }));
+        } catch (e: any) {
+          console.error(`Could not copy assets '${JSON.stringify(assetPath)}' to '${outputPath}': ${e.message}`);
+        }
       }
     }));
   }
@@ -128,7 +144,7 @@ export class Builder {
       });
 
       if (Array.isArray(buildOptions.assets) && buildOptions.assets.length) {
-        await this.copyFiles(buildOptions.assets as string[]);
+        await this.copyFiles(buildOptions.assets as any);
       } else {
         console.info('Skip assets copy. The build target of this project has no assets specified.');
       }
