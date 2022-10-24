@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.0.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@13.0.1...@rxap/plugin-localazy@13.0.2) (2022-10-24)
+
+
+### Bug Fixes
+
+* extract read key from download target if exists ([aa02d4b](https://gitlab.com/rxap/schematics/commit/aa02d4bd564820c3d00d18a7a9b9164bfe9bb7be))
+
+
+
+
+
 ## [13.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@13.0.0...@rxap/plugin-localazy@13.0.1) (2022-09-08)
 
 **Note:** Version bump only for package @rxap/plugin-localazy
