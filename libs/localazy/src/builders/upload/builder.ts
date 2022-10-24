@@ -56,15 +56,35 @@ export class Builder {
       this.options.readKey = process.env.LOCALAZY_READ_KEY;
     }
 
-    if (this.options.extractTarget) {
-      const extractI18nTarget = Builder.stringToTarget(this.options.extractTarget);
-
-      try {
-        await this.executeBuildTarget(extractI18nTarget);
-      } catch (e: any) {
-        console.log(`Could not execute extract target: ${e.message}`);
-        return { success: false, error: e.message };
+    if (!this.options.extractTarget) {
+      if (!this.context.target?.project) {
+        return { error: 'Could not extract the current project', success: false };
       }
+      this.options.extractTarget = this.context.target?.project + ':extract-i18n'
+    }
+
+    if (!this.options.readKey) {
+      if (!this.context.target?.project) {
+        return { error: 'Could not extract the current project', success: false };
+      }
+      const readTarget = Builder.stringToTarget(this.context.target?.project + ':localazy-download');
+      try {
+        const options = await this.context.getTargetOptions(readTarget);
+        if (options.readKey && typeof options.readKey === 'string') {
+          this.options.readKey = options.readKey;
+        }
+      } catch (e) {
+        console.warn('failed to get localazy-download target options');
+      }
+    }
+
+    const extractI18nTarget = Builder.stringToTarget(this.options.extractTarget);
+
+    try {
+      await this.executeBuildTarget(extractI18nTarget);
+    } catch (e: any) {
+      console.log(`Could not execute extract target: ${e.message}`);
+      return { success: false, error: `Could not execute extract target: ${e.message}` };
     }
 
     const yarn = new Yarn(this.context.logger);
