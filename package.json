@@ -33,7 +33,8 @@
     "update": "nx migrate latest",
     "workspace-generator": "nx workspace-generator",
     "dep-graph": "nx dep-graph",
-    "help": "nx help"
+    "help": "nx help",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
@@ -64,6 +65,9 @@
     "@rxap/plugin-readme-generator": "14.0.1",
     "@rxap/schematics": "^14.0.1",
     "@swc-node/register": "^1.4.2",
+    "@commitlint/cli": "17.0.2",
+    "@commitlint/config-conventional": "17.0.2",
+    "@commitlint/prompt-cli": "17.0.0",
     "@swc/core": "^1.2.173",
     "@types/fs-extra": "^9.0.13",
     "@types/glob": "^7.2.0",
@@ -72,6 +76,7 @@
     "@typescript-eslint/eslint-plugin": "5.33.1",
     "@typescript-eslint/parser": "5.33.1",
     "ajv-formats": "^2.1.1",
+    "husky": "8.0.1",
     "dotenv": "10.0.0",
     "env-cmd": "^10.1.0",
     "eslint": "8.15.0",
