@@ -47,5 +47,5 @@
       "default": false
     }
   },
-  "required": [ "buildTarget" ]
+  "required": []
 }

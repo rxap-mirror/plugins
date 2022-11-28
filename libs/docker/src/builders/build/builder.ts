@@ -41,6 +41,18 @@ export class Builder {
     return builderRun.result;
   }
 
+  private getBuildTarget() {
+    if (this.options.buildTarget) {
+      return this.stringToTarget(this.options.buildTarget)
+    } else {
+      return {
+        target: 'build',
+        project: this.context.target?.project!,
+        configuration: this.context.target?.configuration!
+      }
+    }
+  }
+
   public async run(): Promise<BuilderOutput> {
 
     if (!this.context.target?.project) {
@@ -51,7 +63,7 @@ export class Builder {
 
     if (!this.options.context) {
 
-      const buildTarget = this.stringToTarget(this.options.buildTarget);
+      const buildTarget = this.getBuildTarget();
 
       const buildTargetOptions = await this.context.getTargetOptions(buildTarget);
 
@@ -65,7 +77,7 @@ export class Builder {
 
     if (!this.options.tag?.length) {
       console.log('create registry tag');
-      const buildTarget = this.stringToTarget(this.options.buildTarget);
+      const buildTarget = this.getBuildTarget();
       const fallbackImageName = buildTarget.project;
       this.options.tag = [
         this.getGitlabRegistryDestination(fallbackImageName, undefined, buildTarget.configuration)

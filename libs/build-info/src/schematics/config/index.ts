@@ -28,9 +28,7 @@ export default function(options: ConfigSchema): Rule {
           if (project.targets.has('build')) {
             const buildTarget = project.targets.get('build')!;
             for (const configuration in buildTarget.configurations) {
-              configurations[configuration] = {
-                buildTarget: `${options.project}:build:${configuration}`
-              }
+              configurations[configuration] = {}
             }
           }
 
