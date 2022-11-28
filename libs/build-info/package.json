@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-build-info",
-  "version": "13.0.1",
+  "version": "13.0.2",
   "homepage": "https://gitlab.com/rxap/plugins/libs/build-info",
   "keywords": [
     "rxap",
@@ -41,7 +41,7 @@
   },
   "peerDependencies": {
     "@nrwl/workspace": "^13.8.3",
-    "@rxap/schematics-utilities": "^12.7.0"
+    "@rxap/schematics-utilities": "^13.0.0"
   },
   "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }
