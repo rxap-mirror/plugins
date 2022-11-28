@@ -61,18 +61,15 @@ export default function(options: ConfigSchema): Rule {
             targetOptions.latest = options.latest;
           }
 
-          const configurations: Record<string, { buildTarget: string }> = {};
+          const configurations: Record<string, { buildTarget?: string }> = {};
 
           if (options.buildTarget) {
             targetOptions.buildTarget = options.buildTarget;
           } else if (project.targets.has('build')) {
             const buildTarget = project.targets.get('build')!;
-            targetOptions.buildTarget = `${options.project}:build`;
 
             for (const configuration in buildTarget.configurations) {
-              configurations[configuration] = {
-                buildTarget: `${options.project}:build:${configuration}`
-              }
+              configurations[configuration] = {}
             }
 
           }
