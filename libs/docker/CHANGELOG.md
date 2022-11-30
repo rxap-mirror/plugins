@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.0.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@13.0.2...@rxap/plugin-docker@13.0.3) (2022-11-30)
+
+
+### Bug Fixes
+
+* remove dependency to @schematics/angular ([3121e55](https://gitlab.com/rxap/schematics/commit/3121e55e476b37c37a190e08ade7c1a35b88464c))
+
+
+
+
+
 ## [13.0.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@13.0.1...@rxap/plugin-docker@13.0.2) (2022-11-28)
 
 
