@@ -2,17 +2,13 @@ import { apply, chain, forEach, mergeWith, move, Rule, template, Tree, url } fro
 import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
-import { createDefaultPath } from '@schematics/angular/utility/workspace';
+import { GetProjectRoot } from '@rxap/schematics-utilities';
 
 export default function (options: ConfigSchema): Rule {
   return async (host: Tree) => {
-    const projectRootLibPath = await createDefaultPath(
-      host,
-      options.project as string
-    );
+    const projectRoot = GetProjectRoot(host, options.project);
 
-    const projectRootPath = join(projectRootLibPath, '../../');
-    const readmeTemplatePath = join(projectRootPath, 'README.md.handlebars');
+    const readmeTemplatePath = join(projectRoot, 'README.md.handlebars');
 
     return chain([
       updateWorkspace((workspace) => {
@@ -35,7 +31,7 @@ export default function (options: ConfigSchema): Rule {
       mergeWith(
         apply(url('./files/' + options.type), [
           template({}),
-          move(projectRootPath),
+          move(projectRoot),
           forEach(entry => {
             if (host.exists(entry.path)) {
               if (options.overwrite && entry.path.includes(readmeTemplatePath)) {

@@ -16,16 +16,14 @@ import {
 } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
-import { createDefaultPath } from '@schematics/angular/utility/workspace';
+import { GetProjectSourceRoot } from '@rxap/schematics-utilities';
 
 export default function(options: ConfigSchema): Rule {
 
   return async (host: Tree) => {
 
-    const projectRootLibPath = await createDefaultPath(host, options.project as string);
-
-    const projectRootPath    = join(projectRootLibPath, '../');
-    const dockerPath = join(projectRootPath, 'Dockerfile');
+    const projectSourceRoot = GetProjectSourceRoot(host, options.project);
+    const dockerPath = join(projectSourceRoot, 'Dockerfile');
 
     return chain([
       updateWorkspace((workspace) => {
@@ -99,7 +97,7 @@ export default function(options: ConfigSchema): Rule {
       noop() :
       mergeWith(apply(url('./files'), [
         applyTemplates({}),
-        move(projectRootPath),
+        move(projectSourceRoot),
         forEach(fileEntry => {
           if (host.exists(fileEntry.path)) {
             return null;
