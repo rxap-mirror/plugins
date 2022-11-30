@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.0.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-build-info@14.0.1...@rxap/plugin-build-info@14.0.2) (2022-11-30)
+
+
+### Bug Fixes
+
+* remove static build target option definition ([494fb58](https://gitlab.com/rxap/schematics/commit/494fb58e8e283c7a8cd253a91f8e296349dbf6ef))
+
+
+
+
+
 ## [14.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-build-info@14.0.0...@rxap/plugin-build-info@14.0.1) (2022-10-06)
 
 
