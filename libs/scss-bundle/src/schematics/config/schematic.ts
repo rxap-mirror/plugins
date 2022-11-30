@@ -1,27 +1,16 @@
-import {
-  chain,
-  Rule,
-  Tree,
-  mergeWith,
-  url,
-  apply,
-  applyTemplates,
-  move,
-  noop
-} from '@angular-devkit/schematics';
+import { apply, applyTemplates, chain, mergeWith, move, noop, Rule, Tree, url } from '@angular-devkit/schematics';
 import { updateWorkspace } from '@nrwl/workspace';
 import { AddSchema } from './schema';
 import { join } from 'path';
-import { createDefaultPath } from '@schematics/angular/utility/workspace';
+import { GetProjectSourceRoot } from '@rxap/schematics-utilities';
 
 export default function(options: AddSchema): Rule {
 
   return async (host: Tree) => {
 
-    const projectRootPath = await createDefaultPath(host, options.project as string);
+    const projectSourceRoot = GetProjectSourceRoot(host, options.project);
 
-    const indexScssPath     = join(projectRootPath, '../');
-    const indexScssFilePath = join(indexScssPath, '_index.scss');
+    const indexScssFilePath = join(projectSourceRoot, '_index.scss');
 
     const angularJson = JSON.parse(host.read('/angular.json')!.toString());
 
@@ -75,7 +64,7 @@ export default function(options: AddSchema): Rule {
       noop() :
       mergeWith(apply(url('./files'), [
         applyTemplates({ ...options, prefix }),
-        move(indexScssPath)
+        move(projectSourceRoot)
       ]))
     ]);
 

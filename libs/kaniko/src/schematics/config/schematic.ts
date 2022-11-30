@@ -1,31 +1,26 @@
 import {
+  apply,
+  applyTemplates,
   chain,
+  forEach,
+  mergeWith,
+  move,
+  noop,
   Rule,
   Tree,
-  mergeWith,
-  url,
-  apply,
-  move,
-  applyTemplates,
-  noop,
-  forEach
+  url
 } from '@angular-devkit/schematics';
-import {
-  updateWorkspace,
-  updateNxJsonInTree
-} from '@nrwl/workspace';
+import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
-import { createDefaultPath } from '@schematics/angular/utility/workspace';
+import { GetProjectSourceRoot } from '@rxap/schematics-utilities';
 
 export default function(options: ConfigSchema): Rule {
 
   return async (host: Tree) => {
 
-    const projectRootLibPath = await createDefaultPath(host, options.project as string);
-
-    const projectRootPath    = join(projectRootLibPath, '../');
-    const dockerPath = join(projectRootPath, 'Dockerfile');
+    const projectSourceRoot = GetProjectSourceRoot(host, options.project);
+    const dockerPath = join(projectSourceRoot, 'Dockerfile');
 
     let hasCiTarget = false;
 
@@ -99,7 +94,7 @@ export default function(options: ConfigSchema): Rule {
       noop() :
       mergeWith(apply(url('./files'), [
         applyTemplates({}),
-        move(projectRootPath),
+        move(projectSourceRoot),
         forEach(fileEntry => {
           if (host.exists(fileEntry.path)) {
             return null;
