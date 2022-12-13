@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-docker",
-  "version": "13.0.3",
+  "version": "13.0.5",
   "main": "src/index.js",
   "schematics": "./collection.json",
   "builders": "./builders.json",
