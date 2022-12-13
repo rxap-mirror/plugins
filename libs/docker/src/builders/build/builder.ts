@@ -75,16 +75,25 @@ export class Builder {
 
     await this.loginToRegistry();
 
+    const destinationList: string[] = [];
+    const buildTarget = this.getBuildTarget();
+    const fallbackImageName = buildTarget.project;
+
+    if (this.options.tag && !Array.isArray(this.options.tag)) {
+      this.options.tag = [ this.options.tag ];
+    }
+
     if (!this.options.tag?.length) {
       console.log('create registry tag');
-      const buildTarget = this.getBuildTarget();
-      const fallbackImageName = buildTarget.project;
-      this.options.tag = [
-        this.getGitlabRegistryDestination(fallbackImageName, undefined, buildTarget.configuration)
-      ];
-      if (process.env.LATEST || this.options.latest) {
-        this.options.tag.push(this.getGitlabRegistryDestination(fallbackImageName, 'latest'));
+      destinationList.push(this.getGitlabRegistryDestination(fallbackImageName, undefined, buildTarget.configuration));
+    } else {
+      for (const tag of this.options.tag) {
+        destinationList.push(this.getGitlabRegistryDestination(fallbackImageName, tag, buildTarget.configuration));
       }
+    }
+
+    if (process.env.LATEST || this.options.latest) {
+      destinationList.push(this.getGitlabRegistryDestination(fallbackImageName, 'latest'));
     }
 
     console.log(`start docker build for ${this.options.dockerfile}`);
@@ -92,19 +101,19 @@ export class Builder {
     let result = await dockerBuild.executor(
       this.options.command,
       this.options.context,
-      this.options.tag,
+      destinationList,
       this.options.dockerfile,
     );
 
     if (Number(result)) {
       return { success: false };
     }
-    
+
     if (this.options.push) {
       const dockerPush = new DockerPush(this.context.logger as any);
       result = await dockerPush.executor(
         this.options.command,
-        this.options.tag
+        destinationList
       );
     }
 
