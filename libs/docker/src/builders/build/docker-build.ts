@@ -20,7 +20,7 @@ export class DockerBuild {
     });
   }
 
-  public executor(command: string, context: string, tags: string[], dockerfile?: string) {
+  public executor(command: string, context: string, destinationList: string[], dockerfile?: string) {
 
     const args: string[] = [];
 
@@ -28,11 +28,11 @@ export class DockerBuild {
       args.push(`--file="${dockerfile}"`)
     }
 
-    if (!tags.length) {
+    if (!destinationList.length) {
       throw new Error('At least one tag must be specified');
     }
 
-    for (const destination of tags) {
+    for (const destination of destinationList) {
       args.push(`--tag=${destination}`);
     }
 

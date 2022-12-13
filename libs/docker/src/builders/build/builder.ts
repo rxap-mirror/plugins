@@ -74,16 +74,25 @@ export class Builder {
 
     await this.loginToRegistry();
 
+    const destinationList: string[] = [];
+    const buildTarget = this.getBuildTarget();
+    const fallbackImageName = buildTarget.project;
+
+    if (this.options.tag && !Array.isArray(this.options.tag)) {
+      this.options.tag = [ this.options.tag ];
+    }
+
     if (!this.options.tag?.length) {
       console.log('create registry tag');
-      const buildTarget = this.getBuildTarget();
-      const fallbackImageName = buildTarget.project;
-      this.options.tag = [
-        this.getGitlabRegistryDestination(fallbackImageName, buildTarget.configuration ?? 'latest')
-      ];
-      if (process.env.LATEST || this.options.latest) {
-        this.options.tag.push(this.getGitlabRegistryDestination(fallbackImageName, 'latest'));
+      destinationList.push(this.getGitlabRegistryDestination(fallbackImageName, undefined, buildTarget.configuration));
+    } else {
+      for (const tag of this.options.tag) {
+        destinationList.push(this.getGitlabRegistryDestination(fallbackImageName, tag, buildTarget.configuration));
       }
+    }
+
+    if (process.env.LATEST || this.options.latest) {
+      destinationList.push(this.getGitlabRegistryDestination(fallbackImageName, 'latest'));
     }
 
     console.log(`start docker build for ${this.options.dockerfile}`);
@@ -91,7 +100,7 @@ export class Builder {
     const result = await dockerBuild.executor(
       this.options.command,
       this.options.context,
-      this.options.tag,
+      destinationList,
       this.options.dockerfile,
     );
 
@@ -109,9 +118,9 @@ export class Builder {
     }
   }
 
-  private getGitlabRegistryDestination(fallbackImageName?: string, imageTag?: string) {
+  private getGitlabRegistryDestination(fallbackImageName?: string, imageTag?: string, fallbackImageTag?: string) {
     const registryImage = process.env.REGISTRY_IMAGE ?? process.env.CI_REGISTRY_IMAGE ?? this.options.imageName ?? fallbackImageName;
-    const registryImageTag = imageTag ?? process.env.REGISTRY_IMAGE_TAG ?? process.env.VERSION ?? process.env.CI_COMMIT_TAG ?? process.env.CI_COMMIT_BRANCH ?? 'latest';
+    const registryImageTag = imageTag ?? process.env.REGISTRY_IMAGE_TAG ?? process.env.VERSION ?? process.env.CI_COMMIT_TAG ?? process.env.CI_COMMIT_BRANCH ?? fallbackImageTag ?? 'latest';
     return `${registryImage}${process.env.REGISTRY_IMAGE_SUFFIX ?? this.options.imageSuffix ?? ''}:${registryImageTag}`;
   }
 
