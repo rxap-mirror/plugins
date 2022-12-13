@@ -6,6 +6,7 @@ import {
 import { BuildBuilderSchema } from './schema';
 import { json } from '@angular-devkit/core';
 import { DockerBuild } from './docker-build';
+import { DockerPush } from './docker-push';
 import { DockerLogin } from './docker-login';
 import { join } from 'path';
 
@@ -97,12 +98,24 @@ export class Builder {
 
     console.log(`start docker build for ${this.options.dockerfile}`);
 
-    const result = await dockerBuild.executor(
+    let result = await dockerBuild.executor(
       this.options.command,
       this.options.context,
       destinationList,
       this.options.dockerfile,
     );
+
+    if (Number(result)) {
+      return { success: false };
+    }
+
+    if (this.options.push) {
+      const dockerPush = new DockerPush(this.context.logger as any);
+      result = await dockerPush.executor(
+        this.options.command,
+        destinationList
+      );
+    }
 
     return { success: !Number(result) };
 
