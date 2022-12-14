@@ -2,6 +2,15 @@
   "sourceRoot": "libs/i18n/src",
   "projectType": "library",
   "targets": {
+    "version": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["echo ok"]
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {

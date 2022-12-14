@@ -3,6 +3,15 @@
   "projectType": "library",
   "generators": {},
   "targets": {
+    "version": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["echo ok"]
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
     "test": {
       "executor": "@nrwl/jest:jest",
       "options": {

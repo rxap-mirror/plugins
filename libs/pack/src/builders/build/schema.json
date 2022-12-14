@@ -5,6 +5,15 @@
   "type": "object",
   "properties": {
     "targets": {
+    "version": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": ["echo ok"]
+      },
+      "configurations": {
+        "production": {}
+      }
+    },
       "type": "array",
       "items": {
         "type": "string"

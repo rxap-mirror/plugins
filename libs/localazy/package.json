@@ -49,7 +49,7 @@
     ]
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^14.6.5"
+    "@nrwl/workspace": "^14.8.6"
   },
   "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }
