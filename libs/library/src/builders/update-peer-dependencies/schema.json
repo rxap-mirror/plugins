@@ -20,6 +20,11 @@
       },
       "description": "A list of package name should be included as dependencies",
       "default": []
+    },
+    "includeIndirectDependencies": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether the dependencies of the direct dependencies are include in the peer dependencies list"
     }
   },
   "required": []

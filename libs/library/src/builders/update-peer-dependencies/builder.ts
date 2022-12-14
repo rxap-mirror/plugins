@@ -342,8 +342,12 @@ export class Builder {
     // the list of direct dependencies of the project
     const projectDependencies: string[] = graphProjectDependency.map(pdg => pdg.target);
 
-    // the list of direct AND indirect of the project
-    const flattenProjectDependencies: string[] = await this.flattenDependencies(projectDependencies);
+    let flattenProjectDependencies: string[] = projectDependencies;
+
+    if (this.options.includeIndirectDependencies) {
+      // the list of direct AND indirect of the project
+      flattenProjectDependencies = await this.flattenDependencies(projectDependencies);
+    }
 
     const packageJson = this.getProjectPackageJson(projectName);
 
