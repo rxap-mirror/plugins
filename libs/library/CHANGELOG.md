@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.0.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@14.0.3...@rxap/plugin-library@15.0.0) (2022-12-14)
+
+
+### chore
+
+* upgrade to nrwl 15.x.x ([b0694b6](https://gitlab.com/rxap/schematics/commit/b0694b6550730b80fb7356f6c225787fda1ff6be))
+
+
+### Features
+
+* **library:** only include direct dependencies on default ([8892585](https://gitlab.com/rxap/schematics/commit/889258508b6a157b049ba9ebd74d6c32f8865331))
+
+
+### BREAKING CHANGES
+
+* upgrade nrwl 15.x.x
+
+
+
+
+
 ## [14.0.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@14.0.2...@rxap/plugin-library@14.0.3) (2022-12-14)
 
 **Note:** Version bump only for package @rxap/plugin-library

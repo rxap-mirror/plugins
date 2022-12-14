@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-scss-bundle",
-  "version": "14.0.3",
+  "version": "15.0.0",
   "author": "Merzough Münker",
   "homepage": "https://gitlab.com/rxap/plugins/libs/scss-bundle",
   "repository": "git@gitlab.com:rxap/schematics.git",
