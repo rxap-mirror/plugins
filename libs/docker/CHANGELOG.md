@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.1.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@14.1.1...@rxap/plugin-docker@14.1.2) (2022-12-14)
+
+
+### Bug Fixes
+
+* **docker:** create destinations for each provided tag ([308c9b0](https://gitlab.com/rxap/schematics/commit/308c9b0275e771a701d23e232c9499d293fe0ca5))
+
+
+
+
+
 ## [14.1.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@14.1.0...@rxap/plugin-docker@14.1.1) (2022-11-30)
 
 

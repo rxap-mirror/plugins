@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.1.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@14.1.0...@rxap/plugin-i18n@14.1.1) (2022-12-14)
+
+**Note:** Version bump only for package @rxap/plugin-i18n
+
+
+
+
+
 # [14.1.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@14.0.1...@rxap/plugin-i18n@14.1.0) (2022-11-08)
 
 

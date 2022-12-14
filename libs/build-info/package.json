@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-build-info",
-  "version": "14.0.2",
+  "version": "14.0.3",
   "homepage": "https://gitlab.com/rxap/plugins/libs/build-info",
   "keywords": [
     "rxap",
