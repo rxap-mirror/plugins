@@ -1,4 +1,5 @@
 {
+  "name": "pack",
   "sourceRoot": "libs/pack/src",
   "projectType": "library",
   "prefix": "rxap-plugin",
@@ -19,7 +20,7 @@
         "jestConfig": "libs/pack/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/libs/pack"]
+      "outputs": ["{workspaceRoot}/coverage/libs/pack"]
     },
     "build": {
       "executor": "@nrwl/js:tsc",

@@ -1,4 +1,6 @@
 {
+  "version": 2,
+  "outputCapture": "direct-nodejs",
   "$schema": "http://json-schema.org/schema",
   "title": "Build builder",
   "description": "",
@@ -22,18 +24,10 @@
     },
     "type": {
       "type": "string",
-      "enum": [
-        "migrations",
-        "schematics",
-        "builders"
-      ]
+      "enum": ["migrations", "schematics", "builders"]
     }
   },
-  "required": [
-    "tsConfig",
-    "outputPath",
-    "type"
-  ],
+  "required": ["tsConfig", "outputPath", "type"],
   "definitions": {
     "assetPattern": {
       "oneOf": [
@@ -61,11 +55,7 @@
             }
           },
           "additionalProperties": false,
-          "required": [
-            "glob",
-            "input",
-            "output"
-          ]
+          "required": ["glob", "input", "output"]
         },
         {
           "type": "string"

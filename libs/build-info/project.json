@@ -1,4 +1,5 @@
 {
+  "name": "build-info",
   "sourceRoot": "libs/build-info/src",
   "projectType": "library",
   "targets": {
@@ -20,7 +21,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/build-info"],
+      "outputs": ["{workspaceRoot}/coverage/libs/build-info"],
       "options": {
         "jestConfig": "libs/build-info/jest.config.ts",
         "passWithNoTests": true

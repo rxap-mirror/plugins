@@ -34,10 +34,10 @@
     "access": "public"
   },
   "dependencies": {
-    "@angular-devkit/architect": "^0.1402.2",
-    "@angular-devkit/core": "^14.2.2",
-    "@angular-devkit/schematics": "^14.2.2",
-    "@rxap/schematics-utilities": "^14.0.1",
+    "@angular-devkit/architect": "^0.1500.3",
+    "@angular-devkit/core": "^15.0.3",
+    "@angular-devkit/schematics": "^15.0.3",
+    "@rxap/schematics-utilities": "^15.0.0",
     "handlebars": "^4.7.7",
     "tslib": "^2.3.1"
   },
@@ -46,7 +46,7 @@
     "save": "devDependencies"
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^14.8.6"
+    "@nrwl/workspace": "^15.3.3"
   },
   "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }

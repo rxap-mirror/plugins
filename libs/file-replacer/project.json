@@ -1,4 +1,5 @@
 {
+  "name": "file-replacer",
   "sourceRoot": "libs/file-replacer/src",
   "projectType": "library",
   "targets": {
@@ -32,7 +33,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/file-replacer"],
+      "outputs": ["{workspaceRoot}/coverage/libs/file-replacer"],
       "options": {
         "jestConfig": "libs/file-replacer/jest.config.ts",
         "passWithNoTests": true

@@ -28,10 +28,10 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@angular-devkit/architect": "^0.1402.2",
-    "@angular-devkit/core": "^14.2.2",
-    "@angular-devkit/schematics": "^14.2.2",
-    "@rxap/schematics-utilities": "^14.0.1"
+    "@angular-devkit/architect": "^0.1500.3",
+    "@angular-devkit/core": "^15.0.3",
+    "@angular-devkit/schematics": "^15.0.3",
+    "@rxap/schematics-utilities": "^15.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.1"

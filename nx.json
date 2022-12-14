@@ -3,7 +3,6 @@
   "affected": {
     "defaultBase": "master"
   },
-  "implicitDependencies": {},
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
@@ -90,7 +89,8 @@
           "target": "update-peer-dependencies",
           "projects": "self"
         }
-      ]
+      ],
+      "inputs": ["production", "^production"]
     },
     "update-peer-dependencies": {
       "dependsOn": [
@@ -99,10 +99,21 @@
           "projects": "self"
         }
       ]
+    },
+    "test": {
+      "inputs": ["default", "^default", "{workspaceRoot}/jest.preset.js"]
+    },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
     }
   },
   "cli": {
     "defaultCollection": "@rxap/schematics",
     "packageManager": "yarn"
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "sharedGlobals": [],
+    "production": ["default"]
   }
 }

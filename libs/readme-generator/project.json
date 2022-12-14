@@ -1,4 +1,5 @@
 {
+  "name": "readme-generator",
   "sourceRoot": "libs/readme-generator/src",
   "projectType": "library",
   "prefix": "rxap-plugin",
@@ -19,7 +20,7 @@
         "jestConfig": "libs/readme-generator/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/libs/readme-generator"]
+      "outputs": ["{workspaceRoot}/coverage/libs/readme-generator"]
     },
     "build": {
       "executor": "@nrwl/js:tsc",

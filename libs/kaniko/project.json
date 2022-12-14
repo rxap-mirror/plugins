@@ -1,4 +1,5 @@
 {
+  "name": "kaniko",
   "sourceRoot": "libs/kaniko/src",
   "projectType": "library",
   "generators": {},
@@ -18,7 +19,7 @@
         "jestConfig": "libs/kaniko/jest.config.ts",
         "passWithNoTests": true
       },
-      "outputs": ["coverage/libs/kaniko"]
+      "outputs": ["{workspaceRoot}/coverage/libs/kaniko"]
     },
     "build": {
       "executor": "@nrwl/js:tsc",

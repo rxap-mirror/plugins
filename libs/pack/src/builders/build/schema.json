@@ -1,19 +1,21 @@
 {
+  "version": 2,
+  "outputCapture": "direct-nodejs",
   "$schema": "http://json-schema.org/schema",
   "title": "Build builder",
   "description": "",
   "type": "object",
   "properties": {
     "targets": {
-    "version": {
-      "executor": "@nrwl/workspace:run-commands",
-      "options": {
-        "commands": ["echo ok"]
+      "version": {
+        "executor": "@nrwl/workspace:run-commands",
+        "options": {
+          "commands": ["echo ok"]
+        },
+        "configurations": {
+          "production": {}
+        }
       },
-      "configurations": {
-        "production": {}
-      }
-    },
       "type": "array",
       "items": {
         "type": "string"
