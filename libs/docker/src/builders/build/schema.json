@@ -33,6 +33,10 @@
       "type": "string",
       "description": "The base image name"
     },
+    "imageRegistry": {
+      "type": "string",
+      "description": "The image registry"
+    },
     "command": {
       "type": "string",
       "description": "The command to start docker",
