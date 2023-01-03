@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.1.0-dev.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@13.1.0-dev.0...@rxap/plugin-docker@13.1.0-dev.1) (2023-01-03)
+
+
+### Bug Fixes
+
+* **docker:** set default output path prefix to dist ([0df6492](https://gitlab.com/rxap/schematics/commit/0df649234b6ca91c9b0cde5dcbd843e59459354f))
+
+
+
+
+
 # [13.1.0-dev.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@13.0.5...@rxap/plugin-docker@13.1.0-dev.0) (2023-01-03)
 
 
