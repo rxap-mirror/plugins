@@ -1,0 +1,8 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "title": "docker save builder",
+  "description": "",
+  "type": "object",
+  "properties": {},
+  "required": []
+}
