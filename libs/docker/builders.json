@@ -5,6 +5,11 @@
       "implementation": "./src/builders/build/builder",
       "schema": "./src/builders/build/schema.json",
       "description": "docker builder"
+    },
+    "save": {
+      "implementation": "./src/builders/save/builder",
+      "schema": "./src/builders/save/schema.json",
+      "description": "docker save builder"
     }
   }
 }
