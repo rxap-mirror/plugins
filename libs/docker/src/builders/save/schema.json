@@ -3,6 +3,11 @@
   "title": "docker save builder",
   "description": "",
   "type": "object",
-  "properties": {},
+  "properties": {
+    "outputPath": {
+      "type": "string",
+      "description": "output path for the tar.gz files"
+    }
+  },
   "required": []
 }
