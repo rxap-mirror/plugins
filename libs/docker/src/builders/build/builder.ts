@@ -71,6 +71,15 @@ export class Builder {
 
     }
 
+    if (this.options.imageRegistry) {
+      if (this.options.imageName) {
+        this.options.imageName = [
+          this.options.imageRegistry,
+          this.options.imageName
+        ].join('/');
+      }
+    }
+
     console.log('login to registry');
 
     await this.loginToRegistry();
