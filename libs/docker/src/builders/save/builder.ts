@@ -36,6 +36,14 @@ export class Builder {
     }
   }
 
+  private getOutputName(): string {
+    const project = this.context.target?.project;
+    if (!this.options.outputPath) {
+      this.options.outputPath = `dist`
+    }
+    return `${this.options.outputPath}/${project}`
+  }
+
   public async run(): Promise<BuilderOutput> {
 
     if (!this.context.target?.project) {
@@ -68,7 +76,7 @@ export class Builder {
 
     let result = await dockerSave.executor(
       destinationList,
-      this.context.target?.project
+      this.getOutputName()
     );
 
     return { success: !Number(result) };
