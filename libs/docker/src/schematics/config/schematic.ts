@@ -43,8 +43,16 @@ export default function(options: ConfigSchema): Rule {
             targetOptions.dockerfile = options.dockerfile;
           }
 
-          if (options.destination?.length) {
-            targetOptions.destination = options.destination;
+          if (options.imageSuffix) {
+            targetOptions.imageSuffix = options.imageSuffix;
+          }
+
+          if (options.imageName) {
+            targetOptions.imageName = options.imageName;
+          }
+
+          if (options.imageRegistry) {
+            targetOptions.imageRegistry = options.imageRegistry;
           }
 
           if (options.context) {
@@ -53,10 +61,6 @@ export default function(options: ConfigSchema): Rule {
 
           if (options.command) {
             targetOptions.command = options.command;
-          }
-
-          if (options.latest) {
-            targetOptions.latest = options.latest;
           }
 
           const configurations: Record<string, { buildTarget?: string }> = {};
@@ -78,6 +82,15 @@ export default function(options: ConfigSchema): Rule {
             options: targetOptions,
             configurations
           });
+
+          if (options.save) {
+            project.targets.add({
+              name:    'save',
+              builder: `@rxap/plugin-docker:save`,
+              options: {},
+              configurations
+            });
+          }
 
         }
 
