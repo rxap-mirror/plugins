@@ -109,7 +109,7 @@ export class Builder {
         try {
           await copy(assetPath, assetOutputPath);
         } catch (e: any) {
-          console.error(`Could not copy assets '${assetPath}' to '${outputPath}': ${e.message}`);
+          throw new Error(`Could not copy assets '${assetPath}' to '${outputPath}': ${e.message}`);
         }
       } else {
         const assetOutputPath = join(outputPath, assetPath.output);
@@ -122,7 +122,7 @@ export class Builder {
             Promise.all(files.map(file => copy(file, join(assetOutputPath, relative(assetPath.input, file))))).then(resolve).catch(reject);
           }));
         } catch (e: any) {
-          console.error(`Could not copy assets '${JSON.stringify(assetPath)}' to '${outputPath}': ${e.message}`);
+          throw new Error(`Could not copy assets '${JSON.stringify(assetPath)}' to '${outputPath}': ${e.message}`);
         }
       }
     }));
