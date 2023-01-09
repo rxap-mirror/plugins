@@ -44,12 +44,14 @@ ng g @rxap/plugin-docker:config
 Option | Type | Default | Description
 --- | --- | --- | ---
 project | string |  | The name of the project.
-destination | array |  | Specify the docker image names
 context | string |  | Path to context for the docker build process.
 dockerfile | string |  | Path to the dockerfile.
 buildTarget | string |  | The target from witch the output path can be extract.
+imageSuffix | string |  | A suffix added to the base image name
+imageName | string |  | The base image name
+imageRegistry | string |  | The image registry
 command | string |  | The command to start docker
-latest | boolean | false | If true a tag with a latest tag is added
+save | boolean |  | Whether to create a save target
 
 | Required |
 | --- |
