@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [13.1.0-dev.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@13.1.0-dev.2...@rxap/plugin-docker@13.1.0-dev.3) (2023-01-09)
+
+
+### Features
+
+* **docker:** update config schematics to new builder options ([33abdf1](https://gitlab.com/rxap/schematics/commit/33abdf15e755fa3f2006f2681a1f61766aff8634))
+
+
+
+
+
 # [13.1.0-dev.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@13.1.0-dev.1...@rxap/plugin-docker@13.1.0-dev.2) (2023-01-03)
 
 
