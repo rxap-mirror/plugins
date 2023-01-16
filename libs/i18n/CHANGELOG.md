@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [13.1.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@13.1.1...@rxap/plugin-i18n@13.1.2) (2023-01-16)
+
+
+### Bug Fixes
+
+* throw if assets copy failed ([094c972](https://gitlab.com/rxap/schematics/commit/094c97250668d738b2e907f928ca50b1ce921a01))
+
+
+
+
+
 ## [13.1.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@13.1.0...@rxap/plugin-i18n@13.1.1) (2022-09-19)
 
 
