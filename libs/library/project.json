@@ -99,7 +99,7 @@
     "update-peer-dependencies": {
       "executor": "@rxap/plugin-library:update-peer-dependencies",
       "options": {
-        "ignore": []
+        "ignore": ["fs-extra", "glob"]
       }
     }
   },
