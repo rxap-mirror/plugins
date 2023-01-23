@@ -98,7 +98,7 @@ export class Builder {
     if (typeof outputPath !== 'string') {
       throw new Error(`Could not extract the output path from the build target with the configuration: '${this.context.target?.configuration}'`);
     }
-    return outputPath;
+    return join(process.env.NX_WORKSPACE_ROOT ?? '', outputPath);
   }
 
   private async copyFiles(pathList: Array<string | { glob: string, input: string, output: string }>) {
