@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@15.0.0...@rxap/plugin-i18n@15.0.1) (2023-01-30)
+
+
+### Bug Fixes
+
+* throw if assets copy failed ([f3fa038](https://gitlab.com/rxap/schematics/commit/f3fa0387030a88cea030766f8b51f2231565a814))
+* use NX_WORKSPACE_ROOT as base path for outputs ([ebb93db](https://gitlab.com/rxap/schematics/commit/ebb93db78f9bd637631727ab6b68c23ef5f9ff28))
+
+
+
+
+
 # [15.0.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-i18n@14.1.1...@rxap/plugin-i18n@15.0.0) (2022-12-14)
 
 

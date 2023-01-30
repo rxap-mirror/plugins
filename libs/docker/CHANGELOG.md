@@ -3,6 +3,24 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [15.1.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@15.0.0...@rxap/plugin-docker@15.1.0) (2023-01-30)
+
+
+### Bug Fixes
+
+* **docker:** set default output path prefix to dist ([fc9e9db](https://gitlab.com/rxap/schematics/commit/fc9e9db2a330d57aca0ef702dae0ee3d55718505))
+
+
+### Features
+
+* **docker:** add imageRegistry option ([a4c3f8e](https://gitlab.com/rxap/schematics/commit/a4c3f8ee1612470cdedc1702c521f8e1cafe9f07))
+* **docker:** add save builder ([6b8f7df](https://gitlab.com/rxap/schematics/commit/6b8f7dfee83f218a7a7153f5e4d892eaf0744a7b))
+* **docker:** update config schematics to new builder options ([4a376a8](https://gitlab.com/rxap/schematics/commit/4a376a895d283763d088b11111d1a82d82bc9d8f))
+
+
+
+
+
 # [15.0.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@14.1.2...@rxap/plugin-docker@15.0.0) (2022-12-14)
 
 

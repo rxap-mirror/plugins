@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@15.0.0...@rxap/plugin-library@15.0.1) (2023-01-30)
+
+**Note:** Version bump only for package @rxap/plugin-library
+
+
+
+
+
 # [15.0.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-library@14.0.3...@rxap/plugin-library@15.0.0) (2022-12-14)
 
 
