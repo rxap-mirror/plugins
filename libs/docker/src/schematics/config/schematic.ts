@@ -1,22 +1,19 @@
 import {
+  apply,
+  applyTemplates,
   chain,
+  forEach,
+  mergeWith,
+  move,
+  noop,
   Rule,
   Tree,
-  mergeWith,
-  url,
-  apply,
-  move,
-  applyTemplates,
-  noop,
-  forEach
+  url
 } from '@angular-devkit/schematics';
-import {
-  updateWorkspace,
-  updateNxJsonInTree
-} from '@nrwl/workspace';
+import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
-import { GetProjectSourceRoot } from '@rxap/schematics-utilities';
+import { GetProjectSourceRoot, UpdateJsonFile } from '@rxap/schematics-utilities';
 
 export default function(options: ConfigSchema): Rule {
 
@@ -95,17 +92,17 @@ export default function(options: ConfigSchema): Rule {
         }
 
       }),
-      updateNxJsonInTree((json, context) => {
+      UpdateJsonFile(json => {
         json.targetDependencies ??= {};
         json.targetDependencies.docker ??= [];
-        if (!json.targetDependencies.docker.find(dep => typeof dep === 'string' ? dep === 'build' : dep.target === 'build')) {
+        if (!json.targetDependencies.docker.find((dep: any) => typeof dep === 'string' ? dep === 'build' : dep.target === 'build')) {
           json.targetDependencies.docker.push({ target: 'build', projects: 'self' });
         }
-        if (!json.targetDependencies.docker.find(dep => typeof dep === 'string' ? dep === 'ci' : dep.target === 'ci')) {
+        if (!json.targetDependencies.docker.find((dep: any) => typeof dep === 'string' ? dep === 'ci' : dep.target === 'ci')) {
           json.targetDependencies.docker.push({ target: 'ci', projects: 'self' });
         }
         return json;
-      }),
+      }, 'nx.json'),
       host.exists(dockerPath) || options.dockerfile ?
       noop() :
       mergeWith(apply(url('./files'), [

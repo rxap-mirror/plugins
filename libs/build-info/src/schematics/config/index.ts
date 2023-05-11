@@ -1,13 +1,7 @@
-import {
-  chain,
-  Rule,
-  SchematicsException
-} from '@angular-devkit/schematics';
-import {
-  updateWorkspace,
-  updateNxJsonInTree
-} from '@nrwl/workspace';
+import { chain, Rule } from '@angular-devkit/schematics';
+import { updateWorkspace } from '@nrwl/workspace';
 import { ConfigSchema } from './schema';
+import { UpdateJsonFile } from '@rxap/schematics-utilities';
 
 export default function(options: ConfigSchema): Rule {
 
@@ -42,14 +36,14 @@ export default function(options: ConfigSchema): Rule {
         }
 
       }),
-      updateNxJsonInTree((json, context) => {
+      UpdateJsonFile(json => {
         json.targetDependencies ??= {};
         json.targetDependencies.ci ??= [];
-        if (!json.targetDependencies.ci.find(dep => typeof dep === 'string' ? dep === 'build' : dep.target === 'build')) {
+        if (!json.targetDependencies.ci.find((dep: any) => typeof dep === 'string' ? dep === 'build' : dep.target === 'build')) {
           json.targetDependencies.ci.push({ target: 'build', projects: 'self' });
         }
         return json;
-      })
+      }, 'nx.json'),
     ]);
 
   };
