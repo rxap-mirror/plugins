@@ -8,17 +8,18 @@ import {
   noop,
   Rule,
   Tree,
-  url
+  url,
 } from '@angular-devkit/schematics';
-import { updateWorkspace } from '@nrwl/workspace';
+import { updateWorkspace } from '@nx/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
-import { GetProjectSourceRoot, UpdateJsonFile } from '@rxap/schematics-utilities';
+import {
+  GetProjectSourceRoot,
+  UpdateJsonFile,
+} from '@rxap/schematics-utilities';
 
-export default function(options: ConfigSchema): Rule {
-
+export default function (options: ConfigSchema): Rule {
   return async (host: Tree) => {
-
     const projectSourceRoot = GetProjectSourceRoot(host, options.project);
     const dockerPath = join(projectSourceRoot, 'Dockerfile');
 
@@ -31,10 +32,8 @@ export default function(options: ConfigSchema): Rule {
         }
 
         if (project.targets.has('docker')) {
-
         } else {
-
-          const targetOptions: any = {}
+          const targetOptions: any = {};
 
           if (options.dockerfile) {
             targetOptions.dockerfile = options.dockerfile;
@@ -68,55 +67,66 @@ export default function(options: ConfigSchema): Rule {
             const buildTarget = project.targets.get('build')!;
 
             for (const configuration in buildTarget.configurations) {
-              configurations[configuration] = {}
+              configurations[configuration] = {};
             }
-
           }
 
           project.targets.add({
-            name:    'docker',
+            name: 'docker',
             builder: `@rxap/plugin-docker:build`,
             options: targetOptions,
-            configurations
+            configurations,
           });
 
           if (options.save) {
             project.targets.add({
-              name:    'save',
+              name: 'save',
               builder: `@rxap/plugin-docker:save`,
               options: {},
-              configurations
+              configurations,
             });
           }
-
         }
-
       }),
-      UpdateJsonFile(json => {
+      UpdateJsonFile((json) => {
         json.targetDependencies ??= {};
         json.targetDependencies.docker ??= [];
-        if (!json.targetDependencies.docker.find((dep: any) => typeof dep === 'string' ? dep === 'build' : dep.target === 'build')) {
-          json.targetDependencies.docker.push({ target: 'build', projects: 'self' });
+        if (
+          !json.targetDependencies.docker.find((dep: any) =>
+            typeof dep === 'string' ? dep === 'build' : dep.target === 'build'
+          )
+        ) {
+          json.targetDependencies.docker.push({
+            target: 'build',
+            projects: 'self',
+          });
         }
-        if (!json.targetDependencies.docker.find((dep: any) => typeof dep === 'string' ? dep === 'ci' : dep.target === 'ci')) {
-          json.targetDependencies.docker.push({ target: 'ci', projects: 'self' });
+        if (
+          !json.targetDependencies.docker.find((dep: any) =>
+            typeof dep === 'string' ? dep === 'ci' : dep.target === 'ci'
+          )
+        ) {
+          json.targetDependencies.docker.push({
+            target: 'ci',
+            projects: 'self',
+          });
         }
         return json;
       }, 'nx.json'),
-      host.exists(dockerPath) || options.dockerfile ?
-      noop() :
-      mergeWith(apply(url('./files'), [
-        applyTemplates({}),
-        move(projectSourceRoot),
-        forEach(fileEntry => {
-          if (host.exists(fileEntry.path)) {
-            return null;
-          }
-          return fileEntry;
-        })
-      ]))
+      host.exists(dockerPath) || options.dockerfile
+        ? noop()
+        : mergeWith(
+            apply(url('./files'), [
+              applyTemplates({}),
+              move(projectSourceRoot),
+              forEach((fileEntry) => {
+                if (host.exists(fileEntry.path)) {
+                  return null;
+                }
+                return fileEntry;
+              }),
+            ])
+          ),
     ]);
-
   };
-
 }

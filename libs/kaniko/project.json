@@ -1,11 +1,12 @@
 {
   "name": "kaniko",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/kaniko/src",
   "projectType": "library",
   "generators": {},
   "targets": {
     "version": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": ["echo ok"]
       },

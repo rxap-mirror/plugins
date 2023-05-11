@@ -1,12 +1,13 @@
 {
   "name": "pack",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/pack/src",
   "projectType": "library",
   "prefix": "rxap-plugin",
   "generators": {},
   "targets": {
     "version": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": ["echo ok"]
       },

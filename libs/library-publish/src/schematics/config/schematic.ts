@@ -1,14 +1,9 @@
-import {
-  chain,
-  Rule
-} from '@angular-devkit/schematics';
-import { updateWorkspace } from '@nrwl/workspace';
+import { chain, Rule } from '@angular-devkit/schematics';
+import { updateWorkspace } from '@nx/workspace';
 import { ConfigSchema } from './schema';
 
-export default function(options: ConfigSchema): Rule {
-
+export default function (options: ConfigSchema): Rule {
   return () => {
-
     return chain([
       updateWorkspace((workspace) => {
         const project = workspace.projects.get(options.project);
@@ -18,17 +13,19 @@ export default function(options: ConfigSchema): Rule {
         }
 
         if (project.targets.has('publish')) {
-
         } else {
-
           const targetOptions: any = {};
 
-          targetOptions.buildTarget = options.buildTarget ?? `${options.project}:build:production`;
+          targetOptions.buildTarget =
+            options.buildTarget ?? `${options.project}:build:production`;
 
           if (!options.buildTarget) {
             if (project.targets.has('build')) {
               const buildTarget = project.targets.get('build')!;
-              if (buildTarget.configurations && buildTarget.configurations[ 'production' ]) {
+              if (
+                buildTarget.configurations &&
+                buildTarget.configurations['production']
+              ) {
                 targetOptions.buildTarget = `${options.project}:build:production`;
               } else {
                 targetOptions.buildTarget = `${options.project}:build`;
@@ -47,7 +44,10 @@ export default function(options: ConfigSchema): Rule {
               targetOptions.preTarget = `${options.project}:pack`;
             } else if (project.targets.has('build')) {
               const buildTarget = project.targets.get('build')!;
-              if (buildTarget.configurations && buildTarget.configurations[ 'production' ]) {
+              if (
+                buildTarget.configurations &&
+                buildTarget.configurations['production']
+              ) {
                 targetOptions.preTarget = `${options.project}:build:production`;
               } else {
                 targetOptions.preTarget = `${options.project}:build`;
@@ -58,16 +58,12 @@ export default function(options: ConfigSchema): Rule {
           }
 
           project.targets.add({
-            name:    'publish',
+            name: 'publish',
             builder: '@rxap/plugin-library-publish:publish',
-            options: targetOptions
+            options: targetOptions,
           });
-
         }
-
-      })
+      }),
     ]);
-
   };
-
 }

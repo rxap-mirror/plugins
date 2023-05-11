@@ -21,7 +21,7 @@
           "update-package-group",
           "update-peer-dependencies"
         ],
-        "parallel": 5,
+        "parallel": 32,
         "accessToken": "ZDExYTYwZTItYWI4OC00YWFhLWI3YzctYjdlMmNiNDhlY2NlfHJlYWQtd3JpdGU="
       }
     }

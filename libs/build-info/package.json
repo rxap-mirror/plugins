@@ -40,7 +40,7 @@
     "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^15.9.4",
+    "@nx/workspace": "^16.1.4",
     "@rxap/schematics-utilities": "^15.0.0"
   },
   "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"

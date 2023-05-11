@@ -8,17 +8,15 @@ import {
   noop,
   Rule,
   Tree,
-  url
+  url,
 } from '@angular-devkit/schematics';
-import { updateWorkspace } from '@nrwl/workspace';
+import { updateWorkspace } from '@nx/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
 import { GetProjectSourceRoot } from '@rxap/schematics-utilities';
 
-export default function(options: ConfigSchema): Rule {
-
+export default function (options: ConfigSchema): Rule {
   return async (host: Tree) => {
-
     const projectSourceRoot = GetProjectSourceRoot(host, options.project);
     const dockerPath = join(projectSourceRoot, 'Dockerfile');
 
@@ -35,10 +33,8 @@ export default function(options: ConfigSchema): Rule {
         hasCiTarget = project.targets.has('ci');
 
         if (project.targets.has('kaniko')) {
-
         } else {
-
-          const targetOptions: any = {}
+          const targetOptions: any = {};
 
           if (options.dockerfile) {
             targetOptions.dockerfile = options.dockerfile;
@@ -49,7 +45,7 @@ export default function(options: ConfigSchema): Rule {
           }
 
           if (options.context) {
-            targetOptions.context = options.context
+            targetOptions.context = options.context;
           }
 
           if (options.command) {
@@ -74,36 +70,33 @@ export default function(options: ConfigSchema): Rule {
 
             for (const configuration in buildTarget.configurations) {
               configurations[configuration] = {
-                buildTarget: `${options.project}:build:${configuration}`
-              }
+                buildTarget: `${options.project}:build:${configuration}`,
+              };
             }
-
           }
 
           project.targets.add({
-            name:    'kaniko',
+            name: 'kaniko',
             builder: `@rxap/plugin-kaniko:build`,
             options: targetOptions,
             configurations,
           });
-
         }
-
       }),
-      host.exists(dockerPath) || options.dockerfile ?
-      noop() :
-      mergeWith(apply(url('./files'), [
-        applyTemplates({}),
-        move(projectSourceRoot),
-        forEach(fileEntry => {
-          if (host.exists(fileEntry.path)) {
-            return null;
-          }
-          return fileEntry;
-        })
-      ]))
+      host.exists(dockerPath) || options.dockerfile
+        ? noop()
+        : mergeWith(
+            apply(url('./files'), [
+              applyTemplates({}),
+              move(projectSourceRoot),
+              forEach((fileEntry) => {
+                if (host.exists(fileEntry.path)) {
+                  return null;
+                }
+                return fileEntry;
+              }),
+            ])
+          ),
     ]);
-
   };
-
 }

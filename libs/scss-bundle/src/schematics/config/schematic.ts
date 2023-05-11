@@ -1,20 +1,31 @@
-import { apply, applyTemplates, chain, mergeWith, move, noop, Rule, Tree, url } from '@angular-devkit/schematics';
-import { updateWorkspace } from '@nrwl/workspace';
+import {
+  apply,
+  applyTemplates,
+  chain,
+  mergeWith,
+  move,
+  noop,
+  Rule,
+  Tree,
+  url,
+} from '@angular-devkit/schematics';
+import { updateWorkspace } from '@nx/workspace';
 import { AddSchema } from './schema';
 import { join } from 'path';
 import { GetProjectSourceRoot } from '@rxap/schematics-utilities';
 
-export default function(options: AddSchema): Rule {
-
+export default function (options: AddSchema): Rule {
   return async (host: Tree) => {
-
     const projectSourceRoot = GetProjectSourceRoot(host, options.project);
 
     const indexScssFilePath = join(projectSourceRoot, '_index.scss');
 
     const angularJson = JSON.parse(host.read('/angular.json')!.toString());
 
-    const prefix = angularJson && angularJson.projects[options.project] && angularJson.projects[options.project].prefix;
+    const prefix =
+      angularJson &&
+      angularJson.projects[options.project] &&
+      angularJson.projects[options.project].prefix;
 
     if (!prefix) {
       throw new Error('The project has not a defined prefix.');
@@ -29,19 +40,16 @@ export default function(options: AddSchema): Rule {
         }
 
         if (project.targets.has('scss-bundle')) {
-
         } else {
-
           project.targets.add({
-            name:    'scss-bundle',
+            name: 'scss-bundle',
             builder: '@rxap/plugin-scss-bundle:build',
             options: {
-              buildTarget:   `${options.project}:build:production`,
-              skipBuild:     true,
-              ignoreImports: [ '~@angular/.*' ]
-            }
+              buildTarget: `${options.project}:build:production`,
+              skipBuild: true,
+              ignoreImports: ['~@angular/.*'],
+            },
           });
-
         }
 
         if (project.targets.has('pack')) {
@@ -51,23 +59,24 @@ export default function(options: AddSchema): Rule {
             packTarget.options = {};
           }
 
-          if (!packTarget.options.targets || !Array.isArray(packTarget.options.targets)) {
+          if (
+            !packTarget.options.targets ||
+            !Array.isArray(packTarget.options.targets)
+          ) {
             packTarget.options.targets = [];
           }
 
           packTarget.options.targets.push(`${options.project}:scss-bundle`);
-
         }
-
       }),
-      host.exists(indexScssFilePath) ?
-      noop() :
-      mergeWith(apply(url('./files'), [
-        applyTemplates({ ...options, prefix }),
-        move(projectSourceRoot)
-      ]))
+      host.exists(indexScssFilePath)
+        ? noop()
+        : mergeWith(
+            apply(url('./files'), [
+              applyTemplates({ ...options, prefix }),
+              move(projectSourceRoot),
+            ])
+          ),
     ]);
-
   };
-
 }

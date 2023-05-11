@@ -36,9 +36,9 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-devkit/architect": "0.1502.8",
-    "@angular-devkit/core": "15.2.8",
-    "@angular-devkit/schematics": "15.2.8",
+    "@angular-devkit/architect": "0.1600.1",
+    "@angular-devkit/core": "16.0.1",
+    "@angular-devkit/schematics": "16.0.1",
     "@rxap/schematics-utilities": "^15.0.0",
     "globs": "^0.1.4",
     "reflect-metadata": "^0.1.13",
@@ -60,7 +60,6 @@
     "@nrwl/node": "15.9.4",
     "@nrwl/nx-cloud": "16.0.5",
     "@nrwl/nx-plugin": "15.9.4",
-    "@nrwl/workspace": "15.9.4",
     "@rxap/plugin-library": "15.0.0",
     "@rxap/plugin-pack": "^15.0.0",
     "@rxap/plugin-readme-generator": "15.0.0",
@@ -87,7 +86,8 @@
     "prettier": "2.7.1",
     "ts-jest": "29.0.5",
     "ts-node": "10.9.1",
-    "typescript": "4.9.5"
+    "typescript": "5.0.4",
+    "@nx/workspace": "16.1.4"
   },
   "repository": "git@gitlab.com:rxap/schematics.git",
   "homepage": "https://gitlab.com/rxap/plugins",
@@ -97,4 +97,3 @@
     "email": "incoming+rxap-plugins-27276642-issue-@incoming.gitlab.com"
   }
 }
-

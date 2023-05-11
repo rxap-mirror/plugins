@@ -1,10 +1,11 @@
 {
   "name": "i18n",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/i18n/src",
   "projectType": "library",
   "targets": {
     "version": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": ["echo ok"]
       },
@@ -109,9 +110,7 @@
     "update-peer-dependencies": {
       "executor": "@rxap/plugin-library:update-peer-dependencies",
       "options": {
-        "ignore": [
-          "fs-extra", "glob"
-        ]
+        "ignore": ["fs-extra", "glob"]
       }
     }
   },

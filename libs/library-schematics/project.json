@@ -1,12 +1,13 @@
 {
   "name": "library-schematics",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "libs/library-schematics/src",
   "projectType": "library",
   "generators": {},
   "prefix": "rxap-plugin",
   "targets": {
     "version": {
-      "executor": "@nrwl/workspace:run-commands",
+      "executor": "nx:run-commands",
       "options": {
         "commands": ["echo ok"]
       },

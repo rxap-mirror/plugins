@@ -1,5 +1,15 @@
-import { apply, chain, forEach, mergeWith, move, Rule, template, Tree, url } from '@angular-devkit/schematics';
-import { updateWorkspace } from '@nrwl/workspace';
+import {
+  apply,
+  chain,
+  forEach,
+  mergeWith,
+  move,
+  Rule,
+  template,
+  Tree,
+  url,
+} from '@angular-devkit/schematics';
+import { updateWorkspace } from '@nx/workspace';
 import { ConfigSchema } from './schema';
 import { join } from 'path';
 import { GetProjectRoot } from '@rxap/schematics-utilities';
@@ -23,18 +33,20 @@ export default function (options: ConfigSchema): Rule {
           project.targets.add({
             name: 'readme',
             builder: `@rxap/plugin-readme-generator:${options.type}`,
-            options: {}
+            options: {},
           });
         }
-
       }),
       mergeWith(
         apply(url('./files/' + options.type), [
           template({}),
           move(projectRoot),
-          forEach(entry => {
+          forEach((entry) => {
             if (host.exists(entry.path)) {
-              if (options.overwrite && entry.path.includes(readmeTemplatePath)) {
+              if (
+                options.overwrite &&
+                entry.path.includes(readmeTemplatePath)
+              ) {
                 // only overwrite the readme.mf.handlebars file
                 host.overwrite(entry.path, entry.content);
               } else {
@@ -42,9 +54,9 @@ export default function (options: ConfigSchema): Rule {
               }
             }
             return entry;
-          })
+          }),
         ])
-      )
+      ),
     ]);
   };
 }

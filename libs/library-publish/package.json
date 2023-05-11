@@ -9,7 +9,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^12.3.6"
+    "@nx/workspace": "^12.3.6"
   },
   "license": "GPL-3.0",
   "keywords": [

@@ -8,17 +8,11 @@ import {
   Tree,
   template,
   noop,
-  forEach
+  forEach,
 } from '@angular-devkit/schematics';
-import {
-  updateWorkspace,
-  getWorkspace
-} from '@nrwl/workspace';
+import { updateWorkspace, getWorkspace } from '@nx/workspace';
 import { strings } from '@angular-devkit/core';
-import {
-  join,
-  relative
-} from 'path';
+import { join, relative } from 'path';
 import { AddSchema } from './schema';
 
 export async function getProjectPath(host: Tree, projectName: string) {
@@ -33,11 +27,9 @@ export async function getProjectPath(host: Tree, projectName: string) {
   return project.root;
 }
 
-export default function(options: AddSchema): Rule {
-
+export default function (options: AddSchema): Rule {
   return async (host: Tree) => {
-
-    const path       = await getProjectPath(host, options.project);
+    const path = await getProjectPath(host, options.project);
     const pathToRoot = relative(join('/', path), host.getDir('/').path) + '/';
 
     const indexTsFilePath = join(path, 'schematics', 'index.ts');
@@ -52,31 +44,25 @@ export default function(options: AddSchema): Rule {
         }
 
         if (project.targets.has('schematics')) {
-
         } else {
-
           project.targets.add({
-            name:    'schematics',
+            name: 'schematics',
             builder: '@rxap/plugin-library-schematics:build',
             options: {
               buildTarget: `${options.project}:build:production`,
-              skipBuild:   options.skipBuild,
-              tsConfig:    join(project.root, 'tsconfig.schematics.json')
-            }
+              skipBuild: options.skipBuild,
+              tsConfig: join(project.root, 'tsconfig.schematics.json'),
+            },
           });
-
         }
 
         if (project.targets.has('update-package-group')) {
-
         } else {
-
           project.targets.add({
-            name:    'update-package-group',
+            name: 'update-package-group',
             builder: '@rxap/plugin-library-schematics:update-package-group',
-            options: {}
+            options: {},
           });
-
         }
 
         if (project.targets.has('pack')) {
@@ -86,7 +72,10 @@ export default function(options: AddSchema): Rule {
             packTarget.options = {};
           }
 
-          if (!packTarget.options.targets || !Array.isArray(packTarget.options.targets)) {
+          if (
+            !packTarget.options.targets ||
+            !Array.isArray(packTarget.options.targets)
+          ) {
             packTarget.options.targets = [];
           }
 
@@ -95,25 +84,24 @@ export default function(options: AddSchema): Rule {
             packTarget.options.targets.push(buildSchematicsTarget);
           }
 
-          const updatePackageGroupTarget = `${options.project}:update-package-group`
+          const updatePackageGroupTarget = `${options.project}:update-package-group`;
           if (!packTarget.options.targets.includes(updatePackageGroupTarget)) {
             packTarget.options.targets.unshift(updatePackageGroupTarget);
           }
-
         }
-
       }),
       (tree: Tree) => {
-
         const packageJsonFile = join('/', path, 'package.json');
 
-        const packageJson = JSON.parse(tree.read(packageJsonFile)!.toString('utf-8'));
+        const packageJson = JSON.parse(
+          tree.read(packageJsonFile)!.toString('utf-8')
+        );
 
         packageJson.schematics = './schematics/collection.json';
 
         const ngUpdate = packageJson['ng-update'] ?? {
           migrations: './schematics/migration.json',
-          packageGroup: []
+          packageGroup: [],
         };
 
         // enforce the migration json file path
@@ -122,28 +110,29 @@ export default function(options: AddSchema): Rule {
         packageJson['ng-update'] = ngUpdate;
 
         tree.overwrite(packageJsonFile, JSON.stringify(packageJson, null, 2));
-
       },
-      options.onlyBuilder ? noop() : mergeWith(
-        apply(url('./files'), [
-          template({
-            ...strings,
-            ...options,
-            path,
-            pathToRoot
-          }),
-          move(join('/', path)),
-          forEach(entry => {
-            if (host.exists(entry.path)) {
-              return null;
-            }
-            return entry;
-          })
-        ])
-      ),
-      hasIndexTs ? noop() : (tree: Tree) => tree.create(indexTsFilePath, 'export {}'),
+      options.onlyBuilder
+        ? noop()
+        : mergeWith(
+            apply(url('./files'), [
+              template({
+                ...strings,
+                ...options,
+                path,
+                pathToRoot,
+              }),
+              move(join('/', path)),
+              forEach((entry) => {
+                if (host.exists(entry.path)) {
+                  return null;
+                }
+                return entry;
+              }),
+            ])
+          ),
+      hasIndexTs
+        ? noop()
+        : (tree: Tree) => tree.create(indexTsFilePath, 'export {}'),
     ]);
-
   };
-
 }

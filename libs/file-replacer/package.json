@@ -28,9 +28,9 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@angular-devkit/architect": "^0.1500.3",
-    "@angular-devkit/core": "^15.0.3",
-    "@angular-devkit/schematics": "^15.0.3",
+    "@angular-devkit/architect": "^0.1502.8",
+    "@angular-devkit/core": "^15.2.8",
+    "@angular-devkit/schematics": "^15.2.8",
     "@rxap/schematics-utilities": "^15.0.0"
   },
   "dependencies": {

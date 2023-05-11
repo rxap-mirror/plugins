@@ -43,7 +43,7 @@
     ]
   },
   "peerDependencies": {
-    "@nrwl/workspace": "^15.9.4"
+    "@nx/workspace": "^16.1.4"
   },
   "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }
