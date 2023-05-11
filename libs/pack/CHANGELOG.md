@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-pack@15.0.0...@rxap/plugin-pack@15.0.1) (2023-05-11)
+
+
+### Bug Fixes
+
+* update to nrwl 15.9.4 ([c9ab045](https://gitlab.com/rxap/schematics/commit/c9ab0454484162e633b789a6274d77793179df23))
+
+
+
+
+
 # [15.0.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-pack@14.0.3...@rxap/plugin-pack@15.0.0) (2022-12-14)
 
 

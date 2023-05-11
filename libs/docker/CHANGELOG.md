@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [15.1.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@15.1.0...@rxap/plugin-docker@15.1.1) (2023-05-11)
+
+
+### Bug Fixes
+
+* update to nrwl 15.9.4 ([c9ab045](https://gitlab.com/rxap/schematics/commit/c9ab0454484162e633b789a6274d77793179df23))
+
+
+
+
+
 # [15.1.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-docker@15.0.0...@rxap/plugin-docker@15.1.0) (2023-01-30)
 
 

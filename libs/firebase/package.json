@@ -1,6 +1,6 @@
 {
   "name": "@rxap/plugin-firebase",
-  "version": "15.0.0",
+  "version": "15.0.1",
   "schematics": "./collection.json",
   "description": "A Nx/Ng plugin for configuring and building firebase features",
   "ng-update": {
