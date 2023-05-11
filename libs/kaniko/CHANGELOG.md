@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [16.0.0-dev.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@15.0.1...@rxap/plugin-kaniko@16.0.0-dev.0) (2023-05-11)
+
+
+### Build System
+
+* upgrade to nrwl 16.x.x ([de73759](https://gitlab.com/rxap/schematics/commit/de737599e984ce6e0dd19776ffbd04ab2c4085f3))
+
+
+### BREAKING CHANGES
+
+* upgrade nrwl 16.x.x
+
+
+
+
+
 ## [15.0.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-kaniko@15.0.0...@rxap/plugin-kaniko@15.0.1) (2023-05-11)
 
 
