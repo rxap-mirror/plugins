@@ -10,7 +10,9 @@
       "version": {
         "executor": "nx:run-commands",
         "options": {
-          "commands": ["echo ok"]
+          "commands": [
+            "echo ok"
+          ]
         },
         "configurations": {
           "production": {}

@@ -16,7 +16,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "options": {
         "jestConfig": "libs/pack/jest.config.ts",
         "passWithNoTests": true
@@ -24,7 +24,7 @@
       "outputs": ["{workspaceRoot}/coverage/libs/pack"]
     },
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "options": {
         "outputPath": "dist/libs/pack",
         "tsConfig": "libs/pack/tsconfig.lib.json",

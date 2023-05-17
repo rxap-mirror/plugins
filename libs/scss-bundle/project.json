@@ -16,7 +16,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "options": {
         "jestConfig": "libs/scss-bundle/jest.config.ts",
         "passWithNoTests": true
@@ -24,7 +24,7 @@
       "outputs": ["{workspaceRoot}/coverage/libs/scss-bundle"]
     },
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "options": {
         "outputPath": "dist/libs/scss-bundle",
         "tsConfig": "libs/scss-bundle/tsconfig.lib.json",

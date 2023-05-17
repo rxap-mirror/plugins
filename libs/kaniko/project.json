@@ -15,7 +15,7 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "options": {
         "jestConfig": "libs/kaniko/jest.config.ts",
         "passWithNoTests": true
@@ -23,7 +23,7 @@
       "outputs": ["{workspaceRoot}/coverage/libs/kaniko"]
     },
     "build": {
-      "executor": "@nrwl/js:tsc",
+      "executor": "@nx/js:tsc",
       "options": {
         "outputPath": "dist/libs/kaniko",
         "tsConfig": "libs/kaniko/tsconfig.lib.json",
