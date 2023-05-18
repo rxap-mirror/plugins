@@ -40,17 +40,6 @@
         "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
-    "pack": {
-      "executor": "@rxap/plugin-pack:build",
-      "options": {
-        "targets": [
-          "build-info:build",
-          "build-info:build-schematics",
-          "build-info:build-migrations",
-          "build-info:build-builders"
-        ]
-      }
-    },
     "readme": {
       "executor": "@rxap/plugin-readme-generator:plugin"
     },

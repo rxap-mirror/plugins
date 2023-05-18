@@ -63,17 +63,6 @@
         "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
-    "pack": {
-      "executor": "@rxap/plugin-pack:build",
-      "options": {
-        "targets": [
-          "i18n:build",
-          "i18n:build-schematics",
-          "i18n:build-migrations",
-          "i18n:build-builders"
-        ]
-      }
-    },
     "readme": {
       "executor": "@rxap/plugin-readme-generator:plugin"
     },

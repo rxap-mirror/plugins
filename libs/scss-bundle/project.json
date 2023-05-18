@@ -54,17 +54,6 @@
       },
       "outputs": ["{options.outputPath}"]
     },
-    "pack": {
-      "executor": "@rxap/plugin-pack:build",
-      "options": {
-        "targets": [
-          "scss-bundle:build",
-          "scss-bundle:build-schematics",
-          "scss-bundle:build-migrations",
-          "scss-bundle:build-builders"
-        ]
-      }
-    },
     "readme": {
       "executor": "@rxap/plugin-readme-generator:plugin"
     },

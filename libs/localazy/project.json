@@ -58,17 +58,6 @@
         "buildableProjectDepsInPackageJsonType": "dependencies"
       }
     },
-    "pack": {
-      "executor": "@rxap/plugin-pack:build",
-      "options": {
-        "targets": [
-          "localazy:build",
-          "localazy:build-schematics",
-          "localazy:build-migrations",
-          "localazy:build-builders"
-        ]
-      }
-    },
     "readme": {
       "executor": "@rxap/plugin-readme-generator:plugin"
     },

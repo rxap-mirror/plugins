@@ -53,17 +53,6 @@
       },
       "outputs": ["{options.outputPath}"]
     },
-    "pack": {
-      "executor": "@rxap/plugin-pack:build",
-      "options": {
-        "targets": [
-          "kaniko:build",
-          "kaniko:build-schematics",
-          "kaniko:build-migrations",
-          "kaniko:build-builders"
-        ]
-      }
-    },
     "readme": {
       "executor": "@rxap/plugin-readme-generator:plugin"
     },

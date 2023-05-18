@@ -6,8 +6,6 @@ export default function(options: ConfigSchema): Rule {
 
   return async (host: Tree) => {
 
-    let hasPackTarget: boolean | null = null;
-
     return chain([
       UpdateAngularProject((project) => {
         if (!project.targets.has('config')) {
@@ -37,22 +35,7 @@ export default function(options: ConfigSchema): Rule {
           console.warn(`The project '${options.project}' has already the builder config.`);
         }
 
-        hasPackTarget = project.targets.has('pack');
-
       }, { projectName: options.project }),
-      () => {
-        if (hasPackTarget === null) {
-          throw new SchematicsException('It is unclear if the project has a the target "pack"');
-        }
-        if (hasPackTarget) {
-          console.log('Project has pack target');
-          return externalSchematic('@rxap/plugin-pack', 'add-target', {
-            project: options.project,
-            target: `${options.project}:config`,
-            preBuild: false
-          });
-        }
-      }
     ]);
 
   };

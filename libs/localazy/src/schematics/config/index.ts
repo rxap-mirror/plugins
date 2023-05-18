@@ -19,8 +19,6 @@ export default function (options: ConfigSchema): Rule {
   return async (host) => {
     const projectSourceRoot = GetProjectSourceRoot(host, options.project);
 
-    let hasPackTarget: boolean | null = null;
-
     return chain([
       mergeWith(
         apply(url('./files'), [
@@ -88,23 +86,7 @@ export default function (options: ConfigSchema): Rule {
           extractI18n.options.outputPath = join(project.sourceRoot, 'i18n');
         }
 
-        hasPackTarget = project.targets.has('pack');
       }),
-      () => {
-        if (hasPackTarget === null) {
-          throw new SchematicsException(
-            'It is unclear if the project has a the target "pack"'
-          );
-        }
-        if (hasPackTarget) {
-          console.log('Project has pack target');
-          return externalSchematic('@rxap/plugin-pack', 'add-target', {
-            project: options.project,
-            target: `${options.project}:localazy-download`,
-            preBuild: true,
-          });
-        }
-      },
       (tree) => {
         const i18nGitIgnoreFilePath = join(projectSourceRoot, '.gitignore');
         if (!tree.exists(i18nGitIgnoreFilePath)) {

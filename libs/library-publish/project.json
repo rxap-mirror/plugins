@@ -52,17 +52,6 @@
       },
       "outputs": ["{options.outputPath}"]
     },
-    "pack": {
-      "executor": "@rxap/plugin-pack:build",
-      "options": {
-        "targets": [
-          "library-publish:build",
-          "library-publish:build-schematics",
-          "library-publish:build-migrations",
-          "library-publish:build-builders"
-        ]
-      }
-    },
     "readme": {
       "executor": "@rxap/plugin-readme-generator:plugin"
     },

@@ -59,17 +59,6 @@
       },
       "outputs": ["{options.outputPath}"]
     },
-    "pack": {
-      "executor": "@rxap/plugin-pack:build",
-      "options": {
-        "targets": [
-          "readme-generator:build",
-          "readme-generator:build-schematics",
-          "readme-generator:build-migrations",
-          "readme-generator:build-builders"
-        ]
-      }
-    },
     "readme": {
       "executor": "@rxap/plugin-readme-generator:plugin"
     },

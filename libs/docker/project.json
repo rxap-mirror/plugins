@@ -59,18 +59,6 @@
         "passWithNoTests": true
       }
     },
-    "pack": {
-      "executor": "@rxap/plugin-pack:build",
-      "options": {
-        "targets": [
-          "docker:build",
-          "docker:build-schematics",
-          "docker:build-migrations",
-          "docker:build-builders"
-        ]
-      },
-      "configurations": {}
-    },
     "readme": {
       "executor": "@rxap/plugin-readme-generator:library"
     },

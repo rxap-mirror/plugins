@@ -36,8 +36,6 @@ export default function (options: ConfigSchema): Rule {
   return async (host) => {
     const projectSourceRoot = GetProjectSourceRoot(host, options.project);
 
-    let hasPackTarget: boolean | null = null;
-
     return chain([
       mergeWith(
         apply(url('./files'), [
@@ -113,7 +111,6 @@ export default function (options: ConfigSchema): Rule {
           }
         }
 
-        hasPackTarget = project.targets.has('pack');
       }),
       UpdateAngularJson((angularJson) => {
         const project = angularJson.projects.get(options.project);
@@ -146,20 +143,6 @@ export default function (options: ConfigSchema): Rule {
           }
         }
       }),
-      () => {
-        if (hasPackTarget === null) {
-          throw new SchematicsException(
-            'It is unclear if the project has a the target "pack"'
-          );
-        }
-        if (hasPackTarget) {
-          console.log('Project has pack target');
-          return externalSchematic('@rxap/plugin-pack', 'add-target', {
-            project: options.project,
-            target: `${options.project}:i18n`,
-          });
-        }
-      },
       (tree, context) => {
         const rootPackageJson = GetPackageJson(tree);
         const hasAngularLocalizePackage = Object.keys(

@@ -40,17 +40,6 @@
         "passWithNoTests": true
       }
     },
-    "pack": {
-      "executor": "@rxap/plugin-pack:build",
-      "options": {
-        "targets": [
-          "firebase:build",
-          "firebase:build-schematics",
-          "firebase:build-migrations",
-          "firebase:build-builders"
-        ]
-      }
-    },
     "readme": {
       "executor": "@rxap/plugin-readme-generator:library"
     },

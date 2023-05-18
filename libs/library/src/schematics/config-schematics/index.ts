@@ -17,8 +17,6 @@ export default function(options: ConfigSchematicsSchema): Rule {
     const projectRoot = GetProjectRoot(host, options.project);
     const relativePath = relative(normalize('/' + projectRoot), '/');
 
-    let hasPackTarget: boolean | null = null;
-
     return chain([
       UpdateAngularProject(project => {
 
@@ -37,8 +35,6 @@ export default function(options: ConfigSchematicsSchema): Rule {
             }
           });
         }
-
-        hasPackTarget = project.targets.has('pack');
 
       }, { projectName: options.project }),
       UpdateProjectTsConfigJson(tsConfig => {
@@ -91,18 +87,6 @@ export default function(options: ConfigSchematicsSchema): Rule {
       options.type === 'schematics' ? CoerceCollectionJson(options.project) : noop(),
       options.type === 'builders' ? CoerceBuilders(options.project) : noop(),
       options.type === 'builders' ? CoerceBuildersJson(options.project) : noop(),
-      () => {
-        if (hasPackTarget === null) {
-          throw new SchematicsException('It is unclear if the project has a the target "pack"');
-        }
-        if (hasPackTarget) {
-          return externalSchematic('@rxap/plugin-pack', 'add-target', {
-            project: options.project,
-            target: `${options.project}:build-${options.type}`,
-            preBuild: false
-          });
-        }
-      }
     ]);
 
   };
