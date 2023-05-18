@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [16.0.0-dev.2](https://gitlab.com/rxap/packages/compare/@rxap/plugin-library-publish@16.0.0-dev.1...@rxap/plugin-library-publish@16.0.0-dev.2) (2023-05-18)
+
+
+### Bug Fixes
+
+* remove deprecated pack target concept ([39f1869](https://gitlab.com/rxap/packages/commit/39f18698795cc6f5d8db81b43581c7d75244021f))
+
+
+
+
+
 # [16.0.0-dev.1](https://gitlab.com/rxap/packages/compare/@rxap/plugin-library-publish@16.0.0-dev.0...@rxap/plugin-library-publish@16.0.0-dev.1) (2023-05-17)
 
 **Note:** Version bump only for package @rxap/plugin-library-publish

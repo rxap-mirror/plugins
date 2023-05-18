@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [16.0.0-dev.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@16.0.0-dev.2...@rxap/plugin-firebase@16.0.0-dev.3) (2023-05-18)
+
+
+### Bug Fixes
+
+* remove deprecated pack target concept ([39f1869](https://gitlab.com/rxap/schematics/commit/39f18698795cc6f5d8db81b43581c7d75244021f))
+
+
+
+
+
 # [16.0.0-dev.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-firebase@16.0.0-dev.1...@rxap/plugin-firebase@16.0.0-dev.2) (2023-05-18)
 
 
