@@ -3110,10 +3110,10 @@
   dependencies:
     esquery "^1.4.0"
 
-"@rxap/plugin-library@16.0.0-dev.1":
-  version "16.0.0-dev.1"
-  resolved "https://registry.yarnpkg.com/@rxap/plugin-library/-/plugin-library-16.0.0-dev.1.tgz#74a5dfdc6f65a3246245eecc6fd81d0df998652a"
-  integrity sha512-8pWIMn23ZElMoWIFSNxxxndLOqhWA5hJgyAa6E5i1PTlA+SAEwdoXG4G+Rk7sRa+1fPjsJjXk46OuB2aalbA2w==
+"@rxap/plugin-library@16.0.0-dev.2":
+  version "16.0.0-dev.2"
+  resolved "https://registry.yarnpkg.com/@rxap/plugin-library/-/plugin-library-16.0.0-dev.2.tgz#654907de065bd4952f06c3d38b029f3bcfa4850e"
+  integrity sha512-qP0uF9eYYNKCv+uUyGfo69nQBabaHjigDrwCWNh4o2AH1OLZVeofQ1BK33OAx2XnM6ordDRS60sCK/1cIQkI9w==
   dependencies:
     "@angular-devkit/architect" "^0.1600.1"
     "@angular-devkit/core" "^16.0.1"
@@ -3125,20 +3125,20 @@
     tslib "^2.3.1"
     typescript "^5.0.4"
 
-"@rxap/plugin-pack@16.0.0-dev.1":
-  version "16.0.0-dev.1"
-  resolved "https://registry.yarnpkg.com/@rxap/plugin-pack/-/plugin-pack-16.0.0-dev.1.tgz#ff99dce5bf9655f436832485ffe21d2f5cd5033e"
-  integrity sha512-LnGgmRwRl54udjEQDqU3JS+C3WDdtKHL+KGjiwoPhbtzCnpMrpJOSrIBLLSUnlBnMvkKHfZWSvfsebniExJNjg==
+"@rxap/plugin-pack@16.0.0-dev.2":
+  version "16.0.0-dev.2"
+  resolved "https://registry.yarnpkg.com/@rxap/plugin-pack/-/plugin-pack-16.0.0-dev.2.tgz#6b6c323acf78101087ef5865b9f11d5c6ef225c5"
+  integrity sha512-CesntXNrHd3PgPl8AQ5bMWjfo6rq5lHeWI7PTlq7G5zGyfwUTiurC+M74IdVGBY+ia1sCOsSwQz0viJzVaRg4g==
   dependencies:
     "@angular-devkit/architect" "^0.1600.1"
     "@angular-devkit/schematics" "^16.0.1"
     "@rxap/schematics-utilities" "^16.0.0-dev.0"
     tslib "^2.3.1"
 
-"@rxap/plugin-readme-generator@16.0.0-dev.1":
-  version "16.0.0-dev.1"
-  resolved "https://registry.yarnpkg.com/@rxap/plugin-readme-generator/-/plugin-readme-generator-16.0.0-dev.1.tgz#89e2540a033c570a0da2288e8f0f4ef0242b4116"
-  integrity sha512-lgj66qvTgaNrmlYcyVjwR8VeKVs4lrspCcA4C1kokn7WM4LiBF7cVfEK2Qt4FUpwAEfaL/uW776vYC8M5v1QSg==
+"@rxap/plugin-readme-generator@16.0.0-dev.2":
+  version "16.0.0-dev.2"
+  resolved "https://registry.yarnpkg.com/@rxap/plugin-readme-generator/-/plugin-readme-generator-16.0.0-dev.2.tgz#c0340ea6757cb68246c2ab024dde86afdcaf4060"
+  integrity sha512-0aW44waWTWEqwPo22pPhJjMRFAmO06LudxmYm7Cr99V0ZeHLoCkTNhWvSZRBlGy0XQB5cPffQl1hJFWyeboJhw==
   dependencies:
     "@angular-devkit/architect" "^0.1600.1"
     "@angular-devkit/core" "^16.0.1"
