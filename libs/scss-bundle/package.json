@@ -25,7 +25,7 @@
     "@angular-devkit/architect": "^0.1600.1",
     "@angular-devkit/core": "^16.0.1",
     "@angular-devkit/schematics": "^16.0.1",
-    "@rxap/schematics-utilities": "^15.0.0",
+    "@rxap/schematics-utilities": "^16.0.0-dev.0",
     "globs": "^0.1.4",
     "tslib": "^2.3.1"
   },
@@ -44,7 +44,7 @@
     "save": "devDependencies"
   },
   "peerDependencies": {
-    "@nx/workspace": "^16.1.4"
+    "@nx/workspace": "^16.2.1"
   },
   "gitHead": "4d5539102ddcfc828e6d22e8a15beb42e326ca12"
 }

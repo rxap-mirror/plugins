@@ -31,7 +31,7 @@
     "@angular-devkit/architect": "^0.1600.1",
     "@angular-devkit/core": "^16.0.1",
     "@angular-devkit/schematics": "^16.0.1",
-    "@rxap/schematics-utilities": "^15.0.0"
+    "@rxap/schematics-utilities": "^16.0.0-dev.0"
   },
   "dependencies": {
     "tslib": "^2.3.1"
