@@ -1,4 +1,10 @@
 export interface UploadBuilderSchema extends Record<string, any> {
+  disableContentLength?: boolean;
+  async?: boolean;
+  project?: string;
+  branch?: string;
+  param?: string;
+  failOnMissingGroups?: boolean;
   readKey?: string;
   writeKey?: string;
   keysJson?: string;
@@ -9,4 +15,6 @@ export interface UploadBuilderSchema extends Record<string, any> {
   force?: boolean;
   version?: number;
   extractTarget?: string;
+  autoTag?: boolean;
+  tag?: string;
 }

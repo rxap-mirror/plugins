@@ -5,6 +5,7 @@ import {
 } from '@angular-devkit/architect';
 import { DownloadBuilderSchema } from './schema';
 import { Yarn } from '../yarn';
+import { GetAutoTag } from '../get-auto-tag';
 
 export interface Target extends Record<string, any> {
   project: string;
@@ -46,40 +47,61 @@ export class Builder {
     try {
       const args: string[] = ['localazy', 'download'];
 
+      if (this.options.autoTag) {
+        const tag = GetAutoTag();
+        if (tag) {
+          this.options.tag = tag;
+        } else {
+          console.warn('Could not get auto tag');
+        }
+      }
+
       if (this.options.readKey) {
-        args.push('-r ' + this.options.readKey);
+        args.push(`--read-key ${ this.options.readKey }`);
       }
 
       if (this.options.writeKey) {
-        args.push('-w ' + this.options.writeKey);
+        args.push(`--write-key ${ this.options.writeKey }`);
       }
 
       if (this.options.configJson) {
-        args.push('-c "' + this.options.configJson + '"')
+        args.push(`--config "${ this.options.configJson }"`);
       }
 
       if (this.options.workingDirectory) {
-        args.push('-d "' + this.options.workingDirectory + '"')
+        args.push(`--working-dir "${ this.options.workingDirectory }"`);
       }
 
       if (this.options.keysJson) {
-        args.push('-k "' + this.options.keysJson + '"')
+        args.push(`--keys "${ this.options.keysJson }"`);
       }
 
       if (this.options.tag) {
-        args.push('-t ' + this.options.tag)
+        args.push(`--tag ${ this.options.tag }`);
       }
 
       if (this.options.dryRun) {
-        args.push('-s');
+        args.push('--simulate');
       }
 
       if (this.options.quite) {
-        args.push('-q');
+        args.push('--quiet');
       }
 
       if (this.options.force) {
-        args.push('-f');
+        args.push('--force');
+      }
+
+      if (this.options.branch) {
+        args.push(`--branch ${ this.options.branch }`);
+      }
+
+      if (this.options.param) {
+        args.push(`--param ${ this.options.param }`);
+      }
+
+      if (this.options.failOnMissingGroups) {
+        args.push('--failOnMissingGroups');
       }
 
       await yarn.spawn(args);

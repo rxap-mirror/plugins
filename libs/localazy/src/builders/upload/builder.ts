@@ -1,6 +1,7 @@
 import { BuilderContext, BuilderOutput, createBuilder } from '@angular-devkit/architect';
 import { UploadBuilderSchema } from './schema';
 import { Yarn } from '../yarn';
+import { GetAutoTag } from '../get-auto-tag';
 
 export interface Target extends Record<string, any> {
   project: string;
@@ -70,7 +71,7 @@ export class Builder {
       const readTarget = Builder.stringToTarget(this.context.target?.project + ':localazy-download');
       try {
         const options = await this.context.getTargetOptions(readTarget);
-        if (options.readKey && typeof options.readKey === 'string') {
+        if (this.options.readKey && typeof options.readKey === 'string') {
           this.options.readKey = options.readKey;
         }
       } catch (e) {
@@ -93,44 +94,89 @@ export class Builder {
       const args: string[] = [ 'localazy', 'upload' ];
 
       if (this.options.readKey) {
-        args.push('-r ' + this.options.readKey);
+        args.push('--read-key ' + this.options.readKey);
       }
 
       if (this.options.writeKey) {
-        args.push('-w ' + this.options.writeKey);
+        args.push('--write-key ' +  this.options.writeKey);
       }
 
       if (this.options.configJson) {
-        args.push('-c "' + this.options.configJson + '"')
+        args.push('--config "' +  this.options.configJson + '"');
       }
 
       if (this.options.workingDirectory) {
-        args.push('-d "' + this.options.workingDirectory + '"')
+        args.push('--working-dir "' +  this.options.workingDirectory + '"');
       }
 
       if (this.options.keysJson) {
-        args.push('-k "' + this.options.keysJson + '"')
+        args.push('--keys "' +  this.options.keysJson + '"');
       }
 
       if (this.options.version) {
-        args.push('-v ' + this.options.version)
+        args.push('--app-version ' +  this.options.version);
       }
 
       if (this.options.dryRun) {
-        args.push('-s');
+        args.push('--simulate');
       }
 
       if (this.options.quite) {
-        args.push('-q');
+        args.push('--quiet');
       }
 
       if (this.options.force) {
-        args.push('-f');
+        args.push('--force');
+      }
+
+      if (this.options.branch) {
+        args.push(`--branch ${  this.options.branch }`);
+      }
+
+      if (this.options.param) {
+        args.push(`--param ${  this.options.param }`);
+      }
+
+      if (this.options.failOnMissingGroups) {
+        args.push('--failOnMissingGroups');
+      }
+
+      if (this.options.project) {
+        args.push('--project ' +  this.options.project);
+      }
+
+      if (this.options.async) {
+        args.push('--async');
+      }
+
+      if (this.options.disableContentLength) {
+        args.push('--disable-content-length');
       }
 
       await yarn.spawn(args);
     } catch (e: any) {
       return { success: false, error: e.message };
+    }
+
+    if (this.options.autoTag) {
+      const tag = GetAutoTag();
+      if (tag) {
+        this.options.tag = tag;
+      } else {
+        console.warn('Could not get auto tag');
+      }
+    }
+
+    if (this.options.tag) {
+      try {
+        await yarn.spawn([ 'localazy', 'tag', 'publish', this.options.tag ]);
+      } catch (e: any) {
+        console.error(`Could not run 'localazy tag publish ${ this.options.tag }'`, e.message);
+        return {
+          success: false,
+          error: e.message,
+        };
+      }
     }
 
     return { success: true };
