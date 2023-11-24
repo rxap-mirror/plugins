@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.1.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@14.1.0...@rxap/plugin-localazy@14.1.1) (2023-11-24)
+
+
+### Bug Fixes
+
+* check if read key is defined ([adf3218](https://gitlab.com/rxap/schematics/commit/adf32188cda5cabaec83126e55b03fdef0aac379))
+
+
+
+
+
 # [14.1.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@14.0.3...@rxap/plugin-localazy@14.1.0) (2023-11-24)
 
 
