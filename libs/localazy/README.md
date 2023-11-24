@@ -150,7 +150,11 @@ workingDirectory | string |  | Set the working directory that all paths are rela
 dryRun | boolean | false | Do not perform the actual operation, only simulate the process. No files are uploaded nor written.
 quite | boolean | false | Quiet mode. Print only important information.
 force | boolean | false | Force the upload operation if the validation step fails.
+autoTag | boolean | false | Automatically determine a tag and perform the operation for it.
 tag | string |  | Perform the operation for the given release tag.
+branch | string |  | Perform the operation for the given branch
+param | string |  | Add extra parameter for processing; format is key:value
+failOnMissingGroups | boolean |  | Fail when non-existent group is provided on the command line
 ## upload
 > localazy upload
 
@@ -170,4 +174,11 @@ dryRun | boolean | false | Do not perform the actual operation, only simulate th
 quite | boolean | false | Quiet mode. Print only important information.
 force | boolean | false | Force the upload operation if the validation step fails.
 tag | string |  | Perform the operation for the given release tag.
+autoTag | boolean | false | Automatically determine a tag and perform the operation for it.
 extractTarget | string |  | The target that extracts or generate the translation source file.
+disableContentLength | boolean |  | Disable Content-Length header when uploading data; use only when the upload  operation fails with &#x27;bad request&#x27;
+async | boolean |  | Do not wait for the server to process the uploaded data and report errors.
+project | string |  | Only perform upload if the project slug or ID match the specified one
+branch | string |  | Perform the operation for the given branch
+param | string |  | Add extra parameter for processing; format is key:value
+failOnMissingGroups | boolean |  | Fail when non-existent group is provided on the command line

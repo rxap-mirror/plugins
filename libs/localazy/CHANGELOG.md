@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [14.1.0](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@14.0.3...@rxap/plugin-localazy@14.1.0) (2023-11-24)
+
+
+### Features
+
+* support tag and branch options ([48916e1](https://gitlab.com/rxap/schematics/commit/48916e1fdf6bd2d288b8737743194c05ba2790c4))
+
+
+
+
+
 ## [14.0.3](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@14.0.2...@rxap/plugin-localazy@14.0.3) (2022-12-14)
 
 **Note:** Version bump only for package @rxap/plugin-localazy
