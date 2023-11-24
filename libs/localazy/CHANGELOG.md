@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [14.1.2](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@14.1.1...@rxap/plugin-localazy@14.1.2) (2023-11-24)
+
+
+### Bug Fixes
+
+* use correct type conversion ([e16a4af](https://gitlab.com/rxap/schematics/commit/e16a4af82a96d4f20094aadb91be292a0918af7f))
+
+
+
+
+
 ## [14.1.1](https://gitlab.com/rxap/schematics/compare/@rxap/plugin-localazy@14.1.0...@rxap/plugin-localazy@14.1.1) (2023-11-24)
 
 
