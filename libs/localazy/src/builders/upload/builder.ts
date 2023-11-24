@@ -72,9 +72,10 @@ export class Builder {
       }
       try {
         const options = await this.context.getTargetOptions(readTarget);
-        console.log('read options', options);
-        if (this.options.readKey && typeof options.readKey === 'string') {
+        if (!this.options.readKey && typeof options.readKey === 'string') {
           this.options.readKey = options.readKey;
+        } else {
+          console.log(`Could not extract read key from ${JSON.stringify(readTarget)} target options`, options)
         }
       } catch (e) {
         console.warn('failed to get localazy-download target options');
