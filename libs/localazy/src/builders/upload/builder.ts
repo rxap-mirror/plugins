@@ -178,7 +178,7 @@ export class Builder {
 
     if (this.options.tag) {
       try {
-        const args = [ 'localazy', 'tag', 'publish', this.options.tag ];
+        const args = [ 'localazy', 'tag' ];
         if (this.options.readKey) {
           args.push('--read-key ' + this.options.readKey);
         }
@@ -197,6 +197,7 @@ export class Builder {
         if (this.options.keysJson) {
           args.push('--keys "' +  this.options.keysJson + '"');
         }
+        args.push('publish', this.options.tag)
         await yarn.spawn(args);
       } catch (e: any) {
         console.error(`Could not run 'localazy tag publish ${ this.options.tag }'`, e.message);
