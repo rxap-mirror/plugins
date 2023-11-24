@@ -64,11 +64,12 @@ export class Builder {
       this.options.extractTarget = this.context.target?.project + ':extract-i18n'
     }
 
+    const readTarget = Builder.stringToTarget(this.context.target?.project + ':localazy-download');
+
     if (!this.options.readKey) {
       if (!this.context.target?.project) {
         return { error: 'Could not extract the current project', success: false };
       }
-      const readTarget = Builder.stringToTarget(this.context.target?.project + ':localazy-download');
       try {
         const options = await this.context.getTargetOptions(readTarget);
         if (this.options.readKey && typeof options.readKey === 'string') {
@@ -77,6 +78,12 @@ export class Builder {
       } catch (e) {
         console.warn('failed to get localazy-download target options');
       }
+    }
+
+    if (this.options.autoTag && !this.options.readKey) {
+      console.log('Can not use auto tag without read key');
+      console.log(`Tried to extract read key from ${readTarget} target options`);
+      return { success: false, error: 'Can not use auto tag without read key' };
     }
 
     const extractI18nTarget = Builder.stringToTarget(this.options.extractTarget);
@@ -169,7 +176,26 @@ export class Builder {
 
     if (this.options.tag) {
       try {
-        await yarn.spawn([ 'localazy', 'tag', 'publish', this.options.tag ]);
+        const args = [ 'localazy', 'tag', 'publish', this.options.tag ];
+        if (this.options.readKey) {
+          args.push('--read-key ' + this.options.readKey);
+        }
+
+        if (this.options.writeKey) {
+          args.push('--write-key ' +  this.options.writeKey);
+        }
+
+        if (this.options.configJson) {
+          args.push('--config "' +  this.options.configJson + '"');
+        }
+
+        if (this.options.workingDirectory) {
+          args.push('--working-dir "' +  this.options.workingDirectory + '"');
+        }
+        if (this.options.keysJson) {
+          args.push('--keys "' +  this.options.keysJson + '"');
+        }
+        await yarn.spawn(args);
       } catch (e: any) {
         console.error(`Could not run 'localazy tag publish ${ this.options.tag }'`, e.message);
         return {
