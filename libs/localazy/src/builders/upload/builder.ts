@@ -82,7 +82,7 @@ export class Builder {
 
     if (this.options.autoTag && !this.options.readKey) {
       console.log('Can not use auto tag without read key');
-      console.log(`Tried to extract read key from ${readTarget} target options`);
+      console.log(`Tried to extract read key from ${JSON.stringify(readTarget)} target options`);
       return { success: false, error: 'Can not use auto tag without read key' };
     }
 
