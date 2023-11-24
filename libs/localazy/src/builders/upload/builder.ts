@@ -72,6 +72,7 @@ export class Builder {
       }
       try {
         const options = await this.context.getTargetOptions(readTarget);
+        console.log('read options', options);
         if (this.options.readKey && typeof options.readKey === 'string') {
           this.options.readKey = options.readKey;
         }
